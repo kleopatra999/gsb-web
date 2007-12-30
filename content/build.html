@@ -1,0 +1,852 @@
+    <div id="toc"
+         class="toc">
+      <p>
+        Table of Contents
+      </p>
+
+      <ol>
+        <li>
+          <a href="#bid-1">Checking Out the GSB Build Tree</a>
+        </li>
+
+        <li>
+          <a href="#bid-2">Downloading the Source</a>
+        </li>
+
+        <li>
+          <a href="#bid-3">System Requirements</a>
+          <ol>
+            <li>
+              <a href="#bid-4">Disk Space</a>
+            </li>
+
+            <li>
+              <a href="#bid-5">Development Tools</a>
+            </li>
+
+            <li>
+              <a href="#bid-6">Build System Cleanup and Requirements</a>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <a href="#bid-7">Build Settings</a>
+        </li>
+
+        <li>
+          <a href="#bid-8">Advanced Build Settings</a>
+        </li>
+
+        <li>
+          <a href="#bid-9">SlackBuild Options</a>
+        </li>
+
+        <li>
+          <a href="#bid-10">Building GNOME SlackBuild</a>
+        </li>
+
+        <li>
+          <a href="#bid-11">When Things Go Wrong</a>
+        </li>
+      </ol>
+    </div>
+
+    <h2 id="build-gsb">
+      The GNOME SlackBuild (GSB) Build System
+    </h2>
+
+    <p>
+      This page describes how to build the binary GSB distribution from the
+      actual GSB source code. <span class="hilite">It is recommended that
+      you read through (end even <span style=
+      "color:#147;text-decoration:underline;cursor:pointer;"
+            onclick="window.print();"
+            title="Click to Print">print</span>) this entire document
+            before starting the build process.</span>
+    </p>
+
+    <h3 id="bid-1">
+      Checking Out the GSB Build System from Subversion <span class=
+      "toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_svn.png"
+         class="listimg-l"
+         alt="" /> The first step to building your GNOME Desktop with GSB
+         is to check out our source code from our svn repository. Please
+         make sure to do so in a directory on a disk partition that has
+         quite a bit of free space. The GSB Build System itself doesn&#39;t
+         not take up much disk space, however, the source tarballs are
+         downloaded directory into the build tree. <b>A full source build
+         tree can take up to 1GB of disk space.</b> We have not yet
+         unveiled a formal release version, so the most up-to-date build
+         tree is found in trunk. You can check out the GSB Build System
+         using the following command.
+    </p>
+
+    <div>
+      <pre>
+$ svn co <a href=
+"http://svn.gnomeslackbuild.org/gsb/trunk">http://svn.gnomeslackbuild.org/gsb/trunk</a> gsb
+</pre>
+    </div>
+
+    <p>
+      This may take a long time depending on the speed of your internet
+      connection. The svn GSB tree does not only contain our own scripts
+      and patches for building the GNOME Desktop, but also contains
+      external links to other software available via svn, such as the x264
+      Codec library, and applications such as gnucash. These external links
+      via svn will ease the building of such packages. However, the
+      majority of the tree will consist of SlackBuild build scripts
+      (.SlackBuild), Slackware package description files (slack-desc), and
+      Slackware package requirements (slack-required) files.
+    </p>
+
+    <p>
+      <strong>If you have difficulties building a package, before reporting
+      any errors, please make sure your Build Tree is up-to-date. Changes
+      to the trunk can happen daily, and the fix may already be applied to
+      the build tree.</strong> To update your tree to the latest version,
+      change into the <code>gsb</code> directory and run
+    </p>
+
+    <div>
+      <pre>
+$ svn update
+</pre>
+    </div>
+
+    <h3 id="bid-2">
+      Downloading the Source Code <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_download.png"
+         class="listimg-l"
+         alt="" /> Apart of the GSB Build System is a download script
+         written in perl, which is kept up to date with all the versions
+         and download locations of all the source tarballs used by the GSB
+         Build System. This is for the convenience of any user who wishes
+         to build GSB from scratch. The download script is designed to
+         download the source tarballs for the entire GSB Build Tree,
+         <strong>which can be up to 1GB.</strong> Users may find they
+         either do not want this, and may only want to use the GSB Build
+         Tree for building a few select packages. In this case it may be
+         easier to download the tarballs by hand into each package&#39;s
+         directory.
+    </p>
+
+    <p>
+      The perl download script is called <code>gsb_update.pl</code>, and it
+      is found in the <code>gsb/bin</code> directory. There are two
+      settings you may wish to change before running the download script.
+      To do this, you will need to edit the <code>GSB.pm</code> file found
+      in the directory <code>gsb/lib/perl/GSB</code>.
+    </p>
+
+    <div>
+      <pre>
+################################################################################
+      # Config Options
+      #
+      &#39;mirror&#39;   =&gt; &#39;ftp://ftp.gnome.org/pub/gnome&#39;
+      my $wget_options = &quot;--continue --cache=on --passive-ftp --progress=bar:force --timeout=30 --tries=3&quot;;
+</pre>
+    </div>
+
+    <ol>
+      <li>&#39;mirror&#39; - You can change the mirror you download from to
+      a location nearer you. You can find a list of GNOME Mirrors at
+      &lt;<a href=
+      "http://www.gnome.org/~mjs/MIRRORS.html">http://www.gnome.org/~mjs/MIRRORS.html</a>&gt;.
+      </li>
+
+      <li>wget_options - The <code>gsb_update.pl</code> script uses
+        <a href="http://www.gnu.org/software/wget/">wget</a> to download
+        all the soure tarballs. If you would like to change the default
+        settings for the GSB download script, please consult the <a href=
+        "http://www.gnu.org/software/wget/manual/html_node/Invoking.html#Invoking">
+        wget manual</a>.
+      </li>
+    </ol>
+
+    <p>
+      When you are ready to run the download script, change into the
+      <code>gsb/lib</code> directory and run:
+    </p>
+
+    <div>
+      <pre>
+$ ../bin/gsb_update.pl --dl --edit --build=gsb
+</pre>
+    </div>
+
+    <dl>
+      <dt>
+        <var>--dl</var>
+      </dt>
+
+      <dd>
+        This argument will tell gsb_update.pl to download all the source
+        tarballs.
+      </dd>
+
+      <dt>
+        <var>--edit</var>
+      </dt>
+
+      <dd>
+        This argument will tell gsb_update.pl to edit the SlackBuild to
+        reflect the version number which is downloaded from the GSB.pm
+        source files, as well as reset the build number if the version has
+        changed.
+      </dd>
+
+      <dt>
+        <var>--build=gsb</var>
+      </dt>
+
+      <dd>
+        This argument will tell gsb_update.pl to tag all the packages with
+        &quot;gsb&quot;. When the package is built, the string
+        &quot;gsb&quot; will be appended to the package build number, i.e.,
+        -1gsb.tgz, rather than -1.tgz. This will help differentiate it from
+        regular Slackware provided packages.
+      </dd>
+    </dl>
+
+    <p>
+      Downloading the sources may take a while depending on the speed of
+      your internet connection. Don&#39;t be surprised if it takes a few
+      hours. :^)
+    </p>
+
+    <h3 id="bid-3">
+      System Requirements <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <h4 id="bid-4">
+      Disk Space <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/build_space.png"
+         class="listimg-l"
+         alt="" /> Disk space requirements are the first priority. It may
+         seem surprising at first, but a complete GSB Build may require up
+         to 8GB of disk space! There is a lot of software that will be
+         compiled during the build process and it is important to ensure
+         that enough free disk space is available before starting the build
+         scripts. The disk space usage is broken down as such:
+    </p>
+
+    <dl>
+      <dt>
+        <strong>GNOME SlackBuild Source Tree:</strong> ~100MB
+      </dt>
+
+      <dd>
+        This includes all the GNOME SlackBuild scripts, as well as all
+        external svn sources.
+      </dd>
+
+      <dt>
+        <strong>GNOME SlackBuild Source Tarballs:</strong> ~1GB
+      </dt>
+
+      <dd>
+        This is approximate for a full source download. If you only wish to
+        build a few single packages then if may be easier for you to
+        download each source tarball individually.
+      </dd>
+
+      <dt>
+        <strong>Temporary building space:</strong> ~4GB.
+      </dt>
+
+      <dd>
+        Some larger applications like Mozilla Firefox, Mono, and Boost C++
+        require enormous amounts of space to build. Despite the fact that
+        the resulting binaries are often only about 30MB, while building
+        they may need up to 3-4GB for object files and libraries.
+      </dd>
+
+      <dt>
+        <strong>Installed Software:</strong> ~2GB.
+      </dt>
+
+      <dd>
+        As the GSB Build system steadily progresses building packages, it
+        will need to install them on the build system for the sake of
+        satisfying dependencies. In other words, the system on which GSB is
+        built will also have it installed. A full installation of GSB will
+        required approximately 2GB
+      </dd>
+
+      <dt>
+        <strong>GNOME SlackBuild Packages:</strong> ~650MB
+      </dt>
+
+      <dd>
+        GNOME SlackBuild will produce standard <code>tgz</code> format
+        Slackware packages, placing all the built packages into the default
+        directory <code>/tmp/gsb-packages</code>. A full GSB Build will
+        require space for about 240 individual packages.
+      </dd>
+    </dl>
+
+    <h4 id="bid-5">
+      Development Tools <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/build_tools.png"
+         class="listimg-l"
+         alt="" /> <strong>A full development system is also required to
+         build GSB.</strong> You will need to ensure that the following
+         standard Slackware packages are installed on your system:
+         <code>autoconf, automake, bin86, binutils, doxygen, flex, gcc,
+         gcc-g++, gettext-tools, guile, indent, kernel-headers, libtools,
+         m4, make, perl, pkg-config, python, subversion.</code>
+    </p>
+
+    <p>
+      All of these packages are installed on a &quot;full&quot; Slackware
+      install, but some users who installed a custom selection may not have
+      these packages installed. They are available on any Slackware CD, or
+      available from any Slackware mirror.
+    </p>
+
+    <p>
+      For those users who are interested, we provide a set of tagfiles to
+      be used during a Slackware installation which will install the same
+      set of Slackware packages we use on our own build system. They are
+      available in the <code>lib/build-box-tagfiles/</code> directory.
+    </p>
+
+    <h4 id="bid-6">
+      Build System Cleanup and Requirements <span class="toc-link"><a href=
+      "#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/cleanup.png"
+         class="listimg-l"
+         alt="" /> One caveat for builders is that some standard Slackware
+         packages will need to be upgraded, most notably pango, glib2, and
+         gtk+2. Others will need to be upgraded for added functionality,
+         but these packages are optional. The build scripts will not
+         upgraded these packages automatically unless you run the
+         <code>gsb.*.SlackBuild</code> with the <code>-upgrade</code>
+         argument. Your other option is to use <code>removepkg</code> to
+         remove all the packages listed in our <a href=
+         "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&amp;root=gsb">
+      replaced packages file</a>:
+    </p>
+    <?php
+        # replaced_packages grabber
+        $rp_error = "<h4>Replaced Packages Error</h4>\n"
+                    ."<p>The server is experiencing issues retrieving the replaced_packages from
+                      SVN.  Please try again a bit later.</p>"
+                    ."\n</div>\n";
+
+        $rp = curl_init();
+        $timeout = 10; // set to zero for no timeout
+        curl_setopt ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?root=gsb&view=co");
+        curl_setopt ($rp, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($rp, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $rp_result = curl_exec($rp);
+        curl_close($rp);
+        if (!$rp_result)
+        {
+            print($td_error);
+            include('common/footer_inc.php');
+            exit();
+        }
+        else
+        {
+            $rp_result = htmlentities($rp_result);
+            #$rp_result = str_replace(" ", "&nbsp;", $rp_result);
+            $rp_result = trim($rp_result);
+        }
+        ?>
+    <div>
+      <pre style="overflow:auto;">
+<?php print($rp_result); ?>
+</pre>
+    </div>
+
+    <p>
+      You will also need a live internet connection in order to build some
+      packages.
+    </p>
+
+    <h3 id="bid-7">
+      Build Settings <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/build_options.png"
+         class="listimg-l"
+         alt="" /> When building GSB, there are several environment
+         variables which can be used to tweak and customise the build
+         process. GSB supports two methods of setting these environment
+         variables, described below.
+    </p>
+
+    <p>
+      The first option is to use the bash builtin &quot;export&quot; to
+      manually set the option and export it to all sub-processes. This can
+      be done with a command like:
+    </p>
+
+    <div>
+      <pre>
+$ export VAR=&quot;VAL&quot;
+</pre>
+    </div>
+
+    <p>
+      This can be repeated for as many environment options as you want to
+      set. You must remember to set these options every time you begin a
+      build process as they will not be saved accross multiple builds.
+    </p>
+
+    <p>
+      The second option is to create a <code>gsb.options</code> file in the
+      src/ directory. The gsb.options file is read at the begining of every
+      build process, and the options specified in this file will be saved
+      accross multiple builds. Using the <code>gsb.options</code> file is
+      especially useful for repeat builds or for developers who want to set
+      specific options when testing.
+    </p>
+
+    <p>
+      The gsb.options file should contain exactly the same
+      &quot;export&quot; commands which would be used manually on the
+      command line (see above). The advantage of putting them into the
+      gsb.options file is that the options will always be read, no matter
+      whether you remember to manually export them on the command line.
+    </p>
+
+    <p>
+      Here are the common environment variables which can be set to effect,
+      tweak or customise the build process:
+    </p>
+
+    <dl>
+      <dt>
+        <var>ARCH</var>
+      </dt>
+
+      <dd>
+        Setting the ARCH allows you to over-ride the default base
+        architecture type for GSB. You can use this environment option to
+        build GSB for, say, x86_64 or the powerpc architecture type. The
+        architecture type set when building GSB determines the absolute
+        minimum processor type required to run the produced binaries. In
+        other words, if you set ARCH=i686 the resulting code will NOT work
+        on an i586 or earlier CPU. These ARCH types are currently
+        recognised by the GSB SlackBuild scripts: <code>i386, i486, i586,
+        i686, x86_64, powerpc</code>.
+      </dd>
+
+      <dd class="emph">
+        The default is &quot;i586&quot;.
+      </dd>
+
+      <dt>
+        <var>TUNE</var>
+      </dt>
+
+      <dd>
+        This option is very similar to the ARCH environment option except
+        that the resulting binaries are scheduler-tuned to the given
+        processor type. This means that the binaries will be tuned to run
+        with better performance on the CPU type specified with TUNE, but
+        will still work without problems on CPU types going back to the
+        value specified for ARCH. TUNE can be set to any valid CPU type
+        within the architecture type specified with ARCH. For example, if
+        ARCH=i586, TUNE could be set to i686. For an ARCH type of x86_64,
+        TUNE must be set to one of the 64 bit processor types,
+        currently:<code>k8, opteron, athlon64, athlon-fx</code>.
+      </dd>
+
+      <dd>
+        The default is &quot;i586&quot;, except for an ARCH type of x86_64
+        where it is &quot;k8&quot;.
+      </dd>
+
+      <dt>
+        <var>DISTRO</var>
+      </dt>
+
+      <dd>
+        Setting DISTRO to anything other than &quot;slackware&quot; allows
+        GSB to be built on different (Slackware based) distributions. For
+        example, this can be set to &quot;slamd64&quot; when building GSB
+        on the 64 bit Slackware based distro <a href=
+        "http://www.slamd64.com">Slamd64</a>.
+      </dd>
+
+      <dd class="emph">
+        The default is &quot;slackware&quot;, and should not be over-ridden
+        unless you are specifically building for another distribution.
+      </dd>
+
+      <dt>
+        <var>TMP</var>
+      </dt>
+
+      <dd>
+        During the package builds, temporary data will need to be stored on
+        disk. This option specifies the directory where that temporary data
+        can be written. Make sure the default (or any directory you
+        specify) has enough free space for the build process, plus the
+        completed packages and logs.
+      </dd>
+
+      <dd class="emph">
+        The default is <code>/tmp</code>.
+      </dd>
+
+      <dt>
+        <var>PKGDEST</var>
+      </dt>
+
+      <dd>
+        Once a package has been built it will be stored in the directory
+        specified with this option. The default for this option is affected
+        by the value of the TMP environment option detailed above (referred
+        to as $TMP below).
+      </dd>
+
+      <dd class="emph">
+        The default is <code>$TMP/gsb-packages</code>.
+      </dd>
+
+      <dt>
+        <var>LOGSDIR</var>
+      </dt>
+
+      <dd>
+        As the GSB build process proceeds, a log of the output from each
+        package build is logged for later debugging. This environment
+        option specifies the directory where these log files will be
+        stored. This option is not used by individual package SlackBuilds
+        but is used by the top-level SlackBuilds which control the build
+        processes. The default for this option is affected by the value of
+        the TMP environment option detailed above (referred to as $TMP
+        below).
+      </dd>
+
+      <dd class="emph">
+        The default is <code>$TMP/gsb-buildlogs</code>.
+      </dd>
+    </dl>
+
+    <h3 id="bid-8">
+      Advanced Build Settings <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/advanced_build.png"
+         class="listimg-l"
+         alt="" /> The following options are less common but allow highly
+         specific customisation of the build process. You should not set
+         these options unless you know exactly what needs to be set for
+         each. GSB comes with fairly optimised complier settings, but if
+         you really want to squeeze every last cycle out of your CPU, you
+         can adjust compiler and make settings. Be wary though! Sometimes
+         hyper-optimising can break software that depends on careful or
+         ISO-standard math routines, for example, liboil.
+    </p>
+
+    <dl>
+      <dt>
+        <var>GSB_CONFIGURE_FLAGS</var>
+      </dt>
+
+      <dd>
+        Any options specified in this environment variable are ADDED to the
+        package specific options passed to the <code>./configure</code>
+        command in the SlackBuilds. If this option is set globally (ie, set
+        with export or in gsb.options) it sets the additional options
+        passed to <code>./configure</code> for EVERY SlackBuild in GSB.
+        Therefore, make sure that any setting given in this environment
+        option is valid for EVERY <code>./configure</code> used in GSB.
+      </dd>
+
+      <dd class="emph">
+        By default, when ARCH=x86_64, <code>./configure</code> is
+        automatically passed <code>--libdir=/usr/lib64</code>.
+      </dd>
+
+      <dt>
+        <var>GSB_TUNE_FLAGS</var>
+      </dt>
+
+      <dd>
+        This environment option allows you to set the specific tuning
+        options gcc should use when compiling/linking the binaries in
+        packages. There are many, many gcc options which can be set to
+        optimise/tune the binaries - see the gcc man page for full details.
+        Setting this option over-rides the default tuning options specified
+        in the SlackBuild files - these options are NOT added to the
+        default ones. Make sure you add any of the default options from the
+        SlackBuilds back to this environment option if you choose to use
+        it. Tuning is specific to each ARCH, with the defaults being:
+        <dl>
+          <dt>
+            i386, i486
+          </dt>
+
+          <dd>
+            <code>-O3 -march=$ARCH -mtune=$TUNE</code>
+          </dd>
+
+          <dt>
+            i586, i686
+          </dt>
+
+          <dd>
+            <code>-O3 -march=$ARCH -mtune=$TUNE -pipe -fomit-frame-pointer
+            -ffast-math</code>
+          </dd>
+
+          <dt>
+            x86_64, with default TUNE
+          </dt>
+
+          <dd>
+            <code>-O3 -march=k8 -mtune=k8 -pipe -fomit-frame-pointer
+            -ffast-math -fPIC</code>
+          </dd>
+
+          <dt>
+            x86_64, with custom TUNE
+          </dt>
+
+          <dd>
+            <code>-O3 -march=$TUNE -mtune=$TUNE -pipe -fomit-frame-pointer
+            -ffast-math -fPIC</code>
+          </dd>
+
+          <dt>
+            powerpc
+          </dt>
+
+          <dd>
+            <code>-O2 -march=$ARCH</code>
+          </dd>
+        </dl>
+      </dd>
+    </dl>
+
+    <h3 id="bid-9">
+      SlackBuild Arguments <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/sb.png"
+         class="listimg-l"
+         alt="" />The default behaviour of the build script is to skip any
+         previously installed package, and continue building the next
+         package in the build order. This is to avoid accidently updating
+         and removing of any customised, prebuilt, or Slackware default
+         packages.
+    </p>
+
+    <p>
+      <strong>Note:</strong> You will need to pass the <code>-update</code>
+      argument to build GSB packages that replace any default Slackware
+      package.
+    </p>
+
+    <dl>
+      <dt>
+        <var>-force</var>
+      </dt>
+
+      <dd>
+        The package will not be built if a package of the same name is
+        already installed, or any of the packages required to build are
+        missing. This option over-rides these checks and attempts a build
+        anyway. It cannot be used with the -update switch.
+      </dd>
+
+      <dt>
+        <var>-update</var>
+      </dt>
+
+      <dd>
+        This switch will make the build script test each package version as
+        defined in the SlackBuild script against the currently installed
+        package. If there is a difference, the script will remove, rebuild,
+        and reinstall the package. It cannot be used with the -force
+        switch.
+      </dd>
+
+      <dt>
+        <var>-no-cleanup</var>
+      </dt>
+
+      <dd>
+        By default any temporary source, build and package directories will
+        be deleted once the package is built. This option prevents those
+        files from being removed.
+      </dd>
+
+      <dt>
+        <var>-no-install</var>
+      </dt>
+
+      <dd>
+        Build the packages but don&#39;t install them. This should only be
+        used for testing individual SlackBuilds. It may cause the section
+        build to fail when required packages are not installed and the
+        dependency checks fail.
+      </dd>
+
+      <dt>
+        <var>-help</var>
+      </dt>
+
+      <dd>
+        Show this help screen.
+      </dd>
+    </dl>
+
+    <p>
+      Options are passed down to the next level SlackBuild where
+      appropriate.
+    </p>
+
+    <h3 id="bid-10">
+      Building GNOME SlackBuild <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/building.png"
+         class="listimg-l"
+         alt="" /> Building every package provided by GNOME SlackBuild will
+         take a long time. We have separated packages into sections in
+         order to aid building in a proper order, as well as to make
+         maintaining dependencies easier. If you do not wish to run the
+         entire build in one go, you may build section by section (ie, by
+         hand), following the build order below. We have, however, provided
+         there is one overarching script, <code>gsb.SlackBuild</code> which
+         will run each of the section SlackBuild&#39;s in the proper order.
+    </p>
+
+    <ol>
+      <li>tools
+      </li>
+
+      <li>libraries
+      </li>
+
+      <li>platform
+      </li>
+
+      <li>desktop
+      </li>
+
+      <li>applications
+      </li>
+
+      <li>accessibility
+      </li>
+
+      <li>bindings
+      </li>
+
+      <li>office
+      </li>
+
+      <li>mono
+      </li>
+
+      <li>extras
+      </li>
+
+      <li>themes
+      </li>
+
+      <li>compiz
+      </li>
+
+      <li>testing
+      </li>
+    </ol>
+
+    <p>
+      This master list is defined within the <code>gsb.SlackBuild</code>
+      file itself, and each section SlackBuild has it&#39;s own defined
+      build order. The binary distribution provided compiles every package
+      listed, but if you prefer to roll your own GSB packages, then feel
+      free to edit the order to suit your own needs or wants. But be
+      warned, if everything breaks, it&#39;s not our fault! :^)
+    </p>
+
+    <div>
+      <pre>
+./gsb.SlackBuild -update
+</pre>
+    </div>
+
+    <p>
+      The -update argument is important, and used to upgrade a few standard
+      Slackware packages. For more information, see the Build System
+      Requirements above.
+    </p>
+
+    <h3 id="bid-11">
+      When Things Go Wrong <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/alert.png"
+         class="listimg-l"
+         alt="" /> Don&#39;t panic. :^) We&#39;ve worked hard to ensure
+         that all the packages within the GSB Build Tree will build on
+         Slackware. <strong>If you have difficulties building a package,
+         before reporting any errors, please make sure your Build Tree is
+         up-to-date. Changes to the trunk can happen daily, (and even
+         hourly!), and the fix may already be applied to the build
+         tree.</strong> Before reporting errors, please make sure to have
+         updated your tree to the latest version. Change into the
+         <code>gsb</code> directory and run:
+    </p>
+
+    <div>
+      <pre>
+$ svn update
+</pre>
+    </div>
+
+    <p>
+      If you discover yourself still having difficulty building a certain
+      package or packages, let us know and we&#39;ll try our best to
+      resolve any issues. Our contact information can be found on the
+      <a href="/lists/">Lists</a> web page. Give IRC a try first, but if
+      no-one is around, then please do send an email detailing the problem
+      you are having, with all the appropriate details, like OS and compile
+      versions, the exact error, and steps to reproduce it. You may also
+      want to check the archives or FAQ to see if the problem is already
+      known.
+    </p>

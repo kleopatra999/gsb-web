@@ -1,0 +1,321 @@
+    <h2 id="support">
+      Getting Support
+    </h2>
+
+    <ul>
+      <li id="list">Join the <a href="/lists/">GSB User Discussion Mailing
+      List</a> and ask questions (you must be subscribed to the mailing
+      list in order to post messages).
+      </li>
+
+      <li id="irc">Join the <a href="irc://irc.freenode.net/#gsb">#gsb IRC
+      channel on irc.freenode.net</a> and ask questions.
+      </li>
+    </ul>
+
+    <p>
+      <span class="hilite">Before you ask questions, please check the
+      <a href="#FAQs">FAQs</a>, and search the <a href="/lists/">user
+      discussion mailing list archives</a>.</span>
+    </p>
+
+    <hr />
+
+    <h2 id="FAQs">
+      <acronym title="Frequently-asked Questions">FAQs</acronym>
+    </h2>
+
+    <dl>
+      <dt class="faqhead"
+          id="faq_id-0">
+        <q>I&#39;ve just installed GSB. How do I make it my default desktop
+        environment? And how do I start it?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          You should be able to simply select GNOME by running
+          `<code>xwmconfig</code>` (as root). If that doesn&#39;t work:
+        </p>
+
+        <ol>
+          <li>Execute the following command <strong>as root</strong>:
+            <div>
+              <pre>
+cd /etc/X11/xinit ; ln -f  xinitrc.gnome xinitrc
+</pre>
+            </div>
+          </li>
+
+          <li>Then, using <strong>your own user account</strong>, execute
+          the following command:
+            <div>
+              <pre>
+rm ~/.xinitrc
+</pre>
+            </div>
+          </li>
+
+          <li>To start GSB/GNOME:
+            <div>
+              <pre>
+startx
+</pre>
+            </div>
+          </li>
+        </ol>
+
+        <p>
+          You may also want to consider setting your <code>initab</code> to
+          <code>init 4</code>, to start the graphical environment
+          automatically.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-1">
+        <q>What&#39;s the difference between GSB and Dropline GNOME?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Not a whole lot, actually. Dropline GNOME is a similar project,
+          and has been around longer. It&#39;s simply another
+          choice/alternative of a GNOME distribution for Slackware. GSB
+          does not &quot;compete&quot; with Dropline. Matter of fact, the
+          Dropline and GSB teams collaborate together periodically. Some
+          folks however, do appreciate that GSB does not add <a href=
+          "http://en.wikipedia.org/wiki/Pluggable_Authentication_Modules">PAM</a>
+          to Slackware.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-2">
+        <q>I tried to install GSB &#39;-current&#39; via
+        slapt-get/net-install, and it fails, saying that I have &#39;unmet
+        dependencies.&#39; Why?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Note that the &quot;-current&quot; branch is under constant
+          development, and may have bugs. Hence, gsb-current isn&#39;t
+          officially supported. If you encounter any bugs in gsb-current,
+          it would be appreciated if you reported them using the GSB
+          Development List in the <a href="/lists/">mailing lists
+          section</a>.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-3">
+        <q>How do I uninstall GSB?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Please note that when uninstalling, you will have to reinstall
+          some packages from the &quot;<code>l</code>&quot; disk set on
+          your Slackware CD-ROM. Please refer to <a href=
+          "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&amp;root=gsb">
+          &quot;replaced packages&quot; file</a> for more information.
+        </p>
+
+        <p>
+          slapt-get method:
+        </p>
+
+        <div>
+          <pre>
+$ slapt-get --search &#39;gsb$&#39;|awk &#39;{print $1}&#39;| \
+    xargs -r slapt-get --remove -y
+</pre>
+        </div>
+
+        <p>
+          manual method:
+        </p>
+
+        <div>
+          <pre>
+$ cd /var/log/packages
+$ ls -1| grep gsb$| xargs -n 1 removepkg
+</pre>
+        </div>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-4">
+        <q>How can I install GSB using <code>slapt-get</code>?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          First, make certain you have the GSB package respository in your
+          <code>/etc/slapt-get/slapt-getrc</code>;
+        </p>
+
+        <ol>
+          <li>
+            <div>
+              <pre>
+SOURCE=&lt;full-path-to-the-mirror-of-your-choice&gt;/gsb-&lt;version&gt;
+</pre>
+            </div>
+
+            <p>
+              See the <strong><a href="/download/">Download
+              section</a></strong> for a list of avaliable mirrors.
+            </p>
+
+            <p>
+              <small>(don&#39;t forget to run <code>`slapt-get
+              --update`</code> after adding new respositories!)</small>
+            </p>
+          </li>
+
+          <li>Then run the following command;
+            <div>
+              <pre>
+$ slapt-get --install gsb-gnome
+</pre>
+            </div>
+          </li>
+        </ol>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-5">
+        <q>After installing GSB, my keyboard does not repeat keys any
+        longer. How is that fixed?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          From GNOME Menu Bar, choose &quot;Desktop -&gt; Preferences -&gt;
+          Keyboard&quot;, then check the &quot;Repeat Keys&quot; box.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-6">
+        <q>My KDE Menus are all messed up after installing GSB. How do I
+        fix them?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          The KDE menus might be changed if you install GSB because of the
+          gnome-menus package, The gnome-menus package implements the
+          freedesktop.org desktop menu specification. There is a simple fix
+          for this. Just add the following near the top of the startkde
+          script:
+        </p>
+
+        <div>
+          <pre>
+$ export XDG_CONFIG_DIRS=/etc/kde/xdg
+</pre>
+        </div>
+
+        <p>
+          If the improper menus persist, run kbuildsycoca from Konsole
+          after you have logged into KDE. Thanks to Jim Philips and
+          Locustfurnace for pointing it out.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-7">
+        <q>My Mime Types/File Associations are all screwed up after I
+        installed GSB. What do I do to fix that?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Run the following commands as root:
+        </p>
+
+        <div>
+          <pre>
+$ /usr/bin/update-mime-database \
+     /usr/share/mime
+$ /usr/bin/update-desktop-database
+</pre>
+        </div>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-9">
+        <q>Does GSB require the Linux 2.6 kernel?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          As of Slackware 12.0, yes - it does.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-10">
+        <q>Must I subscribe to post messages to the lists? Do I need a
+        Google or Gmail Account?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Yes - you must <a href="/lists/">subscribe to the lists</a> to
+          post messages. However, you do not need a Google or Gmail account
+          - you only need to <a href=
+          "http://groups.google.com/support/bin/answer.py?answer=46606&amp;query=subscribe">
+          subscribe with a valid email address</a>.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-11">
+        <q>Can I send email to the mailing lists, like most other
+        lists?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Yes - when you <a href="/lists/">subscribe to the lists</a>,
+          you&#39;ll see instructions on how to post messages to the list,
+          along with the email address to send your messages to. Remember
+          to use <a href="http://groups.google.com/support">Google
+          Help</a>, and do not bug the GSB developers/admins about how to
+          use Google Groups.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-12">
+        <q>Do you support GSB installed on Slackware-current?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          No we do not. At this time, we support GSB on Slackware <?php
+                    echo $slack_ver; ?> <em>only</em>. You can try to
+          install GSB on Slackware-current, but support requests will be
+          ignored.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-13">
+        <q>Does GSB replace any official Slackware packages?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Yes it does - but very few. See the <a href=
+          "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&amp;root=gsb">
+          <tt>replaced_packages</tt> file</a> for a list of packages that
+          GSB replaces/upgrades. Note that <span class="emph">GSB does not
+          install PAM, nor does it replace the X11 windowing system.</span>
+        </p>
+      </dd>
+    </dl>

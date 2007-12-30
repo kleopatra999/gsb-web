@@ -1,0 +1,21 @@
+var {font-family: monospace;}
+body{float:none;background-color:#FFF;color:#000;line-height:1.2em;text-align:left;width:auto;font-family:Palatino, "Book Antiqua", Georgia, Times, Times New Roman, Serif;font-size:medium;margin:0.2em;padding:0.5em;}
+.screenOnly a{color:blue;font-weight:700;}
+a{color:#000;text-decoration:underline;}
+h1,h2,h3,h4,h5,h6{font-family:'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Sans-Serif;line-height:1.2em;}
+h1,h2{font-weight:normal;}
+h1{text-align:left;;}
+.noem{font-style:normal;}
+dt{font-weight:700;}
+.toc ol li{list-style-type:upper-roman;}
+.toc ol li ol li{list-style-type:decimal;}
+table{vertical-align:top;padding:2px;}
+table{border:1px solid #999;border-collapse:collapse;border-spacing:0;margin:10px 0;}
+table td{border:1px solid #999;padding:8px;}
+table th{background-color:#ccc;border:1px solid #999;color:#000;vertical-align:top;padding:8px;}
+.pres-alt{background:#eee;color:#000;}
+#main-body{padding-top:0.1em;text-align:justify;line-height:1.3em;}
+blockquote,q,.prestitle{font-style:italic;}
+#footer, #side-bar, span.toc-link, #toc, .toc, .doNotPrint, #subfoot, img, .subHeader{display: none;}
+
+

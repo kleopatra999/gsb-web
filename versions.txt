@@ -1,0 +1,25 @@
+1.0 : 2.20.2 : 12.0 : 12.0 : 2.20.2 : 2.20.2 : 2.21.2 : 2.20.2
+
+* Order;
+  
+  GSB source,
+  GSB binary (stable),
+  Slack-stable,
+  Slack-unstable,
+  GSB-bin-64,
+  GSB-bin-current,
+  GSB-bin-unstable,
+  GSB-bin-update (tracks gnome maint. rel.)
+  
+  (NOTE: delimeter is "space-colon-space")
+
+* Version variables:
+
+  GSB Source           =  $gsb_source_ver
+  GSB Binary (stable)  =  $gsb_bin_stable_ver
+  Slack-Stable         =  $slack_ver
+  Slack-unstable       =  $slack_unstable_ver
+  GSB-bin-64           =  $gsb_bin_64_ver
+  GSB-bin-current      =  $gsb_bin_current_ver 
+  GSB-bin-unstable     =  $gsb_bin_unstable_ver
+  GSB-bin-update       =  $gsb_bin_update_ver

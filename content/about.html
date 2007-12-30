@@ -1,0 +1,134 @@
+    <h2 id="about">
+      The GNOME SlackBuild (GSB) Project
+    </h2>
+
+    <p>
+      GNOME SlackBuild is unique in that it is designed to be a twofold
+      project. Its aim is not only to provide users with binary packages
+      for an easy installation of GNOME, but also a full GNOME Build
+      System, with the goal of allowing individuals to customise and build
+      their own GNOME packages for their Slackware system.
+    </p>
+
+    <h3 id="about-distribution">
+      GNOME SlackBuild Distribution
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_distribution.png"
+         class="listimg-l"
+         alt="" /> This is our binary GNOME distribution for Slackware
+         Linux. It encompasses all needed packages for a fully
+         configurable, customisable and usable GNOME desktop environment
+         for Slackware. There have been a lot of improvements in GNOME
+         <?php echo($gsb_bin_stable_ver); ?>, which include better desktop
+         searching, a more organised Evolution email and calendar client,
+         enhanced image browsing, simplified control panel, efficient power
+         management, and powerful desktop tools, as well as a great new
+         documentation web site.
+    </p>
+
+    <p>
+      For a complete summary of what is new to the GNOME
+      <?php echo($gsb_bin_stable_ver); ?> Desktop, please refer to the
+      GNOME <a href="http://www.gnome.org/start/stable/">release notes</a>.
+    </p>
+
+    <p>
+      GNOME SlackBuild is designed to bring the greatest features of GNOME
+      to Slackware, integrating seamlessly into a standard install. It uses
+      the standard Slackware package system, and <em>aims to replace as few
+      packages as possible.</em> For a list of packages that require
+      updating, please see the <a href=
+      "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&amp;root=gsb">
+      replaced packages file</a>.
+    </p>
+
+    <p>
+      GNOME Slackbuild also aims to provide a fully functional desktop, and
+      comes with a wide variety of applications in order to create a full
+      desktop environment for any user. We have created a short list of
+      featured applications, covering areas such as document management,
+      office software, multimedia, graphic design, and software
+      development.
+    </p>
+
+    <h4>
+      <span class="str hilite"><a href="/software/">See some of the
+      software included with GSB</a> ...</span>
+    </h4>
+
+    <p>
+      The latest (forthcoming) stable version of the GSB binary
+      distribution is <span class=
+      "version"><?php echo($gsb_bin_stable_ver); ?></span>
+    </p>
+
+    <h3 id="about-build">
+      GNOME SlackBuild Build System
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_build.png"
+         class="listimg-l"
+         alt="" /> The build system is full and complete GSB source code we
+         use to generate our binary distribution. It is a collection of
+         SlackBuild scripts that build a GNOME release on Slackware Linux.
+         It also comes with a download script to grab all the latest source
+         tarball for every package that GSB can build.
+    </p>
+
+    <h4>
+      Downloading
+    </h4>
+
+    <p>
+      The GNOME source files, and source for all the other packages are not
+      distributed with GSB, but part of the build process will download the
+      source files for you. Our download script is written in Perl, and is
+      organised into sections for easy customisation. Version numbers, and
+      download locations for all the software packages in GSB are kept
+      up-to-date, and you&#39;ll be able to specify local mirrors to help
+      speed up your downloads. The majority of the packages come from
+      either GNOME Mirrors, or Sourceforge; however a few packages have
+      their own individual web site and no local mirrors will be available.
+      Your download speeds will vary according to your connection, and you
+      need an active internet connection to download the sources.
+    </p>
+
+    <h4>
+      Building
+    </h4>
+
+    <p>
+      The source tree is governed by a <code>gsb.SlackBuild</code>, which
+      will run build scripts for each of the sections of the GSB Project.
+      GSB has been broken into logical sections, such as libraries,
+      platform, desktop, applications, and so on. In turn, each section has
+      its own master build script which controls what packages and in what
+      order things are compiled and installed for that section. Within each
+      section, each individual package has its own SlackBuild script which
+      will configure, compile, and build its own Slackware package.
+    </p>
+
+    <p>
+      The GSB Build System is aimed at all levels of users. Those who are
+      new to Slackware or to Linux as a whole will find the GSB Build
+      System easy to use, and rather simple to modify. Intermediate and
+      advanced users will find it heavily customisable, and will be pleased
+      to find that the majority of the grunt work in designing and building
+      packages is done for them; they will be free to tweak or patch any
+      packages to their own taste.
+    </p>
+
+    <p>
+      For more details about the GSB Build System, or for more information
+      about how to get started building GSB, please see the <a href=
+      "/build/">build section</a>.
+    </p>
+
+    <p>
+      The latest version of the GSB source code is <span class=
+      "version"><?php echo($gsb_source_ver); ?></span>. It builds GNOME
+      <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+    </p>

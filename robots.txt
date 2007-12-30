@@ -1,0 +1,16 @@
+User-Agent: *
+Disallow: /changelog/
+
+User-agent: ia_archiver
+Disallow: /
+
+User-agent: twiceler
+Disallow: /
+
+User-agent: Googlebot-Image
+Disallow: /
+
+User-agent: duggmirror
+Disallow: /
+
+Sitemap: http://gnomeslackbuild.org/sitemap.xml

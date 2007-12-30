@@ -1,0 +1,341 @@
+    <div id="toc"
+         class="toc">
+      <p>
+        Table of Contents
+      </p>
+
+      <ol>
+        <li>
+          <a href="#about-avahi">Avahi Zeroconf</a>
+        </li>
+
+        <li>
+          <a href="#about-nm">Network Manager</a>
+          <ol>
+            <li>
+              <a href="#nm-daemon">System Daemon</a>
+            </li>
+
+            <li>
+              <a href="#nm-netdev">Proper Permissions</a>
+            </li>
+
+            <li>
+              <a href="#nm-applet">GNOME Panel Applet</a>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <a href="#about-tracker">Tracker (or Beagle) Desktop
+          Searching</a>
+        </li>
+
+        <li>
+          <a href="#about-compiz">Compiz</a>
+        </li>
+
+        <li>
+          <a href="#misc">Miscellaneous</a>
+        </li>
+      </ol>
+    </div>
+
+    <h2 id="configure">
+      Configuring GNOME SlackBuild
+    </h2>
+
+    <h3 id="about-avahi">
+      Avahi Zeroconf <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/avahi.png"
+         class="listimg-l"
+         alt="" />Avahi is a system which facilitates service discovery on
+         a local network. This means that you can plug your laptop or
+         computer into a network and instantly be able to view other people
+         who you can chat with, find printers to print to or find files
+         being shared. The system daemon that makes all this happen is not
+         configured to start automatically at each system boot. If you
+         would like to enable the Avahi Zeroconf system with GNOME, you
+         will need to enable the daemon. You can do this by running:
+    </p>
+
+    <div>
+      <pre>
+$ chmod +x /etc/rc.d/rc.avahidaemon
+$ chmod +x /etc/rc.d/rc.avahidnsconfd
+</pre>
+    </div>
+
+    <p>
+      The system <code>/etc/rc.d/rc.local</code> will start these services
+      if they are executable. You can also start the service by hand by
+      running:
+    </p>
+
+    <div>
+      <pre>
+$ . /etc/rc.d/rc.avahidaemon start
+$ . /etc/rc.d/rc.avahidnsconfd start
+</pre>
+    </div>
+
+    <p>
+      If you wish to later disable Avahi, remove the exectuable flag from
+      the above scripts.
+    </p>
+
+    <h3 id="about-nm">
+      NetworkManager <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/nm.png"
+         class="listimg-l"
+         alt="" />By default, NetworkManager and the NetworkManager panel
+         applet are disabled. This is to prevent any accidental conflict
+         with previous system networking configurations. Luckily, however,
+         NetworkManager and the GNOME Panel applet are very easy to enable.
+    </p>
+
+    <h4 id="nm-daemon">
+      System Daemon <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      If you haven&#39;t rebooted after installing GNOME SlackBuild, you
+      might want to. NetworkManager and the applet install a few
+      configuration files into the dbus system messaging system, and this
+      daemon will need to be restarted. Restarting the system is one
+      method, the other method of course is simply to restart the system
+      service. On Slackware, you need to switch to the
+      <code>/etc/rc.d/</code> directory, and run
+    </p>
+
+    <div>
+      <pre>
+$ ./rc.messagebus restart
+</pre>
+    </div>
+
+    <p>
+      This will reload the dbus configuration. After this you will need to
+      make the <code>rc.networkmanager</code> script executable. You can do
+      this, while still within the <code>/etc/rc.d/</code> directory by
+      running:
+    </p>
+
+    <div>
+      <pre>
+$ chmod +x rc.networkmanager
+</pre>
+    </div>
+
+    <p>
+      The rc.networkmanager script is run by rc.local at system boot.
+      Making this file executable will allow the NetworkManager daemon, as
+      well as a dbus-capable wpa_supplicant daemon (for wireless networks)
+      to run at system startup. To start the NetworkManager daemon
+      immediately, run:
+    </p>
+
+    <div>
+      <pre>
+$ ./rc.networkmanager start
+</pre>
+    </div>
+
+    <p>
+      This will start the NetworkManager and wpa_supplicant daemon. But how
+      do you actually come to use the software? That&#39;s where the
+      NetworkManager GNOME panel applet comes in. After logging in the
+      GNOME Desktop Environment, &quot;Network Manager&quot; can be found
+      in the GNOME Menu under &quot;Applications&quot; and
+      &quot;Internet&quot;. Clicking this will start the panel applet. You
+      will then be able to select various networks detected and decide
+      which one to connect to. You may also be asked for a password for the
+      GNOME Keyring. The keyring will store all the seperate passwords for
+      each of the networks (if they require one) in a wallet. The keyring
+      password you supply will then be asked again when you connect to the
+      networks a second time. You will then need only remember this one
+      password, and not all the individual passwords for all the different
+      networks.
+    </p>
+
+    <h4 id="nm-netdev">
+      Proper Permissions <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      Because Slackware does not come with PAM support, NetworkManager
+      needs to be configured with default group-level permissions. This
+      means that users will not be able to connect to the NetworkManager
+      daemon, or use the panel applet until they have added themselves to
+      the <strong>netdev</strong> group in <code>/etc/group</code>.
+    </p>
+
+    <p>
+      As root, you will need to edit the <code>/etc/group</code> file and
+      add in user names to the netdev group.
+    </p>
+
+    <h4 id="nm-applet">
+      GNOME Panel Applet <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+      You may also wish that the NetworkManager GNOME Panel applet start
+      when you log in. If this is the case, there are two ways. You could
+      use the GNOME Session Manager from the GNOME Control Panel, or else
+      create a softlink in your home directory to autostart the
+      NetworkManager applet.
+    </p>
+
+    <p>
+      If the directory doesn&#39;t already exist, you will need to create
+      it.
+    </p>
+
+    <div>
+      <pre>
+$ mkdir -p ~/.config/autostart
+$ cd ~/.config/autostart
+$ ln -s /usr/share/applications/nm-applet.desktop
+</pre>
+    </div>
+
+    <p>
+      This will force the NetworkManager applet to start with your
+      gnome-session. If you would like to make this applet start
+      system-wide, then create the link in your
+      <code>/usr/share/gnome/autostart</code> directory.
+    </p>
+
+    <h3 id="about-tracker">
+      Tracker (or Beagle) Desktop Search <span class="toc-link"><a href=
+      "#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/tracker.png"
+         class="listimg-l"
+         alt="" /> Tracker is a tool designed to extract information and
+         metadata about your personal data so that it can be searched
+         easily and quickly. By using Tracker, you no longer have to
+         remember where you&#39;ve left your files. To locate a file you
+         only need to remember something about it, such as a word in the
+         document or the artist of the song. This is because as well as
+         searching for files in the traditional way, by name and location.
+         There is a background daemon that runs idly in the background
+         cataloguing and indexing all the files within the configured
+         directories. In order to enable tracker (or beagle), you will need
+         to start up these daemons. You can load these at the start of your
+         GNOME Session with the following.
+    </p>
+
+    <p>
+      (If the directory doesn&#39;t already exist, you will need to create
+      it.)
+    </p>
+
+    <div>
+      <pre>
+$ mkdir -p ~/.config/autostart
+$ cd ~/.config/autostart
+$ ln -s /usr/share/applications/tracker-applet.desktop
+</pre>
+    </div>
+
+    <p>
+      This wil configure the GNOME Tracker applet to appear on the panel at
+      the next session start. If you would like to start the applet
+      manually, you need to run:
+    </p>
+
+    <pre>
+$ tracker-applet
+</pre>
+    <p>
+      After the applet has start, you will need to configure the
+      directories that the indexing service will keep an eye on for
+      updates. You can do this by using the &quot;Preferences&quot; dialog
+      after right-clicking on the panel applet.
+    </p>
+
+    <h3 id="about-compiz">
+      Compiz <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/compiz.png"
+         class="listimg-l"
+         alt="" /> Compiz, at the moment, doesn&#39;t have an xinitrc
+         written for it yet, and we are planning on doing that. We will
+         also need to write a proper a gdm session file. (For those of you
+         who want to use Xgl). If you want to use compiz when you start
+         your GNOME Session, then your best bet is to put
+         &quot;compiz-manager&quot; in your session startup (through GNOME
+         Control Panel), or else, following the same method above,
+    </p>
+
+    <div>
+      <pre>
+$ mkdir -p ~/.config/autostart
+$ cd ~/.config/autostart
+$ ln -s /usr/bin/compiz-manager
+</pre>
+    </div>
+
+    <p>
+      We are toying with the idea of providing a Xgl server for those
+      Slackware users who are interested. Properly configuring an AIGLX X
+      server can be notoriously difficult, particularly if you are an ATI
+      owner. We are unable to assist users in setting up their X server,
+      but we will help out as much as we can with any configuration
+      problems with compiz itself.
+    </p>
+
+    <h3 id="misc">
+      Miscellaneous <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/misc.png"
+         class="listimg-l"
+         alt="" />Below are a few other configuration options that may be
+         needed on some or most systems. These may appear as
+         &quot;gotchas&quot; for a smooth running system and are including
+         for the sake of assisting those who may have an annoying trouble
+         with a package, or who are stumped as to permission problems, or
+         other things of that sort.
+    </p>
+
+    <ul>
+      <li>To get proper scoring working with gnome-games, you have to add
+      the user name to group &quot;games&quot;.
+      </li>
+
+      <li>gnome-volume-control will whine about &quot;No Audio Device&quot;
+      if the user is not in the group &quot;audio&quot;. Follow similar
+      instruction above with NetworkManager.
+      </li>
+
+      <li>Administrative utilities, like time-date-admin, shares-admin,
+      sabayon, etc, will only complain that the user doesn&#39;t have the
+      proper rights to change the settings. If you use these applications
+      enough on a regular basis to warrant keeping them in the menu, and
+      you would like a prompt for a root password, edit the menu entry
+      (using Alacarte, right click on the GNOME menu, then right click on
+      properties), and append &quot;gksu&quot; to the command.
+      </li>
+    </ul>
