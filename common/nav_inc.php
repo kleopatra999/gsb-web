@@ -82,12 +82,12 @@
           <li>
             <a href="/lists/"
                 title="Mailing Lists"
-                class="thisPage">Lists</a>
+                class="thisPage">Mailing Lists</a>
           </li>
           <?php } else { ?>
           <li>
             <a href="/lists/"
-                title="Mailing Lists">Lists</a>
+                title="Mailing Lists">Mailing Lists</a>
           </li>
           <?php }
                     if ($op == "support") { ?>
