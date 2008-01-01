@@ -66,18 +66,6 @@
                 title="Software Included">Software Included</a>
           </li>
           <?php }
-                      if ($op == "build") { ?>
-          <li>
-            <a href="/build/"
-                title="Building GSB"
-                class="thisPage">Build GSB</a>
-          </li>
-          <?php } else { ?>
-          <li>
-            <a href="/build/"
-                title="Building GSB">Build GSB</a>
-          </li>
-          <?php }
                       if ($op == "development") { ?>
           <li>
             <a href="/development/"

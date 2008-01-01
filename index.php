@@ -78,9 +78,6 @@ switch ($op)
     case "development":
         $title = "Development : $common_title";
         break;
-    case "build":
-        $title = "Building GSB Binaries : $common_title";
-        break;
     case "configure":
         $title = "Configuring GSB : $common_title";
         break;

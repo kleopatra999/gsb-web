@@ -32,7 +32,6 @@ RewriteEngine On
     RewriteRule ^configure/?$  /index.php?op=configure [QSA,L]
     RewriteRule ^download/ports/?$  /index.php?op=download&ports=true [QSA,L]
     RewriteRule ^development/?$  /index.php?op=development [QSA,L]
-    RewriteRule ^build/?$  /index.php?op=build [QSA,L]
     RewriteRule ^screenshots/?$  /index.php?op=screenshots [QSA,L]
     RewriteRule ^support/?$  /index.php?op=support [QSA,L]
     RewriteRule ^faqs/?$  /support/ [R,L]
@@ -41,6 +40,7 @@ RewriteEngine On
     #RewriteRule ^net-install/current/?$  /common/net-install.php?use_ver=current [QSA,L]
     #RewriteRule ^net-install/unstable/?$  /common/net-install.php?use_ver=unstable [QSA,L]
     RewriteRule ^installation/?$  /download/ [R,L]
+    RewriteRule ^build/?$  /development/ [R,L]
     #  this stuff redirs the RSS feed to FeedBurner #
     RewriteCond %{HTTP_USER_AGENT} !^FeedBurner.*
     RewriteRule ^changelog.xml$ http://feeds.feedburner.com/gsb-current-changelog [R,L]

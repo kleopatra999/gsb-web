@@ -1,4 +1,18 @@
 ###
+2008-01-01-10-52-CST
+GSB `-current` binary packages ready for testing
+The long-awaited GSB GNOME Distribution (based on GNOME 2.20.2<sup>[<a href="#fn_1">1</a>]</sup>) is ready
+for brave folks to test.  For access to the binaries, hop into our IRC
+channel (#gsb on irc.freenode.net).  But reports must be logged in our
+issue tracker:<br />
+http://dev.gnomeslackbuild.org/projects/gsb-binary/issues
+<p>Also, we have a new roadmap published, which details our GSB release
+schedules and plans:<br />
+http://dev.gnomeslackbuild.org/projects/roadmap/gsb-binary</p>
+<p class="small" id="fn_1">1.  In late January, when GSB stable is released, it
+will actually be upgraded to GNOME 2.20.3.</p>
+
+###
 2007-12-14-13-40-CDT
 GSB 2.20.2 Progress
 We're preparing to (finally) release (the binary version of) GSB 2.20.2,
