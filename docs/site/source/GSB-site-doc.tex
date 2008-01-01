@@ -1,10 +1,9 @@
-%% LyX 1.5.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 1.5.3 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[12pt,english]{scrartcl}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
-\IfFileExists{url.sty}{\usepackage{url}}
-                      {\newcommand{\url}{\texttt}}
+\usepackage{url}
 
 \makeatletter
 
@@ -322,8 +321,8 @@ handle everything else for you.
 
 Screenshots are placed in \texttt{`<webroot>/screenies`}. Then, a
 simple shell script takes care of resizing, creating thumbnails, and
-adding eveything to the screenshots page. After screenshots have been
-dropped into the proper directory run:
+adding everything to the screenshots page. After screenshots have
+been dropped into the proper directory run:
 
 \begin{lyxcode}
 cd~../support-scripts
@@ -333,7 +332,7 @@ cd~../support-scripts
 And that's it. Commit the changes to SVN, sync to staging, and make
 sure the screenshots page/section looks and works OK (i.e.: New thumbnails
 should now appear on the page. Thumbnails should be clickable links
-to full-size images. Full-size images should be in the ballpack of
+to full-size images. Full-size images should be in the ballpark of
 \textasciitilde{}800x600 resolution.)
 
 

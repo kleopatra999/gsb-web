@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html --> 
 <meta name="src" content="GSB-site-doc.tex"> 
-<meta name="date" content="2007-12-02 09:39:00"> 
+<meta name="date" content="2008-01-01 16:18:00"> 
 <link rel="stylesheet" type="text/css" href="GSB-site-doc.css"> 
 </head><body 
 >
@@ -27,7 +27,7 @@ class="ecrm-1728">11/24/2007</span></div>
   </div><table 
 class="abstract"><tr><td 
 >
-      <!--l. 89--><p class="indent" >  This document explains how the GNOME SlackBuild (GSB) website was
+      <!--l. 88--><p class="indent" >  This document explains how the GNOME SlackBuild (GSB) website was
       developed, how it works, how to maintain it, etc. This document also contains
       other general site-related information for developers of the GSB project, as
       well as web/sysadmins assigned web-related duties. This document is &#8220;living&#8221;
@@ -71,33 +71,33 @@ href="#x1-150005" id="QQ2-1-15">Open to suggestions</a></span>
                                                                                      
   <h3 class="sectionHead"><span class="titlemark">1  </span> <a 
  id="x1-20001"></a>Introduction</h3>
-<!--l. 100--><p class="noindent" >The GNOME SlackBuild (GSB) website was initially developed by Chip Cuccio in early 2005
+<!--l. 99--><p class="noindent" >The GNOME SlackBuild (GSB) website was initially developed by Chip Cuccio in early 2005
 as a &#8220;static&#8221; website. However, it didn&#8217;t take long before we realized that we needed the site to
 be a bit more dynamic. At the same token, I really didn&#8217;t want to deploy (or write) a
 CMS-type of app that used some DB back-end. I wanted tiny, fast, and simple. Really, the
 only key points of the website that are dynamic, are the news, version numbers, and
 changelogs, and the project TODOs.
-<!--l. 108--><p class="indent" >  So I custom-wrote a tiny &#8220;CMS&#8221; that uses flat files as its &#8220;DB&#8221;. It&#8217;s tiny, portable (and has
+<!--l. 107--><p class="indent" >  So I custom-wrote a tiny &#8220;CMS&#8221; that uses flat files as its &#8220;DB&#8221;. It&#8217;s tiny, portable (and has
 been moved around from server-to-server a bunch!), and is simple for anyone to update
 content. Since 2005, it&#8217;s the same code that&#8217;s been in use (with a bunch of updates and
 revisions), and it still works well to this day,
-<!--l. 115--><p class="noindent" >
+<!--l. 114--><p class="noindent" >
   <h3 class="sectionHead"><span class="titlemark">2  </span> <a 
  id="x1-30002"></a>Why this document?</h3>
-<!--l. 117--><p class="noindent" >This document was written to help developers or web/sysadmins manage, maintain, and
+<!--l. 116--><p class="noindent" >This document was written to help developers or web/sysadmins manage, maintain, and
 continue the active development of the GSB website. Because the site was custom-written, a
 good document explaining how everything works is necessary.
-<!--l. 123--><p class="noindent" >
+<!--l. 122--><p class="noindent" >
   <h3 class="sectionHead"><span class="titlemark">3  </span> <a 
  id="x1-40003"></a>How the site works</h3>
-<!--l. 126--><p class="noindent" >
+<!--l. 125--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">3.1  </span> <a 
  id="x1-50003.1"></a>Basic technical info</h4>
-<!--l. 128--><p class="noindent" >The GSB site&#8217;s main &#8220;CMS engine&#8221; is written in PHP. The engine performs parsing/&#8217;includes&#8217;
+<!--l. 127--><p class="noindent" >The GSB site&#8217;s main &#8220;CMS engine&#8221; is written in PHP. The engine performs parsing/&#8217;includes&#8217;
 against basic HTML templates for the content/copy in the main sections of the website. There
 are some support scripts and programs, not directly related to content rendering, written in
 shell and PHP as well.
-<!--l. 134--><p class="indent" >  The GSB site was written with strict adherence to standards, as well as, with excellent
+<!--l. 133--><p class="indent" >  The GSB site was written with strict adherence to standards, as well as, with excellent
 accessibility and usability guidelines. The site renders it&#8217;s output in XHTML 1.1 (modular),
 with MathML plus SVG extensions. Styling is handled by strict CSS 2.0, with no
 &#8220;IE hacks&#8221;. Visitors of the site whom use IE will see the site just fine, but will not
@@ -111,16 +111,16 @@ structure, but at the same token, it degrades nicely in non-graphical and legacy
 environments. Again, IE will see the site in a degraded text-only mode, simply because
 IE sucks ass, and I refuse to write CSS hacks so that it looks pretty in a shitty
 browser.
-<!--l. 149--><p class="indent" >  It is important to note, that since the site is rendered in XHTML 1.1, the content-type on
+<!--l. 148--><p class="indent" >  It is important to note, that since the site is rendered in XHTML 1.1, the content-type on
 the server side, serves the pages as &#8220;application/xhtml+xml&#8221;. This creates even more
 strict-ness when writing web code - since one tiny malformation or syntax error will render the
 entire page unreadable by many browsers. <span 
 class="ecti-1200">All pages, all the time, should validate as 100%</span>
 <span 
 class="ecti-1200">pure, valid XHTML 1.1 </span>- always!
-<!--l. 156--><p class="indent" >  The chosen &#8220;LANG&#8221; (or &#8220;charset&#8221;) attribute used to serve the site, is UTF-8. No other
+<!--l. 155--><p class="indent" >  The chosen &#8220;LANG&#8221; (or &#8220;charset&#8221;) attribute used to serve the site, is UTF-8. No other
 character set will do. UTF-8/Unicode is great stuff, and it&#8217;s the future.
-<!--l. 160--><p class="indent" >  All images on the site are in PNG format. No GIFs, no JPEGs, no TIFFs. Just PNGs.
+<!--l. 159--><p class="indent" >  All images on the site are in PNG format. No GIFs, no JPEGs, no TIFFs. Just PNGs.
 Larger documents are in plain text, PDF, or just HTML. Documents which were written in
 <span class="LATEX">L<span class="A">A</span><span class="TEX">T<span 
 class="E">E</span>X</span></span> or other typesetting apps, then rendered to other formats, must include the original
@@ -131,17 +131,17 @@ class="E">E</span>X</span></span> - hence, the source files are in SVN.
 <span 
 class="ecti-1200">Nothing in this site is closed-source</span>. Ever. It&#8217;s all in SVN for public review and
 consumption.
-<!--l. 171--><p class="noindent" >
+<!--l. 170--><p class="noindent" >
   <h5 class="subsubsectionHead"><span class="titlemark">3.1.1  </span> <a 
  id="x1-60003.1.1"></a>Code review</h5>
-<!--l. 173--><p class="noindent" >It is highly recommended that anyone who wishes to help with the website, &#8217;checkout&#8217; the
+<!--l. 172--><p class="noindent" >It is highly recommended that anyone who wishes to help with the website, &#8217;checkout&#8217; the
 web code from SVN and perform a thorough code review. If you have a web server
 accessible locally, you can even use the GSB site on that to debug, work on, test,
 etc.
-<!--l. 179--><p class="noindent" >
+<!--l. 178--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">3.2  </span> <a 
  id="x1-70003.2"></a>Style guide</h4>
-<!--l. 181--><p class="noindent" >I&#8217;ll try and keep this short and simple. But proper structure and semantics is of utmost
+<!--l. 180--><p class="noindent" >I&#8217;ll try and keep this short and simple. But proper structure and semantics is of utmost
 importance when maintaining the GSB site. Here is the basic style guide I&#8217;ve used when
 writing/maintaining the GSB site:
       <ul class="itemize1">
@@ -211,10 +211,10 @@ class="ecti-1200">Do not </span>enclose &#x003C;pre&#x003E; blocks of text withi
       <li class="itemize">Tables should only be used to present <span 
 class="ecti-1200">tabular data</span>. They are never to be used to
       handle/render layout. Ever!</li></ul>
-<!--l. 244--><p class="noindent" >
+<!--l. 243--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">3.3  </span> <a 
  id="x1-80003.3"></a>Site layout</h4>
-<!--l. 246--><p class="noindent" >The layout of the site is quite simple:
+<!--l. 245--><p class="noindent" >The layout of the site is quite simple:
       <ul class="itemize1">
       <li class="itemize">Homepage
       </li>
@@ -222,58 +222,58 @@ class="ecti-1200">tabular data</span>. They are never to be used to
            <ul class="itemize2">
            <li class="itemize">Subsections</li></ul>
       </li></ul>
-<!--l. 256--><p class="noindent" >And that&#8217;s about it. I try to keep sections only two levels deep maximum, so not to lose folks.
+<!--l. 255--><p class="noindent" >And that&#8217;s about it. I try to keep sections only two levels deep maximum, so not to lose folks.
 There&#8217;s no search facility on the site, because it&#8217;s so small, and because Google can do it
 anyway.
                                                                                      
                                                                                      
-<!--l. 261--><p class="noindent" >
+<!--l. 260--><p class="noindent" >
   <h3 class="sectionHead"><span class="titlemark">4  </span> <a 
  id="x1-90004"></a>Helping with the site</h3>
-<!--l. 263--><p class="noindent" >I won&#8217;t get into detail as to how the site&#8217;s CMS engine works, because as a web hacker, it&#8217;s
+<!--l. 262--><p class="noindent" >I won&#8217;t get into detail as to how the site&#8217;s CMS engine works, because as a web hacker, it&#8217;s
 your job to figure it out. Folks not familiar with PHP/HTML/CSS/etc. should not express
 interest in maintaining the site - &#8217;cause you&#8217;ll just be denied. We need experienced folks to
 help.
-<!--l. 269--><p class="indent" >  But I will cover a few basic, yet important aspect of the site, where maintaining content and
+<!--l. 268--><p class="indent" >  But I will cover a few basic, yet important aspect of the site, where maintaining content and
 a few other things is ridiculously easy.
-<!--l. 273--><p class="noindent" >
+<!--l. 272--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">4.1  </span> <a 
  id="x1-100004.1"></a>News</h4>
-<!--l. 275--><p class="noindent" >On the landing/home page, there&#8217;s a news section (and it&#8217;s also in it&#8217;s own main section - for
+<!--l. 274--><p class="noindent" >On the landing/home page, there&#8217;s a news section (and it&#8217;s also in it&#8217;s own main section - for
 archival purposes). All of those articles are handled and maintained in a flat text file within
 the &#x003C;docroot&#x003E; of the site: &#8220;news.txt&#8221;. News is displayed on the site in reverse-chronological
 order (newest entry first). It&#8217;s very simple to edit/add news; by editing that one small
 news.txt file.
-<!--l. 282--><p class="indent" >  The file is a specially-formatted text file, and is parsed by some PHP functions to display
+<!--l. 281--><p class="indent" >  The file is a specially-formatted text file, and is parsed by some PHP functions to display
 nice and cleanly on the site.
-<!--l. 285--><p class="indent" >  The format of the news.txt file is as follows:
-<!--l. 287--><p class="noindent" >
+<!--l. 284--><p class="indent" >  The format of the news.txt file is as follows:
+<!--l. 286--><p class="noindent" >
       <dl class="list1"><dt class="list">
       </dt><dd 
 class="list">
-      <!--l. 287--><p class="noindent" ><span 
+      <!--l. 286--><p class="noindent" ><span 
 class="ectt-1200">###</span>
-      <!--l. 290--><p class="noindent" ><span 
+      <!--l. 289--><p class="noindent" ><span 
 class="ectt-1200">date-time</span>
-      <!--l. 292--><p class="noindent" ><span 
+      <!--l. 291--><p class="noindent" ><span 
 class="ectt-1200">title</span><span 
 class="ectt-1200">&#x00A0;of</span><span 
 class="ectt-1200">&#x00A0;news</span><span 
 class="ectt-1200">&#x00A0;entry</span>
-      <!--l. 294--><p class="noindent" ><span 
+      <!--l. 293--><p class="noindent" ><span 
 class="ectt-1200">body</span><span 
 class="ectt-1200">&#x00A0;of</span><span 
 class="ectt-1200">&#x00A0;news</span><span 
 class="ectt-1200">&#x00A0;entry</span></dd></dl>
-<!--l. 296--><p class="noindent" >The "###" text, is actually a separator, so that the PHP news function knows to parse that as
+<!--l. 295--><p class="noindent" >The "###" text, is actually a separator, so that the PHP news function knows to parse that as
 one entire "article". The body section of the news entry accepts HTML, but that is the only
 place HTML is used. URIs are automatically made as links. To reference an internal URI, one
 must use the following format:
-<!--l. 302--><p class="noindent" >
+<!--l. 301--><p class="noindent" >
       <dl class="list1"><dt class="list">
       </dt><dd 
 class="list">
-      <!--l. 302--><p class="noindent" ><span 
+      <!--l. 301--><p class="noindent" ><span 
 class="ectt-1200">&#x003C;a</span><span 
 class="ectt-1200">&#x00A0;href="/foo/"&#x003E;See</span><span 
 class="ectt-1200">&#x00A0;the</span><span 
@@ -281,47 +281,47 @@ class="ectt-1200">&#x00A0;foo</span><span
 class="ectt-1200">&#x00A0;section&#x003C;/a&#x003E;</span></dd></dl>
                                                                                      
                                                                                      
-<!--l. 305--><p class="noindent" >Hint: Internal URIs /never/ use "http://" - ever. Reference them to the base/root of the site, as
+<!--l. 304--><p class="noindent" >Hint: Internal URIs /never/ use "http://" - ever. Reference them to the base/root of the site, as
 shown in the above example.
-<!--l. 309--><p class="indent" >  Just open the &#x003C;svnroot&#x003E;/web/news.txt file for actual live examples used on the
+<!--l. 308--><p class="indent" >  Just open the &#x003C;svnroot&#x003E;/web/news.txt file for actual live examples used on the
 site.
-<!--l. 313--><p class="noindent" >
+<!--l. 312--><p class="noindent" >
   <h5 class="subsubsectionHead"><span class="titlemark">4.1.1  </span> <a 
  id="x1-110004.1.1"></a>News style guide</h5>
-<!--l. 315--><p class="noindent" >The news articles actually have their own style, and it&#8217;s consistent. It is important to note,
+<!--l. 314--><p class="noindent" >The news articles actually have their own style, and it&#8217;s consistent. It is important to note,
 that news articles are automatically enclosed within HTML block-level elements. However, you
 still must enclose blocks of text/paragraphs in block-level elements (mainly, "&#x003C;p&#x003E;"). Lists, are
 OK - but header tags are not. The site news engine will handle everything else for
 you.
-<!--l. 323--><p class="noindent" >
+<!--l. 322--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">4.2  </span> <a 
  id="x1-120004.2"></a>Screenshots</h4>
-<!--l. 325--><p class="noindent" >Screenshots are placed in <span 
+<!--l. 324--><p class="noindent" >Screenshots are placed in <span 
 class="ectt-1200">&#8216;&#x003C;webroot&#x003E;/screenies&#8216;</span>. Then, a simple shell script takes care of
-resizing, creating thumbnails, and adding eveything to the screenshots page. After screenshots
+resizing, creating thumbnails, and adding everything to the screenshots page. After screenshots
 have been dropped into the proper directory run:
-<!--l. 330--><p class="noindent" >
+<!--l. 329--><p class="noindent" >
       <dl class="list1"><dt class="list">
       </dt><dd 
 class="list">
-      <!--l. 330--><p class="noindent" ><span 
+      <!--l. 329--><p class="noindent" ><span 
 class="ectt-1200">cd</span><span 
 class="ectt-1200">&#x00A0;../support-scripts</span>
-      <!--l. 333--><p class="noindent" ><span 
+      <!--l. 332--><p class="noindent" ><span 
 class="ectt-1200">./make-GSB-thumbs.sh</span></dd></dl>
-<!--l. 335--><p class="noindent" >And that&#8217;s it. Commit the changes to SVN, sync to staging, and make sure the screenshots
+<!--l. 334--><p class="noindent" >And that&#8217;s it. Commit the changes to SVN, sync to staging, and make sure the screenshots
 page/section looks and works OK (i.e.: New thumbnails should now appear on the page.
 Thumbnails should be clickable links to full-size images. Full-size images should be in the
-ballpack of ~800x600 resolution.)
-<!--l. 342--><p class="noindent" >
+ballpark of ~800x600 resolution.)
+<!--l. 341--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">4.3  </span> <a 
  id="x1-130004.3"></a>Version numbers</h4>
-<!--l. 344--><p class="noindent" >Version numbers are used all over the site for our project. But they only need to be
+<!--l. 343--><p class="noindent" >Version numbers are used all over the site for our project. But they only need to be
 maintained/specified in one tiny file:
 <br class="newline" />&#x003C;svnroot&#x003E;/web/versions.txt
                                                                                      
                                                                                      
-<!--l. 348--><p class="indent" >  The legend for the version numbers is explained in the header of that file. To reference
+<!--l. 347--><p class="indent" >  The legend for the version numbers is explained in the header of that file. To reference
 version numbers in the site templates (&#8220;&#x003C;svnroot&#x003E;/web/content/foo.html"):
       <ul class="itemize1">
       <li class="itemize"><span 
@@ -333,15 +333,15 @@ class="ectt-1200">&#x003C;?php echo $gsb_source_ver; ?&#x003E;</span>
       <br class="newline" />References                                         the                                         GSB
       source release. ...and so on (see &#x003C;svnroot&#x003E;web/common/versions_inc.php for all
       variables).</li></ul>
-<!--l. 359--><p class="noindent" >
+<!--l. 358--><p class="noindent" >
   <h4 class="subsectionHead"><span class="titlemark">4.4  </span> <a 
  id="x1-140004.4"></a>Getting SVN commit access to the site</h4>
-<!--l. 361--><p class="noindent" >We don&#8217;t just let any Tom Dick and Harry have SVN commit access to the site. You
+<!--l. 360--><p class="noindent" >We don&#8217;t just let any Tom Dick and Harry have SVN commit access to the site. You
 must prove yourself first by submitting patches, etc. Once we&#8217;ve learned to trust
 you and your work, you&#8217;ll likely be granted SVN commit access to maintain the
 site.
-<!--l. 366--><p class="indent" >  Developing/maintaining the GSB website is a three step process:
-<!--l. 368--><p class="indent" >
+<!--l. 365--><p class="indent" >  Developing/maintaining the GSB website is a three step process:
+<!--l. 367--><p class="indent" >
       <ol  class="enumerate1" >
       <li 
   class="enumerate" id="x1-14002x1">Develop and commit to &#x003C;svnroot&#x003E;/web
@@ -351,24 +351,24 @@ site.
       </li>
       <li 
   class="enumerate" id="x1-14006x3">Migrate staging to production</li></ol>
-<!--l. 374--><p class="noindent" >Under no circumstances is the staging environment to be used as the development environment.
+<!--l. 373--><p class="noindent" >Under no circumstances is the staging environment to be used as the development environment.
 Development occurs on your own server/workstations. Staging is where we test and approve
 before pushing to production.
-<!--l. 378--><p class="indent" >  Even to migrate the SVN web code to the staging site, you must be granted access.
-<!--l. 381--><p class="indent" >  To migrate SVN web code to the staging site, we use a web-based facility (written by yours
+<!--l. 377--><p class="indent" >  Even to migrate the SVN web code to the staging site, you must be granted access.
+<!--l. 380--><p class="indent" >  To migrate SVN web code to the staging site, we use a web-based facility (written by yours
 truly): &#x003C;<span class="obeylines-h"><a 
 href="http://admin.gnomeslackbuild.org" class="url" ><span 
 class="ectt-1200">http://admin.gnomeslackbuild.org</span></a></span>&#x003E;. It&#8217;s locked down, and web developers we
 can trust will be granted access to the facility.
-<!--l. 386--><p class="indent" >  At the moment, code migrations to the production site are handled by me once it&#8217;s been
+<!--l. 385--><p class="indent" >  At the moment, code migrations to the production site are handled by me once it&#8217;s been
 approved. I&#8217;m very picky about the site functionality and the look-n-feel, it&#8217;s just the way it
 works for now.
                                                                                      
                                                                                      
-<!--l. 391--><p class="noindent" >
+<!--l. 390--><p class="noindent" >
   <h3 class="sectionHead"><span class="titlemark">5  </span> <a 
  id="x1-150005"></a>Open to suggestions</h3>
-<!--l. 393--><p class="noindent" >I should close saying that I&#8217;m always open to suggestions. I may dismiss most of them, though.
+<!--l. 392--><p class="noindent" >I should close saying that I&#8217;m always open to suggestions. I may dismiss most of them, though.
 All kidding aside, I embrace ideas, feedback, and web/code hackers to help make and keep this
 site as cool as the project it hosts. Thanks.  
 </body></html> 

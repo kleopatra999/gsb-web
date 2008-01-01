@@ -1,4 +1,4 @@
-#LyX 1.5.1 created this file. For more info see http://www.lyx.org/
+#LyX 1.5.3 created this file. For more info see http://www.lyx.org/
 \lyxformat 276
 \begin_document
 \begin_header
@@ -608,7 +608,7 @@ Screenshots are placed in
 \family default
 .
  Then, a simple shell script takes care of resizing, creating thumbnails,
- and adding eveything to the screenshots page.
+ and adding everything to the screenshots page.
  After screenshots have been dropped into the proper directory run:
 \end_layout
 
@@ -626,7 +626,7 @@ And that's it.
  page/section looks and works OK (i.e.: New thumbnails should now appear on
  the page.
  Thumbnails should be clickable links to full-size images.
- Full-size images should be in the ballpack of ~800x600 resolution.)
+ Full-size images should be in the ballpark of ~800x600 resolution.)
 \end_layout
 
 \begin_layout Subsection
