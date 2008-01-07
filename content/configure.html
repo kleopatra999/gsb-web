@@ -36,7 +36,19 @@
         </li>
 
         <li>
-          <a href="#misc">Miscellaneous</a>
+          <a href="#gdm">GNOME Display Manager (GDM)</a>
+        </li>
+        
+        <li>
+          <a href="#printing">Printing</a>
+        </li>
+
+        <li>
+          <a href="#usb">USB Device Permissions</a>
+        </li>
+
+        <li>
+          <a href="#misc">Game Scoring</a>
         </li>
       </ol>
     </div>
@@ -304,38 +316,106 @@ $ ln -s /usr/bin/compiz-manager
       problems with compiz itself.
     </p>
 
-    <h3 id="misc">
-      Miscellaneous <span class="toc-link"><a href="#toc"
+    <h3 id="gdm">
+      GNOME Display Manager (GDM) <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
     <p>
-      <img src="/images/app-icons/misc.png"
-         class="listimg-l"
-         alt="" />Below are a few other configuration options that may be
-         needed on some or most systems. These may appear as
-         &quot;gotchas&quot; for a smooth running system and are including
-         for the sake of assisting those who may have an annoying trouble
-         with a package, or who are stumped as to permission problems, or
-         other things of that sort.
+      <img src="/images/app-icons/gdm.png"
+      class="listimg-l"
+      alt="" /> GDM (the GNOME Display Manager) provides an alternate display manager
+      for the X Window System. The X Window System by default uses the XDM
+      display manager. However, resolving XDM configuration issues typically
+      involves editing a configuration file. GDM allows users to customize
+      or troubleshoot settings without having to resort to a command line.
+      Users can pick their session type on a per-login basis. GDM also
+      features easy customisation with themes.
+    </p>
+    
+    <p>
+      If you would like to enable GDM on system boot, you will need to edit 
+      <code>/etc/inittab</code> and change the default run level from 3 to 4.
+
+    <div>
+      <pre>
+       # Default runlevel. (Do not set to 0 or 6)
+       id:4:initdefault:
+      </pre>
+    </div>          
+    </p>         
+
+    <p>
+       If you are interested in installing new GDM themes, your best starting point is then
+       <a href="http://www.gnome-look.org/index.php?xcontentmode=150">GDM Themes</a> 
+       available from GNOME-Look.org.  Just download the tarballs to a temporary directory
+       and use the GDM theme installer you can find from the GDM main login screen.   
     </p>
 
-    <ul>
-      <li>To get proper scoring working with gnome-games, you have to add
+    <p>You can also find the GNOME Display Manager manual 
+       <a href="http://www.gnome.org/projects/gdm/docs/2.20/gdm.html">here.</a>
+    </p>
+
+    <h3 id="printing">
+      Printing <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+    
+     <p>
+      <img src="/images/app-icons/printing.png"
+      class="listimg-l"
+      alt="" /> The easiest way of using printing with the GNOME Desktop is via CUPS.
+      CUPS uses the  Internet Printing Protocol ("IPP") as the basis for managing
+      print jobs and queues and adds network printer browsing and PostScript 
+      Printer Description ("PPD") based printing options to support real-world
+      printing. GNOME SlackBuild comes with the system-config-printer utility, 
+      which has been borrowed from RedHat.  It can can be used to configure a 
+      CUPS server (often the local machine) using the standard CUPS API. 
+      The tool is written in Python, using pygtk for the graphical parts.
+      It is largely the same as using the CUPS web interface for configuring printers, 
+      but has the advantage of being a native application rather than a web page. It
+      allows for easy installing of new printers, configuring your existing printers, 
+      and supports basic popup notification of low ink, and other messages.
+    </p>
+    
+    <p>In order to use system-config-printer, you must make sure that the CUPS daemon
+    is running in the background.  You can start the CUPS services for Slackware at system
+    start by making the rc script executable. 
+    </p>
+
+    <div>
+       <pre>
+       $ chmod +x /etc/rc.d/rc.cups
+       </pre>
+    </div>    
+
+    <h3 id="usb">
+      USB Device Permissions <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/usb.png"
+      class="listimg-l"
+      alt="" /> There are many applications available in GNOME SlackBuild that you will want
+      to use in order to access you pluggable devices, from external USB drives, to digital
+      cameras, MP3 players, iPods and so forth.  These devices will not work unless you have
+      added the username to the <code>/etc/group</code> group permissions.  As root, run
+      <code>vigr</code> and add your name to the <b>plugdev</b> group.  Afterwards, you will
+      need to make sure that you logoff and logon for the changes to take effect.  
+    </p>
+
+    <h3 id="admin-tools">
+      Sabayon <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <h3 id="misc">
+      Game Scoring <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      To get proper scoring working with gnome-games, you have to add
       the user name to group &quot;games&quot;.
-      </li>
-
-      <li>gnome-volume-control will whine about &quot;No Audio Device&quot;
-      if the user is not in the group &quot;audio&quot;. Follow similar
-      instruction above with NetworkManager.
-      </li>
-
-      <li>Administrative utilities, like time-date-admin, shares-admin,
-      sabayon, etc, will only complain that the user doesn&#39;t have the
-      proper rights to change the settings. If you use these applications
-      enough on a regular basis to warrant keeping them in the menu, and
-      you would like a prompt for a root password, edit the menu entry
-      (using Alacarte, right click on the GNOME menu, then right click on
-      properties), and append &quot;gksu&quot; to the command.
-      </li>
-    </ul>
+    </p>
