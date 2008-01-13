@@ -33,6 +33,9 @@
             <li>
               <a href="#meta">Metapackages</a>
             </li>
+            <li>
+              <a href="#adupgrades">Additional Upgrades</a>
+            </li>
           </ol>
         <li>
           <a href="#configure">Post-Install and Configuration Notes</a>
@@ -312,6 +315,8 @@ $ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
       If you plan on using <strong>NetworkManager</strong> with GNOME, then make sure to upgrade 
       to the GNOME SlackBuild build of <strong>wpa_supplicant</strong>, which contains
       the needed dbus bindings and binary.  Otherwise, this is not a required upgrade.
+      There are other packages that may required upgrading, please see the 
+      <a href="#adupgrades">Additional Upgrades</a> section.
     </p>
 
 <div>
@@ -626,9 +631,56 @@ $ slapt-get --install gsb-desktop
         "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/src/meta/slack-required.gsb-themes?revision=HEAD&amp;root=gsb">
         slack-required</a> file.
       </dd>      
-      
     </dl>
 
+    <h4 id="adupgrades">
+      Additional Upgrades <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+       While GNOME SlackBuild is designed to replace as few Slackware packages as possible,
+       it is not possible to free ourselves wholly from replacing some packages.  Some software,
+       like Gnumeric, required updated libraries and as a result we need to replace some
+       default Slackware packages.  
+    </p>
+
+    <p> Please see our <a href="http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&amp;root=gsb">
+      replaced packages file</a>:
+    </p>
+    <?php
+        # replaced_packages grabber
+        $rp_error = "<h4>Replaced Packages Error</h4>\n"
+                    ."<p>The server is experiencing issues retrieving the replaced_packages from
+                      SVN.  Please try again a bit later.</p>"
+                    ."\n</div>\n";
+
+        $rp = curl_init();
+        $timeout = 10; // set to zero for no timeout
+        curl_setopt ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?root=gsb&view=co");
+        curl_setopt ($rp, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($rp, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $rp_result = curl_exec($rp);
+        curl_close($rp);
+        if (!$rp_result)
+        {
+            print($td_error);
+            include('common/footer_inc.php');
+            exit();
+        }
+        else
+        {
+            $rp_result = htmlentities($rp_result);
+            #$rp_result = str_replace(" ", "&nbsp;", $rp_result);
+            $rp_result = trim($rp_result);
+        }
+        ?>
+<div>
+<pre style="overflow:auto;">
+<?php print($rp_result); ?>
+</pre>
+</div>    
+    
     <h3 id="configure">
       Post Installation and Configure Notes <span class="toc-link"><a href=
       "#toc"
