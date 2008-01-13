@@ -29,7 +29,11 @@
         <li>
           <a href="#install">Downloading and Installing</a>
         </li>
-
+          <ol>
+            <li>
+              <a href="#meta">Metapackages</a>
+            </li>
+          </ol>
         <li>
           <a href="#configure">Post-Install and Configuration Notes</a>
         </li>
@@ -580,8 +584,35 @@ $ slapt-get --install gsb-desktop
     <p>
       <img src="/images/app-icons/gsb_uninstall.png"
          class="listimg-l"
-         alt="" /> This section intentionally left blank. :^)
+         alt="" /> In order to uninstall GNOME SlackBuild, you'll first need to remove all 
+         GNOME SlackBuild packages, and then re-install any Slackware provided packages
+         that may have been replaced by GSB ones.  You can remove all GNOME SlackBuild packages
+         by running:
     </p>
+    
+<div>
+<pre>
+$ removepkg /var/log/packages/*gsb
+</pre>
+</div>
+
+    <p>This will remove all packages that are provided by GNOME SlackBuild.  If you are using
+    slapt-get, then you'll need to comment out the SOURCE for GNOME SlackBuild in your
+    <code>/etc/slapt-get/slapt-getrc</code> file.  Then make sure to rerun <code>
+    slapt-get --update</code>.  After this has finished, you'll be able to reinstall
+    the standard Slackware packages by running:</p>
+
+<div>
+<pre>
+$ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
+</pre>
+</div>
+
+    <p>
+     You may also need to reinstall other packages that may have been replaced.  
+     For a full list of packages that may have been upgraded by GNOME SlackBuild, 
+     please see our replaced packages file.
+     </p>
 
     <h3 id="bugs">
       Known Issues and Bugs <span class="toc-link"><a href=
@@ -589,7 +620,7 @@ $ slapt-get --install gsb-desktop
     </h3>
 
     <p>
-      <img src="/images/app-icons/faq.png"
+      <img src="/images/app-icons/gsb_bugs.png"
          class="listimg-l"
          alt="" /> While the current release can be considered more or less stable, there 
          are a still few small issues known with the current version of the binary release 
