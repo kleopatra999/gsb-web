@@ -23,19 +23,26 @@
         </li>
 
         <li>
+          <a href="#upgrades">Required Upgrades</a>
+        </li>
+
+        <li>
           <a href="#install">Downloading and Installing</a>
         </li>
 
         <li>
           <a href="#configure">Post-Install and Configuration Notes</a>
-        </li>
+        </li>page is meant to be a small reference page for users new to GNOME, or to
+    GNOME SlackBuild.  It highlights some of the most useful configuration settings
+    that many users will want to, and even need to configure, in order to get the most
+    out of their GNOME SlackBuild desktop.  
 
         <li>
           <a href="#uninstall">Uninstalling</a>
         </li>
 
         <li>
-          <a href="#faq">Further Information and Questions</a>
+          <a href="#bugs">Known Issues and Reporting Bugs</a>
         </li>
       </ol>
     </div>
@@ -112,8 +119,8 @@
       with:
     </p>
 
-    <div>
-      <pre>
+<div>
+<pre>
 $ installpkg slapt-get-0.9.12c-i386-1.tgz
 </pre>
     </div>
@@ -213,15 +220,27 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
     <ul>
       <li>Slackware <?php echo ($slack_ver); ?>
         <ul>
+          FTP
           <li>
             <a href=
             "ftp://ftp.slackware.org.uk/gsb/gsb-current/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-current/&gt;</a>
+          </li>
+          HTTP
+          <li>
+            <a href=
+            "http://http.slackware.org.uk/gsb/gsb-current/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-current/&gt;</a>
           </li>
         </ul>
       </li>
 
       <li>x86_64 Slackware derivatives, like Slamd64
         <ul>
+          FTP
+          <li>
+            <a href=
+            "ftp://ftp.slackware.org.uk/gsb64/gsb-current/">&lt;ftp://ftp.slackware.org.uk/gsb64/gsb-current/&gt;</a>
+          </li>
+          HTTP
           <li>
             <a href=
             "ftp://ftp.slackware.org.uk/gsb64/gsb-current/">&lt;ftp://ftp.slackware.org.uk/gsb64/gsb-current/&gt;</a>
@@ -230,21 +249,69 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
       </li>
     </ul>
 
-    <h3 id="install">
-      Downloading and Installing <span class="toc-link"><a href="#toc"
+    <h3 id="upgrades">
+      Required Upgrades <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
     <p>
-      <img src="/images/app-icons/gsb_install.png"
+      <img src="/images/app-icons/gsb_upgrade.png"
          class="listimg-l"
          alt="" /> After installing and customizing the
          <code>slapt-getrc</code> configuration file, you need to run
          slapt-get with the <var>--update</var> option to download the
          package data available from all the package sources you specified
-         within the <code>slapt-getrc</code> file. Once this is done, you
-         can use the following options to initially install GNOME
-         SlackBuild, and add additional packages afterwards.
+         within the <code>slapt-getrc</code> file. 
+    </p>
+
+    <p>After the package data has been updated, the first step to installing
+      GNOME SlackBuild is to <strong>upgrade the required packages</strong>.
+      If you do not upgrade the required packages, GNOME SlackBuild will not
+      run properly.</p> 
+      
+   <p>
+      Some standard Slackware packages will need to be 
+      upgraded, most notably <strong>pango, glib2, gtk+2, and gnome-icon-theme</strong>. 
+      Others may need to be upgraded later for added functionality, but these 
+      packages are optional. <strong>Please take a look at all the packages that may 
+      require replacing in our </strong>
+      <a href="http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages?revision=HEAD&root=gsb">replaced packages file</a>
+   </p>
+   
+<div>
+*Required Slackware Updates for GNOME 2.20.3 *
+
+gnome-icon-theme: ( >= 2.20 for gnome-desktop 2.20)
+glib2:            ( > 2.14 required by gtk+2 2.12)
+pango:            ( > 1.18 required by gtk+2 2.12)
+gtk+2:            ( >= 2.12 required for libgnomeui 2.20.0)
+</div>
+   
+   <p>
+      You can upgrade all these required packages by running:   
+   </p>
+
+<div>
+<pre>
+$ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
+</pre>
+</div>
+
+    <p>
+      Slapt-get should then upgrade only these four specific packages.  
+      If you plan on using <strong>NetworkManager</strong> with GNOME, then make sure to upgrade 
+      to the GNOME SlackBuild build of <strong>wpa_supplicant</strong>, which contains
+      the needed dbus bindings and binary.  Otherwise, this is not a required upgrade.
+    </p>
+
+<div>
+<pre>
+$ slapt-get --install wpa_supplicant
+</pre>
+</div>
+
+    <p>
+      Below is a list enumerating the various options you can pass to <code>slapt-get</code>
     </p>
 
     <dl>
@@ -346,9 +413,18 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
       </dd>
     </dl>
 
+    <h3 id="install">
+      Downloading and Installing <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
     <p>
-      GNOME SlackBuild provides a number of metapackages in order to ease
-      the installation of huge package lists via slapt-get. The recommended
+      <img src="/images/app-icons/gsb_install.png"
+      class="listimg-l"
+      alt="" /> After upgrading the required packages, you are now
+      ready to install GNOME SlackBuild.  GNOME SlackBuild provides 
+      a number of metapackages in order to ease the installation of 
+      huge package lists via slapt-get. The recommended
       installation method is to first install the basic GSB GNOME Desktop
       through the <code>gsb-desktop</code> metapackage. It contains all the
       packages required for a working GNOME Desktop, including Epiphany,
@@ -379,7 +455,7 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
 
     <div>
       <pre>
-$ slapt-get --upgrade --install gsb-desktop
+$ slapt-get --install gsb-desktop
 </pre>
     </div>
 
@@ -488,9 +564,16 @@ $ slapt-get --upgrade --install gsb-desktop
 
     <p>
       <img src="/images/app-icons/gsb_configure.png"
-         class="listimg-l"
-         alt="" /> Link to configure page here.
+       class="listimg-l"
+       alt="" /> We have a seperate page for some configuration options for GNOME 
+       SlackBuild. It is meant to be a small reference page for users new to GNOME, or to
+       GNOME SlackBuild.  It highlights some of the most useful configuration settings
+       that many users will want to, and even need to configure, in order to get the most
+       out of their GNOME SlackBuild desktop.  
     </p>
+    
+    <p>Please make sure to use <a href="/configure/">this configuration page</a>
+    in order to properly set up USB devices, the GNOME Display Manager, or NetworkManager.</p>
 
     <h3 id="uninstall">
       Uninstalling GNOME SlackBuild <span class="toc-link"><a href="#toc"
@@ -503,14 +586,19 @@ $ slapt-get --upgrade --install gsb-desktop
          alt="" /> This section intentionally left blank. :^)
     </p>
 
-    <h3 id="faq">
-      Further Information and Questions <span class="toc-link"><a href=
-      "#toc"
-         title="Go up to TOC">&#8593;</a></span>
+    <h3 id="bugs">
+      Known Issues and Bugs <span class="toc-link"><a href=
+      "#toc" title="Go up to TOC">&#8593;</a></span>
     </h3>
 
     <p>
       <img src="/images/app-icons/faq.png"
          class="listimg-l"
-         alt="" /> FIX ME. Links to lists?
+         alt="" /> While the current release can be considered more or less stable, there 
+         are a still few small issues known with the current version of the binary release 
+         of GNOME SlackBuild which still need fixing before we can properly term this a 
+         stable release.  If you find any bugs in GNOME SlackBuild, please help us out by 
+         reporting them.  You can find a full list of known issues, or report any new issues,
+         by visiting our <a href="http://dev.gnomeslackbuild.org/projects/gsb-source/issues">
+         Development Issues</a> page.  
     </p>
