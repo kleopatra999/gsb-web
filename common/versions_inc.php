@@ -22,7 +22,7 @@ if(!isset($use_ver)) {
 }
 
 $slapt_path =
-    "/home/chipster/rsync_repos/gsb/gsb-$use_ver/packages/tools/";
+    "/home/chipster/rsync_repos/gsb/gsb/gsb-$use_ver/packages/tools/";
 $slapt_ver_cmd = "ls $slapt_path/slapt-get*.tgz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.tgz||g'";

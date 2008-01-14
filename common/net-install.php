@@ -3,10 +3,35 @@
 $ident = '$Id: net-install.php 3276 2007-12-23 00:02:46Z chipster $';
 // prevent confusion - wheee!
 $ident = str_replace(".php", "", $ident);
-require('common/versions_inc.php');
 
+// op
+$use_ver = $_REQUEST['use_ver'];
+
+// need version vars
+require('versions_inc.php');
+
+// slapt-get file
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.*||g'`);
 
+// mirror randomizer
+$sites[0] = array("http://slackware.org.uk/gsb/", 5);
+$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/", 2);
+$sites[2] = array("http://get.gnomeslackbuild.org/gsb/", 1);
+$countsites = count($sites);
+for($i=0; $i<$countsites; $i++)
+{
+    for($x=0; $x<$sites[$i][1]; $x++)
+    {
+        $mylist[] = array($sites[$i][0]);
+    }
+}
+$countlist = count($mylist);
+$countlist = $countlist - 1;
+$picker = rand(0, $countlist);
+$picked = $mylist[$picker][0];
+$mirror = $picked;
+
+// main op
 switch ($use_ver) {
     case "$gsb_bin_stable_ver":
         $slapt_dir = "tools";
@@ -14,11 +39,6 @@ switch ($use_ver) {
             "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
         break;
     case "current":
-        $slapt_dir = "tools";
-        $slack_mirror_uri =
-            "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
-        break;
-    case "unstable":
         $slapt_dir = "tools";
         $slack_mirror_uri =
             "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
@@ -34,7 +54,7 @@ $output = "#!/usr/bin/env bash
 #
 #  +--------------------------------------------------------------------+
 #  | GSB GNOME installer script                                         |
-#  |   (c) 2005 Chip \"chipster\" Cuccio                                |
+#  |   (c) 2005 Chip \"chipster\" Cuccio                                 |
 #  |   <http://gnomeslackbuild.org/>                                    |
 #  | This progam is distributed under the GNU GPL;                      |
 #  |   See <http://www.gnu.org/licenses/gpl.html> for lic. info         |
@@ -57,11 +77,11 @@ export PATH=\$PATH:/usr/sbin:/usr/local/bin
 # vars
 #
 GSB_VER=\"$use_ver\"
-META_PACK=\"frgnome-libs frgnome-apps frgnome-gnome-apps frgnome-office frgnome-mono frgnome-applets_extensions frgnome-ruby frgnome planner goffice frgnome-bindings-c++ frgnome-bindings frgnome-bindings-perl frgnome-bindings-python\"
+META_PACK=\"gsb-complete\"
 SLAPTGET_VER=\"$slapt_get_ver\"
 SLAPTGET_FILE=\"slapt-get-\$SLAPTGET_VER.tgz\"
 TMP=\"\${TMP:-/tmp}\"
-MIRROR=\"http://slackware.org.uk/gsb\"
+MIRROR=\"$mirror\"
 SLAPTGET_DLPATH=\"\$MIRROR/gsb-\$GSB_VER/packages/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
 SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y\"
