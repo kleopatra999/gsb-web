@@ -3,8 +3,7 @@
 GSB GNOME 2.20.3 Release Candidate 1
 Good news everyone!  We've moved from the testing stage to being able to offer our first 
 firm Release Candidate for GNOME SlackBuild.  It's proving quite solid, but there are
-a few minor tweaks still to be made.  We have a brand new <a href="/download/">Download
-</a> page that has full instructions on how to download, install and configure
+a few minor tweaks still to be made.  We have a brand new <a href="/download/">Download</a> page that has full instructions on how to download, install and configure
 GSB GNOME 2.20.3.  Please give it a try!  And remember, this is a release candidate, 
 so if you find any bugs, please help us out by reporting it using our 
 issue tracker:<br /> http://dev.gnomeslackbuild.org/projects/gsb-binary/issues
