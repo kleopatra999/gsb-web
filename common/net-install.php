@@ -54,7 +54,7 @@ $output = "#!/usr/bin/env bash
 #
 #  +--------------------------------------------------------------------+
 #  | GSB GNOME installer script                                         |
-#  |   (c) 2005 Chip \"chipster\" Cuccio                                 |
+#  |   (c) 2008 Chip \"chipster\" Cuccio                                  |
 #  |   <http://gnomeslackbuild.org/>                                    |
 #  | This progam is distributed under the GNU GPL;                      |
 #  |   See <http://www.gnu.org/licenses/gpl.html> for lic. info         |
@@ -162,7 +162,7 @@ echo \"Updating package lists...\"
 echo
 \$SLAPTGET --config \$TEMP_CONFIGFILE --update
 echo
-echo \"Instaling/updating GSB GNOME\"...
+echo \"Installing/updating GSB GNOME\"...
 echo
 
 #
