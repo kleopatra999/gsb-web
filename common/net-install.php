@@ -6,6 +6,20 @@ $ident = str_replace(".php", "", $ident);
 
 // op
 $use_ver = $_REQUEST['use_ver'];
+// arch
+$arch = $_REQUEST['arch'];
+switch ($arch)
+{
+    case "gsb":
+        $arch_path = "gsb-";
+        break;
+    case "gsb64":
+        $arch_path = "gsb64-";
+        break;
+    default:
+        $arch = "gsb";
+        $arch_path = "gsb-";
+}
 
 // need version vars
 require('versions_inc.php');
@@ -33,7 +47,8 @@ $picked = $mylist[$picker][0];
 $mirror = $picked;
 
 // main op
-switch ($use_ver) {
+switch ($use_ver)
+{
     case "$gsb_bin_stable_ver":
         $slapt_dir = "tools";
         $slack_mirror_uri =
@@ -83,7 +98,7 @@ SLAPTGET_VER=\"$slapt_get_ver\"
 SLAPTGET_FILE=\"slapt-get-\$SLAPTGET_VER.tgz\"
 TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
-SLAPTGET_DLPATH=\"\$MIRROR/gsb-\$GSB_VER/packages/$slapt_dir/\$SLAPTGET_FILE\"
+SLAPTGET_DLPATH=\"\$MIRROR/$arch_path\$GSB_VER/packages/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
 SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y\"
 SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --install \$META_PACK -y\"
@@ -151,7 +166,7 @@ echo
 cat << EOF >\$TEMP_CONFIGFILE
 WORKINGDIR=/var/slapt-get
 EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64
-SOURCE=\$MIRROR/gsb-\$GSB_VER
+SOURCE=\$MIRROR/$arch_path\$GSB_VER
 SOURCE=$slack_mirror_uri
 EOF
 

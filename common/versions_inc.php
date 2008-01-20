@@ -16,16 +16,23 @@ $gsb_bin_current_ver  =   $proj_ver[5];
 $gsb_bin_unstable_ver =   $proj_ver[6];
 $gsb_bin_update_ver   =   $proj_ver[7];
 
-// net-installer stuff
-if(!isset($use_ver)) {
+// net-installer defaults
+if(!isset($use_ver))
+{
     $use_ver = $gsb_bin_stable_ver;
 }
 
+if(!isset($arch))
+{
+    $arch = "gsb";
+}
+
 $slapt_path =
-    "/home/chipster/rsync_repos/gsb/gsb/gsb-$use_ver/packages/tools/";
+    "/home/chipster/rsync_repos/gsb/$arch/$arch_path".$use_ver."/packages/tools/";
 $slapt_ver_cmd = "ls $slapt_path/slapt-get*.tgz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.tgz||g'";
 $slapt_get_ver = @exec($slapt_ver_cmd);
 
 ?>
+
