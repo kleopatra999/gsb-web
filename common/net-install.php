@@ -14,9 +14,9 @@ require('versions_inc.php');
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.*||g'`);
 
 // mirror randomizer
-$sites[0] = array("http://slackware.org.uk/gsb", 2);
-$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb", 2);
-$sites[2] = array("http://slackware.rol.ru/gsb", 2);
+$sites[0] = array("http://slackware.org.uk/gsb", 3);
+$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb", 3);
+$sites[2] = array("http://slackware.rol.ru/gsb", 3);
 $sites[3] = array("http://get.gnomeslackbuild.org/gsb", 1);
 $countsites = count($sites);
 for($i=0; $i<$countsites; $i++)
