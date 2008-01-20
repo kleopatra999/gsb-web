@@ -11,14 +11,14 @@ $arch = $_REQUEST['arch'];
 switch ($arch)
 {
     case "gsb":
-        $arch_path = "gsb-";
+        $arch_path = "gsb/gsb-";
         break;
     case "gsb64":
-        $arch_path = "gsb64-";
+        $arch_path = "gsb64/gsb64-";
         break;
     default:
         $arch = "gsb";
-        $arch_path = "gsb-";
+        $arch_path = "gsb/gsb-";
 }
 
 // need version vars
@@ -28,10 +28,10 @@ require('versions_inc.php');
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.*||g'`);
 
 // mirror randomizer
-$sites[0] = array("http://slackware.org.uk/gsb", 3);
-$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb", 3);
-$sites[2] = array("http://slackware.rol.ru/gsb", 3);
-$sites[3] = array("http://get.gnomeslackbuild.org/gsb", 1);
+$sites[0] = array("http://slackware.org.uk", 3);
+$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 3);
+$sites[2] = array("http://slackware.rol.ru/gsb", 0);
+$sites[3] = array("http://get.gnomeslackbuild.org", 1);
 $countsites = count($sites);
 for($i=0; $i<$countsites; $i++)
 {

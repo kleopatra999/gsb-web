@@ -28,7 +28,7 @@ if(!isset($arch))
 }
 
 $slapt_path =
-    "/home/chipster/rsync_repos/gsb/$arch/$arch_path".$use_ver."/packages/tools/";
+    "/home/chipster/rsync_repos/gsb/$arch_path".$use_ver."/packages/tools/";
 $slapt_ver_cmd = "ls $slapt_path/slapt-get*.tgz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.tgz||g'";
