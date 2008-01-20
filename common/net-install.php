@@ -12,13 +12,19 @@ switch ($arch)
 {
     case "gsb":
         $arch_path = "gsb/gsb-";
+        $excludes =
+          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
         break;
     case "gsb64":
         $arch_path = "gsb64/gsb64-";
+        $excludes =
+          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
         break;
     default:
         $arch = "gsb";
         $arch_path = "gsb/gsb-";
+        $excludes =
+          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
 }
 
 // need version vars
@@ -165,7 +171,7 @@ echo \"Preparing GSB GNOME installation...\"
 echo
 cat << EOF >\$TEMP_CONFIGFILE
 WORKINGDIR=/var/slapt-get
-EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64
+EXCLUDE=$excludes
 SOURCE=\$MIRROR/$arch_path\$GSB_VER
 SOURCE=$slack_mirror_uri
 EOF
