@@ -26,8 +26,7 @@ if(stristr($_SERVER["HTTP_USER_AGENT"],"Validator")) {
 }
 
 if($mime == "application/xhtml+xml") {
-    $prolog_type = "<?xml version=\"1.0\" encoding=\"$charset\"?>
-<!DOCTYPE html PUBLIC
+    $prolog_type = "<!DOCTYPE html PUBLIC
   \"-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN\"
   \"http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd\">
 <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\">";
