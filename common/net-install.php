@@ -1,9 +1,5 @@
 <?php
 
-$ident = '$Id: net-install.php 3276 2007-12-23 00:02:46Z chipster $';
-// prevent confusion - wheee!
-$ident = str_replace(".php", "", $ident);
-
 // op
 $use_ver = $_REQUEST['use_ver'];
 // arch
@@ -120,7 +116,7 @@ if [ `id -u` -ne 0 ]; then
     echo \"You must be root when running this program!\"
     echo \"log into a shell as root and run this command again;\"
     echo 
-    echo \"     lynx --source http://gnomeslackbuild.org/net-install/$use_ver | sh\"
+    echo \"lynx --source http://gnomeslackbuild.org/net-install/$use_ver | sh\"
     echo
     exit 1
 fi
@@ -191,7 +187,6 @@ echo
 # sanity
 #
 if \$SLAPTGET \$SLAPTGET_ARGS0; then
-    #removepkg pkgconfig
     echo \"Dependencies upgraded - installing GSB GNOME...\"
     if \$SLAPTGET \$SLAPTGET_ARGS1; then
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
