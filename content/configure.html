@@ -38,10 +38,24 @@
         <li>
           <a href="#gdm">GNOME Display Manager (GDM)</a>
         </li>
+
+        <li>
+          <a href="#about-kde">KDE Integration</a>
+          <ol>
+            <li>
+              <a href="#kde-kdm">KDE Display Manager (KDM)</a>
+            </li>
+
+            <li>
+              <a href="#kde-menus">KDE Menus</a>
+            </li>
+          </ol>
+        </li>        
         
         <li>
           <a href="#printing">Printing</a>
         </li>
+
 
         <li>
           <a href="#usb">USB Device Permissions</a>
@@ -366,11 +380,88 @@ id:4:initdefault:
        <a href="http://www.gnome.org/projects/gdm/docs/2.20/gdm.html">here.</a>
     </p>
 
+    <p>
+      <img src="/images/app-icons/kde-icon.png"
+      class="listimg-l"
+      alt="" /> We try our best to be able to provide a GNOME distribution that 
+      works well alongside KDE, the desktop that comes by default with Slackware,
+      without modifying the default settings too much, or by over patching the 
+      source software.  There are a few things that a GNOME SlackBuild user can 
+      do to make the integration a little nicer between the two desktop.  
+    </p>
+
+    <h4 id="kde-kdm">
+      KDE Display Manager <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+       By default, GDM is the preferred display manager of Slackware.  When entering 
+       runlevel 4, which starts the display manager, Slackware first tries GDM,
+       secondly KDM, and lastly XDM.  GDM is configured to properly start a GNOME
+       session by running the <code>/etc/X11/xinit/xinitrc.gnome</code> script.
+       On the other hand, KDE comes configured with the bare minimum gnome session
+       script which will not work with GNOME SlackBuild.  If you prefer KDM, and would
+       like to start a gnome session, <b>you will need to modify</b>:    
+    </p>
+       
+    <p>
+       <code>/usr/share/apps/kdm/sessions/gnome.desktop</code>
+    </p>
+    
+    <p>You will need to change the line:</p>
+    
+<div>
+<pre>
+Exec=gnome-session
+</pre>
+</div>
+
+     <p>to:</p>
+<div>
+<pre>
+Exec=/etc/X11/xinit/xinitrc.gnome
+</pre>
+</div>
+
+    <p>Your other option is to copy <code>/usr/share/xsessions/gnome.desktop</code>
+       to <code>/usr/share/apps/kde/sessions</code>.  This will correct the default
+       session script run by KDM and will start a full and proper GNOME session.    
+    </p>
+
+    <h4 id="kde-menus">
+      KDE Menus <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
     <h3 id="printing">
       Printing <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
     
+    <p>
+       The default GNOME menus have been configured in GNOME SlackBuild to exclude
+       KDE and XFCE menu items to avoid clutter and general ugliness.  Some users
+       may find that they would like to access their KDE menu items from the GNOME
+       menus.  We have provided a package to do this for you.  You will need to install
+       the <b>gsb-gnome-menus</b> package.  
+    </p>    
+    
+    <div>
+<pre>
+slapt-get --install gsb-gnome-menus
+</pre>
+</div>
+
+    <p>
+       This package is based on gnome-menu-extended, and places a submenu 
+       in the GNOME menus for easy access to KDE applications.  If you would like
+       to restore the previous "exclusive" menu, you'll need to (as root) move
+       the saved menu template <code>/etc/gnome/xdg/menus/applications.menu.orig</code>
+       to <code>/etc/gnome/xdg/menus/applications.menu</code>, overwriting the 
+       KDE submenu menu template.  
+    </p>
+
      <p>
       <img src="/images/app-icons/printer.png"
       class="listimg-l"
