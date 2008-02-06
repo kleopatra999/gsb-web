@@ -54,6 +54,18 @@
                 Install</a>
           </li>
           <?php }
+                      if ($op == "configure") { ?>
+          <li>
+            <a href="/configure/"
+                title="Configure GSB"
+                class="thisPage">Configure</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/configure/"
+                title="Configure GSB">Configure</a>
+          </li>
+          <?php }
                       if ($op == "software") { ?>
           <li>
             <a href="/software/"
