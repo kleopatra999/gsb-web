@@ -34,6 +34,15 @@
         <li>
           <a href="#about-compiz">Compiz</a>
         </li>
+          <ol>
+            <li>
+              <a href="#compiz-gnome">Using Compiz with GNOME SlackBuild</a>
+            </li>
+
+            <li>
+              <a href="#compiz-ati">Compiz and ATI Video Drivers</a>
+            </li>
+          </ol>
 
         <li>
           <a href="#gdm">GNOME Display Manager (GDM)</a>
@@ -310,30 +319,97 @@ $ tracker-applet
     <p>
       <img src="/images/app-icons/compiz.png"
          class="listimg-l"
-         alt="" /> Compiz, at the moment, doesn&#39;t have an xinitrc
-         written for it yet, and we are planning on doing that. We will
-         also need to write a proper a gdm session file. (For those of you
-         who want to use Xgl). If you want to use compiz when you start
-         your GNOME Session, then your best bet is to put
-         &quot;compiz-manager&quot; in your session startup (through GNOME
-         Control Panel), or else, following the same method above,
+         alt="" /> GNOME SlackBuild includes Compiz-fusion, which is a 
+         compositing window manager that uses 3D graphics acceleration 
+         via OpenGL. It provides various new graphical effects and 
+         features on any desktop environment, including GNOME. It is the 
+         result of the re-unification of the Beryl-project and the community
+         around the Compiz Window Manager. It seeks to provide an easy and
+         fun-to-use windowing environment, allowing use of the graphics
+         hardware to provide impressive effects, amazing speed and unrivalled
+         usefulness.
     </p>
 
-    <div>
-      <pre>
-$ mkdir -p ~/.config/autostart
-$ cd ~/.config/autostart
-$ ln -s /usr/bin/compiz-manager
-</pre>
-    </div>
+    <h4 id="compiz-gnome">
+      Using Compiz with GNOME SlackBuild <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+    
+    <p>
+      GNOME SlackBuild comes with both an <code>/etc/X11/xinitrc.gnome</code>, 
+      which is the X startup script for a gnome-session with Metacity as the
+      default window manager.  We have also provided an <code>/etc/X11/xinitrc.compiz-gnome</code>
+      script to use the compiz window manager instead. First be sure
+      to have your video card properly configured for AIGLX.  There is lots of
+      information about doing this on the web, both for Nvidia or ATI drivers.
+    </p>
+
+    <h5>Using startx</h5>
 
     <p>
-      We are toying with the idea of providing a Xgl server for those
-      Slackware users who are interested. Properly configuring an AIGLX X
-      server can be notoriously difficult, particularly if you are an ATI
-      owner. We are unable to assist users in setting up their X server,
-      but we will help out as much as we can with any configuration
-      problems with compiz itself.
+      If you prefer <code>startx</code> rather than GDM to start your X session,
+      then you should copy one of the both (whichever you prefer) to your
+      <code>~/.xinitrc</code>.  You can then tweak the scripts to your convenience.    
+    </p>    
+
+    <h5>Using GDM</h5>
+
+    <p>
+      If you use GDM, then you will find a "Compiz GNOME" in the list under the 
+      "Sessions" menu.  This will start the compiz window manager instead of the 
+      Metacity window manager, which is started by the default "GNOME" session.  
+    </p>
+
+    <h5>The compiz-manager script</h5>
+    
+    <p>
+      This script will check your settings and detect whether compiz can run, 
+      and if so, start it up.  Otherwise, the script will start metacity instead. 
+      It tends to be more fail proof than the second method.  If you are unsure whether
+      compiz will start on its own, start a default "GNOME" session with metacity.
+    </p>
+      
+<div>
+<pre>
+$ /usr/bin/compiz-manager
+</pre>
+</div>
+
+    <p>
+    This script will start up compiz and the gtk-window-decorator, and give some
+    debugging information to help you detect why compiz cannot start up properly.
+    If compiz starts without any trouble, then you will find it easier to switch
+    to one of the above listed methods, either copying <code>/etc/X11/xinit/xinitrc.compiz-gnome</code>
+    to your home directory, or use the "Compiz GNOME" session from GDM
+    </p>
+
+   <h4 id="compiz-ati">
+      Compiz and ATI Video Drivers <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h4>
+
+    <p>
+       Using the latest ATI proprietary drivers (fglrx) released January 18th, 2008, you
+       should be able to get compiz working quite well.  AIGLX is now supported by the
+       driver, and using compiz-fusion 0.6.2 it is both quite stable and rather fast.
+       If mostly works out-of-the-box, however, you'll need to tweak your <code>xorg.conf</code>
+       a small bit in order to fix a few graphical issues with fonts and icons.
+       Make sure your xorg.conf file has the below in the Device section.
+    </p>
+    
+<div>
+<pre>
+Section "Device"
+        Identifier  "aticonfig-Device[0]"
+        Driver      "fglrx"
+        Option "XAANoOffscreenPixmaps" "true"
+        Option "EnableDepthMoves" "on"
+EndSection
+</pre>
+</div>	
+
+    <p>
+       The above should allow you to use compiz-fusion and ATI fglrx drivers with success.     
     </p>
 
     <h3 id="gdm">
