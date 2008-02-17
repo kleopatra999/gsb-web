@@ -6,6 +6,10 @@
 
       <ol>
         <li>
+          <a href="#quick">Quick and Easy Install</a>
+        </li>
+
+        <li>
           <a href="#slaptget">Package Management</a>
         </li>
 
@@ -76,6 +80,43 @@
       The most current available version of the GSB binary distribution is
       <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
     </p>
+
+    <h3 id="quick" class="hilite-gr">
+      Quick and Easy Install <span class="toc-link"><a href="#toc"
+      title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      The quickest and easiest way to install the GSB binary distribution,
+      is via our net-installer.  Note that this method of installation will
+      install <em>everything</em> included in the GSB distribution (full
+      installation!).
+    </p>
+
+    <p>
+      Login to a terminal as root (in run-level 3, preferred), and run the
+      following command...
+    </p>
+
+    <h4>
+      Slackware for x86
+    </h4>
+
+    <div>
+<pre>
+lynx --source http://gnomeslackbuild.org/net-install | bash
+</pre>
+    </div>
+
+    <h4>
+      Slamd64 for x64
+    </h4>
+
+    <div>
+<pre>
+lynx --source http://gnomeslackbuild.org/net-install/64 | bash
+</pre>
+    </div>
 
     <h3 id="slaptget">
       Package Management <span class="toc-link"><a href="#toc"
