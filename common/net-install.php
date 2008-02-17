@@ -26,7 +26,15 @@ switch ($arch)
 // need version vars
 require('versions_inc.php');
 
-// slapt-get file
+// slack/slamd64 mirror selector
+if ($arch == "gsb64")
+{
+    $slack_mirror_uri = "http://slamd64.he.net/slamd64-$slack_ver";
+}
+else
+{
+    $slack_mirror_uri = "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
+}
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.*||g'`);
 
 // mirror randomizer
@@ -53,18 +61,12 @@ switch ($use_ver)
 {
     case "$gsb_bin_stable_ver":
         $slapt_dir = "tools";
-        $slack_mirror_uri =
-            "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
         break;
     case "current":
         $slapt_dir = "tools";
-        $slack_mirror_uri =
-            "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
         break;
     default:
         $use_ver = $gsb_bin_stable_ver;
-        $slack_mirror_uri =
-            "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
 }
 
 $output = "#!/usr/bin/env bash
