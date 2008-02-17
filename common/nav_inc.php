@@ -113,18 +113,6 @@
             <a href="/support/"
                 title="Support &amp; FAQs">Support</a>
           </li>
-          <?php } 
-                      if ($op == "search") { ?>
-          <li>
-            <a href="/search/"
-                title="Search"
-                class="thisPage">Search</a>
-          </li>
-          <?php } else { ?>
-          <li>
-            <a href="/search/"
-                title="Search">Search</a>
-          </li>
           <?php } ?>
         </ul>
       </div>
