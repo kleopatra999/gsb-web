@@ -1,4 +1,22 @@
 ###
+2008-02-20-18-48-GMT
+<img src="/images/app-icons/ooo-gulls2.3.png" class="listimg-l" alt="" />
+OpenOffice package available for GNOME SlackBuild
+In additional to a full GNOME Office suite, which includes Abiword, GNUCash, 
+Gnumeric, and Glom, GNOME SlackBuild now provides the option of an integrated <b>OpenOffice</b>
+package, including Writer, Impress, Math, and Web Writer, all built using the GTK 
+widget set to seamlessly match your GNOME Desktop.  There is also a new package to install
+an OpenOffice.org submenu in your GNOME Applications menu.
+
+<p>The new packages are:</p>
+<p>openoffice.org - OpenOffice.org Office Suite</p>
+<p>gnome-menus-ooo - OpenOffice.org Menus</p>
+
+<p>The best method for installation is using slapt-get.  For more information
+on how to download and install GNOME SlackBuild packages, please see our
+<a href="/download/">Download</a> page.</p>
+
+###
 2008-01-14-02-48-GMT
 GSB GNOME 2.20.3 Release Candidate 1
 Good news everyone!  We've moved from the testing stage to being able to offer our first 
