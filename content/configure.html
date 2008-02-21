@@ -56,7 +56,7 @@
             </li>
 
             <li>
-              <a href="#kde-menus">KDE Menus</a>
+              <a href="#kde-menus">KDE or XFCE Menus</a>
             </li>
           </ol>
         </li>        
@@ -517,7 +517,7 @@ Exec=/etc/X11/xinit/xinitrc.gnome
     </p>
 
     <h4 id="kde-menus">
-      KDE Menus <span class="toc-link"><a href="#toc"
+      KDE or Xfce Menus <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h4>
 
@@ -526,22 +526,24 @@ Exec=/etc/X11/xinit/xinitrc.gnome
        KDE and XFCE menu items to avoid clutter and general ugliness.  Some users
        may find that they would like to access their KDE menu items from the GNOME
        menus.  We have provided a package to do this for you.  You will need to install
-       the <b>gsb-gnome-menus</b> package.  
+       the <b>gnome-gsb-menus</b> package.  
     </p>    
     
-    <div>
+<div>
 <pre>
-slapt-get --install gsb-gnome-menus
+slapt-get --install gnome-menus-kde
 </pre>
 </div>
 
     <p>
        This package is based on gnome-menu-extended by Ariszló, and places a submenu 
        in the GNOME menus for easy access to KDE applications.  If you would like
-       to restore the previous "exclusive" menu, you'll need to (as root) move
-       the saved menu template <code>/etc/gnome/xdg/menus/applications.menu.orig</code>
-       to <code>/etc/gnome/xdg/menus/applications.menu</code>, overwriting the 
-       KDE submenu menu template.  
+       to restore the previous "exclusive" menu, you'll need to (as root) remove
+       the <b>gnome-menus-kde</b> package.
+    </p>
+    
+    <p>The above applies for Xfce menus;  instead f gnome-menus-kde, install
+    or remove the package<b>gnome-menus-xfce</b>
     </p>
 
    <h3 id="printing">
