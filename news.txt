@@ -1,7 +1,7 @@
 ###
 2008-02-20-18-48-GMT
-<img src="/images/app-icons/ooo-gulls2.3.png" class="listimg-l" alt="" />
 OpenOffice package available for GNOME SlackBuild
+<img src="/images/app-icons/ooo-gulls2.3.png" class="listimg-l" alt="" />
 In additional to a full GNOME Office suite, which includes Abiword, GNUCash, 
 Gnumeric, and Glom, GNOME SlackBuild now provides the option of an integrated <b>OpenOffice</b>
 package, including Writer, Impress, Math, and Web Writer, all built using the GTK 
