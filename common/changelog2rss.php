@@ -9,10 +9,10 @@
 */
 
 header("Content-type: text/xml");
-$localServer = 'http://foo.bar.baz/gsb';
+$localServer = 'http://gnomeslackbuild.org';
 $feeds = 'ChangeLog';
 $feedPath = "$localServer/$feeds";
-$mirror = "http://foo.bar.baz/gsb";
+$mirror = "http://gnomeslackbuild.org";
 $realdate = date('r');
 $items = array();
 
