@@ -13,7 +13,7 @@ or take a look at our <a href="/screenshots/">Screenshots</a> page to see
 GNOME SlackBuild in action.
 
 <p>If you are interested in trying GNOME SlackBuild, please take a look at our
-<a href="/download/">Downloads & Install</a> web page for a full set of instructions on 
+<a href="/download/">Downloads &amp; Install</a> web page for a full set of instructions on 
 how to download, install, and configure your new GNOME desktop.
 </p>
 
