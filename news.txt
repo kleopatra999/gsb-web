@@ -3,7 +3,7 @@
 GNOME SlackBuild GNOME 2.20.3 Stable Release
 <img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 We are proud to announce the stable release of the GNOME SlackBuild GNOME 2.20.3
-Desktop for Slackware Linux and its 64-bit versions, like Slamd64.  The GNOME
+Desktop for Slackware Linux and its 64-bit version, Slamd64.  The GNOME
 SlackBuild GNOME Desktop most notably features a full GNOME Desktop, with
 Epiphany and Evolution, the OpenOffice.org Office Suite built for GNOME and GTK,
 integrated Compiz-Fusion or Metacity Window Manager, and a wide variety of
@@ -13,7 +13,7 @@ or take a look at our <a href="/screenshots/">Screenshots</a> page to see
 GNOME SlackBuild in action.
 
 <p>If you are interested in trying GNOME SlackBuild, please take a look at our
-<a href="/download/">Downloads &amp; Install</a> web page for a full set of instructions on 
+<a href="/download/">Download &amp; Install</a> web page for a full set of instructions on 
 how to download, install, and configure your new GNOME desktop.
 </p>
 
