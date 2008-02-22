@@ -1,7 +1,6 @@
 ###
 2008-02-22-13-07-GMT
 GNOME SlackBuild GNOME 2.20.3 Stable Release
-OpenOffice package available for GNOME SlackBuild
 <img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 We are proud to announce the stable release of the GNOME SlackBuild GNOME 2.20.3
 Desktop for Slackware Linux and its 64-bit versions, like Slamd64.  The GNOME
@@ -21,7 +20,7 @@ install, and configure your new GNOME desktop.
 <p>The GNOME SlackBuild Development Team</p>
 
 ###
-2008-02-20-18-48-GMT
+2008-02-17-18-48-GMT
 OpenOffice package available for GNOME SlackBuild
 <img src="/images/app-icons/ooo-gulls2.3.png" class="listimg-l" alt="" />
 In additional to a full GNOME Office suite, which includes Abiword, GNUCash, 
@@ -41,6 +40,7 @@ on how to download and install GNOME SlackBuild packages, please see our
 ###
 2008-01-14-02-48-GMT
 GSB GNOME 2.20.3 Release Candidate 1
+<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 Good news everyone!  We've moved from the testing stage to being able to offer our first 
 firm Release Candidate for GNOME SlackBuild.  It's proving quite solid, but there are
 a few minor tweaks still to be made.  We have a brand new <a href="/download/">Download</a> page that has full instructions on how to download, install and configure
@@ -52,6 +52,7 @@ issue tracker:<br /> http://dev.gnomeslackbuild.org/projects/gsb-binary/issues
 ###
 2008-01-01-10-52-CDT
 GSB `-current` binary packages ready for testing
+<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 The long-awaited GSB GNOME Distribution (based on GNOME 2.20.2<sup>[<a href="#fn_1">1</a>]</sup>) is ready
 for brave folks to test.  For access to the binaries, hop into our IRC
 channel (#gsb on irc.freenode.net).  But reports must be logged in our
@@ -66,6 +67,7 @@ will actually be upgraded to GNOME 2.20.3.</p>
 ###
 2007-12-14-13-40-CDT
 GSB 2.20.2 Progress
+<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 We're preparing to (finally) release (the binary version of) GSB 2.20.2,
 consisting of GNOME 2.20.2 (obviously).  We think it'll be relesed within
 2 weeks or so.  This release will be for Slackware 12.0 (only).  The GSB
