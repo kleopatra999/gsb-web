@@ -31,7 +31,7 @@ switch ($cl_ver) {
 }
 $ch = curl_init();
 $timeout = 5; // set to zero for no timeout
-curl_setopt ($ch, CURLOPT_URL, "http://foo.bar.baz/gsb/$cl_ver/ChangeLog");
+curl_setopt ($ch, CURLOPT_URL, "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver/ChangeLog");
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 $cl_result = curl_exec($ch);
