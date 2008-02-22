@@ -16,9 +16,9 @@ GNOME SlackBuild in action.
 <p>If you are interested in trying GNOME SlackBuild, please take a look at our
 <a href="/download/">Downloads</a> web for full instruction on how to download,
 install, and configure your new GNOME desktop.
-<p>
+</p>
 
-<p>The GNOME SlackBuild Development Team<p>
+<p>The GNOME SlackBuild Development Team</p>
 
 ###
 2008-02-20-18-48-GMT
