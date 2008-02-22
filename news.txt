@@ -7,7 +7,7 @@ Desktop for Slackware Linux and its 64-bit version, Slamd64.  The GNOME
 SlackBuild GNOME Desktop most notably features a full GNOME Desktop, with
 Epiphany and Evolution, the OpenOffice.org Office Suite built for GNOME and GTK,
 integrated Compiz-Fusion or Metacity Window Manager, and a wide variety of
-applications to suite every user's taste or need.  For a more detailed list
+applications to suit every user's taste or need.  For a more detailed list
 of software provided by GSB, please see our <a href="/software/">Included Software</a> page,
 or take a look at our <a href="/screenshots/">Screenshots</a> page to see 
 GNOME SlackBuild in action.
