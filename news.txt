@@ -8,10 +8,11 @@ work in svn.  Please be aware that <code>trunk/</code> will continue as the
 -current development branch, and a 2.20.x stable branch has been created 
 in <code>branches/</code> for those who wish to build from a -STABLE tree.
 
+<h2>SVN Development Tree:</h2>
 <p>
-SVN Development Tree:
--------------------------------
 http://svn.gnomeslackbuild.org/gsb/branches/gsb-2.20.x (-STABLE)
+</p>
+<p>
 http://svn.gnomeslackbuild.org/gsb/trunk (-CURRENT)
 </p>
 
