@@ -1,6 +1,6 @@
 ###
 2008-02-24-16-21-GMT
-SVN 2.20.x Branch Announcemen
+SVN 2.20.x Branch Announcement
 <img src="/images/app-icons/gsb_build.png" class="listimg-l" alt="" />
 Just a general news announcement to those who use the svn build
 system.  Since we're releasing GNOME 2.20.3-STABLE, we're branching development 
@@ -8,7 +8,7 @@ work in svn.  Please be aware that <code>trunk/</code> will continue as the
 -current development branch, and a 2.20.x stable branch has been created 
 in <code>branches/</code> for those who wish to build from a -STABLE tree.
 
-<h2>SVN Development Tree:</h2>
+<h3>SVN Development Tree:</h3>
 <p>
 http://svn.gnomeslackbuild.org/gsb/branches/gsb-2.20.x (-STABLE)
 </p>
