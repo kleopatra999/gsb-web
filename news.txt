@@ -1,4 +1,26 @@
 ###
+2008-02-24-16-21-GMT
+SVN 2.20.x Branch Announcemen
+<img src="/images/app-icons/gsb_build.png" class="listimg-l" alt="" />
+Just a general news announcement to those who use the svn build
+system.  Since we're releasing GNOME 2.20.3-STABLE, we're branching development 
+work in svn.  Please be aware that <code>trunk/</code> will continue as the 
+-current development branch, and a 2.20.x stable branch has been created 
+in <code>branches/</code> for those who wish to build from a -STABLE tree.
+
+<p>
+SVN Development Tree:
+-------------------------------
+http://svn.gnomeslackbuild.org/gsb/branches/gsb-2.20.x (-STABLE)
+http://svn.gnomeslackbuild.org/gsb/trunk (-CURRENT)
+</p>
+
+<p>
+You can check out either (or both) or these using svn. See our 
+<a href="http://dev.gnomeslackbuild.org/wiki/gsb-source">Wiki</a> for more information
+about obtaining the source code, or building GNOME SlackBuild.
+</p>
+###
 2008-02-22-13-07-GMT
 GNOME SlackBuild GNOME 2.20.3 Stable Release
 <img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
@@ -30,7 +52,7 @@ widget set to seamlessly match your GNOME Desktop.  There is also a new package 
 an OpenOffice.org submenu in your GNOME Applications menu.
 
 <p>The new packages are:</p>
-<p>openoffice.org - OpenOffice.org Office Suite</p>
+<p>openoffice - OpenOffice.org Office Suite</p>
 <p>gnome-menus-ooo - OpenOffice.org Menus</p>
 
 <p>The best method for installation is using slapt-get.  For more information
