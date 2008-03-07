@@ -1,7 +1,25 @@
 ###
+2008-03-07-13-07-GMT
+GNOME SlackBuild GNOME 2.20.3 Stable Release
+We are proud to announce the stable release of the GNOME SlackBuild GNOME 2.20.3
+Desktop for Slackware Linux and its 64-bit version, Slamd64.  The GNOME
+SlackBuild GNOME Desktop most notably features a full GNOME Desktop, with
+Epiphany and Evolution, the OpenOffice.org Office Suite built for GNOME and GTK,
+integrated Compiz-Fusion or Metacity Window Manager, and a wide variety of
+applications to suit every user's taste or need.  For a more detailed list
+of software provided by GSB, please see our <a href="/software/">Included Software</a> page,
+or take a look at our <a href="/screenshots/">Screenshots</a> page to see 
+GNOME SlackBuild in action.
+
+<p>If you are interested in trying GNOME SlackBuild, please take a look at our
+<a href="/download/">Download &amp; Install</a> web page for a full set of instructions on 
+how to download, install, and configure your new GNOME desktop.
+</p>
+
+<p>The GNOME SlackBuild Development Team</p>
+###
 2008-02-24-16-21-GMT
 SVN 2.20.x Branch Announcement
-<img src="/images/app-icons/gsb_build.png" class="listimg-l" alt="" />
 Just a general news announcement to those who use the svn build
 system.  Since we're releasing GNOME 2.20.3-STABLE, we're branching development 
 work in svn.  Please be aware that <code>trunk/</code> will continue as the 
@@ -22,30 +40,8 @@ You can check out either (or both) or these using svn. See our
 about obtaining the source code, or building GNOME SlackBuild.
 </p>
 ###
-2008-02-22-13-07-GMT
-GNOME SlackBuild GNOME 2.20.3 Stable Release
-<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
-We are proud to announce the stable release of the GNOME SlackBuild GNOME 2.20.3
-Desktop for Slackware Linux and its 64-bit version, Slamd64.  The GNOME
-SlackBuild GNOME Desktop most notably features a full GNOME Desktop, with
-Epiphany and Evolution, the OpenOffice.org Office Suite built for GNOME and GTK,
-integrated Compiz-Fusion or Metacity Window Manager, and a wide variety of
-applications to suit every user's taste or need.  For a more detailed list
-of software provided by GSB, please see our <a href="/software/">Included Software</a> page,
-or take a look at our <a href="/screenshots/">Screenshots</a> page to see 
-GNOME SlackBuild in action.
-
-<p>If you are interested in trying GNOME SlackBuild, please take a look at our
-<a href="/download/">Download &amp; Install</a> web page for a full set of instructions on 
-how to download, install, and configure your new GNOME desktop.
-</p>
-
-<p>The GNOME SlackBuild Development Team</p>
-
-###
 2008-02-17-18-48-GMT
 OpenOffice package available for GNOME SlackBuild
-<img src="/images/app-icons/ooo-gulls2.3.png" class="listimg-l" alt="" />
 In additional to a full GNOME Office suite, which includes Abiword, GNUCash, 
 Gnumeric, and Glom, GNOME SlackBuild now provides the option of an integrated <b>OpenOffice</b>
 package, including Writer, Impress, Math, and Web Writer, all built using the GTK 
@@ -63,7 +59,6 @@ on how to download and install GNOME SlackBuild packages, please see our
 ###
 2008-01-14-02-48-GMT
 GSB GNOME 2.20.3 Release Candidate 1
-<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 Good news everyone!  We've moved from the testing stage to being able to offer our first 
 firm Release Candidate for GNOME SlackBuild.  It's proving quite solid, but there are
 a few minor tweaks still to be made.  We have a brand new <a href="/download/">Download</a> page that has full instructions on how to download, install and configure
@@ -75,7 +70,6 @@ issue tracker:<br /> http://dev.gnomeslackbuild.org/projects/gsb-binary/issues
 ###
 2008-01-01-10-52-CDT
 GSB `-current` binary packages ready for testing
-<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 The long-awaited GSB GNOME Distribution (based on GNOME 2.20.2<sup>[<a href="#fn_1">1</a>]</sup>) is ready
 for brave folks to test.  For access to the binaries, hop into our IRC
 channel (#gsb on irc.freenode.net).  But reports must be logged in our
@@ -90,7 +84,6 @@ will actually be upgraded to GNOME 2.20.3.</p>
 ###
 2007-12-14-13-40-CDT
 GSB 2.20.2 Progress
-<img src="/images/app-icons/gsb_foot.png" class="listimg-l" alt="" />
 We're preparing to (finally) release (the binary version of) GSB 2.20.2,
 consisting of GNOME 2.20.2 (obviously).  We think it'll be relesed within
 2 weeks or so.  This release will be for Slackware 12.0 (only).  The GSB
