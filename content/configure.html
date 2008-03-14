@@ -10,6 +10,10 @@
         </li>
 
         <li>
+          <a href="#about-menus">Missing Menus?</a>
+        </li>
+
+        <li>
           <a href="#about-nm">Network Manager</a>
           <ol>
             <li>
@@ -128,6 +132,40 @@ $ . /etc/rc.d/rc.avahidnsconfd start
       the above scripts.
     </p>
 
+    <h3 id="about-menus">
+      Missing Menus? <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/changelog.png"
+         class="listimg-l"
+         alt="" />In order to prevent KDE and GNOME from interfering with each
+         other's menus, we have placed the GNOME Standard menu structure in 
+         <code>/etc/gnome/xdg</code>.  Some users, by not starting GSB GNOME in
+         a proper fashion, may find that their menus have gone missing.  The
+         package <strong>gnome-session</strong> installs a file <code>
+         /etc/X11/xinit/xinitrc.gnome</code>, and this file ought to be copied
+         to your user's home directory (~/.xinitrc) in order to use <strong>startx
+         </strong> to start an X session.  
+    </p>
+
+    <p>In this startup script is an environment variable.  By specifying this 
+    in a custom startup script, your GSB GNOME session will be able to find
+    it's menus. 
+    </p>
+
+<div>
+<pre>
+XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg
+</pre>
+</div>
+
+    <p>
+    GNOME sessions started through GDM will have this variable defined for them.
+    Please make sure to have the latest gnome-session and gnome-desktop package
+    installed.
+    </p>
     <h3 id="about-nm">
       NetworkManager <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
