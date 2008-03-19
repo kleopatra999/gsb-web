@@ -1,4 +1,19 @@
 ###
+2008-03-18-23-47-GMT
+GNOME SlackBuild GNOME 2.22.0 in Development
+GSB is working hard towards a release of the latest GNOME 2.22 Desktop for Slackware
+and Slamd64.  There were a few snags to work out, but things are progressing nicely.
+We should have a -CURRENT version of GSB GNOME 2.22.0 out for testing soon, and we 
+plan on creating a page for all the details about what has changed from GSB 2.20. 
+
+<p>
+We'll be sending an email out to our user and devel emailing list when things 
+are ready for testing.  Please feel free to sign up to these email lists if you
+want all the latest updates for GSB, or keep checking back to our news page for
+all the latest info about the upcoming GSB 2.22.
+</p>
+
+###
 2008-03-07-13-07-GMT
 GNOME SlackBuild GNOME 2.20.3 Stable Release
 We are proud to announce the stable release of the GNOME SlackBuild GNOME 2.20.3
