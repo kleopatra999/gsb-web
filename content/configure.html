@@ -150,6 +150,15 @@ $ . /etc/rc.d/rc.avahidnsconfd start
          </strong> to start an X session.  
     </p>
 
+    <p>
+    <b>NOTE: There have been some reports that menus are missing when starting
+    GSB GNOME.  The cause may be due to the xinitrc failing to honour the 
+    environment setting XDG_CONFIG_DIRS without first exporting the variable.
+    You may need to add <code>export XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg</code>
+    to your <code>xinitrc.gnome</code>. <i>Note the export at the start of the line.</i>
+    </b>
+    </p>
+
     <p>In this startup script is an environment variable.  By specifying this 
     in a custom startup script, your GSB GNOME session will be able to find
     its menus. 
@@ -157,7 +166,7 @@ $ . /etc/rc.d/rc.avahidnsconfd start
 
 <div>
 <pre>
-XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg
+export XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg
 </pre>
 </div>
 
