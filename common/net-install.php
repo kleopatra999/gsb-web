@@ -41,7 +41,7 @@ $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.
 $sites[0] = array("http://slackware.org.uk", 3);
 $sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 3);
 $sites[2] = array("http://slackware.rol.ru/gsb", 3);
-$sites[3] = array("http://get.gnomeslackbuild.org", 1);
+$sites[3] = array("http://get.gnomeslackbuild.org", 0);
 $countsites = count($sites);
 for($i=0; $i<$countsites; $i++)
 {
