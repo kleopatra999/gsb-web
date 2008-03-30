@@ -69,6 +69,9 @@ switch ($op)
     case "software";
         $title = "Software Included with GSB : $common_title";
         break;
+    case "whatsnew";
+        $title = "What's New in GSB : $common_title";
+        break;
     case "screenshots";
         $title = "Screenshots : $common_title";
         break;
