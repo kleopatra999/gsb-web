@@ -24,6 +24,7 @@ RewriteEngine On
     RewriteRule ^news/([0-9]{1,})?/?$ /?news_page=$1 [QSA,L]
     RewriteRule ^changelog/(.*)?$ /index.php?op=changelog&cl_ver=$1 [QSA,L]
     RewriteRule ^about/?$  /index.php?op=about [QSA,L]
+    RewriteRule ^whatsnew/?$  /index.php?op=whatsnew [QSA,L]
     RewriteRule ^search/?$  /index.php?op=search [QSA,L]
     RewriteRule ^lists/?$  /index.php?op=lists [QSA,L]
     RewriteRule ^software/?$  /index.php?op=software [QSA,L]
