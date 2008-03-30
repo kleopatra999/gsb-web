@@ -1,0 +1,482 @@
+    <div id="toc"
+         class="toc">
+      <p>
+        Table of Contents
+      </p>
+
+      <ol>
+        <li>
+          <a href="#new-gnome">New to GNOME 2.22</a>
+        </li>
+        
+        <li>
+          <a href="#new-replaced">Fewer Package Replacements</a>
+        </li>
+
+        <li>
+          <a href="#new-wm">New in Desktop Management</a>
+        </li>        
+        
+        <li>
+          <a href="#new-wm">New in Window Managers</a>
+        </li>
+
+        <li>
+          <a href="#new-multimedia">New in Multimedia</a>
+        </li>
+
+        <li>
+          <a href="#new-networking">New in Internet and Networking</a>
+        </li>
+
+        <li>
+          <a href="#new-office">New in Office</a>
+        </li>
+
+        <li>
+          <a href="#new-devtools">New in Development Environment</a>
+        </li>
+
+        <li>
+          <a href="#new-graphics">New in Graphic Design and Digital Imagery</a>
+        </li>
+      </ol>
+    </div>
+
+    <h2 id="about-new">
+      What's New in 2.22?
+    </h2>
+
+    <p>
+      <bold>NOTE 1:  GNOME SlackBuild GNOME 2.22-CURRENT is designed 
+      and built for the upcoming Slackware 12.1.  It will not work on Slackware
+      12.0.</bold>
+    </p>
+
+    <p>
+      NOTE 2: Slackware 12.1 is no doubt soon to be released, and when that occurs, 
+      we will be rebuilding all our packages against the released stable version 
+      of Slackware 12.1.
+    </p>
+    
+    <p>
+      <bold>This page then is aimed at those users who live on the edge and want to 
+      try out the latest GSB Desktop on their Slackware-current installation. It will
+      be modified and updated as our "What's New" page when we release a stable version
+      of GSB 2.22 for Slackware 12.1.  For now, it aims at giving a basic preview
+      of what GNOME SlackBuild 2.22 has in store.	</bold>
+    </p>
+    
+    <p>Below are highlighted some of the major changes found in GSB 2.22.</p>
+    
+
+    <h3 id="new-desktop">
+      The GNOME SlackBuild GNOME 2.22 Desktop
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gnome-logo-icon-transparent.png"
+         class="listimg-l"
+         alt="" />GNOME <?php echo($gsb_bin_unstable_ver); ?> is the latest
+         version of the GNOME Desktop. There have been a lot of
+         improvements in GNOME <?php echo($gsb_bin_unstable_ver); ?>, which
+         include better networked filesystems, DVD, Digital TV Support, 
+         improved Evolution Mail client, the new Remote Desktop Viewer, 
+         improved Evince viewer, new features in Accessibility, and
+         better Internationalisation. For a complete summary of what is new 
+         to the GNOME <?php echo($gsb_bin_unstable_ver); ?>
+         Desktop, please refer to the <a href=
+         "http://www.gnome.org/start/stable/">release notes</a>. 
+    </p>      
+    
+     <h3 id="new-replaced">
+     Fewer Package Replacements
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gnome-logo-icon-transparent.png"
+         class="listimg-l"
+         alt="" /> GNOME SlackBuild is designed to bring the greatest features 
+         of GNOME to Slackware, integrating seamlessly into a standard install while
+         at the same time replacing as few system supplied packages as possible.  With
+         Slackware 12.1, we have reduced even further our replaced packages list.
+     </p>
+
+ <?php
+        # replaced_packages grabber
+        $rp_error = "<h4>Replaced Packages Error</h4>\n"
+                    ."<p>The server is experiencing issues retrieving the replaced_packages from
+                      SVN.  Please try again a bit later.</p>"
+                    ."\n</div>\n";
+
+        $rp = curl_init();
+        $timeout = 10; // set to zero for no timeout
+        curl_setopt ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages_gsb-2.22?root=gsb&view=co");
+        curl_setopt ($rp, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt ($rp, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $rp_result = curl_exec($rp);
+        curl_close($rp);
+        if (!$rp_result)
+        {
+            print($td_error);
+            include('common/footer_inc.php');
+            exit();
+        }
+        else
+        {
+            $rp_result = htmlentities($rp_result);
+            #$rp_result = str_replace(" ", "&nbsp;", $rp_result);
+            $rp_result = trim($rp_result);
+        }
+        ?>
+<div>
+<pre style="overflow:auto;">
+<?php print($rp_result); ?>
+</pre>
+</div>        
+
+    <hr />
+    
+    <h3 id="new-fm">
+      New in File Management <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>       
+            
+    <p>
+      <img src="/images/app-icons/nautilus.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> The latest version of Nautilus now uses GVFS/GIO
+         rather than using the now deprecated GNOME-VFS system.  Some features
+         are now missing, such as fonts://, but for the most part, it has feature
+         partity with the older GNOME-VFS.  Nautilus now handles all disk mounting
+         directly, and no longer relies on Gnome Volume Manager, <b>which has been
+         removed from GNOME SlackBuild's GNOME Desktop.</b>  File copying is much 
+         smoother, as is the access of Network folders via Samba, ObexFTP and WebDAV.
+    </p>    
+                  
+    <hr />
+    
+    <h3 id="new-wm">
+      New in Window Managers <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      GNOME SlackBuild provides two different window managers for your
+      GNOME Desktop, Metacity, which is the default GNOME Window Manager,
+      as well as Compiz-Fusion, a Window Manager which offers a wide range
+      of spectacular effects for a 3D accelerated desktop.
+    </p>
+
+    <h4 id="compiz">
+      Compiz-Fusion
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/compiz.png"
+         class="listimg-l"
+         alt="" /> Compiz-Fusion has been <b>upgraded</b> to the latest 0.7.2 version.
+         Our compiz-fusion package comes with CCSM for easy integration into
+         your GNOME desktop, and with two sets of extra plugins for all sorts
+         of cool and wacky effects by which you can impress your neighbours.
+         For more information, see Compiz-Fusion&#39;s 
+         <a href="http://www.compiz-fusion.org/">home page</a>.
+    </p>
+
+    <p>
+       <bold>New:</bold> GNOME SlackBuild now comes with the <b>fusion-icon</b>package
+       allowing users to easily switch between their various window managers, like
+       Metacity and Compiz, in addition to changing between various <i>window decorators</i>
+       like Emerald and the GTK Window Decorator.
+    </p>
+
+    <p>
+       <bold>New:</bold> The <b>Emerald Decorator</b> is now apart of our GSB Compiz package
+       and is the default for Compiz-GNOME.  The Emerald Window Decorator allows theming and
+       other various style changes to your Compiz Desktop.
+    </p>
+
+    <p>
+       <bold>Note:</bold> Slackware 12.1 comes with Compiz, not Compiz-Fusion.  Our package
+       is called <code>compiz-fusion</code>, not <code>compiz</code> in order to avoid the 
+       confusion.  However, we have specified a "package conflict" with Slackware's package.
+       You may want to remove your compiz package and replace it with our Compiz-Fusion package.
+       If you're wondering what the difference, please see their 
+       <a href="http://wiki.compiz-fusion.org/FAQ#head-f2b74a26fe4e660b1472e126e829203a4167d97b">
+       Wiki page</a>.       
+    </p>
+
+
+    <h4 id="metacity">
+      Metacity
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/metacity.png"
+         class="listimg-l"
+         alt="" /> GNOME 2.22 officially incorporates the Metacity window
+         manager, a fully integrated window manager that uses GTK+ for
+         visual elements, communicates tightly with the panel and other
+         desktop elements, and is configured straight from the GNOME
+         preferences dialogs. It includes full keyboard navigation,
+         including navigation to the panel and the desktop background, and
+         it very themeable. For more information, see Metacity&#39;s
+         <a href="http://www.gnome.org/start/2.2/notes/rnwm.html">home
+         page</a>.
+    </p>
+
+    <p>
+       <bold>New:</bold> Metacity is now built with <b>compositing</b> enabled.  
+    </p>
+
+
+    <hr />
+
+    <h3 id="new-multimedia">
+      New in Mulitmedia <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      GNOME SlackBuild provides a wide assortment of multimedia programs all
+      based on the latest<a href="http://gstreamer.freedesktop.org">GStreamer
+      framework</a>, so users are able to play back a wide variety of media
+      types (sound and video files, streaming network audio/video, DVDs,
+      CD-ROMs, and more.) There are many applications to choose from! GSB
+      offers a range of choice for users to pick from. You can either
+      install your favorite application, or a few to try.
+    </p>
+
+    <h4 id="new-pulse">
+      Pulseaudio
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/pulseaudio.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> Pulseaudio is now installed as the default GNOME
+         SlackBuild sound server.  Pulseaudio has many cool features for your 
+         desktop, including transferring the audio to a different machine, 
+         changing the sample format or channel count and mixing several sounds,
+         or changing the volume for different applications all running at one. 
+         For instance, you can turn the volume down on music playing in the background
+         while turning up the volume for a game or movie.  These are easily achieved 
+         using PulseAudio. For more information, see PulseAudio&#39;s
+         <a href="http://www.pulseaudio.org/">home page</a>.
+    </p>
+
+    <p>
+       <bold>Note:</bold> PulseAudio works great with Avahi! It will allow you to discover
+       and browse remote sound servers, or even share your sound server and speakers with other
+       users.  
+    </p>
+
+    <h4 id="about-rhythmbox">
+      Rhythmbox
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/rhythmbox.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> The latest version of Rhythmbox has many
+         improved features as a music browser, searching and sorting, 
+         and much better support for you iPod, MTP and USB Music Player support.
+         For more information, see Rhythmbox&#39;s <a href=
+         "http://www.gnome.org/projects/rhythmbox/">home page</a>.
+    </p>
+
+    <h4 id="about-totem">
+      Totem
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/totem.png"
+         class="listimg-l"
+         alt="" /><b>New:</b> Totem is now even better!  It supports local publishing
+         of playlists through the latest Easy Publish and Consume Library.  It
+         also has new plugins to allow you to browse YouTube videos, and better support
+         for DV and DVD/CD.  It uses the latest and greatest GStreamer backend in order
+         to support every possible media format you can think of.  For more information, 
+         see Totem&#39;s <a href="http://www.gnome.org/projects/totem/">home page</a>.
+    </p>
+
+
+    <hr />
+
+    <h3 id="new-networking">
+      New in Internet and Networking <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      GNOME <?php echo($gsb_bin_unstable_ver); ?> features many improvements
+      in its connectivity and networking suite. GNOME&#39;s email and
+      groupware client, Evolution, has several new features. Users of
+      Microsoft Exchange will welcome improvements to Evolution&#39;s
+      Exchange support. GNOME&#39;s integrated web browser, Epiphany, has
+      been subtly but significantly improved. GNOME SlackBuild also
+      features a number of new networking applications.
+    </p>
+
+    <h4 id="about-nm">
+      Latest (from SVN) NetworkManager
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/nm.png"
+         class="listimg-l"
+         alt="" /><b>New:</b> GNOME SlackBuild provides the latest
+         and improved NetworkManager 0.7 from svn, including the
+         network-manager applet for your GNOME panel, and VPN connection
+         support with openvpn and vpnc. For more information, see
+         NetworkManager&#39;s <a href="http://www.gnome.org/projects/NetworkManager/">home page</a>.
+    </p>
+
+    <p>
+       <bold>Note:</bold> At the moment, the PPTP client is not available, since it has 
+       not been updated to the latest NetworkManager API.
+    </p>
+
+    <h4 id="about-avahi">
+      Avahi and Zerconf
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/avahi.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> GNOME SlackBuild now has better Avahi Zeroconf
+         support and browsing of local network services.  We now include the
+         <b>Zerconf Service Browser</b> applet which allows you to easily search
+         and connect to local network services, such as WebDAV, VNC remote sessions,
+         ssh, http, telnet and DAAP multimedia.
+    </p>
+
+    <p>
+      <img src="/images/app-icons/sharing.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> GNOME Personal File Sharing is now even better.  Simply
+         enable file sharing, and drop any file into your "Public" folder, and voila,
+         anyone can access your files easily via WebDAV.  No messy set, and no need for
+         root permissions.
+    </p>
+
+    <p>
+      <img src="/images/app-icons/vinagre.png"
+         class="listimg-l"
+         alt="" /> <b>New:</b> GNOME now easily allows you to share and view remote
+         desktops with Vino and Vinagre.  <b>Vino</b> is a tool for remote administration 
+         readily built into the GNOME Desktop Environment. It allows you to share your 
+         local desktop with a remote computer. This can be used for quick and efficient
+         in-house support as well as for remote assistance via Internet.  <b>Vinagre</b>
+         is a VNC Client for the GNOME Desktop. With it, you can connect to several machines 
+         at the same time, keep track of your most used connections, and browse your 
+         network for VNC servers with Avahi.
+    </p>
+    
+    <hr />
+
+    <h3 id="about-office">
+      New in Office <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      GNOME SlackBuild includes all the latest versions from the GNOME office suite, 
+      including <b>Evince</b>, the document viewer, <b>Glom</b>, the personal
+      database management program, <b>Tracker</b>, a document search tool,<b>Gnumeric</b>,
+      a accurate and fast spreadsheet program, and <b>GNU Cash</b>, GNOME's finance
+      application.
+    </p>
+    
+    <h4 id="about-ooo">
+      OpenOffice.Org Suite
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/ooo-gulls2.3.png"
+         class="listimg-l"
+         alt="" /> <b>New: </b> GNOME SlackBuild provides the latest version of 
+         <b>OpenOffice 2.4</b>, including Writer, Impress, Math, 
+         and Web Writer, all built with Java support, and with the GTK 
+         widget set to seamlessly match your GNOME Desktop.  It even comes with 
+         an OpenOffice.org submenu for your GNOME Applications menu. 
+         For more information about OpenOffice, see OpenOffice.org&#39;s <a href=
+         "http://www.openoffice.org/">home page</a>.
+    </p>
+
+    <h4 id="about-gnomedo">
+      GNOME Do!
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/gnomedo.png"
+         class="listimg-l"
+         alt="" /> <b>New: </b>GNOME Do allows you to quickly search for many items present in 
+         your GNOME desktop environment (applications, Evolution contacts, Firefox 
+         bookmarks, files, artists and albums in Rhythmbox, Pidgin buddies, etc.) 
+         and perform commonly used actions on those items (Run, Open, Email, Chat, 
+         Play, etc.), all at a keyboard stroke. For more information see
+         GNOME Do&#39;s <a href="http://do.davebsd.com/">home page</a>.
+    </p>
+
+    <hr />
+
+    <h3 id="about-devtools">
+      New in Development Environment <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      GNOME SlackBuild continues to provide the latest version of <b>Anjuta</b>,
+       an intergrated development environment, as well as Bluefish and Devhelp, the
+       GNOME Developement Browser.
+    </p>
+
+    <h4 id="about-mono">
+      Mono and MonoDevelop
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/monodevelop.png"
+         class="listimg-l"
+         alt="" /><b>New: </b> GNOME SlackBuild comes with the latest version of
+         of Mono and MonoDevelop, the GNOME IDE designed for C# and other .NET languages. 
+         The main features of MonoDevelop are code completion, class management, 
+         and project support. For more information, see MonoDevelop&#39;s <a href=
+         "http://www.monodevelop.com/Main_Page">home page</a>.
+    </p>
+
+    <p>
+       <bold>Note:</bold> GSB provides the latest Mono 1.9 and its supporting libraries, 
+       which have some changes to the API.  Some applications which compiled fine under
+       the previous Mono 1.2 release may have some difficulties with the new version.
+    </p>
+
+
+    <h4 id="about-glade">
+      Glade Development
+    </h4>
+    
+    <hr />
+
+    <h3 id="about-graphics">
+      New to Graphic Design and Digital Imagery<span class="toc-link"><a href=
+      "#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <h4 id="about-scan">
+      GNOME Scan
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/scan.png"
+         class="listimg-l"
+         alt="" />  GNOME Scan provides Flegita, an application for accesing scanners 
+         from your GNOME Desktop, allowing you to simply scan an area from a device 
+         and save to a file in various format (currently, PNG, JPEG, TIFF and PDF are 
+         supported.) There is also Flegita-gimp, a gimp plugin that uses the GNOME Scan 
+         libraries.  For more information, please see the GNOME Scan&#39;s 
+         <a href="http://www.gnome.org/projects/gnome-scan/index/">home page</a>.
+    </p>
+
