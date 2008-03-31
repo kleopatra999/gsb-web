@@ -1,4 +1,9 @@
 ###
+2008-03-31-05-21-CDT
+See what's new in GSB 2.22!
+GSB 2.22 (for Slackware 12.1) introduces a myriad of improvements and changes.
+<span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a></strong> to read about it!</span>
+###
 2008-03-18-23-47-GMT
 GNOME SlackBuild GNOME 2.22.0 in Development
 GSB is working hard towards a release of the latest GNOME 2.22 Desktop for Slackware
