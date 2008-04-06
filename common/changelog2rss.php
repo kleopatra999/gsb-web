@@ -12,7 +12,7 @@ header("Content-type: text/xml");
 $localServer = 'http://gnomeslackbuild.org';
 $feeds = 'ChangeLog';
 $feedPath = "$localServer/$feeds";
-$mirror = "http://gnomeslackbuild.org";
+$mirror = "http://get.gnomeslackbuild.org/gsb/current/packages";
 $realdate = date('r');
 $items = array();
 
@@ -50,8 +50,8 @@ foreach ($days as $day)
 		//if (preg_match('/:/', $lines[0]))
         if (preg_match('#/.*:#', $lines[0]))
 		{
-			#$path =  preg_replace('/(.+):.+/','\1', $lines[0]);
-			$path = 'http://gnomeslackbuild.org/changelog/';
+			$path =  preg_replace('/(.+):.+/','\1', $lines[0]);
+			#$path = 'http://gnomeslackbuild.org/changelog/';
 			$longPath = "$mirror/$path";
 		}
 		else
