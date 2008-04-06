@@ -48,9 +48,10 @@ foreach ($days as $day)
 		while (trim($lines[count($lines) - 1]) == '')
 			array_pop($lines);
 		//if (preg_match('/:/', $lines[0]))
-        	if (preg_match('#/.*:#', $lines[0]))
+        if (preg_match('#/.*:#', $lines[0]))
 		{
-			$path =  preg_replace('/(.+):.+/','\1', $lines[0]);
+			#$path =  preg_replace('/(.+):.+/','\1', $lines[0]);
+			$path = 'http://gnomeslackbuild.org/changelog/';
 			$longPath = "$mirror/$path";
 		}
 		else
