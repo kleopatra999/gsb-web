@@ -7,7 +7,7 @@ the first patch set from the GNOME Team with a variety of fixes, improvements to
 the panel, terminal, evince, eog, and nautilus.  Compiz-fusion has been updated to the 
 latest version (0.7.4), in addition to the most recent NetworkManager.  
 </p>
-<p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
+<p><span class="hilite-bl">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
 </strong> to find information on running GSB on Slackware-CURRENT.</span>
 </p>
 ###
