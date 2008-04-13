@@ -1,4 +1,16 @@
 ###
+2008-04-13-02-21-GMT
+GSB GNOME 2.22.1-CURRENT Available
+<p>
+GSB GNOME 2.22.1 is available in -CURRENT for users of Slackware 12.1-CURRENT.  This is
+the first patch set from the GNOME Team with a variety of fixes, improvements to Evolution,
+the panel, terminal, evince, eog, and nautilus.  Compiz-fusion has been updated to the 
+latest version (0.7.4), in addition to the most recent NetworkManager.  
+</p>
+<p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
+</strong> to find information on running GSB on Slackware-CURRENT.</span>
+</p>
+###
 2008-03-31-05-21-CDT
 See what's new in GSB 2.22!
 GSB 2.22 (for Slackware 12.1) introduces a myriad of improvements and changes.
