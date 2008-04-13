@@ -18,36 +18,40 @@
         </li>
 
         <li>
-          <a href="#new-fm">New in Desktop Management</a>
-        </li>        
+          <a href="#about-new">New and Updated Packages</a>
+        <ol>
+          <li>
+            <a href="#new-fm">Desktop Management</a>
+          </li>        
+          <li>
+            <a href="#new-wm">Window Managers</a>
+          </li>
+
+          <li>
+            <a href="#new-multimedia">Multimedia</a>
+          </li>
+
+          <li>
+            <a href="#new-networking">Internet and Networking</a>
+          </li>
+
+          <li>
+            <a href="#new-office">Office</a>
+          </li>
+
+          <li>
+            <a href="#new-devtools">Development Environment</a>
+          </li>
+
+          <li>
+            <a href="#new-graphics">Graphic Design and Digital Imagery</a>
+          </li>
+          </ol>
+        </li>
         
-        <li>
-          <a href="#new-wm">New in Window Managers</a>
-        </li>
-
-        <li>
-          <a href="#new-multimedia">New in Multimedia</a>
-        </li>
-
-        <li>
-          <a href="#new-networking">New in Internet and Networking</a>
-        </li>
-
-        <li>
-          <a href="#new-office">New in Office</a>
-        </li>
-
-        <li>
-          <a href="#new-devtools">New in Development Environment</a>
-        </li>
-
-        <li>
-          <a href="#new-graphics">New in Graphic Design and Digital Imagery</a>
-        </li>
-
-        <li>
-          <a href="#bug-reports">Reporting Bugs</a>
-        </li>        
+          <li>
+            <a href="#bug-reports">Reporting Bugs</a>
+          </li>        
         
       </ol>
     </div>
@@ -254,11 +258,11 @@ $ slapt-get --install util-linux-ng
 </div>        
 
     <hr />
-    
-    <h3 id="new-fm">
-      New in File Management <span class="toc-link"><a href="#toc"
+
+    <h3 id="about-new">
+      New and Updated Packages <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h3>       
+    </h3>        
             
     <p>
       <img src="/images/app-icons/nautilus.png"
@@ -273,23 +277,11 @@ $ slapt-get --install util-linux-ng
     </p>    
                   
     <hr />
-    
-    <h3 id="new-wm">
-      New in Window Managers <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
 
-    <p>
-      GNOME SlackBuild provides two different window managers for your
-      GNOME Desktop, Metacity, which is the default GNOME Window Manager,
-      as well as Compiz-Fusion, a Window Manager which offers a wide range
-      of spectacular effects for a 3D accelerated desktop.
-    </p>
-
-    <h4 id="compiz-fusion">
+    <h4 id="compiz">
       Compiz-Fusion
-    </h4>
-
+    </h4>    
+    
     <p>
       <img src="/images/app-icons/compiz.png"
          class="listimg-l"
@@ -326,7 +318,7 @@ $ slapt-get --install util-linux-ng
        Wiki page</a>.       
     </p>
 
-   <h4 id="compiz">
+    <h4 id="awn">
       Avant Window Manager
     </h4>
 
@@ -365,21 +357,6 @@ $ slapt-get --install util-linux-ng
 
 
     <hr />
-
-    <h3 id="new-multimedia">
-      New in Mulitmedia <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      GNOME SlackBuild provides a wide assortment of multimedia programs all
-      based on the latest<a href="http://gstreamer.freedesktop.org"> GStreamer
-      framework</a>, so users are able to play back a wide variety of media
-      types (sound and video files, streaming network audio/video, DVDs,
-      CD-ROMs, and more.) There are many applications to choose from! GSB
-      offers a range of choice for users to pick from. You can either
-      install your favorite application, or a few to try.
-    </p>
 
     <h4 id="new-pulse">
       Pulseaudio
@@ -446,23 +423,7 @@ $ slapt-get --install util-linux-ng
          see Totem&#39;s <a href="http://www.gnome.org/projects/totem/">home page</a>.
     </p>
 
-
     <hr />
-
-    <h3 id="new-networking">
-      New in Internet and Networking <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      GNOME <?php echo($gsb_bin_current_ver); ?> features many improvements
-      in its connectivity and networking suite. GNOME&#39;s email and
-      groupware client, Evolution, has several new features. Users of
-      Microsoft Exchange will welcome improvements to Evolution&#39;s
-      Exchange support. GNOME&#39;s integrated web browser, Epiphany, has
-      been subtly but significantly improved. GNOME SlackBuild also
-      features a number of new networking applications.
-    </p>
 
     <h4 id="about-nm">
       Latest (from SVN) NetworkManager
@@ -483,6 +444,8 @@ $ slapt-get --install util-linux-ng
        not been updated to the latest NetworkManager API.
     </p>
 
+    <hr />
+
     <h4 id="about-avahi">
       Avahi and Zerconf
     </h4>
@@ -497,6 +460,8 @@ $ slapt-get --install util-linux-ng
          ssh, http, telnet and DAAP multimedia.
     </p>
 
+    <hr />
+
     <h4 id="about-sharing">
       GNOME File Sharing
     </h4>
@@ -509,6 +474,8 @@ $ slapt-get --install util-linux-ng
          anyone can access your files easily via WebDAV.  No messy set up process, 
          and no need for root permissions.
     </p>
+
+    <hr />
 
     <h4 id="about-vnc">
       GNOME Desktop Sharing
@@ -529,19 +496,6 @@ $ slapt-get --install util-linux-ng
     
     <hr />
 
-    <h3 id="new-office">
-      New in Office <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      GNOME SlackBuild includes all the latest versions from the GNOME office suite, 
-      including <b>Evince</b>, the document viewer, <b>Glom</b>, the personal
-      database management program, <b>Tracker</b>, a document search tool,<b>Gnumeric</b>,
-      a accurate and fast spreadsheet program, and <b>GNU Cash</b>, GNOME's finance
-      application.
-    </p>
-    
     <h4 id="about-ooo">
       OpenOffice.Org Suite 2.4
     </h4>
@@ -557,6 +511,30 @@ $ slapt-get --install util-linux-ng
          For more information about OpenOffice, see OpenOffice.org&#39;s <a href=
          "http://www.openoffice.org/">home page</a>.
     </p>
+
+    <hr />
+
+    <h4 id="about-abiword">
+      Abiword 2.6 Series
+    </h4>
+
+    <p>
+      <img src="/images/app-icons/abiword.png"
+         class="listimg-l"
+         alt="" /> <b>New: </b> Now included in GNOME SlackBuild's office suite
+         is the latest Abiword <b>2.6</b> series.  AbiWord is a lean and fast 
+         full-featured word processor, with lots of features useful for your 
+         daily work, personal needs, or for just some good old typing fun.  
+         AbiWord is able to read and write all industry standard document types, 
+         such as OpenOffice.org documents, Microsoft Word documents, WordPerfect 
+         documents, Rich Text Format documents, HTML web pages and many more. 
+         It also supports page layouts, internationalization, mail merge, and 
+         has an assortment of plugins. For more information, please see Abiword&#39;s 
+         <a href="http://www.abisource.com/">home page</a>.
+    </p>
+
+    <hr />
+
 
     <h4 id="about-gnomedo">
       GNOME Do!
@@ -574,17 +552,6 @@ $ slapt-get --install util-linux-ng
     </p>
 
     <hr />
-
-    <h3 id="new-devtools">
-      New in Development Environment <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      GNOME SlackBuild continues to provide the latest version of <b>Anjuta</b>,
-       an intergrated development environment, as well as <b>Bluefish</b> and 
-       <b>DevHelp</b>, the GNOME Development Browser.
-    </p>
 
     <h4 id="about-mono">
       Mono and MonoDevelop
@@ -607,12 +574,6 @@ $ slapt-get --install util-linux-ng
     </p>
 
     <hr />
-
-    <h3 id="new-graphics">
-      New to Graphic Design and Digital Imagery<span class="toc-link"><a href=
-      "#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
 
     <h4 id="about-scan">
       GNOME Scan
