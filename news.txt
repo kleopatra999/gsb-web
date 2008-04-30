@@ -1,4 +1,3 @@
-###
 2008-04-30-09-54-GMT
 GSB GNOME 2.22.1-CURRENT now available for Slamd64
 <p>
