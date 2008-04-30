@@ -1,5 +1,5 @@
 ###
-2008-04-13-02-21-GMT
+2008-04-30-02-21-GMT
 GSB GNOME 2.22.1-CURRENT for Slamd64
 <p>
 GSB GNOME 2.22.1 is available in -CURRENT for users of Slamd64 12.1-CURRENT.  This is
