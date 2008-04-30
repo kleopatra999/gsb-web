@@ -9,6 +9,7 @@ version (0.7.4), and offer the most recent version of NetworkManager, and the ne
 <p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
 </strong> to find information on running GSB on Slamd64-CURRENT.</span>
 </p>
+
 ####
 2008-04-13-02-21-GMT
 GSB GNOME 2.22.1-CURRENT Available for Slackware
@@ -21,11 +22,13 @@ version (0.7.4), and offer the most recent version of NetworkManager, and the ne
 <p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
 </strong> to find information on running GSB on Slackware-CURRENT.</span>
 </p>
+
 ###
 2008-03-31-05-21-CDT
 See what's new in GSB 2.22!
 GSB 2.22 (for Slackware 12.1) introduces a myriad of improvements and changes.
 <span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a></strong> to read about it!</span>
+
 ###
 2008-03-18-23-47-GMT
 GNOME SlackBuild GNOME 2.22.0 in Development
