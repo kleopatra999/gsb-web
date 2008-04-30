@@ -1,5 +1,5 @@
 ###
-2008-04-30-02-21-GMT
+2008-04-30-02-00-GMT
 GSB GNOME 2.22.1-CURRENT Available for Slamd64
 <p>
 GSB GNOME 2.22.1 is available in -CURRENT for users of Slamd64 12.1-CURRENT.
@@ -7,8 +7,8 @@ GSB GNOME 2.22.1 is available in -CURRENT for users of Slamd64 12.1-CURRENT.
 <p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
 </strong> to find information on running GSB on Slamd64-CURRENT.</span>
 </p>
-####
-2008-04-13-02-21-GMT
+###
+2008-04-13-02-01-GMT
 GSB GNOME 2.22.1-CURRENT Available for Slackware
 <p>
 GSB GNOME 2.22.1 is available in -CURRENT for users of Slackware 12.1-CURRENT.  This is
@@ -38,7 +38,6 @@ are ready for testing.  Please feel free to sign up to these email lists if you
 want all the latest updates for GSB, or keep checking back to our news page for
 all the latest info about the upcoming GSB 2.22.
 </p>
-
 ###
 2008-03-07-13-07-GMT
 GNOME SlackBuild GNOME 2.20.3 Stable Release
