@@ -1,6 +1,18 @@
 ###
+2008-04-30-09-54-GMT
+GSB GNOME 2.22.1-CURRENT now available for Slamd64
+<p>
+GSB GNOME 2.22.1 is available in -CURRENT for users of Slamd64 12.1-CURRENT.  This is
+the first patch set from the GNOME team with a variety of fixes, including improvements to Evolution,
+the panel, terminal, evince, eog, and Nautilus.  We have also updated Compiz-fusion to the latest 
+version (0.7.4), and offer the most recent version of NetworkManager, and the newest Abiword 2.6 series.
+</p>
+<p><span class="hilite-gr">Head on over to our <strong><a href="/whatsnew/">What's New page</a>
+</strong> to find information on running GSB on Slamd64-CURRENT.</span>
+</p>
+####
 2008-04-13-02-21-GMT
-GSB GNOME 2.22.1-CURRENT Available
+GSB GNOME 2.22.1-CURRENT Available for Slackware
 <p>
 GSB GNOME 2.22.1 is available in -CURRENT for users of Slackware 12.1-CURRENT.  This is
 the first patch set from the GNOME team with a variety of fixes, including improvements to Evolution,
