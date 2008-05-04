@@ -1,4 +1,16 @@
 ###
+2008-05-05-18-32-GMT
+GSB GNOME 2.22.1 stable released for Slackware 12.1
+<p>
+A stable GSB 2.22.1 is now available for users of the latest Slackware 12.1 release.  For those users
+new to GSB, head over to our <a href="/download/">Download</a> page which has full instructions on 
+how to download, install and configure GSB GNOME 2.22.1. 
+</p>
+<p>For users who want to upgrade their current version of GSB, please check out our <a href="/whatsnew/">What's New</a>
+page to find information on what needs to be done for a smooth upgrade, and information about
+what has changed in this released of GNOME SlackBuild.
+</p>
+###
 2008-04-30-02-00-GMT
 GSB GNOME 2.22.1-CURRENT Available for Slamd64
 <p>
