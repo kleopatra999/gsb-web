@@ -6,15 +6,12 @@
 
       <ol>
         <li>
-          <a href="#new-gnome">New to GNOME 2.22</a>
+          <a href="#new-gnome">Welcome to to GNOME 
+          <span class="version"><?php echo($gsb_bin_stable_ver); ?></span></a>
         </li>
-
-        <li>
-          <a href="#bug-reports">Reporting Bugs</a>
-        </li>  
            
         <li>
-          <a href="#upgrade-gsb">How To Upgrade</a>
+          <a href="#upgrade-gsb">Upgrading GNOME SlackBuild</a>
         </li>
 
         <li>
@@ -24,6 +21,10 @@
         <li>
           <a href="#about-new">New and Updated Packages</a>
         </li>
+        
+        <li>
+          <a href="#bug-reports">Reporting Bugs</a>
+        </li>  
       </ol>
     </div>
 
@@ -35,51 +36,30 @@
     </p>
 
     <p>
-      <span class="str hilite-rd">NOTE 1:  GNOME SlackBuild GNOME 2.22-CURRENT
-      is designed and built for the upcoming Slackware 12.1.  It will not work
-      on Slackware 12.0.</span>
+      <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+      is designed and built for Slackware <span class=
+      "version"><strong><?php echo($slack_ver); ?></strong></span>.  It will not work
+      on Slackware 12.0 or earlier releases.</span>
     </p>
 
     <p>
-       You can find full instructions here on how to upgrade: 
+       If you are a user of Slackware 12.0, you must upgrade first.  You can find full instructions 
+       on how to upgrade by reading the 
        <a href="http://slackware.osuosl.org/slackware-current/UPGRADE.TXT">
        Slackware UPGRADE.TXT</a>    
     </p>
-
-    <p>
-      <span class="hilite">NOTE 2: Slackware 12.1 is no doubt soon to be released,
-      and when that occurs, 
-      we will be rebuilding all our packages against the released stable version 
-      of Slackware 12.1.</span>
-    </p>
     
     <p>
-      This page then is aimed at those users who live on the edge and want to 
-      try out the latest GSB Desktop on their Slackware-current installation. It will
-      be modified and updated as our "What's New" page when we release a stable version
-      of GSB 2.22 for Slackware 12.1.  For now, it aims at giving a basic preview
-      of what GNOME SlackBuild 2.22 has in store.
+      This page then is mainly aimed at those users who were running Slackware 12.0 and 
+      GNOME SlackBuild 2.20 and are upgrading their systems rather than installing fresh.  
+      If you are a new-comer to GNOME SlackBuild, and running Slackware <?php echo($slack_ver); ?>, please see our 
+      <a href="http://gnomeslackbuild.org/download/">Download</a> page for a full set of 
+      instructions.  However, this page also contains a list of changes from GSB 2.20 and may
+      be of interest to those who are curious about what's happening with GNOME SlackBuild.  
     </p>
-
-    <h3 id="bug-reports">
-      Known Issues and Bugs <span class="toc-link"><a href=
-      "#toc" title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      <img src="/images/app-icons/gsb_bugs.png"
-         class="listimg-l"
-         alt="" /> The <code>CURRENT</code> release is considered more or less stable, but
-         if you find any bugs in GNOME SlackBuild, please help us out by 
-         reporting them.  You can find a full list of known issues, or report any new issues,
-         by visiting our <a
-         href="http://dev.gnomeslackbuild.org/projects/gsb-binary/issues">
-         Development Issues</a> page.  
-    </p>
-
 
     <h3 id="upgrade-gsb">
-     Upgrade to GSB-CURRENT <span class="toc-link"><a href="#toc"
+     Upgrading GNOME SlackBuild<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -89,9 +69,9 @@
          alt="" /> Please follow the instructions available from
          <a href="http://gnomeslackbuild.org/download/">Download Page</a>.  
          Using slapt-get is the easiest means. Mirrors are available on the download
-         page.  Make sure to modify your slapt-getrc files to use the <b>gsb-current</b> 
-         directory rather than <b>gsb-stable.</b> The upgrade should be smooth for 
-         those users of GSB 2.20. There are a few things to note:
+         page.  Make sure to modify your slapt-getrc files to use the <b>gsb-stable</b> 
+         directory rather than <b>gsb-current</b>. (If you were a user of -current previously)
+         The upgrade should be smooth for those users of GSB 2.20. There are a few things to note:
     </p>
 
     <h4>Deprecated Packages</h4>
@@ -168,16 +148,6 @@ $ slapt-get --install util-linux-ng
     Evolution for NTLM.    
     </p>
 
-    <h3 id="new-screenies">
-      Screenshots of GNOME SlackBuild in Action <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-    <a href="http://stage.gnomeslackbuild.org/screenies/gsb_222_screen1.png">
-       GNOME Desktop featuring Avant Window Manager + Compiz and General Awesome-ness</a>.   
-    </p>
-
     <h3 id="new-gnome">
       The GNOME SlackBuild GNOME 2.22 Desktop <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
@@ -186,14 +156,14 @@ $ slapt-get --install util-linux-ng
     <p>
       <img src="/images/app-icons/gnome-logo-icon-transparent.png"
          class="listimg-l"
-         alt="" />GNOME <?php echo($gsb_bin_current_ver); ?> is the latest
+         alt="" />GNOME <?php echo($gsb_bin_stable_ver); ?> is the latest
          version of the GNOME Desktop. There have been a lot of
-         improvements in GNOME <?php echo($gsb_bin_current_ver); ?>, which
+         improvements in GNOME <?php echo($gsb_bin_stable_ver); ?>, which
          include better networked filesystems, DVD, Digital TV Support, 
          improved Evolution Mail client, the new Remote Desktop Viewer, 
          improved Evince viewer, new features in Accessibility, and
          better Internationalisation. For a complete summary of what is new 
-         to the GNOME <?php echo($gsb_bin_current_ver); ?>
+         to the GNOME <?php echo($gsb_bin_stable_ver); ?>
          Desktop, please refer to the <a href=
          "http://www.gnome.org/start/stable/">release notes</a>. 
     </p>      
@@ -209,9 +179,8 @@ $ slapt-get --install util-linux-ng
          alt="" /> GNOME SlackBuild is designed to bring the greatest features 
          of GNOME to Slackware, integrating seamlessly into a standard install while
          at the same time replacing as few system supplied packages as possible.  With
-         Slackware 12.1, we have reduced even further our replaced packages list.
+         Slackware <?php echo($slack_ver); ?>, we have reduced even further our replaced packages list.
      </p>
-
  <?php
         # replaced_packages grabber
         $rp_error = "<h4>Replaced Packages Error</h4>\n"
@@ -267,6 +236,12 @@ $ slapt-get --install util-linux-ng
          removed from GNOME SlackBuild's GNOME Desktop.</b>  File copying is much 
          smoother, as is the access of Network folders via Samba, ObexFTP and WebDAV.
     </p>    
+
+    <p> GNOME Volume Manager is slowly being deprecated by Nautilus, and now in part causes
+    conflicts with Nautilus and desktop management.  Nautilus however has not yet fully replaced
+    the Volume Manager, and some functionality (like video camera autostart) may be missing.  Hopefully
+    this will soon catch up.  
+    </p>
                   
     <hr />
 
@@ -301,7 +276,7 @@ $ slapt-get --install util-linux-ng
     </p>
 
     <p>
-       <b>Note:</b> Slackware 12.1 comes with Compiz, not Compiz-Fusion.  Our package
+       <b>Note:</b> Slackware <?php echo($slack_ver); ?> comes with Compiz, not Compiz-Fusion.  Our package
        is called <code>compiz-fusion</code>, not <code>compiz</code> in order to avoid the 
        confusion.  However, we have specified a "package conflict" with Slackware's package.
        You may want to remove your compiz package and replace it with our Compiz-Fusion package.
@@ -587,4 +562,22 @@ $ slapt-get --install util-linux-ng
          supported.) There is also Flegita-gimp, a gimp plugin that uses the GNOME Scan 
          libraries.  For more information, please see the GNOME Scan&#39;s 
          <a href="http://www.gnome.org/projects/gnome-scan/index/">home page</a>.
+    </p>
+
+    <h3 id="bug-reports">
+      Known Issues and Bugs <span class="toc-link"><a href=
+      "#toc" title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+   <p>
+      <img src="/images/app-icons/gsb_bugs.png"
+         class="listimg-l"
+         alt="" /> GNOME SlackBuild v<span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+         is considered stable, but with only a few volunteers to help build and test it, we cannot
+         guarantee that it is free from errors.  :)  If you find any bugs in GNOME SlackBuild, please 
+         help us and the GNOME SlackBuild project out by reporting them.  You can find a full list of 
+         any known issues, or you can report any new issues, by visiting our <a
+         href="http://dev.gnomeslackbuild.org/projects/gsb-binary/issues">
+         Development Issues</a> page, or by sending an email to our mailing list.  You can find all our
+         contact information on our <a href="http://gnomeslackbuild.org/lists/"> Mailing Lists</a> page.
     </p>

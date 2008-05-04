@@ -15,36 +15,27 @@
         </li>
 
         <li>
-          <a href="#source">Sources and Mirrors</a>
-          <ol>
-            <li>
-              <a href="#slaptgetrc">Configuring Package Manager</a>
-            </li>
-
-            <li>
-              <a href="#mirrors">List of Mirrors</a>
-            </li>
-          </ol>
+          <a href="#slaptgetrc">Configuring Your Package Manager for GSB</a>
         </li>
 
+        <li>
+          <a href="#mirrors">GNOME SlackBuild Mirrors</a>
+        </li>
+        
         <li>
           <a href="#upgrades">Required Upgrades</a>
         </li>
 
         <li>
-          <a href="#install">Downloading and Installing</a>
-          <ol>
-            <li>
-              <a href="#meta">Metapackages</a>
-            </li>
-            <li>
-              <a href="#adupgrades">Additional Upgrades</a>
-            </li>
-          </ol>
+          <a href="#install">Installing GSB</a>
         </li>
-        
+
+        <li>          
+          <a href="#meta">Additional Metapackages</a>
+       </li>
+                  
         <li>
-          <a href="#configure">Post-Install and Configuration Notes</a>
+          <a href="#configure">Post-Install Configuration Notes</a>
         </li>
 
         <li>
@@ -54,6 +45,7 @@
         <li>
           <a href="#bugs">Known Issues and Reporting Bugs</a>
         </li>
+        
       </ol>
     </div>
 
@@ -96,7 +88,7 @@
 
     <p>
       Login to a terminal as root (in run-level 3, preferred), and run the
-      following command...
+      following command:
     </p>
 
     <h4>
@@ -177,8 +169,8 @@ $ installpkg slapt-get-(version).tgz
 </pre>
     </div>
 
-    <h3 id="source">
-      Source and Mirrors <span class="toc-link"><a href="#toc"
+    <h3 id="slaptgetrc">
+      Configuring Package Manager <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -192,18 +184,13 @@ $ installpkg slapt-get-(version).tgz
          GNOME SlackBuild mirror. You can find a local Slackware mirror
          from the slackware.com mirror list at <a href=
          "http://www.slackware.com/getslack/">http://www.slackware.com/getslack/</a>.
-         A full list of available GNOME SlackBuild Mirrors is given below.
-         You will need to be aware that there is both an i586 (x86) binary
-         version as well as a k8 (x86_64) binary version to choose from.
-         Please make sure to select the mirror that reflects the platform
-         you run on. x86_64 binaries will not run on Slackware 12.
+         A full list of available GNOME SlackBuild Mirrors is given in our
+         <a href="#mirrors">list of mirrors</a>.  You will need to be aware that 
+         there is both an i586 (x86) binary version as well as a k8 (x86_64) binary 
+         version to choose from.  Please make sure to select the mirror that reflects 
+         the platform you run on. x86_64 binaries will not run on Slackware.
     </p>
-
-    <h4 id="slaptgetrc">
-      Configuring Package Manager <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-
+    
     <p>
       The slapt-getrc file consists currently of the following keys:
       <code>SOURCE WORKINGDIR EXCLUDE</code>.
@@ -266,10 +253,10 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
        </dd>
     </dl>
 
-    <h4 id="mirrors">
-      Mirror List <span class="toc-link"><a href="#toc"
+    <h3 id="mirrors">
+      GNOME SlackBuild Mirror List <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h4>
+    </h3>
 
     <p>
       The following is a list of available mirrors from which to download
@@ -337,55 +324,73 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
 
     <p>After the package data has been updated, the first step to installing
       GNOME SlackBuild is to <strong>upgrade the required packages</strong>.
-      If you do not upgrade the required packages, GNOME SlackBuild will not
+      If you do not replace the required packages, GNOME SlackBuild will not
       run properly.</p> 
       
-   <p>
-      Some standard Slackware packages will need to be 
-      upgraded, most notably <strong>pango, glib2, gtk+2, and gnome-icon-theme</strong>. 
-      Others may need to be upgraded later for added functionality, but these 
-      packages are optional. 
-   </p>
-   
+    <p>
+       To get the most out of your GSB GNOME Desktop, it is recommended that you replace
+       a few Slackware packages.  You can easily upgrade these packages first by 
+       using slapt-get.  
+    </p>
+    
 <div>
 <pre>
-*Required Slackware Updates for GNOME 2.20.3 *
-
-gnome-icon-theme: ( >= 2.20 for gnome-desktop 2.20)
-glib2:            ( > 2.14 required by gtk+2 2.12)
-pango:            ( > 1.18 required by gtk+2 2.12)
-gtk+2:            ( >= 2.12 required for libgnomeui 2.20.0)
+$ slapt-get --upgrade
 </pre>
 </div>
-
-   
+      
    <p>
-      You can upgrade all these required packages by running:   
+      <strong>glib2</strong> and <strong>libwnck</strong> are Slackware packages that must be 
+      replaced by the corresponding GNOME SlackBuild versions in order to use GNOME 
+      <span class="version"><?php echo($gsb_bin_stable_ver); ?></span> on Slackware 
+      <span class="version"><?php echo($slack_ver); ?></span>. Reasons for their 
+      replacement are given within brackets.
    </p>
-
+   
 <div>
 <pre>
-$ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
+*Required Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
+
+glib2:            ( > 2.15 required by libgnome 2.22, Gvfs 0.2.3, and Nautilus 2.22)
+libwnck:          ( > 2.22 required by Metacity 2.22, and GNOME 2.22 at large)
+
 </pre>
 </div>
 
     <p>
-      Slapt-get should then upgrade only these four specific packages.  
-      If you plan on using <strong>NetworkManager</strong> with GNOME, then make sure to upgrade 
-      to the GNOME SlackBuild build of <strong>wpa_supplicant</strong>, which contains
-      the needed dbus bindings and binary.  Otherwise, this is not a required upgrade.
-      There are other packages that may required upgrading, please see the 
-      <a href="#adupgrades">Additional Upgrades</a> section.
+       However, while GNOME SlackBuild is designed to replace as few Slackware packages as 
+       possible, it is not possible to free ourselves wholly from replacing some packages.  
+       There are three packages that are optional and replace official Slackware packages, 
+       but their replacement are only necessary for added functionality, or for certain 
+       GNOME applications.  <strong>Their replacement is recommended</strong>, but not 
+       required if you do not plan to use certain applications, or are dead set against
+       replacing any Slackware provided packages.
     </p>
 
 <div>
 <pre>
-$ slapt-get --install wpa_supplicant
+*Optional Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
+
+mozilla-firefox:  
+  This is a shared library version of Mozilla Firefox. You must replace the Slackware Mozilla with 
+  the GSB version if you plan to use Epiphany (GNOME Browser), Yelp (GNOME Help System), 
+  GNOME Python (for the gtkmozembed widget for some Python applications), DevHelp (Developement
+  Documentation Browser), or any Mono applications.
+
+compiz-fusion:    
+  Slackware 12.1 comes with Compiz 0.7.4, but GSB's Compiz-fusion is much cooler.  ;)
+
+libgsf:
+  Slackware's libgsf package lacks GNOME support.  You will need to replace this package with the
+  GSB version if you plan on using any GNOME Office software, like Gnumeric, Glom, GNOME Database, etc.
+
 </pre>
 </div>
 
     <p>
       Below is a list enumerating the various options you can pass to <code>slapt-get</code>
+      when installing GNOME SlackBuild.  For a full list of available options, please consult
+      the slapt-get manual.
     </p>
 
     <dl>
@@ -394,17 +399,7 @@ $ slapt-get --install wpa_supplicant
       </dt>
 
       <dd>
-        Use this to upgrade your installed packages.
-      </dd>
-
-      <dt>
-        <var>--dist-upgrade</var>
-      </dt>
-
-      <dd>
-        Use this to upgrade to a newer release (Please refer to the
-        slapt-get FAQ concerning dist-upgrade prior to running the
-        command).
+        Use this to upgrade all of your currently installed packages.
       </dd>
 
       <dt>
@@ -436,30 +431,6 @@ $ slapt-get --install wpa_supplicant
       </dd>
 
       <dt>
-        <var>--installed</var>
-      </dt>
-
-      <dd>
-        This is used to list all the packages you already have installed.
-      </dd>
-
-      <dt>
-        <var>--remove</var>
-      </dt>
-
-      <dd>
-        Used to remove specified packages.
-      </dd>
-
-      <dt>
-        <var>--show</var>
-      </dt>
-
-      <dd>
-        This is used to show information about packages.
-      </dd>
-
-      <dt>
         <var>--clean</var>
       </dt>
 
@@ -477,14 +448,6 @@ $ slapt-get --install wpa_supplicant
         available on the package sources specified in the slapt-getrc file.
       </dd>
 
-      <dt>
-        <var>--remove-obsolete</var>
-      </dt>
-
-      <dd>
-        Used along with <var>--remove</var> or <var>--dist-upgrade</var>,
-        this argument will mark all non-downloadable packages for removal.
-      </dd>
     </dl>
 
     <h3 id="install">
@@ -495,56 +458,51 @@ $ slapt-get --install wpa_supplicant
     <p>
       <img src="/images/app-icons/gsb_install.png"
       class="listimg-l"
-      alt="" /> After upgrading the required packages, you are now
+      alt="" /> After replacing the required packages, you are now
       ready to install GNOME SlackBuild.  GNOME SlackBuild provides 
       a number of metapackages in order to ease the installation of 
       huge package lists via slapt-get. The recommended
       installation method is to first install the basic GSB GNOME Desktop
       through the <code>gsb-desktop</code> metapackage. It contains all the
-      packages required for a working GNOME Desktop, including Epiphany,
-      Evolution, the GNOME Display Manager (GDM), NetworkManager, Gslapt
-      for package management and some basic themes and desktop utilities.
+      packages required for a working and useable GNOME Desktop, including Epiphany,
+      Evolution, the GNOME Display Manager (GDM), and Gslapt
+      for package management as well as some basic themes and desktop utilities.
       From here, additional packages can be added to suit the users needs.
     </p>
 
     <p>
-      This process may take a long time, depending on the speed of your
-      connection. It will first download all the required packages and
-      install them. There are a few packages installed, such as
-      <code>wpa_supplicant, NetworkManager, network-manager-applet, avahi,
-      system-backend-tools</code>, that will require a restart of the dbus
-      messaging system and some user-made configurations before they are
-      properly installed and usable.
+      To install your basic GNOME SlackBuild GNOME Desktop, run:
     </p>
 
-    <p>
-      Therefore, <strong>it is strongly recommended</strong> that you read
-      the <a href="#configure">Post-Installation and Configuration
-      Notes</a> before installing <code>gsb-desktop</code>.
-    </p>
-
-    <p>
-      To install this basic GSB Desktop, run:
-    </p>
-
-    <div>
-      <pre>
+<div>
+<pre>
 $ slapt-get --install gsb-desktop
 </pre>
-    </div>
+</div>
 
     <p>
-      After installation, it is also <strong>strongly recommended that you
+      This process may take a long time, depending on the speed of your
+      connection. It will first download all the required packages and
+      install them. After installation, it is also <strong>strongly recommended that you
       reboot your system.</strong>
     </p>
 
-    <h4 id="meta">
-      Metapackages <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
     <p>
-      The following is a list of all possible metapackages available for
-      installing GNOME SlackBuild:
+      As well, <strong>it is recommended</strong> that you read the 
+      <a href="#configure">Post-Installation and Configuration Notes</a> 
+      before installing <code>gsb-desktop</code>.  There are a few minor changes users
+      may wish to make in order to get the best possible GSB system running.
+    </p>
+
+    <h3 id="meta">
+      Additional Metapackages <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+    <p>
+      There are additional metapackages that easily allow users to extend their GNOME SlackBuild
+      desktop.  The following is a list of all possible metapackages available for
+      GNOME SlackBuild, and can easily be installed with slapt in the same fashion
+      as the gsb-desktop package above.
     </p>
 
     <dl>
@@ -556,8 +514,8 @@ $ slapt-get --install gsb-desktop
         This is the basic, yet fully functional GNOME Desktop Environment
         provided by GSB. It contains all the packages required for a
         working GNOME Desktop, including Epiphany, Evolution, the GNOME
-        Display Manager (GDM), NetworkManager, Gslapt for package
-        management and some basic themes and desktop utilities. If you
+        Display Manager (GDM), Gslapt for package management as well as some 
+        basic themes and desktop utilities. If you
         would like to view the complete list of packages contained in this
         metapackage, please take a look at it&#39;s <a href=
 	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/src/meta/gsb-desktop/slack-required?view=doc">
@@ -583,8 +541,9 @@ $ slapt-get --install gsb-desktop
 
       <dd>
         This packages all the Administration applications and utilities for
-        the GNOME Desktop, such as Pessulus and Sabayon. If you would like
-        to view the complete list of packages contained in this
+        the GNOME Desktop, such as Pessulus and Sabayon, Remote Desktop viewing,
+        Backup software, partition editing, and some printer administration software. 
+        If you would like to view the complete list of packages contained in this
         metapackage, please take a look at it&#39;s <a href=
 	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/src/meta/gsb-administration/slack-required?view=doc">
         slack-required</a> file.
@@ -595,8 +554,8 @@ $ slapt-get --install gsb-desktop
       </dt>
 
       <dd>
-        This package contains the 3D Window Manager Compiz, its
-        configuration utilities as well as Compiz GNOME Integration. If you
+        This package contains the 3D window manager Compiz-Fusion, its
+        configuration utilities, as well as full GNOME integration. If you
         would like to view the complete list of packages contained in this
         metapackage, please take a look at it&#39;s <a href=
 	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/src/meta/gsb-compiz/slack-required?view=doc">
@@ -638,8 +597,8 @@ $ slapt-get --install gsb-desktop
       </dt>
 
       <dd>
-        This package is a metapackage for a Mono/C# development tools, including a working
-        Mono C# compile, GNOME bindings, and a MonoDevelop IDE.
+        This package is a metapackage for a Mono C# use and development tools, including a working
+        Mono C# compiler, GNOME bindings, and a MonoDevelop IDE.
          If you would like to view the complete list of
         packages contained in this metapackage, please take a look at
         it&#39;s <a href=
@@ -666,7 +625,7 @@ $ slapt-get --install gsb-desktop
       </dt>
 
       <dd>
-        This package contains the a full Office Suite, installing software for
+        This package contains the a full GNOME office suite, installing software for
         all aspects of office manager, like Glom for database and Goffice/Gda
         for data backend management, Gnumeric for spreadsheets, Abiword for work 
         processing, as well as Dia for a Visio-like charting program.
@@ -676,6 +635,21 @@ $ slapt-get --install gsb-desktop
 	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/src/meta/gsb-office/slack-required?view=doc">
         slack-required</a> file.
       </dd>
+
+      <dt>
+        gsb-ooo
+      </dt>
+
+      <dd>
+        This package is for easy installation of OpenOffice.Org for your GNOME Desktop.  
+        Openoffice is linked against Gtk+2 to fit your GNOME Desktop, and comes with 
+        a set of menus for better GNOME integration.
+        If you would like to view the complete list of
+        packages contained in this metapackage, please take a look at
+        it&#39;s <a href=
+	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/src/meta/gsb-ooo/slack-required?view=doc">
+        slack-required</a> file.
+      </dd>      
       
       <dt>
         gsb-themes
@@ -691,71 +665,6 @@ $ slapt-get --install gsb-desktop
         slack-required</a> file.
       </dd>      
     </dl>
-
-    <h4 id="adupgrades">
-      Additional Upgrades <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-
-    <p>
-       While GNOME SlackBuild is designed to replace as few Slackware packages as possible,
-       it is not possible to free ourselves wholly from replacing some packages.  Some software,
-       like Gnumeric, required updated libraries and as a result we need to replace some
-       default Slackware packages.  
-    </p>
-
-    <p> Please see our <a href="http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/notes/replaced_packages?view=doc">
-      replaced packages file</a>:
-    </p>
-    <?php
-        # replaced_packages grabber
-        $rp_error = "<h4>Replaced Packages Error</h4>\n"
-                    ."<p>The server is experiencing issues retrieving the replaced_packages from
-                      SVN.  Please try again a bit later.</p>"
-                    ."\n</div>\n";
-
-        $rp = curl_init();
-        $timeout = 10; // set to zero for no timeout
-        curl_setopt ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.20.x/notes/replaced_packages?root=gsb&view=co");
-        curl_setopt ($rp, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt ($rp, CURLOPT_CONNECTTIMEOUT, $timeout);
-        $rp_result = curl_exec($rp);
-        curl_close($rp);
-        if (!$rp_result)
-        {
-            print($td_error);
-            include('common/footer_inc.php');
-            exit();
-        }
-        else
-        {
-            $rp_result = htmlentities($rp_result);
-            #$rp_result = str_replace(" ", "&nbsp;", $rp_result);
-            $rp_result = trim($rp_result);
-        }
-        ?>
-<div>
-<pre style="overflow:auto;">
-<?php print($rp_result); ?>
-</pre>
-</div>    
-
-    <p>If you would like to, or need to upgrade any of the above, so can do so by running:</p>
-
-<div>
-<pre>
-$ slapt-get --install &lt;package-name&gt;
-</pre>
-</div>
-
-    <p>Or simply to upgrade all packages:</p>
-
-<div>
-<pre>
-$ slapt-get --upgrade
-</pre>
-</div>
-
     
     <h3 id="configure">
       Post Installation and Configure Notes <span class="toc-link"><a href=
@@ -773,8 +682,9 @@ $ slapt-get --upgrade
        out of their GNOME SlackBuild desktop.  
     </p>
     
-    <p>Please make sure to use <a href="/configure/">this configuration page</a>
-    in order to properly set up USB devices, the GNOME Display Manager, or NetworkManager.</p>
+    <p>Please make sure to read our <a href="/configure/">Configuration Page</a>
+    in order to properly set up removable USB devices, the GNOME Display Manager, 
+    or NetworkManager.</p>
 
     <h3 id="uninstall">
       Uninstalling GNOME SlackBuild <span class="toc-link"><a href="#toc"
@@ -786,7 +696,10 @@ $ slapt-get --upgrade
          class="listimg-l"
          alt="" /> In order to uninstall GNOME SlackBuild, you'll first need to remove all 
          GNOME SlackBuild packages, and then re-install any Slackware provided packages
-         that may have been replaced by GSB ones.  You can remove all GNOME SlackBuild packages
+         that may have been replaced by GSB ones.  It is recommended that you drop to runlevel 1
+         (Single-user mode) while you uninstall. You will need your original Slackware CD in order
+         to re-install some standard Slackware packages, or else a working internet connection if you
+         want to use slapt-get to reinstall these packages. You can remove all GNOME SlackBuild packages
          by running:
     </p>
     
@@ -796,22 +709,21 @@ $ removepkg /var/log/packages/*gsb
 </pre>
 </div>
 
-    <p>This will remove all packages that are provided by GNOME SlackBuild.  If you are using
-    slapt-get, then you'll need to comment out the SOURCE for GNOME SlackBuild in your
-    <code>/etc/slapt-get/slapt-getrc</code> file.  Then make sure to rerun <code>
-    slapt-get --update</code>.  After this has finished, you'll be able to reinstall
-    the standard Slackware packages by running:</p>
+    <p>This will remove all packages that are provided by GNOME SlackBuild.  You'll need to 
+    comment out the SOURCE for GNOME SlackBuild in your <code>/etc/slapt-get/slapt-getrc</code> file.  
+    Then make sure to rerun <code>
+    slapt-get --update</code>.  After you have uninstalled GNOME SlackBuild, you'll need to reinstall
+    a few standard Slackware packages by running:</p>
 
 <div>
 <pre>
-$ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
+$ slapt-get --install glib2 libwnck
 </pre>
 </div>
 
     <p>
-     You may also need to reinstall other packages that may have been replaced.  
-     For a full list of packages that may have been upgraded by GNOME SlackBuild, 
-     please see our replaced packages file.
+     You may also need to reinstall other packages that may have been replaced, such as mozilla-firefox,
+     libgsf, or compiz.
      </p>
 
     <h3 id="bugs">
@@ -822,10 +734,12 @@ $ slapt-get --install pango glib2 gtk+2 gnome-icon-theme
     <p>
       <img src="/images/app-icons/gsb_bugs.png"
          class="listimg-l"
-         alt="" /> The <code>STABLE</code> release is considered more or less stable, but
-         if you find any bugs in GNOME SlackBuild, please help us out by 
-         reporting them.  You can find a full list of known issues, or report any new issues,
-         by visiting our <a
+         alt="" /> GNOME SlackBuild v<span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+         is considered stable, but with only a few volunteers to help build and test it, we cannot
+         guarantee that it is free from errors.  :)  If you find any bugs in GNOME SlackBuild, please 
+         help us and the GNOME SlackBuild project out by reporting them.  You can find a full list of 
+         any known issues, or you can report any new issues, by visiting our <a
          href="http://dev.gnomeslackbuild.org/projects/gsb-binary/issues">
-         Development Issues</a> page.  
+         Development Issues</a> page, or by sending an email to our mailing list.  You can find all our
+         contact information on our <a href="http://gnomeslackbuild.org/lists/"> Mailing Lists</a> page.
     </p>
