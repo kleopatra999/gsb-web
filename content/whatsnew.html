@@ -29,7 +29,7 @@
     </div>
 
     <h2 id="new-gsb">
-      What's New in GNOME SlackBuild 2.22?
+      What's New in GNOME SlackBuild <?php echo($gsb_bin_stable_ver); ?>?
     </h2>
 
     <p><strong>Last Updated</strong>: <?php print(date ("F d Y",filemtime(__FILE__))); ?>
@@ -53,7 +53,7 @@
       This page then is mainly aimed at those users who were running Slackware 12.0 and 
       GNOME SlackBuild 2.20 and are upgrading their systems rather than installing fresh.  
       If you are a new-comer to GNOME SlackBuild, and running Slackware <?php echo($slack_ver); ?>, please see our 
-      <a href="http://gnomeslackbuild.org/download/">Download</a> page for a full set of 
+      <a href="/download/">Download</a> page for a full set of 
       instructions.  However, this page also contains a list of changes from GSB 2.20 and may
       be of interest to those who are curious about what's happening with GNOME SlackBuild.  
     </p>
@@ -67,7 +67,7 @@
       <img src="/images/app-icons/gsb_distribution.png"
          class="listimg-l"
          alt="" /> Please follow the instructions available from
-         <a href="http://gnomeslackbuild.org/download/">Download Page</a>.  
+         <a href="/download/">Download Page</a>.  
          Using slapt-get is the easiest means. Mirrors are available on the download
          page.  Make sure to modify your slapt-getrc files to use the <b>gsb-stable</b> 
          directory rather than <b>gsb-current</b>. (If you were a user of -current previously)
@@ -83,8 +83,12 @@
         </p>
         </li>
         <li>
-        <p>Our compiz package is now called compiz-fusion to avoid confusion with the 
-        Slackware compiz package.  One or the other.  (Fusion is cooler.)
+        <p>Our compiz package is now called <strong>compiz-fusion</strong> to avoid confusion with the 
+        Slackware compiz package.  Our compiz-fusion package is built with Gtk/GNOME support, and
+        integrates much better into a GNOME environment that the Slackware version.  However, our
+        compiz-fusion package does not come with a KDE Window Decorator, so if you plan on using
+        KDE or switching back and forth while using Compiz, it's best to stay with Slackware version. 
+        If you are going to use GNOME with Compiz, our package is a much better choice.
         </p>
         </li>        
         <li>
@@ -119,7 +123,6 @@ $ removepkg util-linux
 $ slapt-get --install util-linux-ng
 </pre>
 </div>
-
          <p>Install, remove, and then reinstall again.  I include this as a note, as 
          it may catch a few people off guard when doing the upgrade.
          </p>    
@@ -147,6 +150,44 @@ $ slapt-get --install util-linux-ng
     package which will not conflict with openldap.  This evo-openldap is used by 
     Evolution for NTLM.    
     </p>
+
+    <p>
+     The upgrade should be smooth for those users of GSB 2.20. Make sure your slapt-getrc is
+     pointing to the latest Slackware 12.1 and GSB stable repository.  For a list of mirrors,
+     please see our <a href="/download/">Download</a> page
+     </p>
+<div>
+<pre>
+  $ slapt-get --update
+</pre>
+</div>
+
+
+It may be convenient first to download all upgradable packages before installing.
+
+<div>
+<pre>
+  $ slapt-get --upgrade -d
+</pre>
+</div>
+
+<p>
+This will download all the packages first. You may need up to 500MB of free space in your
+/var directory.  After the download is finished, you can proceed to upgrade GSB. It is 
+recommended that you first drop to single-user mode:
+</p>
+
+<div>
+<pre>
+  $ telinit 1
+  $ slapt-get --upgrade
+</pre>
+</div>
+
+<p>
+<strong>Please make sure to reboot your machine after upgrading all your packages.
+</strong>
+</p>
 
     <h3 id="new-gnome">
       The GNOME SlackBuild GNOME 2.22 Desktop <span class="toc-link"><a href="#toc"

@@ -75,10 +75,18 @@
     </p>
 
     <p>
-      <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME 2.20.3 is still available
+      <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+      is designed and built for Slackware <span class=
+      "version"><strong><?php echo($slack_ver); ?></strong></span>.  It will not work
+      on Slackware 12.0 or earlier releases.</span>  Please also be aware that running GNOME 2.20
+      on Slackware 12.1 is not supported.      
+    </p>
+
+    <p>
+      NOTE:  GNOME SlackBuild GNOME 2.20.3 is still available
       for users of Slackware 12.0.  Users will need to point their slapt-get configuration
-      to <strong>gsb-2.20.3</strong> rather than <strong>gsb-stable</strong>, which now
-      points to the stable version of GSB for Slackware 12.1.    
+      to <strong>gsb-2.20</strong> rather than <strong>gsb-stable</strong>, which now
+      points to the stable version of GSB for Slackware 12.1. 
     </p>
 
     <h3 id="quick"><span class="hilite-gr">
@@ -385,7 +393,12 @@ mozilla-firefox:
   Documentation Browser), or any Mono applications.
 
 compiz-fusion:    
-  Slackware 12.1 comes with Compiz 0.7.4, but GSB's Compiz-fusion is much cooler.  ;)
+  Slackware 12.1 comes with Compiz 0.7.4, but GSB's Compiz-fusion is much cooler. Our compiz-fusion 
+  package is built with Gtk/GNOME support, and integrates much better into a GNOME environment that 
+  the Slackware version.  However, our compiz-fusion package does not come with a KDE Window 
+  Decorator, so if you plan on using KDE or switching back and forth while using Compiz, it's 
+  best to stay with Slackware version. If you are going to use GNOME with Compiz, our package 
+  is a much better choice.
 
 libgsf:
   Slackware's libgsf package lacks GNOME support.  You will need to replace this package with the
