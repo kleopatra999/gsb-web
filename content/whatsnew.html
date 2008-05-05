@@ -65,12 +65,15 @@
     <p>
       <img src="/images/app-icons/gsb_distribution.png"
          class="listimg-l"
-         alt="" /> Please follow the instructions available from
-         <a href="/download/">Download Page</a>.  
-         Using slapt-get is the easiest means. Mirrors are available on the download
-         page.  Make sure to modify your slapt-getrc files to use the <b>gsb-stable</b> 
-         directory rather than <b>gsb-current</b>. (If you were a user of -current previously)
-         The upgrade should be smooth for those users of GSB 2.20. There are a few things to note:
+         alt="" /> You must first configure your <code>slapt-getrc</code> to point to both 
+         a Slackware <?php echo($slack_ver); ?> repository as well as the GSB <?php echo($gsb_bin_stable_ver); ?> 
+         repository.  You can find all the necessary information on how to do so, as well 
+         as a list of source mirrors on our <a href="/download/">Download</a> page. 
+    <p>         
+         If you were a user of -CURRENT previously, make sure to modify your slapt-getrc files to 
+         use the <b>gsb-stable</b> directory rather than <b>gsb-current</b>. 
+         The upgrade should be smooth for those users of GSB 2.20.  <span class="str hilite-rd">
+         If you are upgrading from Slackware 12.0 and GSB 2.20, there are a few things to note:</span>
     </p>
 
     <h4>Deprecated Packages</h4>
