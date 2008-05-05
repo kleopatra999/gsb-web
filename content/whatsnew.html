@@ -4,14 +4,13 @@
         Table of Contents
       </p>
 
-      <ol>
-        <li>
-          <a href="#new-gnome">Welcome to to GNOME 
-          <span class="version"><?php echo($gsb_bin_stable_ver); ?></span></a>
-        </li>
-           
+      <ol>           
         <li>
           <a href="#upgrade-gsb">Upgrading GNOME SlackBuild</a>
+        </li>
+
+        <li>
+          <a href="#new-gnome">What's New in GSB <?php echo($gsb_bin_stable_ver); ?></a>
         </li>
 
         <li>
@@ -59,7 +58,7 @@
     </p>
 
     <h3 id="upgrade-gsb">
-     Upgrading GNOME SlackBuild <span class="toc-link"><a href="#toc"
+     Upgrading GNOME SlackBuild from earlier versions<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -131,39 +130,60 @@ $ slapt-get --install util-linux-ng
 
     <h4>Packages No Longer Supplied by GNOME SlackBuild</h4>
 
+   <p>It's suggested you remove these with removepkg, and the use slapt-get to 
+    reinstall the standard Slackware packages.  (Particularly gtk+2) 
+    </p>
+    
+    <p><b>NOTE 1:</b>We no longer offer a patched openldap package, but provide an 
+    <code>evo-openldap</code> package which will not conflict with openldap.  
+    This evo-openldap is used by Evolution for NTLM.    
+    </p>
+
+    <p><b>NOTE 2:</b>GSB package Pyrex is now replaced by Slackware's pyrex package.
+    </p>    
+    
     <p>
     The following GSB packages can be removed and replaced by the corresponding 
-    Slackware version:
+    Slackware version.  First them first:
     </p>
  
-    <p> 
-    <code>Pyrex </code> <i>(called pyrex in Slackware)</i><code> gtk+2 libgpod pango pygtk bluez-libs
-    icon-naming-utils poppler shared-mime-info bluez-utils libcddb poppler-data 
-    tango-icon-theme dbus-glib libcdio libmtp wavpack gnome-icon-theme 
-    openldap-client pygobject fuse wpa_supplicant dbus-python XML-Simple </code><i>(this
-    is now included in Slackware's perl package)</i>
-    </p>
+<div>
+<pre>
+$ removepkg Pyrex gtk+2 libgpod pango pygtk bluez-libs icon-naming-utils poppler shared-mime-info \
+bluez-utils libcddb poppler-data tango-icon-theme dbus-glib libcdio libmtp wavpack \
+gnome-icon-theme openldap-client pygobject fuse wpa_supplicant dbus-python 
+</pre>
+</div>
 
-    <p>It's suggested you remove these with removepkg, and the use slapt-get to 
-    reinstall the standard Slackware packages.  (Particularly gtk+2) <b>Note:</b> 
-    We no longer offer a patched openldap package, but provide an <code>evo-openldap</code>
-    package which will not conflict with openldap.  This evo-openldap is used by 
-    Evolution for NTLM.    
+    <p>
+    Using slapt-get and a Slackware <?php echo($slack_ver); ?> repository, you can now 
+    re-install the above using their corresponding Slackware supplied versions.
     </p>
-
+    
+<div>
+<pre>
+$ slapt-get --install --reinstall gtk+2 libgpod pango pygtk bluez-libs icon-naming-utils \
+poppler shared-mime-info bluez-utils libcddb poppler-data tango-icon-theme dbus-glib \
+libcdio libmtp wavpack gnome-icon-theme openldap-client pygobject fuse wpa_supplicant \
+dbus-python pyrex
+</pre>
+</div>
+    
     <p>
      The upgrade should be smooth for those users of GSB 2.20. Make sure your slapt-getrc is
      pointing to the latest Slackware 12.1 and GSB stable repository.  For a list of mirrors,
      please see our <a href="/download/">Download</a> page
      </p>
+     
 <div>
 <pre>
   $ slapt-get --update
 </pre>
 </div>
 
-
+<p>
 It may be convenient first to download all upgradable packages before installing.
+</p>
 
 <div>
 <pre>
@@ -190,7 +210,7 @@ recommended that you first drop to single-user mode:
 </p>
 
     <h3 id="new-gnome">
-      The GNOME SlackBuild GNOME 2.22 Desktop <span class="toc-link"><a href="#toc"
+      The GNOME SlackBuild GNOME <?php echo($gsb_bin_stable_ver); ?> Desktop <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
