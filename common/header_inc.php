@@ -35,7 +35,8 @@ $CSS_RAND = true;
     // VERs:
               <?php print("\n\t"
                         ."GSB-source-ver:\t\t".$gsb_source_ver."\n\t"
-                        ."GSB-bin-stable-ver:\t".$gsb_bin_stable_ver."\n\t"
+                        ."GSB-bin-stable-ver (web):\t".$gsb_bin_stable_ver."\n\t"
+                        ."GSB-bin-stable-ver (installer):\t".$gsb_bin_stable."\n\t"
                         ."Slack-stable-ver:\t".$slack_ver."\n\t"
                         ."Slack-unstable-ver:\t".$slack_unstable_ver."\n\t"
                         ."GSB-bin-64-ver:\t\t".$gsb_bin_64_ver."\n\t"

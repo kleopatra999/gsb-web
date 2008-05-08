@@ -9,17 +9,18 @@ $proj_ver = explode(" : ", trim($versions[0]));
 
 $gsb_source_ver       =   $proj_ver[0];
 $gsb_bin_stable_ver   =   $proj_ver[1];
-$slack_ver            =   $proj_ver[2];
-$slack_unstable_ver   =   $proj_ver[3];
-$gsb_bin_64_ver       =   $proj_ver[4];
-$gsb_bin_current_ver  =   $proj_ver[5];
-$gsb_bin_unstable_ver =   $proj_ver[6];
-$gsb_bin_update_ver   =   $proj_ver[7];
+$gsb_bin_stable       =   $proj_ver[2];
+$slack_ver            =   $proj_ver[3];
+$slack_unstable_ver   =   $proj_ver[4];
+$gsb_bin_64_ver       =   $proj_ver[5];
+$gsb_bin_current_ver  =   $proj_ver[6];
+$gsb_bin_unstable_ver =   $proj_ver[7];
+$gsb_bin_update_ver   =   $proj_ver[8];
 
 // net-installer defaults
 if(!isset($use_ver))
 {
-    $use_ver = $gsb_bin_stable_ver;
+    $use_ver = $gsb_bin_stable;
 }
 
 if(!isset($arch))
