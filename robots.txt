@@ -1,5 +1,7 @@
 User-Agent: *
 Disallow: /changelog/
+Disallow: /net-install
+Disallow: /net-install/
 
 User-agent: ia_archiver
 Disallow: /
