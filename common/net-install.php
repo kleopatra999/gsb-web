@@ -15,6 +15,7 @@ switch ($arch)
         $arch_path = "gsb64/gsb64-";
         $excludes =
           "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
+        $use_ver = "current";
         break;
     default:
         $arch = "gsb";
@@ -118,7 +119,7 @@ if [ `id -u` -ne 0 ]; then
     echo \"You must be root when running this program!\"
     echo \"log into a shell as root and run this command again;\"
     echo 
-    echo \"lynx --source http://gnomeslackbuild.org/net-install/$use_ver | sh\"
+    echo \"lynx --source http://gnomeslackbuild.org/net-install | sh\"
     echo
     exit 1
 fi
