@@ -15,7 +15,7 @@ switch ($arch)
         $arch_path = "gsb64/gsb64-";
         $excludes =
           "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
-        $use_ver = "current";
+        $use_ver = "current"; // temp hack until stable is released.
         break;
     default:
         $arch = "gsb";
