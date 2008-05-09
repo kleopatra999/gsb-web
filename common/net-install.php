@@ -9,19 +9,19 @@ switch ($arch)
     case "gsb":
         $arch_path = "gsb/gsb-";
         $excludes =
-          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
+          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
         break;
     case "gsb64":
         $arch_path = "gsb64/gsb64-";
         $excludes =
-          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
+          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
         $use_ver = "current"; // temp hack until stable is released.
         break;
     default:
         $arch = "gsb";
         $arch_path = "gsb/gsb-";
         $excludes =
-          "^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
+          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
 }
 
 // need version vars
