@@ -30,7 +30,7 @@ else
             $gsb_bin_update_ver,$slack_ver,$dir,$path,$ver,
             $gsb_bin_stable_ver,$gsb_source_ver,$cl_ver,$ports,
             $stable,$gsb_bin_unstable_ver,$gsb_bin_current_ver,
-            $slack_unstable_ver,$gsb_bin_64_ver);
+            $gsb_bin_stable,$slack_unstable_ver,$gsb_bin_64_ver);
 }
 ?>
 </div>

@@ -15,10 +15,10 @@ $cl_error = "<h2>Unable to display ChangeLog</h2>\n"
 $cl_ver = str_replace("/", "", $cl_ver);
 
 switch ($cl_ver) {
-    case "$gsb_bin_stable_ver":
+    case "$gsb_bin_stable":
         break;
     case "stable":
-        $cl_ver = $gsb_bin_stable_ver; 
+        $cl_ver = $gsb_bin_stable; 
         break;
     case "current":
         break;
