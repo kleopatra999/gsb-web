@@ -1,8 +1,52 @@
 <h2>Development Information</h2>
 
-<p>GSB <a href="/changelog/">ChangeLogs</a> are available.</p>
+<p>
+   GNOME SlackBuild is unique in that it is designed to be a twofold
+   project. Its aim is not only to provide users with binary packages
+   for an easy installation of GNOME, but also a full GNOME Build
+   System, with the goal of allowing individuals to customise and build
+   their own GNOME packages for their Slackware system.
+</p>
 
-<p>All development and information can be found in our dedicated development
-server/area:</p>
+<h3>
+Changelogs
+</h3>
+
+<p>
+GNOME SlackBuild <a href="/changelog/">ChangeLogs</a> are available.
+</p>
+
+<h3>
+Source Code and Build System
+</h3>
+
+<p>We have a wiki dedicated to the management and documentation about our build system. 
+We provide our full build system, that is to say, it is the full and complete GSB 
+source code we use to generate our binary distribution. It is a collection of 
+SlackBuild scripts that build a GNOME release on Slackware Linux. The build system 
+also comes with a download script to grab all the latest source tarballs for every 
+package that GSB can build.
+</p>
+
+<p>The structure of the build system is quite simple. The source tree is governed by a 
+gsb.SlackBuild, which will run build scripts for each of the sections of the GSB Project. 
+GSB has been broken into logical sections, such as "libraries", "platform", "desktop", 
+"applications", and so on. In turn, each section has its own master build script which 
+controls what packages and in what order things are compiled and installed for that section. 
+Within each section, each individual package has its own SlackBuild script which will 
+configure, compile, and build its own Slackware package.
+</p>
+
+<p>
+The GSB Build System is aimed at all levels of users. Those who are new to Slackware or 
+to Linux as a whole will find the GSB Build System easy to use, and rather simple to 
+modify. Intermediate and advanced users will find it heavily customisable, and will 
+be pleased to find that the majority of the grunt work in designing and building packages 
+is done for them; they will be free to tweak or patch any packages to their own taste.
+</p>
+
+<p>
+Information about our SVN branches, checking out source code, our build environment and more
+can be found in our dedicated development area:</p>
 <p class="str">&lt;<a
 href="http://dev.gnomeslackbuild.org">http://dev.gnomeslackbuild.org</a>&gt;</p>
