@@ -3,14 +3,23 @@
     </h2>
 
     <ul>
-      <li id="list">Join the <a href="/lists/">GSB User Discussion Mailing
-      List</a> and ask questions (you must be subscribed to the mailing
-      list in order to post messages).
+      <li id="list">The preferred means of getting support is to join the 
+      <a href="/lists/">GSB User Discussion Mailing List</a> and ask 
+      questions. (Note: You must be subscribed to the mailing list in order to post messages).
       </li>
 
-      <li id="irc">Join the <a href="irc://irc.freenode.net/#gsb">#gsb IRC
-      channel on irc.freenode.net</a> and ask questions.
+      <li id="irc">You can try for immediate help by dropping by our 
+      <a href="irc://irc.freenode.net/#gsb">#gsb IRC channel on irc.freenode.net</a> 
+      and ask questions.  We may not always be around and available to answer, but 
+      we do always respond.  (Eventually).  :)
       </li>
+      
+      <li id="wiki">Another means of reporting bugs is our Development Wiki.  If you do not wish
+      to use the mailing lists, you can use our  
+      <a href="http://dev.gnomeslackbuild.org/projects/gsb-binary/issues">Binary Issues Wiki</a> 
+      to register any bugs, errors, or problems.
+      </li>
+      
     </ul>
 
     <p>
@@ -86,7 +95,8 @@ startx
           Dropline and GSB teams collaborate together periodically. Some
           folks however, do appreciate that GSB does not add <a href=
           "http://en.wikipedia.org/wiki/Pluggable_Authentication_Modules">PAM</a>
-          to Slackware.
+          to Slackware, and tries to replace as few standard Slackware packages
+          as possible.
         </p>
       </dd>
 
@@ -143,6 +153,23 @@ $ cd /var/log/packages
 $ ls -1| grep gsb$| xargs -n 1 removepkg
 </pre>
         </div>
+
+    <p>This will remove all packages that are provided by GNOME SlackBuild.  You'll need
+    to comment out the SOURCE for GNOME SlackBuild in your <code>/etc/slapt-get/slapt-getrc</code> 
+    file. Then make sure to rerun <code> slapt-get --update</code>.  After you have 
+    uninstalled GNOME SlackBuild, you'll need to reinstall a few standard Slackware packages
+    by running:</p>
+
+<div>
+<pre>
+$ slapt-get --install glib2 libwnck
+</pre>
+</div>
+
+    <p>
+     You may also need to reinstall other packages that may have been replaced, such as mozilla-firefox,
+     libgsf, or compiz.
+     </p>        
       </dd>
 
       <dt class="faqhead"
@@ -178,7 +205,7 @@ SOURCE=&lt;full-path-to-the-mirror-of-your-choice&gt;/gsb-&lt;version&gt;
           <li>Then run the following command;
             <div>
               <pre>
-$ slapt-get --install gsb-gnome
+$ slapt-get --install gsb-desktop
 </pre>
             </div>
           </li>
@@ -253,7 +280,7 @@ $ /usr/bin/update-desktop-database
 
       <dd class="faqentry">
         <p>
-          As of Slackware 12.0, yes - it does.
+          As of Slackware 12.1, yes - it does.
         </p>
       </dd>
 
