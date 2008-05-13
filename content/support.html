@@ -345,4 +345,25 @@ $ /usr/bin/update-desktop-database
           install PAM, nor does it replace the X11 windowing system.</span>
         </p>
       </dd>
+
+      <dt class="faqhead"
+          id="faq_id-14">
+        <q>I installed KDE after GSB was installed, and now some icons are missing or broken?
+        How do I fix it?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Installing the package "kdebase" seems to break the hicolor icon specification for GSB.  If
+          you find that you're missing any GNOME icons, your best bet is to reinstall the standard
+          Slackware package "hicolor-icon-theme".  
+        </p>
+<div>
+<pre>
+$ slapt-get --install --reinstall hicolor-icon-theme
+</pre>
+</div>
+
+      </dd>      
+      
     </dl>
