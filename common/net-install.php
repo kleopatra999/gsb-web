@@ -60,14 +60,14 @@ $mirror = $picked;
 // main op
 switch ($use_ver)
 {
-    case "$gsb_bin_stable_ver":
+    case "$gsb_bin_stable":
         $slapt_dir = "tools";
         break;
     case "current":
         $slapt_dir = "tools";
         break;
     default:
-        $use_ver = $gsb_bin_stable_ver;
+        $use_ver = $gsb_bin_stable;
 }
 
 $output = "#!/usr/bin/env bash
