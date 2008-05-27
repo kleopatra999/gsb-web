@@ -258,7 +258,8 @@ recommended that you first drop to single-user mode:
 
         $rp = curl_init();
         $timeout = 10; // set to zero for no timeout
-        curl_setopt ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages_gsb-2.22?root=gsb&view=co");
+        curl_setopt
+        ($rp,CURLOPT_URL,"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages_gsb-".$gsb_bin_stable."?root=gsb&view=co");
         curl_setopt ($rp, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt ($rp, CURLOPT_CONNECTTIMEOUT, $timeout);
         $rp_result = curl_exec($rp);
