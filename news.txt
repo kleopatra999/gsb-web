@@ -1,4 +1,16 @@
 ###
+2008-07-30-14-59-GMT
+GSB GNOME 2.22.3 in -current for Slackware and Slamd64 12.1
+<p>
+GSB for both Slackware and Slamd64 12.1 is now up to date in -current, providing the latest 
+GNOME 2.22.3 desktop.  There will probably be a few more updates and bug fixes before -current
+is labelled as stable, but at the moment the -current branch is quite solid and very useable.
+</p>
+<p>Users who are interested in helping test out the latest -current branch for any remaining 
+bugs, or who want to be running the latest GSB desktop are encouraged to upgrade to -current 
+using slaptget.
+</p>
+###
 2008-05-05-18-32-GMT
 GSB GNOME 2.22.1 stable released for Slackware 12.1
 <p>
