@@ -8,7 +8,8 @@ is labelled as stable, but at the moment the -current branch is quite solid and 
 </p>
 <p>Users who are interested in helping test out the latest -current branch for any remaining 
 bugs, or who want to be running the latest GSB desktop are encouraged to upgrade to -current 
-using slaptget.
+using slaptget.  Take a look at our <a href="/download/">Download</a> page which has full 
+instructions and a list of mirrors for GSB -current.
 </p>
 ###
 2008-05-05-18-32-GMT
