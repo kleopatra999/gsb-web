@@ -48,8 +48,12 @@ $CSS_RAND = true;
           content="<?php echo $mime ?>; charset=utf-8; ?>" />
     <meta name="author"
           content="Chip Cuccio" />
+    <meta name="keywords"
+          content="gsb,GSB,GNOME,gnome,SlackBuild,GNOME SlackBuild,Slack,Slackware,Slackware Linux,Linux" />
+    <meta name="description"
+          content="GNOME SlackBuild (GSB) - a GNOME distribution for Slackware Linux" />
     <style type="text/css"
-           title="Chipster&#39;s Blue and Plenty-O-Whitespace Style">
+          title="Chipster&#39;s Blue and Plenty-O-Whitespace Style">
     /*<![CDATA[*/
     <?php if($CSS_RAND == true) { ?>
     @import url('/css/style.css?v=<?php echo($rnd); ?>') screen;
