@@ -1,4 +1,15 @@
 ###
+2008-09-25-18-06-GMT
+GSB GNOME 2.24.0 Build in Progress for Slackware 12.1 and Slamd64 12.1
+<p>
+It's that time of year again!  A brand new GNOME 2.24.0 has been released, and we are working
+hard to get a fancy new build of GSB out the door for Slackware 12.1.  We should have a preview
+version in gsb-current by the end of the week.  Some notable new changes to GSB are an integrated
+PolicyKit installation, better printer support, improved development suite, and lots of upgraded
+packages.  If you're interested in knowing when the new GSB comes out, be sure to subscribe to
+the gsb-users mailing list, or keep checking back here for the news and full release notes.
+</p>
+###
 2008-07-30-14-59-GMT
 GSB GNOME 2.22.3 in -current for Slackware and Slamd64 12.1
 <p>
