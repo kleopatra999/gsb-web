@@ -8,6 +8,14 @@ Website TODO - $Id: TODO 1284 2005-09-25 01:48:20Z chipster $
   |  - .... [XX] = [XX] working on it, not finished. |
   +--------------------------------------------------+
 
+    Chip's Stuff:
+    -------------
+        - Need to update site docs.
+
+        - Audit net-installer functionality
+
+        - New screenies from -current
+
     Freerock Suggests:
     ------------------
         - Package browser based on PACKAGES.TXT, and have a
