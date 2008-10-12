@@ -1,4 +1,15 @@
 ###
+2008-10-12-19-20-GMT
+GSB 2.24.0 in testing
+<p>
+Things are starting to look good.  We've got a full build of GSB 2.24.0 done, including a full 
+GNOME 2.24.0 desktop, as well as all the goodies, such as the latest NetworkManager, MPlayer, 
+OpenOffice, Abiword, PulseAudio, and a couple of new applications to make your experience of 
+GSB even better.  At the moment, we are in the process of testing to make sure nothing will go 
+massively awry when we put GSB 2.24.0 into -current ;-) So it will be a day or two before it hits 
+public servers.  We will definitely announce when it is ready, soon we hope!  
+</p>
+####
 2008-09-25-18-06-GMT
 GSB GNOME 2.24.0 Build in Progress for Slackware 12.1 and Slamd64 12.1
 <p>
