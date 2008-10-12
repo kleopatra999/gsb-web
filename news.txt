@@ -1,5 +1,5 @@
 ###
-2008-09-25-18-06-GMT
+2008-05-05-18-32-GMT
 GSB 2.24.0 in testing
 <p>
 Things are starting to look good.  We've got a full build of GSB 2.24.0 done, including a full 
@@ -10,7 +10,7 @@ massively awry when we put GSB 2.24.0 into -current. So it will be a day or two 
 public servers.  We will definitely announce when it is ready, soon we hope!  
 </p>
 ####
-2008-09-25-18-06-GMT
+2008-07-30-14-59-GMT
 GSB GNOME 2.24.0 Build in Progress for Slackware 12.1 and Slamd64 12.1
 <p>
 It's that time of year again!  A brand new GNOME 2.24.0 has been released, and we are working
