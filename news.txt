@@ -1,6 +1,6 @@
 ###
 2008-10-12-19-41-GMT
-GSB 2.24.0 in testing
+GSB 2.24.0 in Testing in Progress
 <p>
 Things are starting to look good.  We've got a full build of GSB 2.24.0 done, including a full 
 GNOME 2.24.0 desktop, as well as all the goodies, such as the latest NetworkManager, MPlayer, 
