@@ -1,5 +1,5 @@
 ###
-2008-10-12-19:41-GMT
+2008-10-12-19-41-GMT
 GSB 2.24.0 in testing
 <p>
 Things are starting to look good.  We've got a full build of GSB 2.24.0 done, including a full 
