@@ -1,4 +1,15 @@
 ###
+2008-12-15-21-01-GMT
+GSB 2.24.2 available in gsb-testing
+<p>
+We're keeping the updates coming, but unfortunately we just did not have enough time in these
+past few months to get a heavily tested version of GSB released.  Still, for those interested,
+gsb-testing contains a GSB 2.24.2 available for testing.  Please make sure to read the 
+CHANGE_AND_HINTS.TXT for a list of obsoleted packages, new packages, and general hints about
+what might need some tweaking.  It's working quite well, but there are still a few updates
+in the pipe.  And please make sure to report any bugs.  :^)
+</p>
+###
 2008-10-12-19-41-GMT
 GSB 2.24.0 Almost Ready - Testing in Progress
 <p>
