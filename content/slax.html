@@ -102,20 +102,11 @@
             <p>
             Once it has been untarred, you'll need to make the USB key bootable.  If you're doing this 
             from Linux, make sure you have the 'rd' module (for <b>Ramdisk Support</b>) loaded into 
-            your running kernel.  You may need to run:
-            </p>
-            <div>
-            <pre>
-            $ modprobe rd
-            </pre>
-            </div>
+	    your running kernel.  You may need to run: <code>$ modprobe rd </code>
+	    </p>
             
-            <p>Once you have done that, from the slax partition where you have untarred Slax, run:</p>
-
-            <pre>
-            $./boot/liloinst.sh
-            </pre>
-            </div>
+            <p>Once you have done that, from the slax partition where you have untarred Slax, run:
+	    $./boot/liloinst.sh </p>
             
             <p>This handy script will make the USB key bootable. If you're doing this from Windows
             (for example, if you're a new comer to Linux), then instead run the <b>liloinst.bat</b> 
@@ -128,7 +119,7 @@
             This is very important if you want to store anything on your USB key after booting and 
             keep changes to your system configuration as if on a regular persistent file system.        
             </p>
-           </li>
+          </li>
            
           <li>
             Before installing any modules to your new Slax system, you may want to give it a test.  Make 
