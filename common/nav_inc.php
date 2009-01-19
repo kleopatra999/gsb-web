@@ -101,6 +101,18 @@
             <a href="/lists/"
                 title="Mailing Lists">Mailing Lists</a>
           </li>
+           <?php }
+                       if ($op == "slax") { ?>
+          <li>
+            <a href="/slax/"
+                title="GSB for Slax"
+                class="thisPage">GSB for Slax</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/slax/"
+                title="GSB for Slax">GSB for Slax</a>
+          </li>
           <?php }
                     if ($op == "support") { ?>
           <li>

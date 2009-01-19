@@ -35,6 +35,7 @@ RewriteEngine On
     RewriteRule ^development/?$  /index.php?op=development [QSA,L]
     RewriteRule ^screenshots/?$  /index.php?op=screenshots [QSA,L]
     RewriteRule ^support/?$  /index.php?op=support [QSA,L]
+    RewriteRule ^slax/?$  /index.php?op=slax [QSA,L]
     RewriteRule ^faqs/?$  /support/ [R,L]
     RewriteRule ^random-screenthumb$  /common/screenthumb-rot.php [QSA,L]
     RewriteRule ^net-install/?$  /common/net-install.php [QSA,L]

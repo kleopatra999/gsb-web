@@ -90,6 +90,9 @@ switch ($op)
     case "lists":
         $title = "Mailing Lists : $common_title";
         break;
+     case "slax":
+        $title = "GSB for Slax : $common_title";
+        break;
     case "search":
         $title = "Search : $common_title";
         break;
