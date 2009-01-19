@@ -80,7 +80,7 @@
          class="listimg-l"
          alt="" /> 
 	 You can get Slax from the Slax website in several formats, but we've tested the GSB modules on Slax only 
-	 for USB. <span class="hilite-gr">Running GSB from a USB key is the recommended version.</span> (At least for the moment.)
+	 for USB. <span class="hilite-gr">Running GSB from a USB key is the recommended method.</span> (At least for the moment.)
 	 Follow the steps below to have a Slax system up and running with GSB.
    </p>
 
@@ -110,7 +110,7 @@
           <p>
           Once it has been untarred, you'll need to make the USB key bootable.  If you're doing this 
           from Linux, make sure you have the 'rd' module (for <b>Ramdisk Support</b>) loaded into 
-	  your running kernel.  You may need to run: <code>$ modprobe rd </code>
+	  your running kernel.  You may need to run: <code>modprobe rd</code>
 	  </p>
           
 	  <p>
@@ -143,7 +143,7 @@
         <li>
 	  <p>
           Adding GSB to a Slax system is easy.  You'll need a minimum of two required modules: 
-          the <b>gsb.required</b>, and the <b>gsb.base modules.</b>  You'll need to download these
+	  the <b>gsb.required</b>, and the <b>gsb.base</b> modules.  You'll need to download these
           two LZM modules and copy them into the <code>slax/modules</code> directory.  
           You can ignore the -devel and -doc modules, unless you want the man pages, help files,
           or developement headers.  For a more detailed description of each module, see below.   
@@ -152,9 +152,13 @@
 
         <li>
 	  <p>
-          Reboot, making sure your USB is your first boot device.  The GSB modules should configure
-          themselves on first boot.  Login to your new Slax system following the instructions on the
-          screen.  You'll need to first run <code>xconf</code>, which should autodetect and setup
+	  Reboot, <span class="str hilite-rd">making sure your USB is your first BIOS boot device. </span>
+	  The GSB modules should configure themselves on first boot.  Login to your new Slax system following 
+	  the instructions on the screen.  
+	  </p>
+	  
+	  <p>
+	  You'll need to first run <code>xconf</code>, which should autodetect and setup
           your X.org, and then run <code>xwmconfg</code> to select GSB as your desktop.  You can set
           up other users or configure your running system using the standard Slackware tools which 
           come with Slax. 
@@ -209,7 +213,35 @@
       </dt>
 
       <dd>
-        This is a required module for running GSB on Slax.  
+      This is a required module for running GSB on Slax, and contains only the following official Slackware packages
+      which are dependencies for the GSB desktop.
+	<p>
+	<div>
+	<pre>
+         sqlite-3.6.6.2-i486-1
+         pygtk-2.12.1-i486-2
+         pygobject-2.15.4-i486-1
+         libtool-1.5.26-i486-1
+         shared-mime-info-0.51-i486-1
+         liboil-0.3.15-i486-1
+         libcdio-0.79-i486-1
+         gstreamer-0.10.21-i486-1
+         gnutls-2.6.2-i486-1
+         httpd-2.2.10-i486-1
+         enchant-1.4.2-i486-1
+         libvisual-0.4.0-i486-2
+         wpa_supplicant-0.5.10-i486-1
+         libcaca-0.99.beta11-i486-1
+         wavpack-4.41.0-i486-1
+         pilot-link-0.12.3-i486-6
+         bluez-libs-3.36-i486-2
+         bluez-utils-3.36-i486-4
+         gnupg-1.4.9-i486-1
+         dbus-python-0.83.0-i486-1
+         libgphoto2-2.4.3-i486-3
+       </pre>
+        </p>
+
       </dd>
 
       <dt>
@@ -217,7 +249,10 @@
       </dt>
 
       <dd>
-        The main gsb module which has stuff. 
+      This is the main GSB Slax Module. It contains only the runtime libraries and binaries required to use GSB in Slax.  
+      It doesn't contain any development related files (like headers, etc) or any documentation (such as man pages).  
+      If you want these extras, then you'll need to download the attendant modules named with a <code>-doc</code> or a
+      <code>-devel</code> extension.
       </dd>
 
     </dl>
