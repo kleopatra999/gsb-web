@@ -1,4 +1,4 @@
-2.0 : 2.22.1 : 2.22 : 12.1 : 12.1 : 2.20.3 : 2.22.1 : 2.23.0 : 2.22.1
+2.0 : 2.22.1 : 2.22 : 12.1 : 12.2 : 2.20.3 : 2.22.1 : 2.23.0 : 2.22.1 : 2.24.3 : 6.0.9
 
 * Order;
   
@@ -10,7 +10,9 @@
   GSB-bin-64,
   GSB-bin-current,
   GSB-bin-unstable,
-  GSB-bin-update (tracks gnome maint. rel.)
+  GSB-bin-update (tracks gnome maint. rel.),
+  GSB Slax (version of GSB),
+  Slax-stable
   
   (NOTE: delimeter is "space-colon-space")
 
@@ -25,3 +27,5 @@
   GSB-bin-current      =  $gsb_bin_current_ver 
   GSB-bin-unstable     =  $gsb_bin_unstable_ver
   GSB-bin-update       =  $gsb_bin_update_ver
+  GSB Slax             =  $gsb_slax_ver
+  Slax-stable          =  $slax_ver

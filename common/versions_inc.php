@@ -16,6 +16,8 @@ $gsb_bin_64_ver       =   $proj_ver[5];
 $gsb_bin_current_ver  =   $proj_ver[6];
 $gsb_bin_unstable_ver =   $proj_ver[7];
 $gsb_bin_update_ver   =   $proj_ver[8];
+$gsb_slax_ver         =   $proj_ver[9];
+$slax_ver             =   $proj_ver[10];
 
 // net-installer defaults
 if(!isset($use_ver))

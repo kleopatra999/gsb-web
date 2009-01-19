@@ -42,6 +42,8 @@ $CSS_RAND = true;
                         ."GSB-bin-64-ver:\t\t".$gsb_bin_64_ver."\n\t"
                         ."GSB-bin-current-ver:\t".$gsb_bin_current_ver."\n\t"
                         ."GSB-bin-unstable-ver:\t".$gsb_bin_unstable_ver."\n\t"
+                        ."GSB-Slax-ver:\t".$gsb_slax_ver."\n\t"
+                        ."Slax-stable-ver:\t".$slax_ver."\n\t"
                         ."Slapt-get-ver:\t\t".$slapt_ver."\n"); ?>
     -->
     <meta http-equiv="Content-Type"
