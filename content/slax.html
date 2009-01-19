@@ -29,15 +29,16 @@
     </div>
 
     <h2>
-      GSB Modules for Slax <span class="version"><?php echo($slax_ver); ?></span>
+	    GSB  <span class="version"><?php echo($gsb_slax_ver); ?></span> Modules for Slax 
+	    <span class="version"><?php echo($slax_ver); ?></span>
     </h2>
 
     <h3 id="about-gsbslax">
-      About the GNOME SlackBuild Modules
+      About the GNOME SlackBuild Modules for Slax
     </h3>
 
     <p>
-      <img src="/images/app-icons/gsb_distribution.png"
+      <img src="/images/app-icons/slax.png"
          class="listimg-l"
          alt="" /> 
          <a href="http://www.slax.org">Slax</a> is a modern, portable, small and fast 
@@ -50,7 +51,7 @@
     <p>
         The modular approach gives us the ability to include any GSB software in Slax easily. 
         If you're missing your favourite GNOME office suite, games, or tools, simply download 
-        the module and copy it to the Slax modules/ directory, no need to fiddle around, 
+	the module and copy it to the Slax <code>modules/</code> directory, no need to fiddle around, 
         no need to configure.  
     </p>
     
@@ -61,13 +62,13 @@
        
     <p>
       The most current available version of the GSB Slax Modules are
-      <span class="version"><?php echo($gsb_slax); ?></span>
+      <span class="version"><?php echo($gsb_slax_ver); ?></span>
     </p>
 
     <p>
       <span class="str hilite-rd">Requirements:</span>  The GSB Modules are designed and 
       built for Slax <span class="version"><strong><?php echo($slax_ver); ?></strong></span>.  
-      It will not work on earlier versions of Slax.      
+      They will not work on earlier versions of Slax.      
     </p>
 
     <h3 id="quick_easy"><span class="hilite-gr">
@@ -76,78 +77,92 @@
     </h3>
 
     <p>
-      <img src="/images/app-icons/slaptget.png"
+      <img src="/images/app-icons/slax_shoes.png"
          class="listimg-l"
          alt="" /> 
-      You can get Slax from the Slax website in several formats.  <i>Because the GSB modules are a new venture,
-      we haven't had a chance to throughly test them for the CD version of Slax, and so it is not recommended
-      that you use the CD version of Slax with the GSB modules.</i>  You might as well spare yourself
-      wasting your blank CDs.  On the other hand, we've tested the GSB modules on Slax for USB. It is distributed
-      as a TAR archive.  Running GSB from a USB key is the recommended version for the moment.     
+	 You can get Slax from the Slax website in several formats, but we've tested the GSB modules on Slax only 
+	 for USB. Running GSB from a USB key is the recommended version (at least for the moment.)
+   </p>
+
+    <p>
+      NOTE: <i>Because the GSB modules are a new venture, we haven't had a chance to throughly test them for the CD version of Slax, 
+      and so it is not recommended that you use the CD version of Slax with the GSB modules.  You might as well spare yourself
+      wasting your blank CDs.  </i>
     </p>
+
     <p>
     <ul>
-      <li>Get Slax <?php echo ($slax_ver); ?>
-        <ul>
-          <li>
-            You can find the USB version of Slax <a href="http://www.slax.org/get_slax.php">here.</a> You will
-            need a USB key (or similar device) about 512MB or larger (1 GB recommended for office modules, 
-            and extra work space, depending on how much you want to store on your file system.) 
-          </li>
-          <li>
-            Untar the slax-<?php echo($gsb_slax); ?>.tar to a working partition on the USB key. 
-          </li>
+        <li>
+	  <p>
+          You can find the USB version of Slax <a href="http://www.slax.org/get_slax.php">here.</a> You will
+          need a USB key (or similar device) about 512MB or larger (1 GB recommended for office modules, 
+          and extra work space, depending on how much you want to store on your file system.) 
+	  </p>
+        </li>
 
-          <li>
-            <p>
-            Once it has been untarred, you'll need to make the USB key bootable.  If you're doing this 
-            from Linux, make sure you have the 'rd' module (for <b>Ramdisk Support</b>) loaded into 
-	    your running kernel.  You may need to run: <code>$ modprobe rd </code>
-	    </p>
+        <li>
+	  <p>
+          Untar the slax-<?php echo($gsb_slax_ver); ?>.tar to a working partition on the USB key. 
+	  </p>
+        </li>
+
+        <li>
+          <p>
+          Once it has been untarred, you'll need to make the USB key bootable.  If you're doing this 
+          from Linux, make sure you have the 'rd' module (for <b>Ramdisk Support</b>) loaded into 
+	  your running kernel.  You may need to run: <code>$ modprobe rd </code>
+	  </p>
+          
+	  <p>
+	  Once you have done that, from the slax partition where you have untarred Slax, run:
+	  <code>./boot/liloinst.sh</code>
+	  </p>
             
-            <p>Once you have done that, from the slax partition where you have untarred Slax, run:
-	    $./boot/liloinst.sh </p>
+	  <p>
+	  This handy script will make the USB key bootable. If you're doing this from Windows
+          (for example, if you're a new comer to Linux), then instead run the <b>liloinst.bat</b> 
+          to make the USB key bootable.
+          </p>
             
-            <p>This handy script will make the USB key bootable. If you're doing this from Windows
-            (for example, if you're a new comer to Linux), then instead run the <b>liloinst.bat</b> 
-            to make the USB key bootable.
-            </p>
-            
-            <p>
-            <span class="str hilite-rd">Note:</span>  Make sure to run the liloinst script, as this also sets
-            up the 'changes' directory, which will store any changes you make to your Slax filesystems.  
-            This is very important if you want to store anything on your USB key after booting and 
-            keep changes to your system configuration as if on a regular persistent file system.        
-            </p>
-          </li>
+          <p>
+          <span class="str hilite-rd">Note:</span>  Make sure to run the liloinst script, as this also sets
+          up the 'changes' directory, which will store any changes you make to your Slax filesystems.  
+          This is very important if you want to store anything on your USB key after booting and 
+          keep changes to your system configuration as if on a regular persistent file system.        
+          </p>
+        </li>
            
-          <li>
-            Before installing any modules to your new Slax system, you may want to give it a test.  Make 
-            sure your computer's BIOS is configured to boot from the USB device first.  Reboot, and you 
-            should have a nicely working Slax system up and running.   
-          </li>
+        <li>
+	  <p>
+          Before installing any modules to your new Slax system, you may want to give it a test.  Make 
+          sure your computer's BIOS is configured to boot from the USB device first.  Reboot, and you 
+          should have a nicely working Slax system up and running.   
+	  </p>
+        </li>
           
-          <li>
-            Adding GSB to a Slax system is easy.  You'll need a minimum of two required modules: 
-            the <b>gsb.required</b>, and the <b>gsb.base modules.</b>  You'll need to download these
-            two LZM modules and copy them into the <code>slax/modules</code> directory.  
-            You can ignore the -devel and -doc modules, unless you want the man pages, help files,
-            or developement headers.  For a more detailed description of each module, see below.   
-          </li>
+        <li>
+	  <p>
+          Adding GSB to a Slax system is easy.  You'll need a minimum of two required modules: 
+          the <b>gsb.required</b>, and the <b>gsb.base modules.</b>  You'll need to download these
+          two LZM modules and copy them into the <code>slax/modules</code> directory.  
+          You can ignore the -devel and -doc modules, unless you want the man pages, help files,
+          or developement headers.  For a more detailed description of each module, see below.   
+	  </p>
+        </li>
 
-          <li>
-            Reboot, making sure your USB is your first boot device.  The GSB modules should configure
-            themselves on first boot.  Login to your new Slax system following the instructions on the
-            screen.  You'll need to first run <code>xconf</code>, which should autodetect and setup
-            your X.org, and then run <code>xwmconfg</code> to select GSB as your desktop.  You can set
-            up other users or configure your running system using the standard Slackware tools which 
-            come with Slax. 
-          </li>
+        <li>
+	  <p>
+          Reboot, making sure your USB is your first boot device.  The GSB modules should configure
+          themselves on first boot.  Login to your new Slax system following the instructions on the
+          screen.  You'll need to first run <code>xconf</code>, which should autodetect and setup
+          your X.org, and then run <code>xwmconfg</code> to select GSB as your desktop.  You can set
+          up other users or configure your running system using the standard Slackware tools which 
+          come with Slax. 
+	  </p>
+        </li>
           
-        </ul>
-      </li>
-    </ul>     
-    </p>
+      </ul>
+  </p>
 
     <h3 id="mod_downloads">
       Downloading the GSB Modules <span class="toc-link"><a href="#toc"
@@ -161,7 +176,7 @@
 
     <p>
     <ul>
-      <li>GSB Modules <?php echo ($gsb_slax); ?>
+      <li>GSB Modules <?php echo ($gsb_slax_ver); ?>
         <ul>
           <li>
             <a href=
@@ -178,6 +193,13 @@
     </h3>
 
     <p>
+      <img src="/images/app-icons/slax_shoes.png"
+         class="listimg-l"
+         alt="" /> 
+         This section will contain a description of all the modules available.
+    </p>
+
+    <p>
     <dl>
       <dt>
         gsb.required
@@ -192,14 +214,14 @@
       </dt>
 
       <dd>
-        The main gsb module.      
+        The main gsb module which has stuff. 
       </dd>
 
     </dl>
     </p>    
 
     <h3 id="bugs">
-      Known Issues and Bugs <span class="toc-link"><a href=
+      Reporting Bugs <span class="toc-link"><a href=
       "#toc" title="Go up to TOC">&#8593;</a></span>
     </h3>
 
