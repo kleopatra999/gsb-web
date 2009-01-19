@@ -1,6 +1,222 @@
-<h2>GSB for Slax</h2>
+    <div id="toc"
+         class="toc">
+      <p>
+        Table of Contents
+      </p>
 
-<p>
-    Foo and bar and baz!!!
-</p>
+      <ol>
+        <li>
+          <a href="#about-gsbslax">Introduction</a>
+        </li>
 
+        <li>
+          <a href="#quick_easy">Quick and Easy Setup</a>
+        </li>
+
+        <li>
+          <a href="#mod_download">Module Downloads</a>
+        </li>
+        
+        <li>
+          <a href="#mod_desc">Module Descriptions</a>
+        </li>
+
+        <li>
+          <a href="#bugs">Known Issues and Reporting Bugs</a>
+        </li>
+        
+      </ol>
+    </div>
+
+    <h2>
+      GSB Modules for Slax <span class="version"><?php echo($slax_ver); ?></span>
+    </h2>
+
+    <h3 id="about-gsbslax">
+      About the GNOME SlackBuild Modules
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_distribution.png"
+         class="listimg-l"
+         alt="" /> 
+         <a href="http://www.slax.org">Slax</a> is a modern, portable, small and fast 
+         Linux operating system, which is based on Slackware, and has a powerful and
+         extendable modular design.  Slax runs from CDs, USB Flash Key, MP3 Players, Cameras or
+         even from a hard drive. The only thing missing from this handy distribution?  
+         A GNOME desktop! And so we created set of Slax modules which bring GSB to your pocket computer.
+    </p>
+
+    <p>
+        The modular approach gives us the ability to include any GSB software in Slax easily. 
+        If you're missing your favourite GNOME office suite, games, or tools, simply download 
+        the module and copy it to the Slax modules/ directory, no need to fiddle around, 
+        no need to configure.  
+    </p>
+    
+    <p>        
+        As well, because Slax can be up and running on a USB key in a matter of minutes, it's a good
+        way to give GSB a test-run before installing it on a Slackware or Slamd64 system.
+    </p>
+       
+    <p>
+      The most current available version of the GSB Slax Modules are
+      <span class="version"><?php echo($gsb_slax); ?></span>
+    </p>
+
+    <p>
+      <span class="str hilite-rd">Requirements:  The GSB Modules are designed and 
+      built for Slax <span class="version"><strong><?php echo($slax_ver); ?></strong></span>.  
+      It will not work on earlier versions of Slax.      
+    </p>
+
+    <h3 id="quick_easy"><span class="hilite-gr">
+      Quick and Easy Setup</span> <span class="toc-link"><a href="#toc"
+      title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/slaptget.png"
+         class="listimg-l"
+         alt="" /> 
+      You can get Slax from the Slax website in several formats.  <i>Because the GSB modules are a new venture,
+      we haven't had a chance to throughly test them for the CD version of Slax, and so it is not recommended
+      that you use the CD version of Slax with the GSB modules.</i>  You might as well spare yourself
+      wasting your blank CDs.  On the other hand, we've tested the GSB modules on Slax for USB. It is distributed
+      as a TAR archive.  Running GSB from a USB key is the recommended version for the moment.     
+    </p>
+    <p>
+    <ul>
+      <li>Get Slax <?php echo ($slax_ver); ?>
+        <ul>
+          <li>
+            You can find the USB version of Slax <a href="http://www.slax.org/get_slax.php">here.</a> You will
+            need a USB key (or similar device) about 512MB or larger (1 GB recommended for office modules, 
+            and extra work space, depending on how much you want to store on your file system.) 
+          </li>
+          <li>
+            Untar the slax-<?php echo($gsb_slax); ?>.tar to a working partition on the USB key. 
+          </li>
+
+          <li>
+            <p>
+            Once it has been untarred, you'll need to make the USB key bootable.  If you're doing this 
+            from Linux, make sure you have the 'rd' module (for <b>Ramdisk Support</b>) loaded into 
+            your running kernel.  You may need to run:
+            </p>
+            <div>
+            <pre>
+            $ modprobe rd
+            </pre>
+            </div>
+            
+            <p>Once you have done that, from the slax partition where you have untarred Slax, run:</p>
+
+            <pre>
+            $./boot/liloinst.sh
+            </pre>
+            </div>
+            
+            <p>This handy script will make the USB key bootable. If you're doing this from Windows
+            (for example, if you're a new comer to Linux), then instead run the <b>liloinst.bat</b> 
+            to make the USB key bootable.
+            </p>
+            
+            <p>
+            <span class="str hilite-rd">Note:  Make sure to run the liloinst script, as this also sets
+            up the 'changes' directory, which will store any changes you make to your Slax filesystems.  
+            This is very important if you want to store anything on your USB key after booting and 
+            keep changes to your system configuration as if on a regular persistent file system.        
+            </p>
+           </li>
+           
+          <li>
+            Before installing any modules to your new Slax system, you may want to give it a test.  Make 
+            sure your computer's BIOS is configured to boot from the USB device first.  Reboot, and you 
+            should have a nicely working Slax system up and running.   
+          </li>
+          
+          <li>
+            Adding GSB to a Slax system is easy.  You'll need a minimum of two required modules: 
+            the <b>gsb.required</b>, and the <b>gsb.base modules.</b>  You'll need to download these
+            two LZM modules and copy them into the <code>slax/modules</code> directory.  
+            You can ignore the -devel and -doc modules, unless you want the man pages, help files,
+            or developement headers.  For a more detailed description of each module, see below.   
+          </li>
+
+          <li>
+            Reboot, making sure your USB is your first boot device.  The GSB modules should configure
+            themselves on first boot.  Login to your new Slax system following the instructions on the
+            screen.  You'll need to first run <code>xconf</code>, which should autodetect and setup
+            your X.org, and then run <code>xwmconfg</code> to select GSB as your desktop.  You can set
+            up other users or configure your running system using the standard Slackware tools which 
+            come with Slax. 
+          </li>
+          
+        </ul>
+      </li>
+    </ul>     
+    </p>
+
+    <h3 id="mod_downloads">
+      Downloading the GSB Modules <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      The following is a list of available mirrors from which to download
+      GNOME SlackBuild as well as its modules.
+    </p>
+
+    <ul>
+      <li>GSB Modules <?php echo ($gsb_slax); ?>
+        <ul>
+          <li>
+            <a href=
+            "ftp://ftp.slackware.org.uk/gsb/gsb-2.24/slax">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-2.24/slax&gt;</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 id="mod_desc">
+      GSB Module Descriptions <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+    <dl>
+      <dt>
+        gsb.required
+      </dt>
+
+      <dd>
+        This is a required module for running GSB on Slax.  
+      </dd>
+
+      <dt>
+        gsb.base
+      </dt>
+
+      <dd>
+        The main gsb module.      
+      </dd>
+
+    </dl>
+    </p>    
+
+    <h3 id="bugs">
+      Known Issues and Bugs <span class="toc-link"><a href=
+      "#toc" title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/gsb_bugs.png"
+         class="listimg-l"
+         alt="" /> GNOME SlackBuild for Slax <span class="version"><?php echo($gsb_slax); ?></span>
+         is considered stable, but with only a few volunteers to help build and test it, we cannot
+         guarantee that it is free from errors.  :)  If you find any bugs in the GSB modules for Slax, 
+         please help us and the GNOME SlackBuild project out by reporting them.  
+         You can report any new issues by sending an email to our mailing list.  You can find all our
+         contact information on our <a href="http://gnomeslackbuild.org/lists/"> Mailing Lists</a> page.
+    </p>
