@@ -1,4 +1,16 @@
 ###
+2009-04-27-18-43-GMT
+GSB 2.26.1 being built
+<p>
+Hello!  Thing are back in motion, and GSB 2.26.1 is being built for Slackware 12.2. We hope 
+to have a working -current version by the end of the week for brave testers.  All the
+details will follow when we make a general announcement.  
+</p>
+<p>P.S. We're also keeping an eye on Slackware-current, and will also aim to have a version of 
+GSB to match soon.  The goal is to have a stable GSB as soon as possible after Pat's unleashes
+Slackware 13.0 on the world (whenever that is).  ;^)
+</p>
+###
 2008-12-15-21-01-GMT
 GSB 2.24.2 available in gsb-testing
 <p>
