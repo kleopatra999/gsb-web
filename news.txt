@@ -1,4 +1,14 @@
 ###
+2009-05-12-10-25-GMT
+GSB 2.26.1 Available in gsb-current
+<p>
+Hello!  GSB 2.26.1 for Slackware 12.2 is now readily available for users to try in gsb-current.
+Details can be found on our download page.  There have been a few package changes in this release
+so please give the CHANGES_AND_HINTS.TXT a quick read before plunging.  This is a solid build at
+the moment, but we'll give it a few days in gsb-current for users to have a chance to test it out
+and report any bugs.  We should be able to have a full stable release by the end of the week.
+</p>
+###
 2009-04-27-18-43-GMT
 GSB 2.26.1 being built
 <p>
