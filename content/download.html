@@ -78,15 +78,7 @@
       <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
       is designed and built for Slackware <span class=
       "version"><strong><?php echo($slack_ver); ?></strong></span>.  It will not work
-      on Slackware 12.0 or earlier releases.</span>  Please also be aware that running GNOME 2.20
-      on Slackware 12.1 is not supported.      
-    </p>
-
-    <p>
-      NOTE:  GNOME SlackBuild GNOME 2.20.3 is still available
-      for users of Slackware 12.0.  Users will need to point their slapt-get configuration
-      to <strong>gsb-2.20</strong> rather than <strong>gsb-stable</strong>, which now
-      points to the stable version of GSB for Slackware 12.1. 
+      on Slackware 12.0 or earlier releases.</span>
     </p>
 
     <h3 id="quick"><span class="hilite-gr">
@@ -116,16 +108,6 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
 </pre>
     </div>
 
-    <h4>
-      Slamd64 <?php echo($slack_ver); ?> for x64
-    </h4>
-
-    <div>
-<pre>
-lynx --source http://gnomeslackbuild.org/net-install/64 | bash
-</pre>
-    </div>
-    
     <p>
       For more install options, see the <a
       href="http://svn.gnomeslackbuild.org/viewvc/trunk/README.TXT?view=text">README</a>.
@@ -167,13 +149,6 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
     </p>
 
     <p>
-      If you are using a 64-bit platform, you can try slapt-get for
-      Slamd64-stable: <a href=
-      "http://get.gnomeslackbuild.org/gsb64/gsb64-current/packages/tools/">
-      &lt;http://get.gnomeslackbuild.org/gsb64/gsb64-current/packages/tools/&gt;</a>.
-    </p>
-
-    <p>
       After downloading the slapt-get binary package, you can install it
       with:
     </p>
@@ -200,10 +175,7 @@ $ installpkg slapt-get-(version).tgz
          from the slackware.com mirror list at <a href=
          "http://www.slackware.com/getslack/">http://www.slackware.com/getslack/</a>.
          A full list of available GNOME SlackBuild Mirrors is given in our
-         <a href="#mirrors">list of mirrors</a>.  You will need to be aware that 
-         there is both an i586 (x86) binary version as well as a k8 (x86_64) binary 
-         version to choose from.  Please make sure to select the mirror that reflects 
-         the platform you run on. x86_64 binaries will not run on Slackware.
+         <a href="#mirrors">list of mirrors</a>. 
     </p>
     
     <p>
@@ -228,13 +200,13 @@ $ installpkg slapt-get-(version).tgz
           <pre>
 WORKINGDIR=/var/slapt-get
 EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
-SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.1/
-SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
+SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.12/
+SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.2/
 </pre>
         </div>
         If you would like to view a fully loaded example, after installing
         slapt-get, refer to
-        <code>/usr/doc/slapt-get-0.9.12b/example.slapt-getrc</code>.
+        <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
       </dd>
 
       <dt>
@@ -275,10 +247,7 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
 
     <p>
       The following is a list of available mirrors from which to download
-      GNOME SlackBuild.  <span class="str hilite-rd">NOTE:  A stable Slamd64 12.1 has not been 
-      released yet.  However, we are providing a GSB-2.22-CURRENT for <strong>Slamd64-current</strong>  It will not work
-      on Slamd64 12.0 or earlier releases.</span>  Please also be aware that running GNOME 2.20
-      on Slamd64 12.1 is not supported. 
+      GNOME SlackBuild. 
     </p>
 
     <ul>
@@ -286,43 +255,23 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
         <ul>
           <li>
             <a href=
-            "ftp://ftp.slackware.org.uk/gsb/gsb-2.22/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-2.22/&gt;</a>
+            "ftp://ftp.slackware.org.uk/gsb/gsb-2.26/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-2.26/&gt;</a>
           </li>
           <li>
             <a href=
-            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.22/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.22/&gt;</a>
+            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.26/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.26/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://www.slackware.org.uk/gsb/gsb-2.22/">&lt;http://www.slackware.org.uk/gsb/gsb-2.22/&gt;</a>
+            "http://www.slackware.org.uk/gsb/gsb-2.26/">&lt;http://www.slackware.org.uk/gsb/gsb-2.26/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://slackware.rol.ru/gsb/gsb/gsb-2.22/">&lt;http://slackware.rol.ru/gsb/gsb/gsb-2.22/&gt;</a>
+            "http://slackware.rol.ru/gsb/gsb/gsb-2.26/">&lt;http://slackware.rol.ru/gsb/gsb/gsb-2.26/&gt;</a>
           </li>
         </ul>
       </li>
 
-  <li>x86_64 Slackware derivatives, like Slamd64
-        <ul>
-          <li>
-            <a href=
-            "ftp://ftp.slackware.org.uk/gsb64/gsb64-current/">&lt;ftp://ftp.slackware.org.uk/gsb64/gsb64-current/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb64/gsb64-current/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb64/gsb64-current/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://www.slackware.org.uk/gsb64/gsb64-current/">&lt;http://http.slackware.org.uk/gsb64/gsb64-current/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://slackware.rol.ru/gsb/gsb64/gsb64-current/">&lt;http://slackware.rol.ru/gsb/gsb64/gsb64-current/&gt;</a>
-          </li>
-        </ul>
-      </li>
     </ul>
 
     <h3 id="upgrades">
@@ -351,26 +300,34 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.0/
        using slapt-get.  
     </p>
     
+    <p>
+      Please consult the documentation, particularly SLACKWARE-12.2_REPLACED_PACKAGES.TXT, 
+      or if you are upgrading from a previous version of GSB, read our
+      GSB_226_UPGRADE.TXT and UPGRADE.TXT.
+    </p>
 <div>
 <pre>
 $ slapt-get --upgrade
 </pre>
 </div>
       
-   <p>
-      <strong>glib2</strong> and <strong>libwnck</strong> are Slackware packages that must be 
-      replaced by the corresponding GNOME SlackBuild versions in order to use GNOME 
-      <span class="version"><?php echo($gsb_bin_stable_ver); ?></span> on Slackware 
-      <span class="version"><?php echo($slack_ver); ?></span>. Reasons for their 
-      replacement are given within brackets.
-   </p>
-   
 <div>
 <pre>
 *Required Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
 
-glib2:            ( > 2.15 required by libgnome 2.22, Gvfs 0.2.3, and Nautilus 2.22)
-libwnck:          ( > 2.22 required by Metacity 2.22, and GNOME 2.22 at large)
+alsa-lib:         ( > 1.0.19 required by pulseaudio 0.9.15, libcanberra, and
+                      gnome-control-center)
+bluez:            ( > 4.2 bluez replaces bluez-utils/libs, required for gvfs
+                    support for Bluetooth, and other GNOME 2.26 bluetooth userspace
+                    applications)
+cairo:            ( > 1.8  required by Evince 2.26)
+glib2:            ( > 2.20 required by libgnome 2.26, gvfs 1.2.2,
+                      nautilus 2.26, etc.)
+gtk+2:            ( > 2.16 required by libgnome 2.26, gvfs 1.2.2,
+                      gnome-panel 2.26.0, etc.)
+libwnck:          ( > 2.26 required by Metacity 2.26, and GNOME 2.26)
+pango             ( > 1.24 required by newer cairo and gtk versions.)
+poppler:          ( > 0.10 required by newer cairo, as well as Evince 2.26)
 
 </pre>
 </div>
@@ -740,7 +697,7 @@ $ removepkg /var/log/packages/*gsb
 
 <div>
 <pre>
-$ slapt-get --install glib2 libwnck
+$ slapt-get --reinstall --install glib2 libwnck alsa-lib pango poppler gtk+2 cairo bluez-lib bluez-utils
 </pre>
 </div>
 

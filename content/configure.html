@@ -5,6 +5,10 @@
       </p>
 
       <ol>
+      
+        <li>
+          <a href="#gst">PulseAudio</a>
+        </li>
         <li>
           <a href="#about-avahi">Avahi Zeroconf</a>
         </li>
@@ -102,7 +106,40 @@
     out of their GNOME SlackBuild desktop.  
     </p>
 
-        
+    <h3 id="about-pulseaudio">
+      PulseAudio <span class="toc-link"><a href="#toc"
+         title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
+    <p>
+      <img src="/images/app-icons/pulseaudio.png"
+         class="listimg-l"
+         alt="" />
+         
+         It's recommended that you configure ALSA for PulseAudio, since most applications use 
+         ALSA. This is done through the PulseAudio plugin for alsalibs (the ALSA PulseAudio 
+         plugin is available through our alsa-plugins package). In order for ALSA to use 
+         PulseAudio you need to configure the /etc/asound.conf.  There is an example version
+         which comes with the pulseaudio package (it may be named /etc/asound.conf.new if there
+         was a previous version).  Please make sure the following lines are found in /etc/asound.conf:
+    </p>        
+    
+    <div>
+      <pre>
+        pcm.pulse {
+          type pulse
+          }
+        ctl.pulse {
+          type pulse
+          }
+        pcm.!default {
+          type pulse
+          }
+        ctl.!default {
+          type pulse
+          }
+      </pre>
+    </div>
     
     <h3 id="about-avahi">
       Avahi Zeroconf <span class="toc-link"><a href="#toc"
