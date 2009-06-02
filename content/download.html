@@ -78,13 +78,39 @@
       <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
       is designed and built for Slackware <span class=
       "version"><strong><?php echo($slack_ver); ?></strong></span>.  It will not work
-      on Slackware 12.0 or earlier releases.</span>
+      on Slackware 12.1 or earlier releases.</span>
+    </p>
+
+    <p>
+      <span class="str hilite-gr">NOTE: There is a fairly serious bug in Slackware 12.2's X.Org
+      Server package.  If you find that when you are running a GNOME desktop your X process is
+      spiked at 100%, then you will need to use the xorg-server package supplied by GSB.  It 
+      is found in the extra/ directory.  Please see our
+      <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/XORG_PACKAGES.TXT">
+      Xorg Package README</a>.
     </p>
 
     <h3 id="quick"><span class="hilite-gr">
       Quick and Easy Install</span> <span class="toc-link"><a href="#toc"
       title="Go up to TOC">&#8593;</a></span>
     </h3>
+
+    <p>
+      Before plunging in, please consult the documentation, particularly our
+      <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/SLACKWARE-12.2_REPLACED_PACKAGES.TXT">
+      Replaced Packages List</a>.  You may also want to review the
+      <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/README.TXT">
+      README.TXT</a>. If you are upgrading from a previous version of GSB, read our 
+      <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/GSB_226_UPGRADE.TXT">
+      GSB 2.26 Upgrade Guide</a> and the
+      <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/UPGRADE.TXT">
+      UPGRADE.TXT</a>.
+   </p>
 
     <p>
       The quickest and easiest way to install the GSB binary distribution,
@@ -110,7 +136,7 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
 
     <p>
       For more install options, see the <a
-      href="http://svn.gnomeslackbuild.org/viewvc/trunk/README.TXT?view=text">README</a>.
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/INSTALL.TXT">README</a>.
     </p>
     
     <h3 id="slaptget">
@@ -144,8 +170,8 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
     <p>
       Download slapt-get for Slackware v<span class=
       "version"><?php echo($slack_ver); ?></span> from: <a href=
-      "http://get.gnomeslackbuild.org/gsb/gsb-2.22/packages/tools/">
-      &lt;http://get.gnomeslackbuild.org/gsb/gsb-2.22/packages/tools/&gt;</a>.
+      "http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>/packages/tools/">
+      &lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>/packages/tools/&gt;</a>.
     </p>
 
     <p>
@@ -200,8 +226,7 @@ $ installpkg slapt-get-(version).tgz
           <pre>
 WORKINGDIR=/var/slapt-get
 EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
-SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.12/
-SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.2/
+SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.2/
 </pre>
         </div>
         If you would like to view a fully loaded example, after installing
@@ -255,19 +280,19 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.2/
         <ul>
           <li>
             <a href=
-            "ftp://ftp.slackware.org.uk/gsb/gsb-2.26/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-2.26/&gt;</a>
+            "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.26/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-2.26/&gt;</a>
+            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://www.slackware.org.uk/gsb/gsb-2.26/">&lt;http://www.slackware.org.uk/gsb/gsb-2.26/&gt;</a>
+            "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://slackware.rol.ru/gsb/gsb/gsb-2.26/">&lt;http://slackware.rol.ru/gsb/gsb/gsb-2.26/&gt;</a>
+            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
           </li>
         </ul>
       </li>
@@ -300,11 +325,6 @@ SOURCE=ftp://anorien.warwick.ac.uk/slamd64/slamd64-12.2/
        using slapt-get.  
     </p>
     
-    <p>
-      Please consult the documentation, particularly SLACKWARE-12.2_REPLACED_PACKAGES.TXT, 
-      or if you are upgrading from a previous version of GSB, read our
-      GSB_226_UPGRADE.TXT and UPGRADE.TXT.
-    </p>
 <div>
 <pre>
 $ slapt-get --upgrade
