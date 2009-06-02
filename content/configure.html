@@ -7,7 +7,7 @@
       <ol>
       
         <li>
-          <a href="#gst">PulseAudio</a>
+          <a href="#about-pulseaudio">PulseAudio</a>
         </li>
         <li>
           <a href="#about-avahi">Avahi Zeroconf</a>
@@ -37,12 +37,7 @@
             </li>
           </ol>
         </li>
-
-        <li>
-          <a href="#about-tracker">Tracker (or Beagle) Desktop
-          Searching</a>
-        </li>
-
+t
         <li>
           <a href="#about-compiz">Compiz</a>        
           <ol>
@@ -410,58 +405,6 @@ $ ln -s /usr/share/applications/nm-applet.desktop
       gnome-session. If you would like to make this applet start
       system-wide, then create the link in your
       <code>/usr/share/gnome/autostart</code> directory.
-    </p>
-
-    <h3 id="about-tracker">
-      Tracker (or Beagle) Desktop Search <span class="toc-link"><a href=
-      "#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      <img src="/images/app-icons/tracker.png"
-         class="listimg-l"
-         alt="" /> Tracker is a tool designed to extract information and
-         metadata about your personal data so that it can be searched
-         easily and quickly. By using Tracker, you no longer have to
-         remember where you&#39;ve left your files. To locate a file you
-         only need to remember something about it, such as a word in the
-         document or the artist of the song. This is because as well as
-         searching for files in the traditional way, by name and location.
-         There is a background daemon that runs idly in the background
-         cataloguing and indexing all the files within the configured
-         directories. In order to enable tracker (or beagle), you will need
-         to start up these daemons. You can load these at the start of your
-         GNOME Session with the following.
-    </p>
-
-    <p>
-      (If the directory doesn&#39;t already exist, you will need to create
-      it.)
-    </p>
-
-    <div>
-      <pre>
-$ mkdir -p ~/.config/autostart
-$ cd ~/.config/autostart
-$ ln -s /usr/share/applications/tracker-applet.desktop
-</pre>
-    </div>
-
-    <p>
-      This will configure the GNOME Tracker applet to appear on the panel at
-      the next session start. If you would like to start the applet
-      manually, you need to run:
-    </p>
-
-    <pre>
-$ tracker-applet
-</pre>
-    <p>
-      After the applet has start, you will need to configure the
-      directories that the indexing service will keep an eye on for
-      updates. You can do this by using the &quot;Preferences&quot; dialog
-      after right-clicking on the panel applet.
     </p>
 
     <h3 id="about-compiz">
