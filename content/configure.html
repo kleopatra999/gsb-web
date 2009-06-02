@@ -31,10 +31,6 @@
             <li>
               <a href="#nm-netdev">Proper Permissions</a>
             </li>
-
-            <li>
-              <a href="#nm-applet">GNOME Panel Applet</a>
-            </li>
           </ol>
         </li>
 t
@@ -371,40 +367,6 @@ $ ./rc.networkmanager start
     <p>
       As root, you will need to edit the <code>/etc/group</code> file and
       add in user names to the netdev group.
-    </p>
-
-    <h4 id="nm-applet">
-      GNOME Panel Applet <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-
-    <p>
-      You can find the NetworkManager applet in the "Applications" and "Internet" menu.
-      You may also wish that the NetworkManager GNOME Panel applet start every time
-      you log in. If this is the case, there are two ways. You could
-      use the GNOME Session Manager from the GNOME Control Panel, or else
-      create a softlink in your home directory to autostart the
-      NetworkManager applet.
-    </p>
-
-    <p>
-      If the directory doesn&#39;t already exist, you will need to create
-      it.
-    </p>
-
-    <div>
-      <pre>
-$ mkdir -p ~/.config/autostart
-$ cd ~/.config/autostart
-$ ln -s /usr/share/applications/nm-applet.desktop
-</pre>
-    </div>
-
-    <p>
-      This will force the NetworkManager applet to start with your
-      gnome-session. If you would like to make this applet start
-      system-wide, then create the link in your
-      <code>/usr/share/gnome/autostart</code> directory.
     </p>
 
     <h3 id="about-compiz">
