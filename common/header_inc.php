@@ -34,17 +34,16 @@ $CSS_RAND = true;
 
     // VERs:
               <?php print("\n\t"
-                        ."GSB-source-ver:\t\t".$gsb_source_ver."\n\t"
+                        ."GSB-source-ver:\t\t\t".$gsb_source_ver."\n\t"
                         ."GSB-bin-stable-ver (web):\t".$gsb_bin_stable_ver."\n\t"
                         ."GSB-bin-stable-ver (installer):\t".$gsb_bin_stable."\n\t"
-                        ."Slack-stable-ver:\t".$slack_ver."\n\t"
-                        ."Slack-unstable-ver:\t".$slack_unstable_ver."\n\t"
-                        ."GSB-bin-64-ver:\t\t".$gsb_bin_64_ver."\n\t"
-                        ."GSB-bin-current-ver:\t".$gsb_bin_current_ver."\n\t"
-                        ."GSB-bin-unstable-ver:\t".$gsb_bin_unstable_ver."\n\t"
-                        ."GSB-Slax-ver:\t".$gsb_slax_ver."\n\t"
-                        ."Slax-stable-ver:\t".$slax_ver."\n\t"
-                        ."Slapt-get-ver:\t\t".$slapt_ver."\n"); ?>
+                        ."Slack-stable-ver:\t\t".$slack_ver."\n\t"
+                        ."Slack-unstable-ver:\t\t".$slack_unstable_ver."\n\t"
+                        ."GSB-bin-64-ver:\t\t\t".$gsb_bin_64_ver."\n\t"
+                        ."GSB-bin-current-ver:\t\t".$gsb_bin_current_ver."\n\t"
+                        ."GSB-bin-unstable-ver:\t\t".$gsb_bin_unstable_ver."\n\t"
+                        ."GSB-Slax-ver:\t\t\t".$gsb_slax_ver."\n\t"
+                        ."Slax-stable-ver:\t\t".$slax_ver."\n\t\n"); ?>
     -->
     <meta http-equiv="Content-Type"
           content="<?php echo $mime ?>; charset=utf-8; ?>" />

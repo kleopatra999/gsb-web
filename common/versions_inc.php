@@ -33,7 +33,7 @@ if(!isset($use_ver))
 if($use_ver != "current")
 {
     $slapt_path =
-        "/home/chipster/rsync_repos/gsb/$arch_path".$use_ver."/packages/tools/";
+        "/home/chipster/rsync_repos/gsb/$arch_path".$use_ver."/gsb/packages/tools/";
 }
 else
 {

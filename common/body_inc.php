@@ -31,7 +31,7 @@ else
             $gsb_bin_stable_ver,$gsb_source_ver,$cl_ver,$ports,
             $stable,$gsb_bin_unstable_ver,$gsb_bin_current_ver,
             $gsb_bin_stable,$slack_unstable_ver,$gsb_bin_64_ver,
-            $gsb_slax_ver,$slax_ver);
+            $gsb_slax_ver,$slax_ver,$slapt_get_ver);
 }
 ?>
 </div>
