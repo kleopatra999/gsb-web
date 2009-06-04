@@ -2,7 +2,7 @@
 2009-06-01-11-18-GMT
 GSB 2.26.2 Stable Released
 <p>
-<a href="/whatsnew">GSB 2.26.2 for Slackware 12.2</a> is now readily available for users. Details can be found on our 
+<a href="/whatsnew/">GSB 2.26.2 for Slackware 12.2</a> is now readily available for users. Details can be found on our 
 download page.  There have been a few package changes in this release so please give the 
 CHANGES_AND_HINTS.TXT a quick read before plunging, as well as note that you may be affected
 by an X bug.  Please read our XORG_PACKAGES.TXT for more details.
