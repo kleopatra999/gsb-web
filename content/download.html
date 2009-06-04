@@ -170,8 +170,8 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
     <p>
       Download slapt-get for Slackware v<span class=
       "version"><?php echo($slack_ver); ?></span> from: <a href=
-      "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/gsb/packages/tools/">
-      &lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>/gsb/packages/tools/&gt;</a>.
+      "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;?>/gsb/packages/tools/slapt-get-<?php echo $slapt_get_ver; ?>.tgz">
+      &lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;?>/gsb/packages/tools/slapt-get<?php echo $slapt_get_ver; ?>.tgz&gt;</a>.
     </p>
 
     <p>
@@ -181,7 +181,7 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
 
 <div>
 <pre>
-$ installpkg slapt-get-(version).tgz
+$ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.tgz
 </pre>
     </div>
 

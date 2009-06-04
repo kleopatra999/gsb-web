@@ -4,6 +4,8 @@
     $Id: index.php 2773 2007-11-18 16:49:41Z chipster $
 */
 
+require('common/versions_inc.php');
+
 // Set req. vars
 $errno          =   $_REQUEST['errno'];
 $op             =   $_REQUEST['op'];
@@ -20,7 +22,6 @@ if (!isset($op))
 
 // common stuff 
 $rnd = md5(gmdate('M d Y'));
-require('common/versions_inc.php');
 $common_title = "GNOME SlackBuild";
 
 // error handlers
