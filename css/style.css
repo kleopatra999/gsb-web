@@ -375,7 +375,7 @@ acronym, .titleTip {
     line-height: 1.5em;
     margin: 0;
     padding: 0;
-    text-align: justify;
+    /*text-align: justify;*/
     border-bottom: 1px solid white;
     min-height: 450px;
 }
