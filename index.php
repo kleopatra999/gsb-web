@@ -61,7 +61,7 @@ switch ($op)
         }
         else
         {
-            $title = "Download &amp; Installation : $common_title";
+            $title = "Download &amp; Install : $common_title";
         }
         break;
     case "links":
