@@ -91,6 +91,21 @@
       Xorg Package README</a>.</span>
     </p>
 
+    <p>
+      <span class="str">Remember: You must first upgrade and replace all packages marked as
+      required in the <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/SLACKWARE-12.2_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  If you fail to do so, your installation may
+      not work.  Run the following command before installing GSB:
+    </p>
+      <div>
+      <pre>
+      $ removepkg bluez-lib bluez-utils monodoc gst-plugins-farsight farsight \
+             nmc emerald-themes candido-themes compiz-fusion-plugins-main \
+             compiz-fusion-plugins-extra
+      $ slapt-get --upgrade alsa-lib cairo glib2 gtk+2 libwnck pango poppler bluez
+      </pre>
+      </div>
+
     <h3 id="quick"><span class="hilite-gr">
       Quick and Easy Install</span> <span class="toc-link"><a href="#toc"
       title="Go up to TOC">&#8593;</a></span>
