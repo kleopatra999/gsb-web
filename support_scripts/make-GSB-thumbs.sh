@@ -34,7 +34,7 @@ echo ""
 cd ../
 echo "" > $HTML_FILE
 for i in $( ls *.png ); do
-    PAGE_ENTRY="    <a href=\"$HTML_IMAGE_PATH/$i\" rel=\"lightbox\"><img src=
+    PAGE_ENTRY="    <a href=\"$HTML_IMAGE_PATH/$i\" rel=\"lightbox[Screenshots]\"><img src=
       \"$HTML_IMAGE_PATH/thumbs/thumb-$i\" alt=\"\" class=\"screenthumb\" /></a>"
     echo "      Generating 'thumb-$i' and adding to HTML page..."
     convert -geometry 150x150 $i thumbs/thumb-$i
