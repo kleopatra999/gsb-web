@@ -16,3 +16,4 @@ User-agent: duggmirror
 Disallow: /
 
 Sitemap: http://gnomeslackbuild.org/sitemap.xml
+
