@@ -128,5 +128,4 @@ function section($op,$news,$errno,$errdesc,$SERVER_NAME,$HTTP_REFERER,
 include('common/header_inc.php');
 include('common/body_inc.php');
 include('common/footer_inc.php');
-
 ?>
