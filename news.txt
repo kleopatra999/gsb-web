@@ -4,6 +4,7 @@ gsb-current 2.26.3 available for Slackware 13.0
 <p>
 GSB 2.26.3 for Slackware 13.0 is now available for users to try in gsb-current.
 </p>
+<p>
 Lots of work has gone into this full rebuild for the latest Slackware.  Every
 SlackBuild has been updated, our directory structure now closely follows Slackware
 practice, and all our packages are now gpg signed.  There have also been a few
