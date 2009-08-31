@@ -1,15 +1,37 @@
 ###
+2009-08-31-17-41-GMT
+gsb-current 2.26.3 available for Slackware 13.0
+<p>
+GSB 2.26.3 for Slackware 13.0 is now available for users to try in gsb-current.
+</p>
+Lots of work has gone into this full rebuild for the latest Slackware.  Every
+SlackBuild has been updated, our directory structure now closely follows Slackware
+practice, and all our packages are now gpg signed.  There have also been a few
+package changes in this release so please give the CHANGES_AND_HINTS.TXT a
+quick read before installing.  Also, we still need to replace five standard
+Slackware packages.  Please see SLACKWARE-13.0_REPLACED_PACKAGES.TXT for more
+details about what needs to be replaced, and why.
+</p>
+<p>
+gsb-current can be considered very useable, but note that a few things still have
+not yet made it into to the repository.  At the moment, there is only the
+gsb-desktop metapackage for handy installation, a few other package tweaks
+planned, and some themes to be added.  And of course, the more testing the
+better.  Please give gsb-current a try and report any bugs you find. 
+</p>
+###
 2009-06-01-11-18-GMT
 GSB 2.26.2 Stable Released
 <p>
-<a href="/download/">GSB 2.26.2 for Slackware 12.2</a> is now readily available for users. Details can be found on our 
-download page.  There have been a few package changes in this release so please give the 
-CHANGES_AND_HINTS.TXT a quick read before plunging, as well as note that you may be affected
-by an X bug.  Please read our XORG_PACKAGES.TXT for more details.
+<a href="/download/">GSB 2.26.2 for Slackware 12.2</a> is now readily available
+for users. Details can be found on our download page.  There have been a few
+package changes in this release so please give the CHANGES_AND_HINTS.TXT a
+quick read before plunging, as well as note that you may be affected by an X
+bug.  Please read our XORG_PACKAGES.TXT for more details.
 </p>
-<p> This release has been tested, is considered stable, and will continue to be actively 
-maintained, especially since 2.26.3 isn't far off.  Please do not hestitate to report any
-bugs you might come across.  Enjoy!  
+<p> This release has been tested, is considered stable, and will continue to be
+actively maintained, especially since 2.26.3 isn't far off.  Please do not
+hestitate to report any bugs you might come across.  Enjoy!  
 </p>
 ###
 2009-05-12-10-25-GMT
