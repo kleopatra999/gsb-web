@@ -14,11 +14,7 @@ Slackware packages.  Please see SLACKWARE-13.0_REPLACED_PACKAGES.TXT for more
 details about what needs to be replaced, and why.
 </p>
 <p>
-gsb-current can be considered very useable, but note that a few things still have
-not yet made it into to the repository.  At the moment, there is only the
-gsb-desktop metapackage for handy installation, a few other package tweaks
-planned, and some themes to be added.  And of course, the more testing the
-better.  Please give gsb-current a try and report any bugs you find. 
+For full details, please see our <a href="http://groups.google.co.uk/group/gsb-users/browse_thread/thread/ea4cfda73d553e50?hl=en">announcement email</a>.
 </p>
 ###
 2009-06-01-11-18-GMT
