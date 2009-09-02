@@ -1,4 +1,13 @@
 ###
+2009-09-02-18:22-GMT
+gsb64-current 2.26.3 available for Slackware64 13.0
+<p>
+The 64-bit build is back!  GSB64 2.26.3 for Slackware64 13.0 is now available for users to try in gsb-current.
+</p>
+<p>
+For full details, please see our <a href="http://groups.google.co.uk/group/gsb-users/browse_thread/thread/50bab9881fa20e4e?hl=en">announcement email</a>.
+</p>
+###
 2009-08-31-17-41-GMT
 gsb-current 2.26.3 available for Slackware 13.0
 <p>
