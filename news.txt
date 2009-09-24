@@ -1,4 +1,26 @@
 ###
+2009-09-24-21-17-GMT
+GNOMESlackBuild 2.26.3 Stable Released for Slackware and Slackware64.
+<p>
+We've brought our GNOME SlackBuild 2.26.3 to the latest Slackware and
+Slackware64.  GNOME SlackBuild 2.26.3 stable for Slackware 13.0 and Slackware64
+13.0 is working solidly.  There have been some updates from the previous 2.26.3
+release for Slackware 12.2, so please make sure to read the documentation,
+particularly our SLACKWARE-13.0_REPLACED_PACKAGES.TXT, and our
+CHANGES_AND_HINTS.TXT.  For those of you upgrading from gsb-current, please make
+sure to update your SOURCE= lines in your slapt-getrc.  Check out our 
+<a href="/download/">download</a> page for more information.
+</p>
+<p>
+The release will be filtering out to a bunch of our new mirrors, which have
+recently been added, so please check the MIRRORS.TXT to find a local copy near
+you.  You may need to wait a bit before all the mirrors are up to date.  
+</p>
+<p>
+Many thanks to all those who helped us out by submitting suggestions or
+reporting bugs! Now onto GNOME 2.28.0!
+</p> 
+###
 2009-09-02-18-22-GMT
 gsb64-current 2.26.3 available for Slackware64 13.0
 <p>

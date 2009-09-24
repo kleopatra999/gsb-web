@@ -30,10 +30,6 @@
           <a href="#install">Installing GSB</a>
         </li>
 
-        <li>          
-          <a href="#meta">Additional Metapackages</a>
-       </li>
-                  
         <li>
           <a href="#configure">Post-Install Configuration Notes</a>
         </li>
@@ -60,8 +56,8 @@
     <p>
       <img src="/images/app-icons/gsb_distribution.png"
          class="listimg-l"
-         alt="" /> This is our binary GNOME distribution for Slackware
-         Linux. It encompasses all needed packages for a fully
+         alt="" /> This is our binary GNOME distribution for Slackware and
+	 Slackware64 Linux. It encompasses all needed packages for a fully
          configurable, customisable and usable GNOME desktop environment
          for Slackware. If you haven&#39;t yet, you should <span
              class="hilite"><a href=
@@ -76,33 +72,19 @@
 
     <p>
       <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
-      is designed and built for Slackware <span class=
-      "version"><strong><?php echo($slack_ver); ?></strong></span>.  It will not work
-      on Slackware 12.1 or earlier releases.</span>
+      is designed and built for Slackware or Slackware64 <span class=
+      "version"><strong><?php echo($slack_ver); ?></strong></span>.  It may not work on Slackware 12.2 or earlier releases.</span>
     </p>
 
-    <p>
-      <span class="str">NOTE: There is a fairly serious bug in Slackware 12.2's X.Org
-      Server package.  If you find that when you are running a GNOME desktop your X process is
-      spiked at 100%, then you will need to use the xorg-server package supplied by GSB.  It 
-      is found in the extra/ directory.  Please see our
-      <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/XORG_PACKAGES.TXT">
-      Xorg Package README</a>.</span>
-    </p>
-
-    <p>
       <span class="str">NOTE ON REQUIREMENTS: </span>
       You <i>must</i> first upgrade and replace all packages marked as required in the <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/SLACKWARE-12.2_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  If you fail to do so, your installation may
-      not work.  Run the following command before installing GSB:
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/SLACKWARE-13.0_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
+      If you fail to do so, your installation may not work.  Run the following
+      command before installing GNOME SlackBuild:
     </p>
       <div>
       <pre>
-      $ removepkg bluez-lib bluez-utils monodoc gst-plugins-farsight farsight \
-             nmc emerald-themes candido-themes compiz-fusion-plugins-main \
-             compiz-fusion-plugins-extra
-      $ slapt-get --upgrade alsa-lib cairo glib2 gtk+2 libwnck pango poppler bluez</pre>
+      $ slapt-get --upgrade alsa-lib bluez glib2 gtk+2 libwnck</pre>
       </div>
 
     <h3 id="quick"><span class="hilite-gr">
@@ -113,16 +95,13 @@
     <p>
       Before plunging in, please consult the documentation, particularly our
       <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/SLACKWARE-12.2_REPLACED_PACKAGES.TXT">
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+      ?>_slackware-13.0/SLACKWARE-13.0_REPLACED_PACKAGES.TXT">
       Replaced Packages List</a>.  You may also want to review the
       <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/README.TXT">
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/README.TXT">
       README.TXT</a>. If you are upgrading from a previous version of GSB, read our 
-      <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/GSB_226_UPGRADE.TXT">
-      GSB 2.26 Upgrade Guide</a> and the
-      <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/UPGRADE.TXT">
+      <a href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/UPGRADE.TXT">
       UPGRADE.TXT</a>.
    </p>
 
@@ -160,7 +139,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
       For more install options, see the <a
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/INSTALL.TXT">README</a>.
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/INSTALL.TXT">README</a>.
     </p>
     
     <h3 id="slaptget">
@@ -248,26 +227,14 @@ $ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.tgz
         mirrors.</strong>
         <div>
           <pre>
-WORKINGDIR=/var/slapt-get
-EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
-SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.2/
-</pre>
+        WORKINGDIR=/var/slapt-get
+        EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
+        SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-13.0/
+        </pre>
         </div>
         If you would like to view a fully loaded example, after installing
         slapt-get, refer to
         <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
-      </dd>
-
-      <dt>
-        <var>WORKINGDIR</var>
-      </dt>
-
-      <dd>
-        WORKINGDIR will hold the package data and downloaded packages. This
-        directory will be created automatically as permissions allow. Be
-        sure that the directory resides on a partition with a large amount
-        of free space, because a full GNOME SlackBuild installation can
-        download up to 500MB of packages.
       </dd>
 
       <dt>
@@ -296,7 +263,8 @@ SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.2/
 
     <p>
       The following is a list of available mirrors from which to download
-      GNOME SlackBuild. 
+      GNOME SlackBuild.  For the most updated list of mirrors, please consult
+      the MIRROR.TXT found in release directory. 
     </p>
 
     <ul>
@@ -304,24 +272,63 @@ SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-12.2/
         <ul>
           <li>
             <a href=
-            "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
+            "http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
           </li>
           <li>
             <a href=
-            "ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;ftp://ftp.slackware.pl/pub/gnomeslackbuild/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
+            "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
+            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://slackware.rol.ru/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>/">&lt;http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>/&gt;</a>
+            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href=
+            "http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href=
+            "http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware_13.0/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
           </li>
         </ul>
       </li>
 
     </ul>
+
+    <ul>
+      <li>Slackware64 <?php echo ($slack_ver); ?>
+        <ul>
+         <li>
+            <a href=
+            "http://get.gnomeslackbuild.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://get.gnomeslackbuild.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href= "http://www.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://www.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href= "http://slackware.rol.ru/gsb/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://slackware.rol.ru/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href=
+            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href= "http://mirrors.dotsrc.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://mirrors.dotsrc.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+          <li>
+            <a href=
+            "http://mirror.switch.ch/ftp/mirror/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64_13.0/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-13.0/&gt;</a>
+          </li>
+
+        </ul>
+      </li>
+
+    </ul>
+
 
     <h3 id="upgrades">
       Required Upgrades <span class="toc-link"><a href="#toc"
@@ -359,19 +366,14 @@ $ slapt-get --upgrade
 <pre>
 *Required Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
 
-alsa-lib:         ( > 1.0.19 required by pulseaudio 0.9.15, libcanberra, and
-                      gnome-control-center)
-bluez:            ( > 4.2 bluez replaces bluez-utils/libs, required for gvfs
-                    support for Bluetooth, and other GNOME 2.26 bluetooth userspace
-                    applications)
-cairo:            ( > 1.8  required by Evince 2.26)
-glib2:            ( > 2.20 required by libgnome 2.26, gvfs 1.2.2,
-                      nautilus 2.26, etc.)
-gtk+2:            ( > 2.16 required by libgnome 2.26, gvfs 1.2.2,
-                      gnome-panel 2.26.0, etc.)
-libwnck:          ( > 2.26 required by Metacity 2.26, and GNOME 2.26)
-pango             ( > 1.24 required by newer cairo and gtk versions.)
-poppler:          ( > 0.10 required by newer cairo, as well as Evince 2.26)
+alsa-lib:         ( > 1.0.20 required by pulseaudio 0.9.15, libcanberra, and
+                    gnome-control-center)
+bluez:            ( > 4.46 bluez replaces bluez-utils and bluez-libs, required
+                    for gvfs support for Bluetooth, and other GNOME 2.26
+                    bluetooth userspace applications)
+glib2:            ( > 2.20 required by libgnome, gvfs, nautilus, and others)
+gtk+2:            ( > 2.16 required by gnome-panel, among others )
+libwnck:          ( 2.26.2 )
 
 </pre>
 </div>
@@ -381,7 +383,7 @@ poppler:          ( > 0.10 required by newer cairo, as well as Evince 2.26)
        possible, it is not possible to free ourselves wholly from replacing some packages.  
        There are three packages that are optional and replace official Slackware packages, 
        but their replacement are only necessary for added functionality, or for certain 
-       GNOME applications.  <strong>Their replacement is recommended</strong>, but not 
+       GNOME applications. <strong>Their replacement is recommended</strong>, but not 
        required if you do not plan to use certain applications, or are dead set against
        replacing any Slackware provided packages.
     </p>
@@ -390,14 +392,8 @@ poppler:          ( > 0.10 required by newer cairo, as well as Evince 2.26)
 <pre>
 *Optional Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
 
-mozilla-firefox:  
-  This is a shared library version of Mozilla Firefox. You must replace the Slackware Mozilla with 
-  the GSB version if you plan to use Epiphany (GNOME Browser), Yelp (GNOME Help System), 
-  GNOME Python (for the gtkmozembed widget for some Python applications), DevHelp (Developement
-  Documentation Browser), or any Mono applications.
-
-compiz-fusion:    
-  Slackware 12.1 comes with Compiz 0.7.4, but GSB's Compiz-fusion is much cooler. Our compiz-fusion 
+compiz:    
+  Slackware 13.0 comes with Compiz, but GSB's Compiz-fusion is much cooler. Our compiz-fusion 
   package is built with Gtk/GNOME support, and integrates much better into a GNOME environment than
   the Slackware version.  However, our compiz-fusion package does not come with a KDE Window 
   Decorator, so if you plan on using KDE or switching back and forth while using Compiz, it's 
@@ -407,6 +403,13 @@ compiz-fusion:
 libgsf:
   Slackware's libgsf package lacks GNOME support.  You will need to replace this package with the
   GSB version if you plan on using any GNOME Office software, like Gnumeric, Glom, GNOME Database, etc.
+
+pidgin:           
+  We offer the latest stable Pidgin package with pulseaudio support for sounds,
+  and found in extra/
+
+MPlayer:    
+  MPlayer built against pulseaudio, found in extra/
 
 </pre>
 </div>
@@ -518,178 +521,6 @@ $ slapt-get --install gsb-desktop
       may wish to make in order to get the best possible GSB system running.
     </p>
 
-    <h3 id="meta">
-      Additional Metapackages <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-    <p>
-      There are additional metapackages that easily allow users to extend their GNOME SlackBuild
-      desktop.  The following is a list of all possible metapackages available for
-      GNOME SlackBuild, and can easily be installed with slapt in the same fashion
-      as the gsb-desktop package above.
-    </p>
-
-    <dl>
-      <dt>
-        gsb-desktop
-      </dt>
-
-      <dd>
-        This is the basic, yet fully functional GNOME Desktop Environment
-        provided by GSB. It contains all the packages required for a
-        working GNOME Desktop, including Epiphany, Evolution, the GNOME
-        Display Manager (GDM), Gslapt for package management as well as some 
-        basic themes and desktop utilities. If you
-        would like to view the complete list of packages contained in this
-        metapackage, please take a look at its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-desktop/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-accessibility
-      </dt>
-
-      <dd>
-        This packages all the Accessibility applications and utilities for
-        the GNOME Desktop, such as Orca and GNOME Magnifier. If you would
-        like to view the complete list of packages contained in this
-        metapackage, please take a look at its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-accessibility/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-administration
-      </dt>
-
-      <dd>
-        This packages all the Administration applications and utilities for
-        the GNOME Desktop, such as Pessulus and Sabayon, Remote Desktop viewing,
-        Backup software, partition editing, and some printer administration software. 
-        If you would like to view the complete list of packages contained in this
-        metapackage, please take a look at its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-administration/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-compiz
-      </dt>
-
-      <dd>
-        This package contains the 3D window manager Compiz-Fusion, its
-        configuration utilities, as well as full GNOME integration. If you
-        would like to view the complete list of packages contained in this
-        metapackage, please take a look at its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-compiz/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-complete
-      </dt>
-
-      <dd>
-        This package contains the entire GNOME SlackBuild distribution. It
-        contains all the multimedia, development, office, desktop, compiz,
-        library and accessibility packages available from GSB. It is a huge
-        download and a huge install, but some users may find this
-        convenient. If you would like to view the complete list of packages
-        contained in this metapackage, please take a look at its
-        <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-complete/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-development
-      </dt>
-
-      <dd>
-        This package contains the a full Development Environment,
-        installing packages like Anjuta, Glade3, and C++ bindings for most
-        GNOME packages. If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-development/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-mono
-      </dt>
-
-      <dd>
-        This package is a metapackage for a Mono C# use and development tools, including a working
-        Mono C# compiler, GNOME bindings, and a MonoDevelop IDE.
-         If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-mono/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-      
-      <dt>
-        gsb-multimedia
-      </dt>
-
-      <dd>
-        This package contains the a full multimedia suite for GNOME SlackBuild. It includes
-        various music players, like Banshee, Rhythmbox, Totem, as well as MPlayer, and
-        a full assortment of codec libraries. If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-multimedia/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-      
-      <dt>
-        gsb-office
-      </dt>
-
-      <dd>
-        This package contains the a full GNOME office suite, installing software for
-        all aspects of office manager, like Glom for database and Goffice/Gda
-        for data backend management, Gnumeric for spreadsheets, Abiword for work 
-        processing, as well as Dia for a Visio-like charting program.
-        If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-office/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>
-
-      <dt>
-        gsb-ooo
-      </dt>
-
-      <dd>
-        This package is for easy installation of OpenOffice.Org for your GNOME Desktop.  
-        Openoffice is linked against Gtk+2 to fit your GNOME Desktop, and comes with 
-        a set of menus for better GNOME integration.
-        If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-ooo/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>      
-      
-      <dt>
-        gsb-themes
-      </dt>
-
-      <dd>
-        This package contains a few extra themes for GNOME SlackBuild, as well
-        as a few of the more popular GTK engines in use by a wide variety of GNOME
-        themes. If you would like to view the complete list of
-        packages contained in this metapackage, please take a look at
-        its <a href=
-	"http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/branches/gsb-2.26_slack12.2/src/metapackages/gsb-themes/slack-required?view=doc">
-        slack-required</a> file.
-      </dd>      
-    </dl>
-    
     <h3 id="configure">
       Post Installation and Configure Notes <span class="toc-link"><a href=
       "#toc"
@@ -741,13 +572,13 @@ $ removepkg /var/log/packages/*gsb
 
 <div>
 <pre>
-$ slapt-get --reinstall --install glib2 libwnck alsa-lib pango poppler gtk+2 cairo bluez-lib bluez-utils
+$ slapt-get --reinstall --install glib2 libwnck alsa-lib gtk+2 bluez-lib bluez-utils
 </pre>
 </div>
 
     <p>
-     You may also need to reinstall other packages that may have been replaced, such as mozilla-firefox,
-     libgsf, or compiz.
+     You may also need to reinstall other packages that may have been replaced,
+     such as pidgin, libgsf, or compiz.
      </p>
 
     <h3 id="bugs">
