@@ -7,20 +7,23 @@ $arch = $_REQUEST['arch'];
 switch ($arch)
 {
     case "gsb":
-        $arch_path = "gsb/gsb-";
-        $excludes =
+        $arch_path  = "gsb";
+        $slack_arch = "slackware";
+        $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
         break;
     case "gsb64":
-        $arch_path = "gsb64/gsb64-";
-        $excludes =
+        $arch_path  = "gsb64";
+        $slack_arch = "slackware64";
+        $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
-        $use_ver = "current"; // temp hack until stable is released.
+        #$use_ver = "current"; // temp hack until stable is released.
         break;
     default:
-        $arch = "gsb";
-        $arch_path = "gsb/gsb-";
-        $excludes =
+        $arch       = "gsb";
+        $arch_path  = "gsb";
+        $slack_arch = "slackware";
+        $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
 }
 
@@ -30,13 +33,15 @@ require('versions_inc.php');
 // slack/slamd64 mirror selector
 if ($arch == "gsb64")
 {
-    $slack_mirror_uri = "http://slamd64.he.net/slamd64-$slack_ver";
+    $slack_mirror_uri =
+        "http://slackware.mirrors.tds.net/pub/slackware/$slack_arch-$slack_ver";
 }
 else
 {
-    $slack_mirror_uri = "http://slackware.mirrors.tds.net/pub/slackware/slackware-$slack_ver";
+    $slack_mirror_uri =
+        "http://slackware.mirrors.tds.net/pub/slackware/$slack_arch-$slack_ver";
 }
-$slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.tgz|sed 's| \/.*||g'`);
+$slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
 
 // mirror randomizer
 $sites[0] = array("http://slackware.org.uk", 3);
@@ -61,10 +66,10 @@ $mirror = $picked;
 switch ($use_ver)
 {
     case "$gsb_bin_stable":
-        $slapt_dir = "tools";
+        $slapt_dir = "ad";
         break;
     case "current":
-        $slapt_dir = "tools";
+        $slapt_dir = "ad";
         break;
     default:
         $use_ver = $gsb_bin_stable;
@@ -97,13 +102,15 @@ export PATH=\$PATH:/usr/sbin:/usr/local/bin
 #
 # vars
 #
+SLACK_VER=\"$slack_ver\"
 GSB_VER=\"$use_ver\"
-META_PACK=\"gsb-complete\"
+GSB_NORMALIZED_PATH=\"$arch_path-\$GSB_VER\"_\"$slack_arch-\$SLACK_VER\"
+META_PACK=\"gsb-desktop\"
 SLAPTGET_VER=\"$slapt_get_ver\"
-SLAPTGET_FILE=\"slapt-get-\$SLAPTGET_VER.tgz\"
+SLAPTGET_FILE=\"slapt-get-\$SLAPTGET_VER.txz\"
 TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
-SLAPTGET_DLPATH=\"\$MIRROR/$arch_path\$GSB_VER/gsb/packages/$slapt_dir/\$SLAPTGET_FILE\"
+SLAPTGET_DLPATH=\"\$MIRROR/gsb/$arch_path-\$GSB_VER\"_\"$slack_arch-\$SLACK_VER/$arch_path/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
 SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y\"
 SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --install \$META_PACK -y\"
@@ -171,7 +178,7 @@ echo
 cat << EOF >\$TEMP_CONFIGFILE
 WORKINGDIR=/var/slapt-get
 EXCLUDE=$excludes
-SOURCE=\$MIRROR/$arch_path\$GSB_VER
+SOURCE=\$MIRROR/$arch_path/\$GSB_NORMALIZED_PATH
 SOURCE=$slack_mirror_uri
 EOF
 

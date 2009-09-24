@@ -33,18 +33,18 @@ if(!isset($use_ver))
 if($use_ver != "current")
 {
     $slapt_path =
-        "/home/chipster/rsync_repos/gsb/gsb/gsb-".$use_ver."/gsb/packages/tools/";
+        "/home/chipster/rsync_repos/gsb/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch_path."/ad/";
 }
 else
 {
     $slapt_path =
-        "/home/chipster/rsync_repos/gsb/$arch_path".$use_ver."/gsb/packages/tools/";
+        "/home/chipster/rsync_repos/gsb/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch_path."/ad/";
 }
 // end tmp hack
 
-$slapt_ver_cmd = "ls $slapt_path/slapt-get*.tgz | \
+$slapt_ver_cmd = "ls $slapt_path/slapt-get*.txz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
-        s'|\.tgz||g'";
+        s'|\.txz||g'";
 $slapt_get_ver = @exec($slapt_ver_cmd);
 
 ?>
