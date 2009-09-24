@@ -29,19 +29,17 @@ if(!isset($use_ver))
     $use_ver = $gsb_bin_stable;
 }
 
-// tmp hack because fidersration keeps changing the dir layout!
-if($use_ver != "current")
+// slapt-get version extractor
+if(!isset($arch_path))
 {
-    $slapt_path =
-        "/home/chipster/rsync_repos/gsb/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch_path."/ad/";
+    $arch_path = "gsb";
 }
-else
+if(!isset($slack_arch))
 {
-    $slapt_path =
+    $slack_arch = "slackware";
+} 
+$slapt_path =
         "/home/chipster/rsync_repos/gsb/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch_path."/ad/";
-}
-// end tmp hack
-
 $slapt_ver_cmd = "ls $slapt_path/slapt-get*.txz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.txz||g'";
