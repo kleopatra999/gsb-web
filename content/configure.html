@@ -14,7 +14,7 @@
         </li>
 
         <li>
-          <a href="#about-menus">Missing Menus?</a>
+          <a href="#about-menus">Custom Menus</a>
         </li>
 
         <li>
@@ -33,29 +33,24 @@
             </li>
           </ol>
         </li>
-t
         <li>
-          <a href="#about-compiz">Compiz</a>        
+          <a href="#about-compiz">GSB Compiz</a>        
           <ol>
             <li>
-              <a href="#compiz-gnome">Using Compiz with GNOME SlackBuild</a>
-            </li>
-
-            <li>
-              <a href="#compiz-ati">Compiz and ATI Video Drivers</a>
+              <a href="#compiz-ati">Compiz and ATI</a>
             </li>
           </ol>
         </li>
 
         <li>
-          <a href="#gdm">GNOME Display Manager (GDM)</a>
+          <a href="#gdm">GNOME Display Manager</a>
         </li>
 
         <li>
           <a href="#about-kde">KDE Integration</a>
           <ol>
             <li>
-              <a href="#kde-kdm">KDE Display Manager (KDM)</a>
+              <a href="#kde-kdm">KDE Display Manager</a>
             </li>
 
             <li>
@@ -181,7 +176,7 @@ $ . /etc/rc.d/rc.avahidnsconfd start
     </p>
 
     <h3 id="about-menus">
-      Missing Menus? <span class="toc-link"><a href="#toc"
+      GNOME Menus<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -196,15 +191,6 @@ $ . /etc/rc.d/rc.avahidnsconfd start
          /etc/X11/xinit/xinitrc.gnome</code>, and this file ought to be copied
          to your user's home directory (~/.xinitrc) in order to use <strong>startx
          </strong> to start an X session.  
-    </p>
-
-    <p>
-    <b>NOTE: There have been some reports that menus are missing when starting
-    GSB GNOME.  The cause may be due to the xinitrc failing to honour the 
-    environment setting XDG_CONFIG_DIRS without first exporting the variable.
-    You may need to add <code>export XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg</code>
-    to your <code>xinitrc.gnome</code>. <i>Note the export at the start of the line.</i>
-    </b>
     </p>
 
     <p>In this startup script is an environment variable.  By specifying this 
@@ -388,11 +374,6 @@ $ ./rc.networkmanager start
          usefulness.
     </p>
 
-    <h4 id="compiz-gnome">
-      Using Compiz with GNOME SlackBuild <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-    
     <p>
       GNOME SlackBuild comes with both an <code>/etc/X11/xinitrc.gnome</code>, 
       which is the X startup script for a gnome-session with Metacity as the
