@@ -30,17 +30,11 @@ switch ($arch)
 // need version vars
 require('versions_inc.php');
 
-// slack/slamd64 mirror selector
-if ($arch == "gsb64")
-{
-    $slack_mirror_uri =
+// mirror vars
+$slack_mirror_uri =
         "http://slackware.mirrors.tds.net/pub/slackware/$slack_arch-$slack_ver";
-}
-else
-{
-    $slack_mirror_uri =
-        "http://slackware.mirrors.tds.net/pub/slackware/$slack_arch-$slack_ver";
-}
+
+// slapt-balls md5 vars
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
 
 // mirror randomizer
