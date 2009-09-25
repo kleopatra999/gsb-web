@@ -79,7 +79,7 @@
     <p>
       <span class="str">NOTE ON REQUIREMENTS: </span>
       You <i>must</i> first upgrade and replace all packages marked as required in the <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/SLACKWARE-13.0_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
       If you fail to do so, your installation may not work.  Run the following
       command before installing GNOME SlackBuild:
     </p>
@@ -98,12 +98,12 @@
       Before plunging in, please consult the documentation, particularly our
       <a 
       href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
-      ?>_slackware-13.0/SLACKWARE-13.0_REPLACED_PACKAGES.TXT">
+      ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">
       Replaced Packages List</a>.  You may also want to review the
       <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/README.TXT">
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/README.TXT">
       README.TXT</a>. If you are upgrading from a previous version of GSB, read our 
-      <a href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/UPGRADE.TXT">
+      <a href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/UPGRADE.TXT">
       UPGRADE.TXT</a>.
    </p>
 
@@ -141,7 +141,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
       For more install options, see the <a
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/INSTALL.TXT">README</a>.
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/INSTALL.TXT">README</a>.
     </p>
     
     <h3 id="slaptget">
@@ -174,12 +174,12 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
     Download slapt-get for Slackware <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href= "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;?>_slackware-13.0/gsb/ad/slapt-get-<?php echo $slapt_get_ver; ?>.txz"> &lt;slapt-get<?php echo $slapt_get_ver; ?>&gt;</a>. 
+    <a href= "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/slapt-get-<?php echo $slapt_get_ver; ?>.txz"> &lt;slapt-get<?php echo $slapt_get_ver; ?>&gt;</a>. 
     </p>
 
     <p>
     Download slapt-get for Slackware64 <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href="http://www.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable;?>_slackware-13.0/gsb64/ad/slapt-get-<?php echo $slapt_get_ver; ?>.txz"> &lt;slapt-get<?php echo $slapt_get_ver; ?>&gt;</a>.  
+    <a href="http://www.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb64/ad/slapt-get-<?php echo $slapt_get_ver; ?>.txz"> &lt;slapt-get<?php echo $slapt_get_ver; ?>&gt;</a>.  
     </p>
 
     <p>
@@ -189,7 +189,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
 <div>
 <pre>
-$ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.tgz
+$ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.txz
 </pre>
     </div>
 
@@ -234,7 +234,7 @@ $ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.tgz
           <pre>
         WORKINGDIR=/var/slapt-get
         EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
-        SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-13.0/
+        SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-<?php echo($slack_ver); ?>/
         </pre>
         </div>
         If you would like to view a fully loaded example, after installing
@@ -277,27 +277,27 @@ $ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.tgz
         <ul>
           <li>
             <a href=
-            "http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+            "http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>-slackware-13.0/&gt;</a>
+            "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>-slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://slackware.rol.ru/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://slackware.rol.ru/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+            "http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
-            "http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-13.0/&gt;</a>
+            "http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
         </ul>
       </li>
