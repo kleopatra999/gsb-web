@@ -73,6 +73,8 @@ switch ($use_ver)
 
 $output = "#!/usr/bin/env bash
 
+$slapt_path
+
 #
 #  +--------------------------------------------------------------------+
 #  | GSB GNOME installer script                                         |
@@ -106,7 +108,7 @@ SLAPTGET_VER=\"$slapt_get_ver\"
 SLAPTGET_FILE=\"slapt-get-\$SLAPTGET_VER.txz\"
 TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
-SLAPTGET_DLPATH=\"\$MIRROR/$arch_path-\$GSB_VER\"_\"$slack_arch-\$SLACK_VER/$arch_path/$slapt_dir/\$SLAPTGET_FILE\"
+SLAPTGET_DLPATH=\"\$MIRROR/\$GSB_NORMALIZED_PATH/$arch/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
 SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y\"
 SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --install \$META_PACK -y\"

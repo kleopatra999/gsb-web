@@ -39,7 +39,7 @@ if(!isset($slack_arch))
     $slack_arch = "slackware";
 } 
 $slapt_path =
-        "/home/chipster/rsync_repos/gsb/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch_path."/ad/";
+        "/home/chipster/rsync_repos/gsb/".$arch_path."-".$use_ver."_".$slack_arch."-".$slack_ver."/".$arch."/ad/";
 $slapt_ver_cmd = "ls $slapt_path/slapt-get*.txz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.txz||g'";
