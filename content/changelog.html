@@ -16,11 +16,14 @@ $cl_ver = str_replace("/", "", $cl_ver);
 
 switch ($cl_ver) {
     case "$gsb_bin_stable":
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/ChangeLog.txt";
         break;
     case "stable":
-        $cl_ver = $gsb_bin_stable; 
+        $cl_ver = $gsb_bin_stable;
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/ChangeLog.txt";
         break;
     case "current":
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-current/ChangeLog.txt";
         break;
     case "unstable":
         break;
@@ -31,8 +34,7 @@ switch ($cl_ver) {
 }
 $ch = curl_init();
 $timeout = 5; // set to zero for no timeout
-curl_setopt($ch,CURLOPT_URL,
-    "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/ChangeLog.txt");
+curl_setopt($ch,CURLOPT_URL,$cl_uri);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
 $cl_result = curl_exec($ch);
