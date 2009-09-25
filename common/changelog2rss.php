@@ -8,11 +8,13 @@
     Contains hacks and tweaks from GSB developers (IE: Valid RSS feed)
 */
 
+include_once('versions_inc.php');
+
 header("Content-type: text/xml");
 $localServer = 'http://gnomeslackbuild.org';
 $feeds = 'ChangeLog';
 $feedPath = "$localServer/$feeds";
-$mirror = "http://slackware.org.uk/gsb/gsb-current/packages";
+$mirror = "http://get.gnomeslackbuild.org/gsb/gsb-current/PACKAGES.TXT";
 $realdate = date('r');
 $items = array();
 

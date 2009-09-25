@@ -46,9 +46,9 @@ RewriteEngine On
     RewriteRule ^installation/?$  /download/ [R,L]
     RewriteRule ^build/?$  /development/ [R,L]
     #  this stuff redirs the RSS feed to FeedBurner #
-    RewriteCond %{HTTP_USER_AGENT} !^FeedBurner.*
-    RewriteRule ^changelog.xml$ http://feeds.feedburner.com/gsb-current-changelog [R,L]
-    RewriteRule ^changelog.xml$ /common/changelog2rss.php [L]
+    #RewriteCond %{HTTP_USER_AGENT} !^FeedBurner.*
+    #RewriteRule ^changelog.xml$ http://feeds.feedburner.com/gsb-current-changelog [R,L]
+    #RewriteRule ^changelog.xml$ /common/changelog2rss.php [L]
 
 #
 # error handling
