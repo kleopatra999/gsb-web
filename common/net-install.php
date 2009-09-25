@@ -7,13 +7,13 @@ $arch = $_REQUEST['arch'];
 switch ($arch)
 {
     case "gsb":
-        $arch_path  = "gsb";
+        $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
         break;
     case "gsb64":
-        $arch_path  = "gsb64";
+        $arch_path  = "gsb/gsb64";
         $slack_arch = "slackware64";
         $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
@@ -21,7 +21,7 @@ switch ($arch)
         break;
     default:
         $arch       = "gsb";
-        $arch_path  = "gsb";
+        $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
@@ -41,7 +41,9 @@ $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.
 $sites[0] = array("http://slackware.org.uk", 3);
 $sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 3);
 $sites[2] = array("http://slackware.rol.ru/gsb", 3);
-$sites[3] = array("http://get.gnomeslackbuild.org", 1);
+$sites[3] = array("http://mirrors.dotsrc.org", 3);
+$sites[4] = array("http://get.gnomeslackbuild.org", 1);
+$sites[5] = array("http://mirror.switch.ch/ftp/mirror", 3);
 $countsites = count($sites);
 for($i=0; $i<$countsites; $i++)
 {
@@ -172,7 +174,7 @@ echo
 cat << EOF >\$TEMP_CONFIGFILE
 WORKINGDIR=/var/slapt-get
 EXCLUDE=$excludes
-SOURCE=\$MIRROR/$arch_path/\$GSB_NORMALIZED_PATH
+SOURCE=\$MIRROR/\$GSB_NORMALIZED_PATH
 SOURCE=$slack_mirror_uri
 EOF
 
