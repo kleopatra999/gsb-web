@@ -78,10 +78,6 @@ $CSS_RAND = true;
           content="no" />
     <meta name="robots"
           content="noarchive" />
-    <link rel="alternate"
-          type="application/rss+xml"
-          title="GSB Binary-current ChangeLog"
-          href="http://gnomeslackbuild.org/changelog.xml" />
     <title>
       <?php echo($title); ?> - a GNOME distribution for Slackware Linux
     </title>
