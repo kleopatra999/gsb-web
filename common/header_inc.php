@@ -42,7 +42,7 @@ $CSS_RAND = true;
                         ."GSB-bin-64-ver:\t\t\t".$gsb_bin_64_ver."\n\t"
                         ."GSB-bin-current-ver:\t\t".$gsb_bin_current_ver."\n\t"
                         ."GSB-bin-unstable-ver:\t\t".$gsb_bin_unstable_ver."\n\t"
-                        ."Slapt-Get-ver:\t\t\t".$slapt_get_ver."\n\t"
+                        ."Slapt-Get-ver:\t\t\t".$slapt_get_ver_noarch."\n\t"
                         ."GSB-Slax-ver:\t\t\t".$gsb_slax_ver."\n\t"
                         ."Slax-stable-ver:\t\t".$slax_ver."\n\t\n"); ?>
     -->

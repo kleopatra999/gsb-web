@@ -4,6 +4,7 @@
     $Id: index.php 2773 2007-11-18 16:49:41Z chipster $
 */
 
+// set versions of stuff
 require('common/versions_inc.php');
 
 // Set req. vars
@@ -113,7 +114,7 @@ function section($op,$news,$errno,$errdesc,$SERVER_NAME,$HTTP_REFERER,
                  $gsb_bin_stable_ver,$gsb_source_ver,$cl_ver,$ports,
                  $stable,$gsb_bin_unstable_ver,$gsb_bin_current_ver,
                  $gsb_bin_stable,$slack_unstable_ver,$gsb_bin_64_ver,
-                 $gsb_slax_ver,$slax_ver,$slapt_get_ver,$cl_uri)
+                 $gsb_slax_ver,$slax_ver,$slapt_get_ver,$cl_uri,$slapt_get_ver_noarch)
 {
     $PAGE['url_'.$op] = ("content/$op.html");
     $doit = "url"."_"."$op";

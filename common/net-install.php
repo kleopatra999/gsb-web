@@ -73,8 +73,6 @@ switch ($use_ver)
 
 $output = "#!/usr/bin/env bash
 
-$slapt_path
-
 #
 #  +--------------------------------------------------------------------+
 #  | GSB GNOME installer script                                         |

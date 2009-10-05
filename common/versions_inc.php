@@ -32,7 +32,7 @@ if(!isset($use_ver))
 // slapt-get version extractor
 if(!isset($arch_path))
 {
-    $arch_path = "gsb";
+    $arch_path = "gsb/gsb";
 }
 if(!isset($slack_arch))
 {
@@ -44,6 +44,8 @@ $slapt_ver_cmd = "ls $slapt_path/slapt-get*.txz | \
         sed s'|\/.*\/.*\/.*\/||'g | sed s'|slapt-get-||'g | sed \
         s'|\.txz||g'";
 $slapt_get_ver = @exec($slapt_ver_cmd);
+// used for the site only
+$slapt_get_ver_noarch = preg_replace('/(-.*)/i', '', $slapt_get_ver);
 
 ?>
 

@@ -18,14 +18,14 @@
 
 * Version variables:
 
-  GSB Source                =  $gsb_source_ver
-  GSB Binary (for web       =  $gsb_bin_stable_ver
-  GSB Binary (for installer)=  $gsb_bin_stable
-  Slack-Stable         =  $slack_ver
-  Slack-unstable       =  $slack_unstable_ver
-  GSB-bin-64           =  $gsb_bin_64_ver
-  GSB-bin-current      =  $gsb_bin_current_ver 
-  GSB-bin-unstable     =  $gsb_bin_unstable_ver
-  GSB-bin-update       =  $gsb_bin_update_ver
-  GSB Slax             =  $gsb_slax_ver
-  Slax-stable          =  $slax_ver
+  GSB Source                  =  $gsb_source_ver
+  GSB Binary (for web         =  $gsb_bin_stable_ver
+  GSB Binary (for installer)  =  $gsb_bin_stable
+  Slack-Stable                =  $slack_ver
+  Slack-unstable              =  $slack_unstable_ver
+  GSB-bin-64                  =  $gsb_bin_64_ver
+  GSB-bin-current             =  $gsb_bin_current_ver 
+  GSB-bin-unstable            =  $gsb_bin_unstable_ver
+  GSB-bin-update              =  $gsb_bin_update_ver
+  GSB Slax                    =  $gsb_slax_ver
+  Slax-stable                 =  $slax_ver
