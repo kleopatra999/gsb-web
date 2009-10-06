@@ -174,12 +174,18 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
     Download slapt-get for Slackware <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href= "http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/slapt-get-<?php echo $slapt_get_ver; ?>.txz"> &lt;slapt-get<?php echo $slapt_get_ver; ?>&gt;</a>. 
+    <a href= "http://www.slackware.org.uk/gsb/gsb-<?php echo
+    $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/">
+    &lt;"http://www.slackware.org.uk/gsb/gsb-<?php echo
+    $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/&gt;</a>. 
     </p>
 
     <p>
     Download slapt-get for Slackware64 <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href="http://www.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable;?>_slackware64-<?php echo($slack_ver); ?>/gsb64/ad/slapt-get-0.10.2-x86_64-2gsb.txz"> &lt;slapt-get-0.10.2-x86_64-2gsb.txz&gt;</a>.  
+    <a href="http://www.slackware.org.uk/gsb/gsb64-<?php echo
+    $gsb_bin_stable;?>_slackware64-<?php echo($slack_ver); ?>/gsb64/ad/">
+    &lt;"http://www.slackware.org.uk/gsb/gsb64-<?php echo
+    $gsb_bin_stable;?>_slackware64-<?php echo($slack_ver); ?>/gsb64/ad/&gt;</a>.  
     </p>
 
     <p>
@@ -189,7 +195,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
 <div>
 <pre>
-$ installpkg slapt-get-<?php echo $slapt_get_ver; ?>.txz
+$ installpkg slapt-get-[version].txz
 </pre>
     </div>
 
