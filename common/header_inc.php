@@ -23,8 +23,6 @@ $CSS_RAND = true;
     <!--
     GSB site code <http://gnomeslackbuild.org>
     by Chip Cuccio <http://chip.cuccio.us>
-    $Date: 2007-12-24 10:33:44 -0800 (Mon, 24 Dec 2007) $
-    $Rev: 3286 $
     
     // ENVs:
 
