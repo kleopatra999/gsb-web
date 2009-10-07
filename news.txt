@@ -1,5 +1,5 @@
 ###
-2009-09-24-21-17-GMT
+2009-10-06-18-52-GMT
 GNOMESlackBuild 2.28.0 for Slackware 13.0 now in gsb-current
 <p>
 gsb-current is a snapshot of the active GNOME SlackBuild development tree. 
@@ -15,17 +15,18 @@ free to try it out and report bugs!
 </p>
 
 <p>
-BE CAREFUL WHEN UPGRADING: upgradepkg glib2 gtk+2 GConf before other upgrading
-other packages.  If you're using slapt-get:
+BE CAREFUL WHEN UPGRADING: upgradepkg glib2 gtk+2 GConf before upgrading
+other packages. If you're using slapt-get:
 </p>
 
 <code>
-$  slapt-get --install glib2 gtk+2 GConf
+     $  slapt-get --install glib2 gtk+2 GConf
 </code>
 
 <p>
-Afterwards, you can safely run slapt-get to upgrade your other packages.  
-See the ChangeLog.txt for a list of changes in gsb-current.
+Afterwards, you can safely run slapt-get to upgrade your other packages.  You
+can follow our <a href="/changelog/current/">Changelog.txt</a> for a list of
+changes in gsb-current, which is also available as text files on our mirrors.
 </p>
 
 <p>
