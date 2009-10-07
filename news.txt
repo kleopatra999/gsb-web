@@ -1,5 +1,38 @@
 ###
 2009-09-24-21-17-GMT
+GNOMESlackBuild 2.28.0 for Slackware 13.0 now in gsb-current
+<p>
+gsb-current is a snapshot of the active GNOME SlackBuild development tree. 
+It is intended to give developers, edgy users, and other Linux gurus a 
+chance to test out the latest packages for GNOME SlackBuild.  The feedback 
+we get will allow us to make the next stable release better than ever.
+</p>
+
+<p>
+gsb-current is a full GNOME 2.28.0 desktop for Slackware 13.0.  Most 
+things are working at the moment, but this is only an initial build.  Feel 
+free to try it out and report bugs!
+</p>
+
+<p>
+BE CAREFUL WHEN UPGRADING: upgradepkg glib2 gtk+2 GConf before other upgrading
+other packages.  If you're using slapt-get:
+</p>
+
+<code>
+$  slapt-get --install glib2 gtk+2 GConf
+</code>
+
+<p>
+Afterwards, you can safely run slapt-get to upgrade your other packages.  
+See the ChangeLog.txt for a list of changes in gsb-current.
+</p>
+
+<p>
+And don't worry! The gsb64-current build is coming!  :^)
+</p>
+###
+2009-09-24-21-17-GMT
 GNOMESlackBuild 2.26.3 Stable Released for Slackware and Slackware64.
 <p>
 We've brought our GNOME SlackBuild 2.26.3 to the latest Slackware and
