@@ -26,7 +26,7 @@ other packages. If you're using slapt-get:
 <p>
 Afterwards, you can safely run slapt-get to upgrade your other packages.  You
 can follow our <a href="/changelog/current/">Changelog.txt</a> for a list of
-changes in gsb-current, which is also available as text files on our mirrors.
+changes in gsb-current, which is also available as a text file on our mirrors.
 </p>
 
 <p>
