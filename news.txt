@@ -15,7 +15,7 @@ free to try it out and report bugs!
 </p>
 
 <p>
-BE CAREFUL WHEN UPGRADING: upgradepkg glib2 gtk+2 GConf before upgrading
+BE CAREFUL WHEN UPGRADING TO -CURRENT: upgradepkg glib2 gtk+2 GConf before upgrading
 other packages. If you're using slapt-get:
 </p>
 
