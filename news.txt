@@ -1,6 +1,6 @@
 ###
 2009-10-06-18-52-GMT
-GNOMESlackBuild 2.28.0 for Slackware 13.0 now in gsb-current
+GNOME SlackBuild 2.28.0 for Slackware 13.0 now in gsb-current
 <p>
 gsb-current is a snapshot of the active GNOME SlackBuild development tree. 
 It is intended to give developers, edgy users, and other Linux gurus a 
