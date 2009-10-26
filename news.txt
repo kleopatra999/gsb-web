@@ -1,5 +1,5 @@
 ###
-2009-10-26-23:28-GMT 
+2009-10-26-23-28-GMT 
 GNOME SlackBuild 2.28.1 for Slackware 13.0 now in gsb-current 
 <p> 
 gsb-current has been updated to the first maintenance release of GNOME 2.28.1.
@@ -10,19 +10,6 @@ GNOME, please give gsb-current a try and help out by reporting any bugs!
 <p> 
 Also, a full gsb64-current build has been finished, and will be hitting servers
 soon!  Keep an eye on the mailing lists for fuller details.  :^) 
-</p>
-###
-2009-10-26-23:28-GMT
-GNOME SlackBuild 2.28.1 for Slackware 13.0 now in gsb-current
-<p>
-gsb-current has been updated to the first maintenance release of GNOME 2.28.1.
-It's had lots of testing, and can be considered largely stable and useable, but
-packages may still change here and there.  If you're looking for the latest
-GNOME, please give gsb-current a try and help out by reporting any bugs!  
-</p>
-
-<p>
-Also, a full gsb64-current build has been finished, and will be hitting servers soon!
 </p>
 ###
 2009-10-06-18-52-GMT
