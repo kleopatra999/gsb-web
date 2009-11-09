@@ -13,7 +13,6 @@
 
         <li>
           <a href="#slaptget">Manual Slapt-get Install</a>
-        </li>
 
 	<ol>
 
@@ -32,8 +31,8 @@
           <li>
             <a href="#install">Installing GSB</a>
           </li>
-
 	</ol>
+    </li>
 
         <li>
           <a href="#configure">Configuring GSB</a>
@@ -244,7 +243,6 @@ $ installpkg slapt-get-[version].txz
         </div>
         If you would like to view a fully loaded example, after installing
         slapt-get, refer to <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
-      </dd>
 
        <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
 	    /etc/slapt-get/slapt-getrc file to point to Slackware 13.0 and
@@ -255,8 +253,7 @@ $ installpkg slapt-get-[version].txz
 	    Slackware packages will outweigh GSB packages, and not all required
 	    packages will be upgraded.
          </p>
-
-
+    </dd>
 
       <dt>
         <var>EXCLUDE</var>
@@ -358,17 +355,16 @@ $ installpkg slapt-get-[version].txz
       <img src="/images/app-icons/gsb_upgrade.png"
          class="listimg-l"
          alt="" /> After installing and customizing the
-         <code>slapt-getrc</code> configuration file, you need to run
+         <code>slapt-getrc</code> configuration file, you need to run:</p>
 
-	 <div>
-	 <pre>
-	 $ slapt-get --update 
-         $ slapt-get --add-keys
-         </pre>
-	 </div>
-
+<div>
+<pre>
+$ slapt-get --update 
+$ slapt-get --add-keys
+</pre>
+</div>
 	 <p>This will download the package data available from all the package sources you specified
-	 within the <code>slapt-getrc</code> file and all gpg keys.</p>
+	 within the <code>slapt-getrc</code> file and all gpg keys.
     </p>
 
     <p>After the package data has been updated, the first step to installing
@@ -384,7 +380,9 @@ $ installpkg slapt-get-[version].txz
       command before attempting to install GNOME SlackBuild:
     </p>
       <div>
-      <pre> $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck </pre>
+      <pre>
+$ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
+</pre>
       </div>
      
     <p>
@@ -399,8 +397,8 @@ $ installpkg slapt-get-[version].txz
 
     <div>
     <pre>
-    $ slapt-get --upgrade
-    </pre>
+$ slapt-get --upgrade
+</pre>
     </div>
 
     <p>
