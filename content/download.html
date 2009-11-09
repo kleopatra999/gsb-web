@@ -142,7 +142,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
     </p>
     
     <h3 id="slaptget">
-      Package Management <span class="toc-link"><a href="#toc"
+      Manual Slapt-get Installation<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -234,7 +234,19 @@ $ installpkg slapt-get-[version].txz
         only an example. Make sure to change your SOURCE to point to local
         mirrors.</strong>
 
-        <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
+       <div>
+          <pre>
+        WORKINGDIR=/var/slapt-get
+        EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
+        SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-<?php echo($slack_ver); ?>/:OFFICIAL
+        SOURCE=http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>
+        </pre>
+        </div>
+        If you would like to view a fully loaded example, after installing
+        slapt-get, refer to <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
+      </dd>
+
+       <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
 	    /etc/slapt-get/slapt-getrc file to point to Slackware 13.0 and
 	    GNOMESlackBuild repositories.  Make sure to add the :OFFICIAL tag to
 	    the end of your SOURCE= which points to the Slackware repository,
@@ -244,17 +256,7 @@ $ installpkg slapt-get-[version].txz
 	    packages will be upgraded.
          </p>
 
-        <div>
-          <pre>
-        WORKINGDIR=/var/slapt-get
-        EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
-        SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-<?php echo($slack_ver); ?>/
-        </pre>
-        </div>
-        If you would like to view a fully loaded example, after installing
-        slapt-get, refer to
-        <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
-      </dd>
+
 
       <dt>
         <var>EXCLUDE</var>
@@ -352,46 +354,39 @@ $ installpkg slapt-get-[version].txz
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
-    <p>
-      <span class="str">NOTE ON REQUIREMENTS: </span>
-      You <i>must</i> first upgrade and replace all packages marked as required in the <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
-      If you fail to do so, your installation may not work.  Run the following
-      command before installing GNOME SlackBuild:
-    </p>
-      <div>
-      <pre>
-      $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
-      </pre>
-      </div>
-
-    <p>
+   <p>
       <img src="/images/app-icons/gsb_upgrade.png"
          class="listimg-l"
          alt="" /> After installing and customizing the
          <code>slapt-getrc</code> configuration file, you need to run
-         slapt-get with the <var>--update</var> option to download the
-         package data available from all the package sources you specified
-         within the <code>slapt-getrc</code> file. 
+
+	 <div>
+	 <pre>
+	 $ slapt-get --update 
+         $ slapt-get --add-keys
+         </pre>
+	 </div>
+
+	 <p>This will download the package data available from all the package sources you specified
+	 within the <code>slapt-getrc</code> file and all gpg keys.</p>
     </p>
 
     <p>After the package data has been updated, the first step to installing
       GNOME SlackBuild is to <strong>upgrade the required packages</strong>.
       If you do not replace the required packages, GNOME SlackBuild will not
       run properly.</p> 
-      
-    <p>
-       To get the most out of your GSB GNOME Desktop, it is recommended that you replace
-       a few Slackware packages.  You can easily upgrade these packages first by 
-       using slapt-get.  
+
+     <p>
+      <span class="str">NOTE ON REQUIREMENTS: </span>
+      You <i>must</i> first upgrade and replace all packages marked as required in the <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
+      If you fail to do so, your installation may not work.  Run the following
+      command before attempting to install GNOME SlackBuild:
     </p>
-    
-<div>
-<pre>
-$ slapt-get --upgrade
-</pre>
-</div>
-      
+      <div>
+      <pre> $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck </pre>
+      </div>
+     
     <p>
        However, while GNOME SlackBuild is designed to replace as few Slackware packages as 
        possible, it is not possible to free ourselves wholly from replacing some packages.  
@@ -401,6 +396,12 @@ $ slapt-get --upgrade
        required if you do not plan to use certain applications, or are dead set against
        replacing any Slackware provided packages.
     </p>
+
+    <div>
+    <pre>
+    $ slapt-get --upgrade
+    </pre>
+    </div>
 
     <p>
       For a full list of available options, please consult the slapt-get manual.
