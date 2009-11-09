@@ -5,33 +5,38 @@
       </p>
 
       <ol>
+
         <li>
           <a href="#quick"><span class="hilite-gr" style="text-decoration:
           underline;">Quick and Easy Install</span></a>
         </li>
 
         <li>
-          <a href="#slaptget">Slapt-get Install</a>
+          <a href="#slaptget">Manual Slapt-get Install</a>
         </li>
 
-        <li>
-          <a href="#slaptgetrc">Configuring slapt-get</a>
-        </li>
+	<ol>
 
-        <li>
-          <a href="#mirrors">GNOME SlackBuild Mirrors</a>
-        </li>
+          <li>
+            <a href="#slaptgetrc">Configuring slapt-get</a>
+          </li>
+
+          <li>
+            <a href="#mirrors">GNOME SlackBuild Mirrors</a>
+          </li>
         
-        <li>
-          <a href="#upgrades">Required Upgrades</a>
-        </li>
+          <li>
+            <a href="#upgrades">Required Package Upgrades</a>
+          </li>
+
+          <li>
+            <a href="#install">Installing GSB</a>
+          </li>
+
+	</ol>
 
         <li>
-          <a href="#install">Installing GSB</a>
-        </li>
-
-        <li>
-          <a href="#configure">Post-Install Configuration Notes</a>
+          <a href="#configure">Configuring GSB</a>
         </li>
 
         <li>
@@ -76,28 +81,10 @@
       "version"><strong><?php echo($slack_ver); ?></strong></span>.  It may not work on Slackware 12.2 or earlier releases.</span>
     </p>
 
-    <p>
-      <span class="str">NOTE ON REQUIREMENTS: </span>
-      You <i>must</i> first upgrade and replace all packages marked as required in the <a 
-      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
-      If you fail to do so, your installation may not work.  Run the following
-      command before installing GNOME SlackBuild:
-    </p>
-      <div>
-      <pre>
-      $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
-      </pre>
-      </div>
-
-      <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
-	    /etc/slapt-get/slapt-getrc file to point to Slackware 13.0 and
-	    GNOMESlackBuild repositories.  Make sure to add the :OFFICIAL tag to
-	    the end of your SOURCE= which points to the Slackware repository,
-	    and the tag :CUSTOM to the SOURCE= line which points to your
-	    GNOMESlackBuild repository.  Without the :CUSTOM tag, the official
-	    Slackware packages will outweigh GSB packages, and not all required
-	    packages will be upgraded.
-   </p>
+    <p><span class="str hilite-rd">NOTE:</span> For users upgrading from a
+    previous GNOME SlackBuild installation, please make sure you're upgrading
+    all the required packages.  See <a href="#upgrade">Required Package
+	    Upgrades"</a> for more information.
 
     <h3 id="quick"><span class="hilite-gr">
       Quick and Easy Install</span> <span class="toc-link"><a href="#toc"
@@ -246,6 +233,17 @@ $ installpkg slapt-get-[version].txz
         example <code>slapt-getrc</code> file. <strong>Please note: This is
         only an example. Make sure to change your SOURCE to point to local
         mirrors.</strong>
+
+        <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
+	    /etc/slapt-get/slapt-getrc file to point to Slackware 13.0 and
+	    GNOMESlackBuild repositories.  Make sure to add the :OFFICIAL tag to
+	    the end of your SOURCE= which points to the Slackware repository,
+	    and the tag :CUSTOM to the SOURCE= line which points to your
+	    GNOMESlackBuild repository.  Without the :CUSTOM tag, the official
+	    Slackware packages will outweigh GSB packages, and not all required
+	    packages will be upgraded.
+         </p>
+
         <div>
           <pre>
         WORKINGDIR=/var/slapt-get
@@ -355,6 +353,19 @@ $ installpkg slapt-get-[version].txz
     </h3>
 
     <p>
+      <span class="str">NOTE ON REQUIREMENTS: </span>
+      You <i>must</i> first upgrade and replace all packages marked as required in the <a 
+      href="http://www.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/slackware-<?php echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
+      If you fail to do so, your installation may not work.  Run the following
+      command before installing GNOME SlackBuild:
+    </p>
+      <div>
+      <pre>
+      $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
+      </pre>
+      </div>
+
+    <p>
       <img src="/images/app-icons/gsb_upgrade.png"
          class="listimg-l"
          alt="" /> After installing and customizing the
@@ -381,22 +392,6 @@ $ slapt-get --upgrade
 </pre>
 </div>
       
-<div>
-<pre>
-*Required Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
-
-alsa-lib:         ( > 1.0.20 required by pulseaudio 0.9.15, libcanberra, and
-                    gnome-control-center)
-bluez:            ( > 4.46 bluez replaces bluez-utils and bluez-libs, required
-                    for gvfs support for Bluetooth, and other GNOME 2.26
-                    bluetooth userspace applications)
-glib2:            ( > 2.20 required by libgnome, gvfs, nautilus, and others)
-gtk+2:            ( > 2.16 required by gnome-panel, among others )
-libwnck:          ( 2.26.2 )
-
-</pre>
-</div>
-
     <p>
        However, while GNOME SlackBuild is designed to replace as few Slackware packages as 
        possible, it is not possible to free ourselves wholly from replacing some packages.  
@@ -407,97 +402,12 @@ libwnck:          ( 2.26.2 )
        replacing any Slackware provided packages.
     </p>
 
-<div>
-<pre>
-*Optional Slackware Package Replacements for GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>*
-
-compiz:    
-  Slackware <?php echo($slack_ver); ?> comes with Compiz, but GSB's Compiz-fusion is much cooler. Our compiz-fusion 
-  package is built with Gtk/GNOME support, and integrates much better into a GNOME environment than
-  the Slackware version.  However, our compiz-fusion package does not come with a KDE Window 
-  Decorator, so if you plan on using KDE or switching back and forth while using Compiz, it's 
-  best to stay with Slackware version. If you are going to use GNOME with Compiz, our package 
-  is a much better choice.
-
-libgsf:
-  Slackware's libgsf package lacks GNOME support.  You will need to replace this package with the
-  GSB version if you plan on using any GNOME Office software, like Gnumeric, Glom, GNOME Database, etc.
-
-pidgin:           
-  We offer the latest stable Pidgin package with pulseaudio support for sounds,
-  and found in extra/
-
-MPlayer:    
-  MPlayer built against pulseaudio, found in extra/
-
-</pre>
-</div>
-
     <p>
-      Below is a list enumerating the various options you can pass to <code>slapt-get</code>
-      when installing GNOME SlackBuild.  For a full list of available options, please consult
-      the slapt-get manual.
+      For a full list of available options, please consult the slapt-get manual.
     </p>
 
-    <dl>
-      <dt>
-        <var>--upgrade</var>
-      </dt>
-
-      <dd>
-        Use this to upgrade all of your currently installed packages.
-      </dd>
-
-      <dt>
-        <var>--search</var>
-      </dt>
-
-      <dd>
-        This is used to locate packages of interest by the package name,
-        disk set, or version. This supports POSIX and extended regular
-        expressions.
-      </dd>
-
-      <dt>
-        <var>--install</var>
-      </dt>
-
-      <dd>
-        Used to install a specified package. If the package is already
-        installed it will be upgraded.
-      </dd>
-
-      <dt>
-        <var>--list</var>
-      </dt>
-
-      <dd>
-        This is used to see all the packages available from the package
-        sources you specified inside the slapt-getrc configuration file.
-      </dd>
-
-      <dt>
-        <var>--clean</var>
-      </dt>
-
-      <dd>
-        This is used to remove all downloaded packages from the local
-        cache.
-      </dd>
-
-      <dt>
-        <var>--autoclean</var>
-      </dt>
-
-      <dd>
-        This is used to remove packages from local cache that are no longer
-        available on the package sources specified in the slapt-getrc file.
-      </dd>
-
-    </dl>
-
     <h3 id="install">
-      Downloading and Installing <span class="toc-link"><a href="#toc"
+      Downloading and Installing a Basic Desktop<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
 
@@ -530,11 +440,13 @@ $ slapt-get --install gsb-desktop
       This process may take a long time, depending on the speed of your
       connection. It will first download all the required packages and
       install them. After installation, it is also <strong>strongly recommended that you
-      reboot your system.</strong>
+      reboot your system.</strong>  After, you can use gslapt (from your GNOME
+      desktop) or slapt-get from the command line to install additional packages
+      you may want. 
     </p>
 
     <h3 id="configure">
-      Post Installation and Configure Notes <span class="toc-link"><a href=
+      Configuring your GNOME Desktop <span class="toc-link"><a href=
       "#toc"
          title="Go up to TOC">&#8593;</a></span>
     </h3>
