@@ -1,4 +1,14 @@
 ###
+2009-11-23-00-04-GMT 
+GNOME SlackBuild64 2.28.1 for Slackware64 13.0 now in gsb64-current 
+<p> 
+gsb64-current has been updated to the first maintenance release of GNOME 2.28.1.
+It is a rather late announcement, since gsb64-current has been up on servers
+for a while now, but it never hurts to announce it to the world.  gsb64-current
+will be more closely kept in step now with gsb-current since the built cycle has
+finally caught up.  Please give it a try if you're using Slackware64!
+</p>
+###
 2009-10-26-23-28-GMT 
 GNOME SlackBuild 2.28.1 for Slackware 13.0 now in gsb-current 
 <p> 
