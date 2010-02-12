@@ -38,7 +38,7 @@ $slack_mirror_uri =
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
 
 // mirror randomizer
-$sites[0] = array("http://slackware.org.uk", 0);
+$sites[0] = array("ftp://ftp.slackware.org.uk", 4);
 $sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 3);
 $sites[2] = array("http://slackware.rol.ru/gsb", 3);
 $sites[3] = array("http://mirrors.dotsrc.org", 3);
