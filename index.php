@@ -81,7 +81,8 @@ switch ($op)
         $title = "Support : $common_title";
         break;
     case "development":
-        $title = "Development : $common_title";
+        header("Location: http://dev.gnomeslackbuild.org/");
+        exit();
         break;
     case "configure":
         $title = "Configuring GSB : $common_title";
