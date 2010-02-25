@@ -4,6 +4,9 @@
     $Id: index.php 2773 2007-11-18 16:49:41Z chipster $
 */
 
+// Needed for anything time/date-related
+date_default_timezone_set('America/Chicago');
+
 // set versions of stuff
 require('common/versions_inc.php');
 

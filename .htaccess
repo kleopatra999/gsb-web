@@ -1,12 +1,12 @@
 #
 # Site Apache Options (deny indexes, disable SSI, and disable CGI)
 #
-Options -Indexes -Includes -ExecCGI
+Options -Indexes -Includes -ExecCGI +FollowSymlinks
 
 #
 # Direcory Index Options
 #
-DirectoryIndex index.php index.pxml index.html
+DirectoryIndex index.php index.html
 
 #
 # PHP include paths
@@ -35,7 +35,6 @@ RewriteEngine On
     RewriteRule ^development/?$  /index.php?op=development [QSA,L]
     RewriteRule ^screenshots/?$  /index.php?op=screenshots [QSA,L]
     RewriteRule ^support/?$  /index.php?op=support [QSA,L]
-    #RewriteRule ^slax/?$  /index.php?op=slax [QSA,L]
     RewriteRule ^faqs/?$  /support/ [R,L]
     RewriteRule ^random-screenthumb$  /common/screenthumb-rot.php [QSA,L]
     RewriteRule ^net-install/?$  /common/net-install.php [QSA,L]
@@ -45,10 +44,6 @@ RewriteEngine On
     #RewriteRule ^net-install/unstable/?$  /common/net-install.php?use_ver=unstable [QSA,L]
     RewriteRule ^installation/?$  /download/ [R,L]
     RewriteRule ^build/?$  /development/ [R,L]
-    #  this stuff redirs the RSS feed to FeedBurner #
-    #RewriteCond %{HTTP_USER_AGENT} !^FeedBurner.*
-    #RewriteRule ^changelog.xml$ http://feeds.feedburner.com/gsb-current-changelog [R,L]
-    #RewriteRule ^changelog.xml$ /common/changelog2rss.php [L]
 
 #
 # error handling
