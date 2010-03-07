@@ -1,4 +1,15 @@
 ###
+2010-03-07-10-15-CST
+Building GSB 2.28 for Slackware -current
+Folks, as Slackware -current ramps up with tons of updates, we're furiously
+trying to build GSB 2.28 against it.  We could use some help.  If you're
+interested in helping build and fix issues, stop by our IRC channel and
+let us know.  We *don't* need feature requests or bug reports.  We need HANDS-ON
+folks that will test the build and fix the issues.
+
+Find us in #gsb in irc.freenode.net
+
+###
 2009-11-23-00-04-GMT 
 GNOME SlackBuild64 2.28.1 for Slackware64 13.0 now in gsb64-current 
 <p> 
