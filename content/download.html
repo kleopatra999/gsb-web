@@ -12,12 +12,12 @@
         </li>
 
         <li>
-          <a href="#slaptget">Manual Slapt-get Install</a>
+          <a href="#slaptget">Manual slapt-get Install</a>
 
 	<ol>
 
           <li>
-            <a href="#slaptgetrc">Configuring slapt-get</a>
+            <a href="#slaptgetrc">Configuring the slapt-get Package Manager</a>
           </li>
 
           <li>
@@ -75,20 +75,18 @@
     </p>
 
     <p>
-      <span class="str hilite-rd">NOTE:  GNOME SlackBuild GNOME <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
+      <span class="str hilite-rd">Note: </span><span class="hilite-rd">GNOME SlackBuild
+      <span class="version"><?php echo($gsb_bin_stable_ver); ?></span>
       is designed and built for Slackware or Slackware64 <span class=
-      "version"><strong><?php echo($slack_ver); ?></strong></span>.  It may not work on Slackware 12.2 or earlier releases.</span>
+      "version"><strong><?php echo($slack_ver); ?> only!</strong></span>  It
+      likely will not work on earlier releases of Slackware, and certainly was not
+      built for them.</span>
     </p>
 
-    <p><span class="str hilite-rd">NOTE:</span> For users upgrading from a
+    <p><span class="str">Important:</span> For users upgrading from a
     previous GNOME SlackBuild installation, please make sure you're upgrading
     all the required packages.  See <a href="#upgrades">Required Package
 	    Upgrades</a> for more information.</p>
-
-    <h3 id="quick"><span class="hilite-gr">
-      Quick and Easy Install</span> <span class="toc-link"><a href="#toc"
-      title="Go up to TOC">&#8593;</a></span>
-    </h3>
 
     <p>
       Before plunging in, please consult the documentation, particularly our
@@ -103,11 +101,17 @@
       UPGRADE.TXT</a>.
    </p>
 
+    <h3 id="quick"><span class="hilite-gr">
+      Quick and Easy Install</span> <span class="toc-link"><a href="#toc"
+      title="Go up to TOC">&#8593;</a></span>
+    </h3>
+
     <p>
       The quickest and easiest way to install the GSB binary distribution,
       is via our net-installer.  Note that this method of installation will
       install <em>everything</em> included in the GSB distribution (full
-      installation!).
+      installation!).  It will also automatically upgrade the various 
+      necessary packages for you.
     </p>
 
     <p>
@@ -195,10 +199,10 @@ $ installpkg slapt-get-[version].txz
 </pre>
 </div>
 
-    <h3 id="slaptgetrc">
-      Configuring Package Manager <span class="toc-link"><a href="#toc"
+    <h4 id="slaptgetrc">
+      Configuring the slapt-get Package Manager <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h3>
+    </h4>
 
     <p>
       <img src="/images/app-icons/mirrors.png"
@@ -245,8 +249,8 @@ $ installpkg slapt-get-[version].txz
         slapt-get, refer to <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
 
        <p> <span class="str hilite-rd">PACKAGE PRIORITY</span>:  Update your
-	    /etc/slapt-get/slapt-getrc file to point to Slackware 13.0 and
-	    GNOMESlackBuild repositories.  Make sure to add the :OFFICIAL tag to
+	    /etc/slapt-get/slapt-getrc file to point to Slackware <?php echo
+        ($slack_ver); ?> and GNOME SlackBuild repositories.  Make sure to add the :OFFICIAL tag to
 	    the end of your SOURCE= which points to the Slackware repository,
 	    and the tag :CUSTOM to the SOURCE= line which points to your
 	    GNOMESlackBuild repository.  Without the :CUSTOM tag, the official
@@ -274,10 +278,10 @@ $ installpkg slapt-get-[version].txz
        </dd>
     </dl>
 
-    <h3 id="mirrors">
+    <h4 id="mirrors">
       GNOME SlackBuild Mirror List <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h3>
+    </h4>
 
     <p>
       The following is a list of available mirrors from which to download
@@ -349,10 +353,10 @@ $ installpkg slapt-get-[version].txz
     </ul>
 
 
-    <h3 id="upgrades">
+    <h4 id="upgrades">
       Required Upgrades <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h3>
+    </h4>
 
    <p>
       <img src="/images/app-icons/gsb_upgrade.png"
@@ -409,10 +413,10 @@ $ slapt-get --upgrade
       For a full list of available options, please consult the slapt-get manual.
     </p>
 
-    <h3 id="install">
+    <h4 id="install">
       Downloading and Installing a Basic Desktop<span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
-    </h3>
+    </h4>
 
     <p>
       <img src="/images/app-icons/gsb_install.png"
@@ -526,6 +530,7 @@ $ slapt-get --reinstall --install glib2 libwnck alsa-lib gtk+2 bluez-lib bluez-u
          is considered stable, but with only a few volunteers to help build and test it, we cannot
          guarantee that it is free from errors.  :)  If you find any bugs in GNOME SlackBuild, please 
          help us and the GNOME SlackBuild project out by reporting them. 
-         The best way is by sending an email to our mailing list.  You can find all our
-         contact information on our <a href="http://gnomeslackbuild.org/lists/"> Mailing Lists</a> page.
+         The preferred and best way is by sumitting a bug report in our <a
+         href="http://dev.gnomeslackbuild.org/projects/show/gsb-binary">bug
+         reporting tool</a>.
     </p>

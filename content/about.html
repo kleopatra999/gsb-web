@@ -40,9 +40,10 @@
       the standard Slackware package system, and <em>aims to replace as few
       packages as possible.</em> For a list of packages that require
       updating, please see the <a
-	      href="http://www.slackware.org.uk/gsb/gsb-<?php echo
-	      $gsb_bin_stable; ?>_slackware-13.0/SLACKWARE-13.0_REPLACED_PACKAGES.TXT">
-      replaced packages file</a>.
+	      href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo
+          $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE-<?php
+          echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">
+          Replaced Packages List</a>.
     </p>
 
     <p>
@@ -66,27 +67,18 @@
     </p>
 
     <h3 id="about-build">
-      GNOME SlackBuild Build System
+      GNOME SlackBuild Build System ("GSB Source Code")
     </h3>
 
     <p>
       <img src="/images/app-icons/gsb_build.png"
          class="listimg-l"
-         alt="" /> The build system is full and complete GSB source code we
-         use to generate our binary distribution. It is a collection of
-         SlackBuild scripts that build a GNOME release on Slackware Linux.
-         It also comes with a download script to grab all the latest source
-         tarball for every package that GSB can build.
-    </p>
-
-    <p>
-      The GSB Build System is aimed at all levels of users. Those who are
-      new to Slackware or to Linux as a whole will find the GSB Build
-      System easy to use, and rather simple to modify. Intermediate and
-      advanced users will find it heavily customisable, and will be pleased
-      to find that the majority of the grunt work in designing and building
-      packages is done for them; they will be free to tweak or patch any
-      packages to their own taste.
+         alt="" /> The build system is the full and complete GSB source code we
+         use to generate our binary distribution. It is our custom build
+         program as well as a collection of SlackBuild scripts which
+         together,  builds a GNOME release on Slackware Linux.
+         Our build system can automatically grab all the source code
+         for every package that GSB builds.
     </p>
 
     <p>

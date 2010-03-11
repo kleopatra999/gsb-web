@@ -11,32 +11,74 @@
       <li id="irc">You can try for immediate help by dropping by our 
       <a href="irc://irc.freenode.net/#gsb">#gsb IRC channel on irc.freenode.net</a> 
       and ask questions.  We may not always be around and available to answer, but 
-      we do always respond.  (Eventually).  :)
+      we do always respond.  (Eventually).  :)  Also note, your IRC nick in
+      Freenode must be both registered and identified to join #gsb.
       </li>
       
-      <li id="wiki">Another means of reporting bugs is our Development Wiki.  If you do not wish
-      to use the mailing lists, you can use our  
-      <a href="http://dev.gnomeslackbuild.org/projects/gsb-binary/issues">Binary Issues Wiki</a> 
-      to register any bugs, errors, or problems.
-      </li>
+      <li id="wiki">Another means of reporting bugs is via our Development
+      site and bug tracking tool.  If you do not wish to use the mailing
+      lists, you can use our <a
+      href="http://dev.gnomeslackbuild.org/projects/show/gsb-binary">bug
+      reporting system</a> to register any bugs, errors, or problems.  </li>
       
     </ul>
 
     <p>
-      <span class="hilite">Before you ask questions, please check the
+      <span class="hilite-rd">Before you ask questions, please check the
       <a href="#FAQs">FAQs</a>, and search the <a href="/lists/">user
-      discussion mailing list archives</a>.</span>
+      discussion mailing list archives</a>.  Do your homework first folks -
+      please! :-)</span>
     </p>
 
     <hr />
 
     <h2 id="FAQs">
-      <acronym title="Frequently-asked Questions">FAQs</acronym>
+      <acronym title="Frequently-asked Questions">FAQs</acronym> and
+      Frequently Observed Mistakes/Issues
     </h2>
 
     <dl>
       <dt class="faqhead"
-          id="faq_id-0">
+          id="faq_id-1">
+        <q>Do you support GSB installed on Slackware-current?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          <strong>No we do not!</strong> We support GSB on Slackware <?php
+          echo $slack_ver; ?> <em>only</em>. You can try to
+          install GSB on Slackware-current, but support requests will be
+          ignored (and you will risk being mocked!).  Mockery gets worse if
+          we must ask you if you're running Slackware-current.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-2">
+        <q>I tried to install GSB &#39;-current&#39; via
+        slapt-get/net-install, and it fails, saying that I have &#39;un-met
+        dependencies.&#39; Why?</q>
+      </dt>
+
+      <dd class="faqentry">
+        <p>
+          Because you have un-met dependencies! :-)<br /><br />
+          Note that the &quot;gsb-current&quot; branch is under constant
+          development, and may have bugs. Hence, <strong>gsb-current isn&#39;t
+          officially supported...ever!</strong>. That branch is specifically made for
+          developers and testers only.  Casual users who ask for gsb-current
+          support will be ignored and possibly mocked for not reading!
+          Mockery gets worse if we must ask you if you're running
+          gsb-current ;-) 
+          On the lighter side, If you are interested in testing and developing for GSB, you
+          should report bugs in gsb-current by using our <a
+          href="http://dev.gnomeslackbuild.org/projects/show/gsb-binary">bug
+          tracking tool</a>.
+        </p>
+      </dd>
+
+      <dt class="faqhead"
+          id="faq_id-3">
         <q>I&#39;ve just installed GSB. How do I make it my default desktop
         environment? And how do I start it?</q>
       </dt>
@@ -44,7 +86,8 @@
       <dd class="faqentry">
         <p>
           You should be able to simply select GNOME by running
-          `<code>xwmconfig</code>` (as root). If that doesn&#39;t work:
+          `<code>xwmconfig</code>` (as root). If that doesn&#39;t work, try
+          this as a last resort:
         </p>
 
         <ol>
@@ -75,14 +118,14 @@ startx
         </ol>
 
         <p>
-          You may also want to consider setting your <code>initab</code> to
+          You may also want to consider setting your <code>/etc/initab</code> to
           <code>init 4</code>, to start the graphical environment
           automatically.
         </p>
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-1">
+          id="faq_id-4">
         <q>What&#39;s the difference between GSB and Dropline GNOME?</q>
       </dt>
 
@@ -96,41 +139,28 @@ startx
           folks however, do appreciate that GSB does not add <a href=
           "http://en.wikipedia.org/wiki/Pluggable_Authentication_Modules">PAM</a>
           to Slackware, and tries to replace as few standard Slackware packages
-          as possible.
+          as possible.<br /><br />
+          We also get the dreaded <q>why don't you guys merge with project
+          X?</q>  Please don't ask that question.  If we want to merge, we'd
+          merge.  We're proud of our project, and we think that our project
+          is the best GNOME for Slackware since it was dropped from Slack.
         </p>
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-2">
-        <q>I tried to install GSB &#39;-current&#39; via
-        slapt-get/net-install, and it fails, saying that I have &#39;unmet
-        dependencies.&#39; Why?</q>
-      </dt>
-
-      <dd class="faqentry">
-        <p>
-          Note that the &quot;-current&quot; branch is under constant
-          development, and may have bugs. Hence, gsb-current isn&#39;t
-          officially supported. If you encounter any bugs in gsb-current,
-          it would be appreciated if you reported them using the GSB
-          Development List in the <a href="/lists/">mailing lists
-          section</a>.
-        </p>
-      </dd>
-
-      <dt class="faqhead"
-          id="faq_id-3">
+          id="faq_id-5">
         <q>How do I uninstall GSB?</q>
       </dt>
 
       <dd class="faqentry">
         <p>
           Please note that when uninstalling, you will have to reinstall
-          some packages from the &quot;<code>l</code>&quot; disk set on
-          your Slackware CD-ROM. Please refer to <a href=
-          "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages_gsb-<?php
-          echo $gsb_bin_stable; ?>?revision=HEAD&amp;root=gsb">
-          &quot;replaced packages&quot; file</a> for more information.
+          some packages from the &quot;<code>l</code>&quot; package set (and
+          possibly others). Please refer to the <a href=
+          "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+           ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE-<?php
+           echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">
+           Replaced Packages List</a> for more information.
         </p>
 
         <p>
@@ -174,7 +204,7 @@ $ slapt-get --install glib2 libwnck
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-4">
+          id="faq_id-6">
         <q>How can I install GSB using <code>slapt-get</code>?</q>
       </dt>
 
@@ -193,7 +223,7 @@ SOURCE=&lt;full-path-to-the-mirror-of-your-choice&gt;/gsb-&lt;version&gt;
             </div>
 
             <p>
-              See the <strong><a href="/download/">Download
+              See the <strong><a href="/download/#mirrors">Download
               section</a></strong> for a list of avaliable mirrors.
             </p>
 
@@ -214,7 +244,7 @@ $ slapt-get --install gsb-desktop
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-5">
+          id="faq_id-7">
         <q>After installing GSB, my keyboard does not repeat keys any
         longer. How is that fixed?</q>
       </dt>
@@ -227,7 +257,7 @@ $ slapt-get --install gsb-desktop
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-6">
+          id="faq_id-8">
         <q>My KDE Menus are all messed up after installing GSB. How do I
         fix them?</q>
       </dt>
@@ -249,13 +279,12 @@ $ export XDG_CONFIG_DIRS=/etc/kde/xdg
 
         <p>
           If the improper menus persist, run kbuildsycoca from Konsole
-          after you have logged into KDE. Thanks to Jim Philips and
-          Locustfurnace for pointing it out.
+          after you have logged into KDE.
         </p>
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-7">
+          id="faq_id-9">
         <q>My Mime Types/File Associations are all screwed up after I
         installed GSB. What do I do to fix that?</q>
       </dt>
@@ -275,7 +304,7 @@ $ /usr/bin/update-desktop-database
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-9">
+          id="faq_id-10">
         <q>Does GSB require the Linux 2.6 kernel?</q>
       </dt>
 
@@ -286,7 +315,7 @@ $ /usr/bin/update-desktop-database
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-10">
+          id="faq_id-11">
         <q>Must I subscribe to post messages to the lists? Do I need a
         Google or Gmail Account?</q>
       </dt>
@@ -302,7 +331,7 @@ $ /usr/bin/update-desktop-database
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-11">
+          id="faq_id-12">
         <q>Can I send email to the mailing lists, like most other
         lists?</q>
       </dt>
@@ -319,20 +348,6 @@ $ /usr/bin/update-desktop-database
       </dd>
 
       <dt class="faqhead"
-          id="faq_id-12">
-        <q>Do you support GSB installed on Slackware-current?</q>
-      </dt>
-
-      <dd class="faqentry">
-        <p>
-          No we do not. At this time, we support GSB on Slackware <?php
-                    echo $slack_ver; ?> <em>only</em>. You can try to
-          install GSB on Slackware-current, but support requests will be
-          ignored.
-        </p>
-      </dd>
-
-      <dt class="faqhead"
           id="faq_id-13">
         <q>Does GSB replace any official Slackware packages?</q>
       </dt>
@@ -340,9 +355,10 @@ $ /usr/bin/update-desktop-database
       <dd class="faqentry">
         <p>
           Yes it does - but very few. See the <a href=
-          "http://svn.gnomeslackbuild.org/viewvc/viewvc.cgi/trunk/notes/replaced_packages_gsb-<?php
-          echo $gsb_bin_stable; ?>?revision=HEAD&amp;root=gsb">
-          <tt>replaced_packages</tt> file</a> for a list of packages that
+          "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+           ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE-<?php
+           echo($slack_ver); ?>_REPLACED_PACKAGES.TXT">
+           Replaced Packages List</a> for a list of packages that
           GSB replaces/upgrades. Note that <span class="emph">GSB does not
           install PAM, nor does it replace the X11 windowing system.</span>
         </p>
@@ -369,3 +385,4 @@ $ slapt-get --install --reinstall hicolor-icon-theme
       </dd>      
       
     </dl>
+
