@@ -209,6 +209,8 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
     if \$SLAPTGET \$SLAPTGET_ARGS1; then
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
         rm -f \$TEMP_CONFIGFILE
+        \$SLAPTGET --update
+        \$SLAPTGET --upgrade
         echo \"GSB GNOME $use_ver has been installed!\"
         echo
     fi
