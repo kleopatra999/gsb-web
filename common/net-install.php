@@ -27,6 +27,9 @@ switch ($arch)
           "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
 }
 
+// get the req. URI for help
+$request_uri = "http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
+
 // need version vars
 require('versions_inc.php');
 
@@ -122,7 +125,7 @@ if [ `id -u` -ne 0 ]; then
     echo \"You must be root when running this program!\"
     echo \"log into a shell as root and run this command again;\"
     echo 
-    echo \"lynx --source http://gnomeslackbuild.org/net-install | sh\"
+    echo \"    lynx --source $request_uri | bash\"
     echo
     exit 1
 fi
@@ -177,17 +180,26 @@ EXCLUDE=$excludes
 SOURCE=\$MIRROR/\$GSB_NORMALIZED_PATH
 SOURCE=$slack_mirror_uri
 EOF
+sleep 2
 
 #
-# get package lists
+# get package lists & add keys
 #
+clear
 echo
 echo \"Updating package lists...\"
 echo
 \$SLAPTGET --config \$TEMP_CONFIGFILE --update
+clear
+echo
+echo \"Grabbing and importing package signing keys....\"
+echo
+\$SLAPTGET --config \$TEMP_CONFIGFILE --add-keys
 echo
 echo \"Installing/updating GSB GNOME\"...
 echo
+sleep 2
+clear
 
 #
 # sanity
