@@ -187,14 +187,14 @@ sleep 2
 #
 clear
 echo
+echo \"Grabbing and importing package signing keys....\"
+echo
+\$SLAPTGET --config \$TEMP_CONFIGFILE --add-keys
+echo
 echo \"Updating package lists...\"
 echo
 \$SLAPTGET --config \$TEMP_CONFIGFILE --update
 clear
-echo
-echo \"Grabbing and importing package signing keys....\"
-echo
-\$SLAPTGET --config \$TEMP_CONFIGFILE --add-keys
 echo
 echo \"Installing/updating GSB GNOME\"...
 echo
@@ -209,8 +209,35 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
     if \$SLAPTGET \$SLAPTGET_ARGS1; then
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
         rm -f \$TEMP_CONFIGFILE
-        \$SLAPTGET --update
-        \$SLAPTGET --upgrade
+        # the following logic re-installs GSB packages which may have been
+        # overwitten by the slackware patches.  important we patch too! 
+        SLAPTRC='/etc/slapt-get/slapt-getrc'
+        if [ \"$( grep gsb \"\${SLAPTRC}\" )\" ]; then
+            \$SLAPTGET --update
+            \$SLAPTGET --upgrade -y
+            \$SLAPTGET --clean -y
+        else
+            clear
+            echo
+            echo \"GSB has been installed - however...\"
+            echo
+            echo \"We've detected that you do not have slapt-get\"
+            echo \"configured to use the GSB mirrors! This could happen\"
+            echo \"if you already had slapt-get installed.\"
+            echo
+            echo \"This means your GSB software may have packages that are\"
+            echo \"out of date.  To rectify this, you must add the GSB\"
+            echo \"mirror(s) to your slapt-getrc as described on our\"
+            echo \"website, and then run this command again to update GSB.\"
+            echo
+            echo \"Steps:\"
+            echo
+            echo \"  1) follow the instructions at\"
+            echo \"     <http://gnomeslackbuild.org/download/#slaptgetrc>\"
+            echo \"  2) run the following command again, as root:\"
+            echo \"     lynx --source $request_uri | bash\"
+            echo
+        fi
         echo \"GSB GNOME $use_ver has been installed!\"
         echo
     fi
