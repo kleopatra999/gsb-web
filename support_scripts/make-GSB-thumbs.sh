@@ -7,6 +7,8 @@ HTML_FILE="$MAIN_PATH/common/screenshots_inc.html"
 #MIRROR_PATH="http://mirror.datapipe.net/norlug/frg-screenies"
 HTML_IMAGE_PATH="/screenies"
 PHYS_IMAGE_PATH="$MAIN_PATH/screenies"
+IMAGE_GEOMETRY="960x540"
+THUMB_GEOMETRY="250x250"
 
 clear
 
@@ -15,7 +17,7 @@ echo "resizing screenshots ..."
 echo ""
 
 cd $PHYS_IMAGE_PATH
-mogrify -verbose -geometry 800x600 *.png
+mogrify -verbose -geometry $IMAGE_GEOMETRY *.png
 
 echo ""
 echo "removing existing thumbs ..."
@@ -28,7 +30,7 @@ for i in $( ls thumb-* ); do
 done
 
 echo ""
-echo "generating thumbnails from regular images (this may take a minute) ..."
+echo "generating thumbnails from regular images ..."
 echo ""
 
 cd ../
@@ -36,8 +38,8 @@ echo "" > $HTML_FILE
 for i in $( ls *.png ); do
     PAGE_ENTRY="    <a href=\"$HTML_IMAGE_PATH/$i\" rel=\"lightbox[Screenshots]\"><img src=
       \"$HTML_IMAGE_PATH/thumbs/thumb-$i\" alt=\"\" class=\"screenthumb\" /></a>"
-    echo "      Generating 'thumb-$i' and adding to HTML page..."
-    convert -geometry 150x150 $i thumbs/thumb-$i
+    echo "      Generating 'thumb-$i' and adding HTML to screenies page..."
+    convert -geometry $THUMB_GEOMETRY $i thumbs/thumb-$i
     echo "$PAGE_ENTRY" >> $HTML_FILE
 done
 
