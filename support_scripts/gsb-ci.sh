@@ -6,14 +6,15 @@ sleep 1
 echo ""
 echo "Committing changes..."
 echo ""
-svn ci web
-
+cd web
+git commit -a
+git push origin master
 sleep 1
 
 echo ""
-echo "Getting SVN HEAD"
+echo "Getting git HEAD"
 echo ""
-svn up web
+git fetch
 
 sleep 1
 
