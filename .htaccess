@@ -41,7 +41,8 @@ RewriteEngine On
     RewriteRule ^net-install/64$        /common/net-install.php?arch=gsb64                       [QSA,L]
     RewriteRule ^installation/?$        /download/                                               [R,L]
     RewriteRule ^build/?$               http://dev.gnomeslackbuild.org/                          [R,L]
-
+    RewriteRule ^irc-rules/?$           /content/irc_rules.txt                                   [QSA,L]
+    
 #
 # error handling
 #

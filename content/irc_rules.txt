@@ -1,0 +1,73 @@
+Rules for the #gsb IRC chat room
+-------------------------------
+
+Admins for the chat room are:
+
+    *  chipster (channel founder)
+    *  fidesratio
+    *  malloc
+    *  Tadgy
+
+The admins are also the project's core developers.
+
+General rules
+=============
+
+    *  Registered and ID'd:
+       You must be registered and identified with freenode's nickserv
+       and services to join #gsb.  This is intentional.  It helps
+       to deter the lazy and unmotivated from entering our channel and
+       asking questions they could likely answer on their own.
+       
+       Private messages asking how to register and ID will likely get
+       you banned from the channel because you aren't taking initiative
+       to learn on your own.
+
+    *  DO YOUR HOMEWORK!
+       Meaning, don't expect us to hold your hand and solve the problem
+       for you.  You are expected to to the legwork, and we'll support
+       you if you show evidence that you have.  Use google!  We will +q
+       you if you aren't showing any motivation or legwork.
+
+       Please be certain you have read the FAQs on our website, perused
+       the mailing list articles, and looked at the bug reports (open
+       and closed) before you ask!
+
+       There's an old saying:  "Teach a man to fish [...]"  That is how
+       we operate.  Look it up.
+
+    *  Germane topics:
+       Unlike the elitist asshats in ##slackware[1] and #httpd, we
+       encourage off-topic discussion.  It brings life to our room, and
+       we're lower traffic which allows for general discussion.  There is
+       one exception to this rule:
+       
+       When asking for support, it had better be GSB-related!
+
+       [1] Exempted from this classification are actual Slackware
+           developers/admins in the channel.  Stand-up guys and fair.
+           Funny how /actual/ project developers aren't fuckfaces, and
+           the non-contributors are the asshats.
+
+    *  Attitude:
+       Have a good one.  Be patient, courteous, polite, and kiss a little
+       ass.  When you're asking for support, we're trying to help you for
+       free.  Also, we develop this project for free.  A shitty attitude
+       will get you nowhere but +q'd.  It's OK to be a freeloader (in some
+       cases), but not an asshat freeloader.
+
+    *  PM's:
+       Don't do it without asking first.  Ever.  If you were +q'd or
+       banned from the channel, and you PM an admin, you will be making
+       it worse for yourself.
+
+    *  Swearing, dirty words, etc.
+       Highly encouraged!  Mocking members of other countries allowed
+       as long as it's in good taste and not hateful and racist.  Name
+       calling with the intent of insulting someone is discouraged.
+
+    *  Pasting snippets, code, errors, etc.
+       DON'T do this in the channel.  Use a pastebin and post the
+       link to it.  We prefer you use <http://gsb.pastebin.com>
+
+    
