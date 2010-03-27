@@ -1,7 +1,7 @@
 Website documentation can be found in:
 
-    <svnroot>/web/docs
+    <repo_root>/web/docs
 
 which is also...
 
-    <http://gnomeslackbuild.org/docs/>
+    <http://gnomeslackbuild.org/docs/site/html-format/>
