@@ -1,7 +1,6 @@
 <?php
 /*
     Chip Cuccio <http://chip.cuccio.us>
-    $Id: index.php 2773 2007-11-18 16:49:41Z chipster $
 */
 
 // Needed for anything time/date-related
