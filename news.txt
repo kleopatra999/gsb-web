@@ -1,3 +1,22 @@
+2010-04-01-10-01-CST
+Project Updates!
+We have a very stable build system for GSB 2.28 and the upcoming Slackware
+13.1 release.  This week we've also started a new branch for GSB 2.30 and
+Slackware 13.1.  This means we may have two releases for the upcoming
+Slackware 13.1 - GSB 2.28 and 2.30.  However, we are still seeking
+volunteer contributors and developers to help us!
+<p>
+The upcoming Slackware 13.1 release also marks the last Slackware version for
+which we will provide multiple GSB releases.  Our newer release policy will be
+one GSB version per one Slackware version.  We will provide patches and updates
+as usual, for the latest stable GSB version.
+</p>
+<p>
+If you'd like to help us with this project,  let us know by dropping by in our
+IRC channel:
+<br/>
+#gsb in irc.freenode.net
+</p>
 ###
 2010-03-07-10-15-CST
 Building GSB 2.28 for Slackware -current
