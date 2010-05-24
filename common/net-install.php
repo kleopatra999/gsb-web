@@ -40,27 +40,8 @@ $slack_mirror_uri =
 // slapt-get md5 vars
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
 
-// mirror randomizer
-$sites[0] = array("ftp://ftp.slackware.org.uk", 5);
-$sites[1] = array("http://slackware.org.uk", 5);
-$sites[2] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 0);
-$sites[3] = array("http://slackware.rol.ru/gsb", 0);
-$sites[4] = array("http://mirrors.dotsrc.org", 0);
-$sites[5] = array("http://get.gnomeslackbuild.org", 3);
-$sites[6] = array("http://mirror.switch.ch/ftp/mirror", 0);
-$countsites = count($sites);
-for($i=0; $i<$countsites; $i++)
-{
-    for($x=0; $x<$sites[$i][1]; $x++)
-    {
-        $mylist[] = array($sites[$i][0]);
-    }
-}
-$countlist = count($mylist);
-$countlist = $countlist - 1;
-$picker = rand(0, $countlist);
-$picked = $mylist[$picker][0];
-$mirror = $picked;
+// GSB mirror randomizer
+$mirror = "http://mirrors.gnomeslackbuild.org";
 
 // main op
 switch ($use_ver)
