@@ -10,13 +10,13 @@ switch ($arch)
         $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
-          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64";
         break;
     case "gsb64":
         $arch_path  = "gsb/gsb64";
         $slack_arch = "slackware64";
         $excludes   =
-          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,i[3456]86";
         #$use_ver = "current"; // temp hack until stable is released.
         break;
     default:
@@ -24,7 +24,7 @@ switch ($arch)
         $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
-          "^kernel-.*,^glibc.*,.*-[0-9]dl$,^devs$,^udev$,aaa_elflibs,x86_64";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64";
 }
 
 // get the req. URI for help
@@ -41,12 +41,13 @@ $slack_mirror_uri =
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
 
 // mirror randomizer
-$sites[0] = array("ftp://ftp.slackware.org.uk", 4);
-$sites[1] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 3);
-$sites[2] = array("http://slackware.rol.ru/gsb", 3);
-$sites[3] = array("http://mirrors.dotsrc.org", 3);
-$sites[4] = array("http://get.gnomeslackbuild.org", 1);
-$sites[5] = array("http://mirror.switch.ch/ftp/mirror", 3);
+$sites[0] = array("ftp://ftp.slackware.org.uk/html", 5);
+$sites[1] = array("http://slackware.org.uk/html", 5);
+$sites[2] = array("ftp://ftp.slackware.pl/pub/gnomeslackbuild", 0);
+$sites[3] = array("http://slackware.rol.ru/gsb", 0);
+$sites[4] = array("http://mirrors.dotsrc.org", 0);
+$sites[5] = array("http://get.gnomeslackbuild.org", 3);
+$sites[6] = array("http://mirror.switch.ch/ftp/mirror", 0);
 $countsites = count($sites);
 for($i=0; $i<$countsites; $i++)
 {
@@ -213,9 +214,7 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
         # overwitten by the slackware patches.  important we patch too! 
         SLAPTRC='/etc/slapt-get/slapt-getrc'
         if [ \"$( grep gsb \"\${SLAPTRC}\" )\" ]; then
-            \$SLAPTGET --update
-            \$SLAPTGET --upgrade -y
-            \$SLAPTGET --clean -y
+            sleep 1
         else
             clear
             echo
