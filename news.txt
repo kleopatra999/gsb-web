@@ -4,8 +4,9 @@ GSB 2.28 for Slackware 13.1 and GSB 2.30 (Release Candidate) now available
 <p>
 Slackware 13.1 has been released and the GSB project follows closely behind.  
 We're offering a fully stable GSB-2.28.3 for Slackware(64) 13.1 as well
-as a freshly built release candidate for GSB-2.30 for Slackware(64) 13.1 which
-are hitting mirrors soon.
+as a freshly built release candidate for GSB-2.30 for Slackware(64) 13.1 
+is available at the main mirror selector/redirector
+at http://mirrors.gnomeslackbuild.org/gsb .
 </p>
 
 <p>
