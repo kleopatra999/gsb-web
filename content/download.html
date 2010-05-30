@@ -91,13 +91,13 @@
     <p>
       Before plunging in, please consult the documentation, particularly our
       <a 
-      href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+      href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable;
       ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE_REPLACED_PACKAGES.TXT">
       Replaced Packages List</a>.  You may also want to review the
       <a 
-      href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/README.TXT">
+      href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/README.TXT">
       README.TXT</a>. If you are upgrading from a previous version of GSB, read our 
-      <a href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/UPGRADE.TXT">
+      <a href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/UPGRADE.TXT">
       UPGRADE.TXT</a>.
    </p>
 
@@ -141,7 +141,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
       For more install options, see the <a
-      href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/INSTALL.TXT">README</a>.
+      href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/INSTALL.TXT">README</a>.
     </p>
     
     <h3 id="slaptget">
@@ -174,17 +174,17 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 
     <p>
     Download slapt-get for Slackware <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href= "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo
+    <a href= "http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo
     $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/">
-    &lt;ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo
+    &lt;http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo
     $gsb_bin_stable;?>_slackware-<?php echo($slack_ver); ?>/gsb/ad/&gt;</a>. 
     </p>
 
     <p>
     Download slapt-get for Slackware64 <span class= "version"><?php echo($slack_ver); ?></span> from: 
-    <a href="ftp://ftp.slackware.org.uk/gsb/gsb64-<?php echo
+    <a href="http://mirrors.gnomeslackbuild.org/gsb/gsb64-<?php echo
     $gsb_bin_stable;?>_slackware64-<?php echo($slack_ver); ?>/gsb64/ad/">
-    &lt;ftp://ftp.slackware.org.uk/gsb/gsb64-<?php echo
+    &lt;http://mirrors.gnomeslackbuild.org/gsb/gsb64-<?php echo
     $gsb_bin_stable;?>_slackware64-<?php echo($slack_ver); ?>/gsb64/ad/&gt;</a>.  
     </p>
 
@@ -242,7 +242,7 @@ $ installpkg slapt-get-[version].txz
         WORKINGDIR=/var/slapt-get
         EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
         SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-<?php echo($slack_ver); ?>/:OFFICIAL
-        SOURCE=ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>
+        SOURCE=http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>
         </pre>
         </div>
         If you would like to view a fully loaded example, after installing
@@ -283,8 +283,19 @@ $ installpkg slapt-get-[version].txz
          title="Go up to TOC">&#8593;</a></span>
     </h4>
 
+    <h3>Master Mirror</h3>
+
     <p>
-      The following is a list of available mirrors from which to download
+      You best option is to use <a
+      href="http://mirrors.gnomeslackbuild.org/gsb">&lt;http://mirrors.gnomeslackbuild.org/gsb&gt;</a>
+      as your mirror.  It is a "smart" mirror redirector, and only uses
+      mirrors which are up-to-date and complete.
+    </p>
+
+    <h3>Optional Mirrors</h3>
+
+    <p>
+      The following is a list of available optional mirrors from which to download
       GNOME SlackBuild.  For the most updated list of mirrors, please consult
       the MIRROR.TXT found in release directory. 
     </p>
@@ -294,8 +305,8 @@ $ installpkg slapt-get-[version].txz
         <ul>
           <li>
             <a href=
-            "ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
-            ?>_slackware-<?php echo($slack_ver); ?>/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>-slackware-<?php echo($slack_ver); ?>/&gt;</a>
+            "http://slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+            ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>-slackware-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href=
@@ -325,9 +336,9 @@ $ installpkg slapt-get-[version].txz
       <li>Slackware64 <?php echo ($slack_ver); ?>
         <ul>
           <li>
-            <a href= "ftp://ftp.slackware.org.uk/gsb/gsb64-<?php echo
+            <a href="http://slackware.org.uk/gsb/gsb64-<?php echo
             $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver);
-            ?>/">&lt;ftp://ftp.slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
+            ?>/">&lt;http://slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
           </li>
           <li>
             <a href= "http://slackware.rol.ru/gsb/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://slackware.rol.ru/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
@@ -382,7 +393,7 @@ $ slapt-get --add-keys
      <p>
       <span class="str">NOTE ON REQUIREMENTS: </span>
       You <i>must</i> first upgrade and replace all packages marked as required in the <a 
-      href="ftp://ftp.slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
+      href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable;
       ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE_REPLACED_PACKAGES.TXT">Replaced Packages List</a>.  
       If you fail to do so, your installation may not work.  Run the following
       command before attempting to install GNOME SlackBuild:
