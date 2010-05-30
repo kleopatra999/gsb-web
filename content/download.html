@@ -389,7 +389,7 @@ $ slapt-get --add-keys
     </p>
       <div>
       <pre>
-$ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
+$ slapt-get --install glib2 gtk+2
 </pre>
       </div>
      
@@ -405,7 +405,7 @@ $ slapt-get --install alsa-lib bluez glib2 gtk+2 libwnck
 
     <div>
     <pre>
-$ slapt-get --upgrade
+$ slapt-get --remove-obsolete --upgrade
 </pre>
     </div>
 
@@ -509,13 +509,13 @@ $ removepkg /var/log/packages/*gsb
 
 <div>
 <pre>
-$ slapt-get --reinstall --install glib2 libwnck alsa-lib gtk+2 bluez-lib bluez-utils
+$ slapt-get --reinstall --install glib2 gtk+2
 </pre>
 </div>
 
     <p>
      You may also need to reinstall other packages that may have been replaced,
-     such as pidgin, libgsf, or compiz.
+     such as libgsf, gst-plugins-good or compiz.
      </p>
 
     <h3 id="bugs">

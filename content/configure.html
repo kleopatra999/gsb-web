@@ -5,20 +5,12 @@
       </p>
 
       <ol>
-      
-        <li>
-          <a href="#about-pulseaudio">PulseAudio</a>
-        </li>
         <li>
           <a href="#about-avahi">Avahi Zeroconf</a>
         </li>
 
         <li>
           <a href="#about-menus">Custom Menus</a>
-        </li>
-
-        <li>
-          <a href="#about-audio">Configuring Audio</a>
         </li>
 
         <li>
@@ -46,19 +38,6 @@
           <a href="#gdm">GNOME Display Manager</a>
         </li>
 
-        <li>
-          <a href="#about-kde">KDE Integration</a>
-          <ol>
-            <li>
-              <a href="#kde-kdm">KDE Display Manager</a>
-            </li>
-
-            <li>
-              <a href="#kde-menus">KDE or XFCE Menus</a>
-            </li>
-          </ol>
-        </li>        
-        
         <li>
           <a href="#printing">Printing</a>
         </li>
@@ -88,41 +67,6 @@
     out of their GNOME SlackBuild desktop.  
     </p>
 
-    <h3 id="about-pulseaudio">
-      PulseAudio <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      <img src="/images/app-icons/pulseaudio.png"
-         class="listimg-l"
-         alt="" />
-         
-         It's recommended that you configure ALSA for PulseAudio, since most applications use 
-         ALSA. This is done through the PulseAudio plugin for alsalibs (the ALSA PulseAudio 
-         plugin is available through our alsa-plugins package). In order for ALSA to use 
-         PulseAudio you need to configure the /etc/asound.conf.  There is an example version
-         which comes with the pulseaudio package (it may be named /etc/asound.conf.new if there
-         was a previous version).  Please make sure the following lines are found in /etc/asound.conf:
-    </p>        
-    
-    <div>
-      <pre>
-        pcm.pulse {
-          type pulse
-          }
-        ctl.pulse {
-          type pulse
-          }
-        pcm.!default {
-          type pulse
-          }
-        ctl.!default {
-          type pulse
-          }
-      </pre>
-    </div>
-    
     <h3 id="about-avahi">
       Avahi Zeroconf <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
@@ -204,54 +148,6 @@ export XDG_CONFIG_DIRS=/etc/xdg:/etc/gnome/xdg
     GNOME sessions started through GDM will have this variable defined for them.
     Please make sure to have the latest gnome-session and gnome-desktop package
     installed.
-    </p>
-
-    <h3 id="about-audio">
-      Configuring Audio <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      <img src="/images/app-icons/pulseaudio.png"
-         class="listimg-l" alt="" /> Pulseaudio is now installed as the default GNOME
-         SlackBuild sound server.  Pulseaudio has many cool features for your 
-         desktop, including transferring the audio to a different machine, 
-         changing the sample format or channel count and mixing several sounds,
-         or changing the volume for different applications all running at one. 
-         For instance, you can turn the volume down on music playing in the background
-         while turning up the volume for a game or movie playing in the foreground.  
-    </p>    
-    
-    <p>
-    In order to get sound in your GNOME Desktop:
-    </p>
-    <ol>
-        <li>
-          <strong>You'll need to "Enable software sound mixing (ESD)" from your Sound 
-          control panel.</strong>  This starts pulseaudio (which has replaced esd).  
-          For new users, this is on by default.  If you have a previous GNOME setup 
-          and have this disabled, you may notice a lack of sound.  :)
-        </li>
-
-        <li>
-          Make sure that the "PulseAudio Sound Server" devices are choosen in your
-          Device panel.  GSB GNOME is now configured by default to use Pulseaudio, so 
-          applications like Rhythmbox, Totem, etc, will use it.  However, you may have to
-          set it manually to PulseAudio when upgrading from a previous GNOME version.
-          You can also switch between using PulseAudio, ALSA, etc, by choosing from the 
-          "Devices" menu in the Sound Control Panel.   
-        </li>
-    </ol>
-    
-    <p>
-       The <b>padevchooser</b> is configured to autostart, and you can access all the 
-       fancy options and features of pulseaudio directly from your GNOME panel.    
-    </p>
-
-    <p>
-       <b>Note:</b> PulseAudio works great with Avahi! It will allow you to discover
-       and browse remote sound servers, or even share your sound server and speakers with other
-       users.  
     </p>
 
     <h3 id="about-nm">
@@ -495,92 +391,7 @@ id:4:initdefault:
     <p>You can also find the GNOME Display Manager manual 
        <a href="http://www.gnome.org/projects/gdm/docs/2.20/gdm.html">here.</a>
     </p>
-
-
-    <h3 id="about-kde">
-      KDE <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h3>
-
-    <p>
-      <img src="/images/app-icons/kde-icon.png"
-      class="listimg-l"
-      alt="" /> We try our best to be able to provide a GNOME distribution that 
-      works well alongside KDE, the desktop that comes by default with Slackware,
-      without modifying the default settings too much, or by over patching the 
-      source software.  There are a few things that a GNOME SlackBuild user can 
-      do to make the integration a little nicer between the two desktop.  
-    </p>
-
-    <h4 id="kde-kdm">
-      KDE Display Manager <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-
-    <p>
-       By default, GDM is the preferred display manager of Slackware.  When entering 
-       runlevel 4, which starts the display manager, Slackware first tries GDM,
-       secondly KDM, and lastly XDM.  GDM is configured to properly start a GNOME
-       session by running the <code>/etc/X11/xinit/xinitrc.gnome</code> script.
-       On the other hand, KDE comes configured with the bare minimum gnome session
-       script which will not work with GNOME SlackBuild.  If you prefer KDM, and would
-       like to start a gnome session, <b>you will need to modify</b>:    
-    </p>
-       
-    <p>
-       <code>/usr/share/apps/kdm/sessions/gnome.desktop</code>
-    </p>
     
-    <p>You will need to change the line:</p>
-    
-<div>
-<pre>
-Exec=gnome-session
-</pre>
-</div>
-
-     <p>to:</p>
-<div>
-<pre>
-Exec=/etc/X11/xinit/xinitrc.gnome
-</pre>
-</div>
-
-    <p>Your other option is to copy <code>/usr/share/xsessions/gnome.desktop</code>
-       to <code>/usr/share/apps/kde/sessions</code>.  This will correct the default
-       session script run by KDM and will start a full and proper GNOME session.    
-    </p>
-
-    <h4 id="kde-menus">
-      KDE or Xfce Menus <span class="toc-link"><a href="#toc"
-         title="Go up to TOC">&#8593;</a></span>
-    </h4>
-
-    <p>
-       The default GNOME menus have been configured in GNOME SlackBuild to exclude
-       KDE and XFCE menu items to avoid clutter and general ugliness.  Some users
-       may find that they would like to access their KDE menu items from the GNOME
-       menus.  We have provided a package to do this for you.  You will need to install
-       the some GNOME GSB menus packages.  
-    </p>    
-    
-<div>
-<pre>
-slapt-get --install gnome-menus-kde
-</pre>
-</div>
-
-    <p>
-       This package is based on gnome-menu-extended by Ariszló, and places a submenu 
-       in the GNOME menus for easy access to KDE applications.  If you would like
-       to restore the previous "exclusive" menu, you'll need to (as root) remove
-       the <b>gnome-menus-kde</b> package.
-    </p>
-    
-    <p>The above applies for Xfce menus;  instead of gnome-menus-kde, install
-    or remove the package <b>gnome-menus-xfce</b>
-    </p>
-
    <h3 id="printing">
       Printing <span class="toc-link"><a href="#toc"
          title="Go up to TOC">&#8593;</a></span>
