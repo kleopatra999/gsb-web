@@ -1,3 +1,21 @@
+###
+2010-05-30-14-46-BST
+GSB 2.30 and 2.28 for Slackware 13.1 Release Candidate Available
+<p>
+Slackware 13.1 has been released and the GSB project follows closely behind.  
+We're offering a fully stable GSB-2.28.3 for Slackware(64) 13.1 as well
+as a freshly build release candidate for GSB-2.30 for Slackware(64) 13.1 which
+are hitting mirrors as we speak.
+</p>
+
+<p>
+For those who want an older and tested GNOME desktop, feel free to stay with
+GNOME 2.28.  However, the GSB-2.30 desktop is in RC status now and is stable
+and ready for use.  There will be a few more package updates on the way before
+we call is a release version.  We encourage users to upgrade to 2.30 and help us
+with more testing and bug reports.  There have been a lot of changes with 2.30
+so please read the UPGRADE.TXT and CHANGES_AND_HINTS.TXT files.
+</p>
 
 ###
 2010-05-19-11-25-CST
