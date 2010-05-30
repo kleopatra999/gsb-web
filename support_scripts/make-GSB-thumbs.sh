@@ -36,7 +36,7 @@ echo ""
 cd ../
 echo "" > $HTML_FILE
 for i in $( ls *.png ); do
-    PAGE_ENTRY="    <a href=\"$HTML_IMAGE_PATH/$i\" rel=\"lightbox[Screenshots]\"><img src=
+    PAGE_ENTRY="    <a href=\"$HTML_IMAGE_PATH/$i\"><img src=
       \"$HTML_IMAGE_PATH/thumbs/thumb-$i\" alt=\"\" class=\"screenthumb\" /></a>"
     echo "      Generating 'thumb-$i' and adding HTML to screenies page..."
     convert -geometry $THUMB_GEOMETRY $i thumbs/thumb-$i
