@@ -14,7 +14,7 @@ sleep 1
 echo ""
 echo "Getting git HEAD"
 echo ""
-git fetch
+git pull
 
 sleep 1
 
