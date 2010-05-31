@@ -19,7 +19,7 @@ $sites[2]  = array("http://mirror.switch.ch/ftp/mirror/gsb",0);
 $sites[3]  = array("http://mirrors.dotsrc.org/gsb", 0);
 $sites[4]  = array("http://ftp.slackware.pl/pub/gnomeslackbuild/gsb", 0);
 $sites[5]  = array("http://slackware.rol.ru/gsb/gsb", 0);
-$sites[6]  = array("http://get.gnomeslackbuild.org", 1);
+$sites[6]  = array("http://get.gnomeslackbuild.org", 3);
 // end vars
 
 $countsites = count($sites);
