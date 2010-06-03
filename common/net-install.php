@@ -93,13 +93,13 @@ TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
 SLAPTGET_DLPATH=\"\$MIRROR/\$GSB_NORMALIZED_PATH/$arch/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
-SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y\"
-SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install \$META_PACK -y\"
-WGET_ARGS=\"--progress=dot \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE\"
+SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y -S\"
+SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install -S \$META_PACK -y\"
+WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE\"
 SLAPT_MD5=$slapt_md5
 
 #
-# determine if r3wt
+# determine if user is logged in as root user
 #
 if [ `id -u` -ne 0 ]; then
     clear
@@ -148,7 +148,7 @@ if [ ! -f \"\${SLAPTGET}\" ]; then
             sleep 3
         else
             echo
-            echo \"slapt-get download md5's don't match\"
+            echo \"slapt-get download md5's don't match! Exiting.\"
             echo
             exit 1
         fi
@@ -189,10 +189,14 @@ sleep 3
 # sanity
 #
 if \$SLAPTGET \$SLAPTGET_ARGS0; then
-    echo \"Dependencies upgraded - installing GSB GNOME...\"
+    echo \"Dependencies upgraded and/or installed - installing GSB GNOME...\"
     if \$SLAPTGET \$SLAPTGET_ARGS1; then
+        echo
+        echo \"cleaning up temoroary files...\"
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
         rm -f \$TEMP_CONFIGFILE
+        echo \"Done\"
+        echo
         # the following logic re-installs GSB packages which may have been
         # overwitten by the slackware patches.  important we patch too! 
         SLAPTRC='/etc/slapt-get/slapt-getrc'
@@ -232,7 +236,7 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
     fi
 else
     echo
-    echo \"GSB GNOME installation failed!\"
+    echo \"GSB GNOME installation failed! Exiting\"
     echo
     exit 1
 fi
