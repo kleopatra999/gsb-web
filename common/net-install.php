@@ -143,8 +143,13 @@ if [ ! -f \"\${SLAPTGET}\" ]; then
         if [ \$TEMP_SLAPT_MD5 = \$SLAPT_MD5 ]; then
             upgradepkg --install-new  \$TMP/\$SLAPTGET_FILE
             rm -f \$TMP/\$SLAPTGET_FILE
+            echo \"slap-get installed successfully\"
+            echo
+            sleep 3
         else
+            echo
             echo \"slapt-get download md5's don't match\"
+            echo
             exit 1
         fi
     fi
@@ -153,7 +158,6 @@ fi
 #
 # slapt-get preparedness
 #
-clear
 echo
 echo \"Preparing GSB GNOME installation...\"
 echo
@@ -176,12 +180,10 @@ echo
 echo \"Updating package lists...\"
 echo
 \$SLAPTGET --config \$TEMP_CONFIGFILE --update
-clear
 echo
 echo \"Installing/updating GSB GNOME\"...
 echo
 sleep 3
-clear
 
 #
 # sanity
@@ -197,7 +199,6 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
         if [ \"$( grep gsb \"\${SLAPTRC}\" )\" ]; then
             sleep 1
         else
-            clear
             echo
             echo \"GSB has been installed - however...\"
             echo
@@ -218,11 +219,14 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
             echo \"     lynx --source $request_uri | bash\"
             echo
         fi
+        echo
         echo \"GSB GNOME $use_ver has been installed!\"
         echo
     fi
 else
+    echo
     echo \"GSB GNOME installation failed!\"
+    echo
     exit 1
 fi
 ";
