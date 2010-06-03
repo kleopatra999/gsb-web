@@ -35,7 +35,7 @@ require('versions_inc.php');
 
 // mirror vars
 $slack_mirror_uri =
-        "http://slackware.mirrors.tds.net/pub/slackware/$slack_arch-$slack_ver";
+        "http://ftp.osuosl.org/pub/slackware/$slack_arch-$slack_ver";
 
 // slapt-get md5 vars
 $slapt_md5   = trim(`md5sum $slapt_path/slapt-get-$slapt_get_ver.txz|sed 's| \/.*||g'`);
