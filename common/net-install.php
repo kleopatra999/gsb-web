@@ -222,6 +222,13 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
         echo
         echo \"GSB GNOME $use_ver has been installed!\"
         echo
+        echo \"To start GNOME or GDM, please see: \"
+        echo \"<http://gnomeslackbuild.org/support/#FAQs>\"
+        echo
+        echo \"We hope you enjoy using GSB! :^)\"
+        echo
+        echo \"        -- The GSB Development Team\"
+        echo
     fi
 else
     echo
