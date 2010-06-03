@@ -133,6 +133,7 @@ if [ ! -f \"\${SLAPTGET}\" ]; then
     echo 
     echo \"slapt-get not found. Downloading and installing...\"
     echo 
+    sleep 3
     \$WGET \$WGET_ARGS
     if [ ! -f \"\$TMP/\$SLAPTGET_FILE\" ]; then
         echo \"slapt-get download failed\"
@@ -156,18 +157,17 @@ clear
 echo
 echo \"Preparing GSB GNOME installation...\"
 echo
+sleep 3
 cat << EOF >\$TEMP_CONFIGFILE
 WORKINGDIR=/var/slapt-get
 EXCLUDE=$excludes
 SOURCE=\$MIRROR/\$GSB_NORMALIZED_PATH
 SOURCE=$slack_mirror_uri
 EOF
-sleep 2
 
 #
 # get package lists & add keys
 #
-clear
 echo
 echo \"Grabbing and importing package signing keys....\"
 echo
@@ -180,7 +180,7 @@ clear
 echo
 echo \"Installing/updating GSB GNOME\"...
 echo
-sleep 2
+sleep 3
 clear
 
 #
