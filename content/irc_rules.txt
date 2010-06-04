@@ -6,7 +6,6 @@ Admins for the chat room are:
     *  chipster (channel founder)
     *  fidesratio
     *  malloc
-    *  Tadgy
 
 The admins are also the project's core developers.
 
@@ -37,14 +36,18 @@ General rules
        we operate.  Look it up.
 
     *  Germane topics:
-       Unlike the elitist asshats in ##slackware[1] and #httpd, we
+       Unlike come of the elitist asshats[1] in ##slackware[2] and #httpd, we
        encourage off-topic discussion.  It brings life to our room, and
        we're lower traffic which allows for general discussion.  There is
        one exception to this rule:
        
        When asking for support, it had better be GSB-related!
 
-       [1] Exempted from this classification are actual Slackware
+       [1] "thumbs" (AKA: Frank Gingras), we're looking in your
+           direction, and telling you to stick your thumbs where the
+           sun doesn't shine ;-)
+
+       [2] Exempted from this classification are actual Slackware
            developers/admins in the channel.  Stand-up guys and fair.
            Funny how /actual/ project developers aren't fuckfaces, and
            the non-contributors are the asshats.
@@ -70,4 +73,3 @@ General rules
        DON'T do this in the channel.  Use a pastebin and post the
        link to it.  We prefer you use <http://gsb.pastebin.com>
 
-    
