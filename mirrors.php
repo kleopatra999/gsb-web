@@ -39,10 +39,23 @@ $mirror = $picked;
 // get their request
 $req_uri = $_SERVER['REQUEST_URI'];
 
-// Redirect!
 # debug
 # echo ($mirror.$req_uri);
-header("Location: $mirror"."$req_uri",TRUE,301);
-exit ();
+
+// the logic here looks for a "/gsb/" (our std. dir/repo parent layout) and
+// adds it to the redir if non-existant.
+if (!preg_match("/\/gsb/", $req_uri)) # "/gsb" missing
+
+{
+    # request is missing "/gsb/" path - we add it to the redirect
+    header("Location: $mirror"."/gsb"."$req_uri", TRUE, 301);
+    exit();
+}
+else
+{
+    # request contains proper "/gsb/" path - we redirect normally
+    header("Location: $mirror"."$req_uri", TRUE, 301);
+    exit();
+}
 
 ?>
