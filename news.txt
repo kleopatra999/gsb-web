@@ -6,7 +6,7 @@ which is touted as the defining technology of the GNOME 3 desktop user
 experience.  It's still under heavy development, but has so far proved to be
 quite usable and very pretty.  Curious users may want to take a look to see
 what will be included in GNOME 3.0.  You can read up on more details at the 
-<a href=http://live.gnome.org/GnomeShell>GNOME Shell</a> home page.
+<a href="http://live.gnome.org/GnomeShell">GNOME Shell</a> home page.
 
 ###
 2010-05-30-14-46-BST
