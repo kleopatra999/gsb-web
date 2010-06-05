@@ -1,5 +1,5 @@
 ###
-2010-05-06-18-30-BST
+2010-06-05-18-30-BST
 GNOME Shell now in testing/
 With the latest round of updates for GSB-2.30RC1, we have included GNOME Shell,
 which is touted as the defining technology of the GNOME 3 desktop user
