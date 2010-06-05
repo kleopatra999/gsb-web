@@ -1,4 +1,14 @@
 ###
+2010-05-06-18-30-BST
+GNOME Shell now in testing/
+With the latest round of updates for GSB-2.30RC1, we have included GNOME Shell,
+which is touted as the defining technology of the GNOME 3 desktop user
+experience.  It's still under heavy development, but has so far proved to be
+quite usable and very pretty.  Curious users may want to take a look to see
+what will be included in GNOME 3.0.  You can read up on more details at the 
+<a href=http://live.gnome.org/GnomeShell>GNOME Shell</a> home page.
+
+###
 2010-05-30-14-46-BST
 GSB 2.28 for Slackware 13.1 and GSB 2.30 (Release Candidate) now available
 <p>
