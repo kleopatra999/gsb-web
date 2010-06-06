@@ -1,3 +1,17 @@
+<?php
+
+// read in the MIRRORS.txt file
+$MirrorFile =
+    "/home/chipster/rsync_repos/gsb/gsb-"."$gsb_bin_stable"."_slackware-"."$slack_ver"."/MIRRORS.TXT";
+$fh = fopen($MirrorFile, 'r');
+$MirrorData = fread($fh, filesize($MirrorFile));
+fclose($fh);
+// linkify :)
+$MirrorData = preg_replace("/(?<!<a href=\")((http|https|rsync|news|irc|ftp)+(s)?:\/\/[^<>\s]+)/i",
+    "<a href=\"\\0\">\\0</a>", $MirrorData);
+
+?>
+            
     <div id="toc"
          class="toc">
       <p>
@@ -296,73 +310,12 @@ $ installpkg slapt-get-[version].txz
 
     <p>
       The following is a list of available optional mirrors from which to download
-      GNOME SlackBuild.  For the most updated list of mirrors, please consult
-      the MIRROR.TXT found in release directory. 
+      GNOME SlackBuild. This list is an exact replica of the MIRROR.TXT found in release directory. 
     </p>
-
-    <ul>
-      <li>Slackware <?php echo ($slack_ver); ?>
-        <ul>
-          <li>
-            <a href=
-            "http://slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable;
-            ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://slackware.org.uk/gsb/gsb-<?php echo $gsb_bin_stable; ?>-slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://slackware.rol.ru/gsb/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://slackware.rol.ru/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://mirrors.dotsrc.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-           <li>
-            <a href=
-            "http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/">&lt;http://get.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-       </ul>
-      </li>
-    </ul>
-
-    <ul>
-      <li>Slackware64 <?php echo ($slack_ver); ?>
-        <ul>
-          <li>
-            <a href="http://slackware.org.uk/gsb/gsb64-<?php echo
-            $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver);
-            ?>/">&lt;http://slackware.org.uk/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href= "http://slackware.rol.ru/gsb/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://slackware.rol.ru/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://darkstar.ist.utl.pt/pub/slackware/addon/gnomeslackbuild/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href= "http://mirrors.dotsrc.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://mirrors.dotsrc.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-          <li>
-            <a href=
-            "http://mirror.switch.ch/ftp/mirror/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://mirror.switch.ch/ftp/mirror/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-         <li>
-            <a href=
-            "http://get.gnomeslackbuild.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/">&lt;http://get.gnomeslackbuild.org/gsb/gsb64-<?php echo $gsb_bin_stable; ?>_slackware64-<?php echo($slack_ver); ?>/&gt;</a>
-          </li>
-        </ul>
-      </li>
-
-    </ul>
-
+    
+    <?php 
+    print("<pre>".$MirrorData."</pre>");
+    ?>
 
     <h4 id="upgrades">
       Required Upgrades <span class="toc-link"><a href="#toc"
