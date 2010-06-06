@@ -1,4 +1,22 @@
 ###
+2010-06-06-01-30-BST
+GNOME SlackBuild 2.30 for x86 and x86_64 is released!
+
+<p>
+Things are very stable.  A lot of weight has been trimmed in this release of
+GSB, and we now only need to replace two Slackware packages.  The desktop is
+solid, responsive and polished and comes with a full set of great GNOME
+applications.  Please make sure to read CHANGES_AND_HINTS.TXT to see what has
+changed in this release, and for a few potential gotchas.  We have also written
+up a FAQ.TXT which has some further hints and tips about getting the most out
+of your new GNOME 2.30 desktop.  The next set of GNOME maintenance patches will be out in a few weeks.  For now, enjoy!  
+</p>
+
+<p>
+The full version of GNOME SlackBuild 2.30 is available for download from: 
+http://mirrors.gnomeslackbuild.org/gsb .</p>
+
+###
 2010-06-05-18-30-BST
 GNOME Shell now in testing/
 With the latest round of updates for GSB-2.30RC1, we have included GNOME Shell,
