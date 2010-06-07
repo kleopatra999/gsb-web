@@ -122,10 +122,10 @@ $MirrorData = preg_replace("/(?<!<a href=\")((http|https|rsync|news|irc|ftp)+(s)
 
     <p>
       The quickest and easiest way to install the GSB binary distribution,
-      is via our net-installer.  Note that this method of installation will
-      install <em>everything</em> included in the GSB distribution (full
-      installation!).  It will also automatically upgrade the various 
-      necessary packages for you.
+      is via our net-installer.  This method of installation will
+      install everything you need to run a full GNOME desktop environment, 
+      as well as GNOME applications.  It  will also automatically upgrade
+      the various necessary packages, as well as install any dependencies for you.
     </p>
 
     <p>
@@ -479,7 +479,10 @@ $ slapt-get --reinstall --install glib2 gtk+2
 
     <p>
      You may also need to reinstall other packages that may have been replaced,
-     such as libgsf, gst-plugins-good or compiz.
+     such as libgsf, gst-plugins-good or compiz.  Remember to refer to the
+     <a href="http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo
+        $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>/SLACKWARE_REPLACED_PACKAGES.TXT">Replaced Packages
+     List</a> for any packages you may need/want to re-install.
      </p>
 
     <h3 id="bugs">
