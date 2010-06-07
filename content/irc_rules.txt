@@ -36,7 +36,7 @@ General rules
        we operate.  Look it up.
 
     *  Germane topics:
-       Unlike come of the elitist asshats[1] in ##slackware[2] and #httpd, we
+       Unlike some of the elitist asshats[1] in ##slackware[2] and #httpd, we
        encourage off-topic discussion.  It brings life to our room, and
        we're lower traffic which allows for general discussion.  There is
        one exception to this rule:
