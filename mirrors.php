@@ -19,6 +19,7 @@ $sites[2]  = array("http://ftp.slackware.pl/pub/gnomeslackbuild", 5); # good
 $sites[3]  = array("http://slackware.rol.ru/gsb", 5); # good
 $sites[4]  = array("http://get.gnomeslackbuild.org", 1); #good
 $sites[5]  = array("http://ftp5.gwdg.de/pub/linux/slackware", 5); #good
+$sites[6]  = array("http://mirrors.dotsrc.org", 5); #good
 // end vars
 
 $countsites = count($sites);
