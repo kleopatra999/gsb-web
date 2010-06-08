@@ -29,18 +29,6 @@
                 title="About the Project">About</a>
           </li>
           <?php }
-                      if($op == "screenshots") { ?>
-          <li>
-            <a href="/screenshots/"
-                title="Screenshots"
-                class="thisPage">Screenshots</a>
-          </li>
-          <?php } else { ?>
-          <li>
-            <a href="/screenshots/"
-                title="Screenshots">Screenshots</a>
-          </li>
-          <?php }
                       if ($op == "download") { ?>
           <li>
             <a href="/download/"
@@ -52,6 +40,30 @@
             <a href="/download/"
                 title="Download and Installation Info">Download &amp;
                 Install</a>
+          </li>
+          <?php }
+                      if ($op == "donate") { ?>
+          <li>
+            <a href="/donate/"
+                title="iDonate to the GSB Project"
+                class="thisPage">Donate</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/donate/"
+                title="Donate to the GSB Project">Donate</a>
+          </li>
+          <?php }
+                      if($op == "screenshots") { ?>
+          <li>
+            <a href="/screenshots/"
+                title="Screenshots"
+                class="thisPage">Screenshots</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/screenshots/"
+                title="Screenshots">Screenshots</a>
           </li>
           <?php }
                       if ($op == "configure") { ?>

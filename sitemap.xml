@@ -14,26 +14,31 @@
  </url>
  <url>
   <loc>http://gnomeslackbuild.org/configure/</loc>
-  <priority>0.3438</priority>
+  <priority>0.1339</priority>
  </url>
  <url>
   <loc>http://gnomeslackbuild.org/download/</loc>
-  <priority>0.7188</priority>
+  <priority>1.0000</priority>
  </url>
  <url>
   <loc>http://gnomeslackbuild.org/lists/</loc>
-  <priority>0.0938</priority>
+  <priority>0.0357</priority>
  </url>
  <url>
   <loc>http://gnomeslackbuild.org/screenshots/</loc>
-  <priority>0.1562</priority>
+  <priority>0.2589</priority>
  </url>
  <url>
+ <url>
   <loc>http://gnomeslackbuild.org/software/</loc>
-  <priority>0.0312</priority>
+  <priority>0.0670</priority>
  </url>
  <url>
   <loc>http://gnomeslackbuild.org/support/</loc>
-  <priority>0.0625</priority>
+  <priority>0.0357</priority>
+ </url>
+ <url>
+  <loc>http://gnomeslackbuild.org/donate/</loc>
+  <priority>0.0357</priority>
  </url>
 </urlset>

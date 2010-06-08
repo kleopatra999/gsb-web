@@ -31,6 +31,7 @@ RewriteEngine On
     RewriteRule ^software/?$            /index.php?op=software                                   [QSA,L]
     RewriteRule ^downloads/?$           /index.php?op=download                                   [QSA,L]
     RewriteRule ^download/?$            /index.php?op=download                                   [QSA,L]
+    RewriteRule ^donate/?$              /index.php?op=donate                                     [QSA,L]
     RewriteRule ^configure/?$           /index.php?op=configure                                  [QSA,L]
     RewriteRule ^development/?$         http://wiki.github.com/gnomeslackbuild/gsb-build-system/ [R,L]
     RewriteRule ^screenshots/?$         /index.php?op=screenshots                                [QSA,L]

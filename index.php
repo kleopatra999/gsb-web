@@ -101,6 +101,9 @@ switch ($op)
     case "search":
         $title = "Search : $common_title";
         break;
+    case "donate":
+        $title = "Donate and help fund the GSB Project : $common_title";
+        break;
     case "http_error":
         $title = $errdesc;
         break;

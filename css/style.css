@@ -104,8 +104,24 @@ pre {
     margin: 1em 0 1em 1.5em;
 }
 
+.donatethumb {
+    margin: 15px 0 15px 0;
+    padding: 8px;
+    border-bottom: 1px solid #999;
+    border-right: 1px solid #999;
+    color: inherit;
+    background: #eee;
+    font-size: x-small;
+    text-align: center;
+}
+
+a .donatethumb:hover {
+    background: #ccc;
+    color: inherit;
+}
+
 .introthumb {
-    margin: 15px 0px 5px 15px;
+    margin: 15px 0px 10px 15px;
     padding: 8px;
     border-bottom: 1px solid #999;
     border-right: 1px solid #999;
