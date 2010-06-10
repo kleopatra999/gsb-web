@@ -192,7 +192,7 @@ if \$SLAPTGET \$SLAPTGET_ARGS0; then
     echo \"Dependencies upgraded and/or installed - installing GSB GNOME...\"
     if \$SLAPTGET \$SLAPTGET_ARGS1; then
         echo
-        echo \"cleaning up temoroary files...\"
+        echo \"cleaning up temporary files...\"
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
         rm -f \$TEMP_CONFIGFILE
         echo \"Done\"
