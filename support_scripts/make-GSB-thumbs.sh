@@ -8,7 +8,7 @@ HTML_FILE="$MAIN_PATH/common/screenshots_inc.html"
 HTML_IMAGE_PATH="/screenies"
 PHYS_IMAGE_PATH="$MAIN_PATH/screenies"
 IMAGE_GEOMETRY="960x540"
-THUMB_GEOMETRY="250x250"
+THUMB_GEOMETRY="225x225"
 
 clear
 
