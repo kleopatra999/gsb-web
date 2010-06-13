@@ -13,19 +13,27 @@ General rules
 =============
 
     *  Registered and ID'd:
-       You must be registered and identified with freenode's nickserv
-       and services to join #gsb.  This is intentional.  It helps
-       to deter the lazy and unmotivated from entering our channel and
-       asking questions they could likely answer on their own.
+       At times, we enable the +r flag on the channel...which requires
+       users to register and ID themselves with the freenode NickServ
+       to join and/or talk on #gsb.
+       
+       This is intentional.  It helps to deter the lazy and unmotivated
+       from entering our channel and asking questions they could likely
+       answer on their own.
+       
+       The +r flag is enabled/disabled at the sole
+       discretion of the admins.  If you can't join or talk ("cant send
+       to channel" errors), ID with NickServ!
        
        Private messages asking how to register and ID will likely get
        you banned from the channel because you aren't taking initiative
-       to learn on your own.
+       to learn on your own.  Freenode had help on this all over the
+       place.
 
     *  DO YOUR HOMEWORK!
        Meaning, don't expect us to hold your hand and solve the problem
        for you.  You are expected to to the legwork, and we'll support
-       you if you show evidence that you have.  Use google!  We will +q
+       you if you show evidence that you have.  Use Google!  We will +q
        you if you aren't showing any motivation or legwork.
 
        Please be certain you have read the FAQs on our website, perused
@@ -36,7 +44,7 @@ General rules
        we operate.  Look it up.
 
     *  Germane topics:
-       Unlike some of the other channels here in freenode, we actually
+       Unlike some of the other channels here in Freenode, we actually
        encourage off-topic discussion.  It brings life to our room, and
        we're lower traffic which allows for general discussion.  HOWEVER:
        there are some exceptions...
@@ -66,6 +74,14 @@ General rules
 
     *  Pasting snippets, code, errors, etc.
        DON'T do this in the channel.  Use a pastebin and post the
-       link to it.  We prefer you use <http://gsb.pastebin.com>
+       link to it.  We prefer you use <http://gsb.pastebin.com>a
+
+    *  The +q (quiet) flag
+       Sometimes we will +q a user (puts them in quiet mode so they cannot
+       talk on the channel.  Normally a user it quieted for breaking rules,
+       breaking admins and/or developers balls, or just being annoying in
+       general.  +q flags are lifted at the discretion of the admins.  DO
+       NOT PM an admin asking to have the quiet lifted.  Bad things will
+       happen.
 
 Have fun! :^)
