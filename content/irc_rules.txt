@@ -45,7 +45,7 @@ General rules
 
         -  When there is a development and/or support discussion taking
            place, refrain from off-topic discussions until the other
-           conversation had ended.
+           conversation has ended.
 
     *  Attitude:
        Have a good one.  Be patient, courteous, polite, and kiss a little
