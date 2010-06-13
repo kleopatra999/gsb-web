@@ -93,7 +93,7 @@ TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
 SLAPTGET_DLPATH=\"\$MIRROR/\$GSB_NORMALIZED_PATH/$arch/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
-SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --upgrade -y -S\"
+SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --upgrade -y -S\"
 SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install -S \$META_PACK -y\"
 WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE\"
 SLAPT_MD5=$slapt_md5
