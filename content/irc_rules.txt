@@ -36,28 +36,23 @@ General rules
        we operate.  Look it up.
 
     *  Germane topics:
-       Unlike some of the elitist asshats[1] in ##slackware[2] and #httpd, we
+       Unlike some of the other channels here in freenode, we actually
        encourage off-topic discussion.  It brings life to our room, and
-       we're lower traffic which allows for general discussion.  There is
-       one exception to this rule:
+       we're lower traffic which allows for general discussion.  HOWEVER:
+       there are some exceptions...
        
-       When asking for support, it had better be GSB-related!
+        -  When asking for support, it had better be GSB-related!
 
-       [1] "thumbs" (AKA: Frank Gingras), we're looking in your
-           direction, and telling you to stick your thumbs where the
-           sun doesn't shine ;-)
-
-       [2] Exempted from this classification are actual Slackware
-           developers/admins in the channel.  Stand-up guys and fair.
-           Funny how /actual/ project developers aren't fuckfaces, and
-           the non-contributors are the asshats.
+        -  When there is a development and/or support discussion taking
+           place, refrain from off-topic discussions until the other
+           conversation had ended.
 
     *  Attitude:
        Have a good one.  Be patient, courteous, polite, and kiss a little
        ass.  When you're asking for support, we're trying to help you for
        free.  Also, we develop this project for free.  A shitty attitude
        will get you nowhere but +q'd.  It's OK to be a freeloader (in some
-       cases), but not an asshat freeloader.
+       cases), but not an ass-hat freeloader.
 
     *  PM's:
        Don't do it without asking first.  Ever.  If you were +q'd or
@@ -73,3 +68,4 @@ General rules
        DON'T do this in the channel.  Use a pastebin and post the
        link to it.  We prefer you use <http://gsb.pastebin.com>
 
+Have fun! :^)
