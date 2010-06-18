@@ -51,7 +51,7 @@ $CSS_RAND = true;
     <meta name="keywords"
           content="gsb,GSB,GNOME,gnome,SlackBuild,GNOME SlackBuild,Slack,Slackware,Slackware Linux,Linux" />
     <meta name="description"
-          content="GNOME SlackBuild (GSB) - a GNOME distribution for Slackware Linux" />
+          content="GNOME SlackBuild (GSB) - The best GNOME distribution for Slackware Linux" />
     <style type="text/css"
           title="Chipster&#39;s Blue and Plenty-O-Whitespace Style">
     /*<![CDATA[*/
