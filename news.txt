@@ -4,7 +4,7 @@ OSUOSL Proudly Sponsors GNOMESlackBuild!
 
 <p>We're happy to announce that <a href="http://osuosl.org/donate">OSUOSL</a> is
 a GSB sponsor, and that they've graciously mirrored our entire GSB software repository.
-This is the same organization mirror &amp; that is the official Slackware mirror :-)
+This is the same organization &amp; mirror that is the official Slackware mirror :-)
 The OSUOSL mirror will now become our official US mirror.</p>
 
 <p>OSUOSL sponsors and hosts a wide variety of excellent Open Source projects and initiatives,
