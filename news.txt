@@ -1,4 +1,20 @@
 ###
+2010-06-23-18-45-CST
+OSUOSL Proudly Sponsors GNOMESlackBuild!
+
+<p>We're happy to announce that <a href="http://osuosl.org/donate">OSUOSL</a> is
+a GSB sponsor, that that they've graciously mirrored our entire GSB software repository.
+This is the same organization mirror &amp; that is the official Slackware mirror :-)
+The OSUOSL mirror will now become our official US mirror.</p>
+
+<p>OSUOSL sponsors and hosts a wide variety of excellent Open Source projects and initiatives,
+including, GNOME, Slackware, Apache, Debian, Fedora, and many more.  Show them how much you
+appreciate what they give to the community by <a href="http://osuosl.org/donate">providing a donation</a>.</p>
+
+<p>The entire GSB team would like to personally extend a big "Thank You" to OSUOSL for providing not only GSB, but
+the entire Open Source community with so much to offer.</p>
+
+###
 2010-06-06-01-30-BST
 GNOME SlackBuild 2.30 for x86 and x86_64 is released!
 
