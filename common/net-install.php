@@ -10,13 +10,13 @@ switch ($arch)
         $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
-          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64,^compiz,^gst-plugins-.*";
         break;
     case "gsb64":
         $arch_path  = "gsb/gsb64";
         $slack_arch = "slackware64";
         $excludes   =
-          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,i[3456]86";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,i[3456]86,^compiz,^gst-plugins-.*";
         #$use_ver = "current"; // temp hack until stable is released.
         break;
     default:
@@ -24,7 +24,7 @@ switch ($arch)
         $arch_path  = "gsb/gsb";
         $slack_arch = "slackware";
         $excludes   =
-          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64";
+          "^aaa_elflibs,^devs,^glibc-.*,^kernel-.*,^udev,.*-[0-9]+dl$,x86_64,^compiz,^gst-plugins-.*";
 }
 
 // get the req. URI for help
@@ -93,10 +93,11 @@ TMP=\"\${TMP:-/tmp}\"
 MIRROR=\"$mirror\"
 SLAPTGET_DLPATH=\"\$MIRROR/\$GSB_NORMALIZED_PATH/$arch/$slapt_dir/\$SLAPTGET_FILE\"
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
-SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --upgrade -y -S\"
-SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install -S \$META_PACK -y\"
+SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --upgrade -y\"
+SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install \$META_PACK -y\"
 WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE\"
 SLAPT_MD5=$slapt_md5
+LOGFILE=\"/tmp/gsb-installation_\$( date +%Y%m%d-%H%M%S ).log\"
 
 #
 # determine if user is logged in as root user
@@ -141,7 +142,7 @@ if [ ! -f \"\${SLAPTGET}\" ]; then
     else
         TEMP_SLAPT_MD5=`md5sum \$TMP/\$SLAPTGET_FILE|sed 's| \/.*||g'|grep .`
         if [ \$TEMP_SLAPT_MD5 = \$SLAPT_MD5 ]; then
-            upgradepkg --install-new  \$TMP/\$SLAPTGET_FILE
+            upgradepkg --install-new  \$TMP/\$SLAPTGET_FILE | tee -a \$LOGFILE
             rm -f \$TMP/\$SLAPTGET_FILE
             echo \"slap-get installed successfully\"
             echo
@@ -175,11 +176,11 @@ EOF
 echo
 echo \"Grabbing and importing package signing keys....\"
 echo
-\$SLAPTGET --config \$TEMP_CONFIGFILE --add-keys
+\$SLAPTGET --config \$TEMP_CONFIGFILE --add-keys | tee -a \$LOGFILE
 echo
 echo \"Updating package lists...\"
 echo
-\$SLAPTGET --config \$TEMP_CONFIGFILE --update
+\$SLAPTGET --config \$TEMP_CONFIGFILE --update | tee -a \$LOGFILE
 echo
 echo \"Installing/updating GSB GNOME\"...
 echo
@@ -188,9 +189,9 @@ sleep 3
 #
 # sanity
 #
-if \$SLAPTGET \$SLAPTGET_ARGS0; then
+if \$SLAPTGET \$SLAPTGET_ARGS0 | tee -a \$LOGFILE; then
     echo \"Dependencies upgraded and/or installed - installing GSB GNOME...\"
-    if \$SLAPTGET \$SLAPTGET_ARGS1; then
+    if \$SLAPTGET \$SLAPTGET_ARGS1 | tee -a \$LOGFILE; then
         echo
         echo \"cleaning up temporary files...\"
         \$SLAPTGET --config \$TEMP_CONFIGFILE --clean
