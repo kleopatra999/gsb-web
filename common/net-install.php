@@ -132,7 +132,7 @@ fi
 echo \"Downloading and installing slapt-get...\"
 echo 
 sleep 2
-\$WGET \$WGET_ARGS | tee \$LOGFILE
+\$WGET \$WGET_ARGS | tee -a \$LOGFILE
 if [ ! -f \"\$TMP/\$SLAPTGET_FILE\" ]; then
     echo \"slapt-get download failed\"
     exit 1
