@@ -98,6 +98,7 @@ SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --insta
 WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE -U GSB_net-installer\"
 SLAPT_MD5=$slapt_md5
 LOGFILE=\"/tmp/gsb-installation_\$( date +%Y%m%d-%H%M%S ).log\"
+SLAPTGET='/usr/sbin/slapt-get'
 
 #
 # determine if user is logged in as root user
@@ -128,7 +129,6 @@ fi
 #
 # slapt-get handling/acquisition
 #
-SLAPTGET='/usr/sbin/slapt-get'
 echo \"Downloading and installing slapt-get...\"
 echo 
 sleep 2
@@ -141,7 +141,7 @@ else
     if [ \$TEMP_SLAPT_MD5 = \$SLAPT_MD5 ]; then
        upgradepkg --install-new --reinstall \$TMP/\$SLAPTGET_FILE | tee -a \$LOGFILE
        rm -f \$TMP/\$SLAPTGET_FILE
-       echo \"slap-get installed successfully\"
+       echo \"slapt-get installed successfully\"
        echo
        sleep 3
     else
