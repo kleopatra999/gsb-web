@@ -129,30 +129,26 @@ fi
 # slapt-get handling/acquisition
 #
 SLAPTGET='/usr/sbin/slapt-get'
-if [ ! -f \"\${SLAPTGET}\" ]; then
-    clear
-    echo 
-    echo \"slapt-get not found. Downloading and installing...\"
-    echo 
-    sleep 3
-    \$WGET \$WGET_ARGS | tee \$LOGFILE
-    if [ ! -f \"\$TMP/\$SLAPTGET_FILE\" ]; then
-        echo \"slapt-get download failed\"
-        exit 1
+echo \"Downloading and installing slapt-get...\"
+echo 
+sleep 2
+\$WGET \$WGET_ARGS | tee \$LOGFILE
+if [ ! -f \"\$TMP/\$SLAPTGET_FILE\" ]; then
+    echo \"slapt-get download failed\"
+    exit 1
+else
+    TEMP_SLAPT_MD5=`md5sum \$TMP/\$SLAPTGET_FILE|sed 's| \/.*||g'|grep .`
+    if [ \$TEMP_SLAPT_MD5 = \$SLAPT_MD5 ]; then
+       upgradepkg --install-new --reinstall \$TMP/\$SLAPTGET_FILE | tee -a \$LOGFILE
+       rm -f \$TMP/\$SLAPTGET_FILE
+       echo \"slap-get installed successfully\"
+       echo
+       sleep 3
     else
-        TEMP_SLAPT_MD5=`md5sum \$TMP/\$SLAPTGET_FILE|sed 's| \/.*||g'|grep .`
-        if [ \$TEMP_SLAPT_MD5 = \$SLAPT_MD5 ]; then
-            upgradepkg --install-new  \$TMP/\$SLAPTGET_FILE | tee -a \$LOGFILE
-            rm -f \$TMP/\$SLAPTGET_FILE
-            echo \"slap-get installed successfully\"
-            echo
-            sleep 3
-        else
-            echo
-            echo \"slapt-get download md5's don't match! Exiting.\"
-            echo
-            exit 1
-        fi
+       echo
+       echo \"slapt-get download md5's don't match! Exiting.\"
+       echo
+       exit 1
     fi
 fi
 
