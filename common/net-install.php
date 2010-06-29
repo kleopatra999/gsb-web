@@ -95,7 +95,7 @@ SLAPTGET_DLPATH=\"\$MIRROR/\$GSB_NORMALIZED_PATH/$arch/$slapt_dir/\$SLAPTGET_FIL
 TEMP_CONFIGFILE=\"\$TMP/slapt-getrc\"
 SLAPTGET_ARGS0=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --upgrade -y\"
 SLAPTGET_ARGS1=\"--config \$TEMP_CONFIGFILE --retry 10 --remove-obsolete --install \$META_PACK -y\"
-WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE\"
+WGET_ARGS=\"--progress=bar \$SLAPTGET_DLPATH -O \$TMP/\$SLAPTGET_FILE -U GSB_net-installer\"
 SLAPT_MD5=$slapt_md5
 LOGFILE=\"/tmp/gsb-installation_\$( date +%Y%m%d-%H%M%S ).log\"
 
@@ -135,7 +135,7 @@ if [ ! -f \"\${SLAPTGET}\" ]; then
     echo \"slapt-get not found. Downloading and installing...\"
     echo 
     sleep 3
-    \$WGET \$WGET_ARGS
+    \$WGET \$WGET_ARGS | tee \$LOGFILE
     if [ ! -f \"\$TMP/\$SLAPTGET_FILE\" ]; then
         echo \"slapt-get download failed\"
         exit 1
