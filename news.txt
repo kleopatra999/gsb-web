@@ -1,5 +1,19 @@
 
 ###
+2010-10-06-21-51-BST
+GSB 2.32 Development Underway
+
+<p>GNOME 2.32 was released September, 29.  We're starting a new development
+cycle to bring all the latest and great from GNOME to Slackware.  GNOME 2.32 is
+the last planned major release in the GNOME 2.x series, with only maintenance
+releases for GNOME 2.x planned going forward.  GNOME 2.32 features a limited
+set of new features in some applications, as the community continues to focus
+on the upcoming GNOME 3.0 release scheduled for April, 2011.</p>
+
+<p>We'll be creating a new -current branch soon so that users can start testing
+the new packages soon!</p>
+
+###
 2010-06-23-18-45-CST
 OSUOSL Proudly Sponsors GNOMESlackBuild!
 
