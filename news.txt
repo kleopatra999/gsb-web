@@ -1,3 +1,15 @@
+2010-10-17-14-03-BST
+GSB 2.32 -current on servers now
+
+<p>gsb-current and gsb64-current for Slackware 13.1 are now up on servers and
+mirrors.  It should be a smooth upgrade from gsb-2.30 to gsb-current for those
+users who wish to try out the latest packages.  Please remember that -current
+is under development, but out packages are available for users who wish to
+help us test the latest versions.  If you find any bugs as development
+advances, please help us by reporting them so we can continue to keep GSB as
+a stable GNOME platform for Slackware.</p>
+
+<p>You can follow progress by looking at our <a href="http://ftp.osuosl.org/pub/gsb/gsb-current_slackware-13.1/ChangeLog.txt">ChangeLog</a>.</p>
 
 ###
 2010-10-06-21-51-BST
