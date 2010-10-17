@@ -2,7 +2,7 @@
 GSB 2.32 -current on servers now
 
 <p>gsb-current and gsb64-current for Slackware 13.1 are now up on servers and
-mirrors.  It should be a smooth upgrade from gsb-2.30 to gsb-current for those
+<a href="http://ftp.osuosl.org/pub/gsb/gsb-current_slackware-13.1/MIRRORS.TXT">MIRRORS</a>.  It should be a smooth upgrade from gsb-2.30 to gsb-current for those
 users who wish to try out the latest packages.  Please remember that -current
 is under development, but out packages are available for users who wish to
 help us test the latest versions.  If you find any bugs as development
