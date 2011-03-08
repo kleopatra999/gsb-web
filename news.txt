@@ -1,3 +1,13 @@
+2011-03-07-21-45-BST
+GSB 3.0 (GNOME 2.91.91) for -current under development
+
+<p>We are working hard to get a GNOME 2.91.91 beta release ready for testing on
+Slackware-current.  We will be releasing in a short time a working GNOME Shell
+desktop for Slackware-current for curious users to try out and report bugs and
+help both us package the new GNOME desktop as well as helping upstream
+development.</p>
+
+###
 2010-10-17-14-03-BST
 GSB 2.32 -current on servers now
 
