@@ -20,7 +20,7 @@ $sites[3]  = array("http://slackware.rol.ru/gsb", 0); # good
 $sites[4]  = array("http://get.gnomeslackbuild.org", 0); #good
 $sites[5]  = array("http://ftp5.gwdg.de/pub/linux/slackware", 0); #good
 $sites[6]  = array("http://mirrors.dotsrc.org", 0); #incomplete mirror!
-$sites[7]  = array("http://ftp.pnfi.kemdiknas.go.id", 0); #good
+$sites[7]  = array("http://ftp.paudni.kemdiknas.go.id", 0); #good
 $sites[8]  = array("http://ftp.osuosl.org/pub", 15); #good
 // end vars
 
