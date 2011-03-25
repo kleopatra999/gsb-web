@@ -7,14 +7,11 @@ are in place now, but we've still got lots to do before we're finished with
 accessibility toolkits, upgrading to latest GNOME office applications, and finishing
 off a Metacity desktop option for those users who aren't quite ready yet for the swanky new GNOME Shell desktop.</p>
 
-<p>There are two new screenies available for viewing consumption.  Take a look!  It's coming soon!</p>
+<p>There are three new screenies available for viewing consumption.  Take a look at what's coming soon!</p>
 
-<p>
-<a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.01.png/">GSB 3.0 Dash</a>
-<a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.02.png/">GSB 3.0 Application Browser</a>
-<a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.03.png/">GSB 3.0 Desktop</a>
-</p>
-
+<p><a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.01.png/">GSB 3.0 Dash</a></p>
+<p><a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.02.png/">GSB 3.0 Application Browser</a></p>
+<p><a href="http://stage.gnomeslackbuild.org/screenies/gsb-3.0.desktop.03.png/">GSB 3.0 Desktop</a></p>
 ###
 2011-03-07-21-45-BST
 GSB 3.0 (GNOME 2.91.91) for -current under development
