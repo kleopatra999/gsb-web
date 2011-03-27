@@ -12,7 +12,7 @@ yet for the swanky new GNOME Shell desktop.</p>
 things are bound to be broken or as yet incomplete.  Help would be greatly
 appreciated in the form of testing and bug reports.  Always make sure you're
 running the most up-to-date Slackware-current and gsb-current since things are
-still changing.<p>
+still changing.</p>
 
 <p>There are three new screenies available for viewing consumption.  Take a look at what's coming soon!</p>
 
