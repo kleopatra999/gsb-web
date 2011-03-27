@@ -4,8 +4,15 @@ GSB 3.0 (GNOME 2.91.93) -current available
 <p>With a full release of Slackware 13.37 coming up quickly, we are working
 hard to get a new GNOME 3.0 Desktop ready for it. A good portion of the pieces
 are in place now, but we've still got lots to do before we're finished with
-accessibility toolkits, upgrading to latest GNOME office applications, and finishing
-off a Metacity desktop option for those users who aren't quite ready yet for the swanky new GNOME Shell desktop.</p>
+accessibility toolkits, upgrading to latest GNOME office applications, and
+finishing off a Metacity desktop option for those users who aren't quite ready
+yet for the swanky new GNOME Shell desktop.</p>
+
+<p>Remember that this is a development version of GNOME, as well as GSB so that
+things are bound to be broken or as yet incomplete.  Help would be greatly
+appreciated in the form of testing and bug reports.  Always make sure you're
+running the most up-to-date Slackware-current and gsb-current since things are
+still changing.<p>
 
 <p>There are three new screenies available for viewing consumption.  Take a look at what's coming soon!</p>
 
