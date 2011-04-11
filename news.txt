@@ -1,3 +1,14 @@
+2011-04-11-17-03-BST
+GSB 3.0 (GNOME 3.0.0) -current available
+
+<p>GNOME 3.0 has been released and GSB has been updated accordingly.
+gsb-3.0-current and gsb64-3.0-current now includes all the latest stable
+packages from GNOME upstream, and we're still working hard in work out all the
+bugs.  It's a working desktop, so users who are on the cutting edge and running
+slackware-current, give it a try and help us out by reporting bugs and offering
+suggestions. :-) </p>
+
+###
 2011-03-25-20-02-BST
 GSB 3.0 (GNOME 2.91.93) -current available
 
