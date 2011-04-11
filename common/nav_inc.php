@@ -17,18 +17,6 @@
                 title="Home Page">Home</a>
           </li>
           <?php }
-                      if($op == "about") { ?>
-          <li>
-            <a href="/about/"
-                title="About the Project"
-                class="thisPage">About</a>
-          </li>
-          <?php } else { ?>
-          <li>
-            <a href="/about/"
-                title="About the Project">About</a>
-          </li>
-          <?php }
                       if ($op == "download") { ?>
           <li>
             <a href="/download/"
@@ -40,18 +28,6 @@
             <a href="/download/"
                 title="Download and Installation Info">Download &amp;
                 Install</a>
-          </li>
-          <?php }
-                      if ($op == "donate") { ?>
-          <li>
-            <a href="/donate/"
-                title="iDonate to the GSB Project"
-                class="thisPage">Donate</a>
-          </li>
-          <?php } else { ?>
-          <li>
-            <a href="/donate/"
-                title="Donate to the GSB Project">Donate</a>
           </li>
           <?php }
                       if($op == "screenshots") { ?>
@@ -100,6 +76,30 @@
           <li>
             <a href="/support/"
                 title="Support &amp; FAQs">Support</a>
+          </li>
+          <?php }
+                      if($op == "about") { ?>
+          <li>
+            <a href="/about/"
+                title="About the Project"
+                class="thisPage">About</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/about/"
+                title="About the Project">About</a>
+          </li>
+          <?php }
+                      if ($op == "donate") { ?>
+          <li>
+            <a href="/donate/"
+                title="iDonate to the GSB Project"
+                class="thisPage">Donate</a>
+          </li>
+          <?php } else { ?>
+          <li>
+            <a href="/donate/"
+                title="Donate to the GSB Project">Donate</a>
           </li>
           <?php } ?>
         </ul>
