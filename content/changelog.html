@@ -11,19 +11,23 @@ $cl_error = "<h2>Unable to display ChangeLog</h2>\n"
            ."<p><a href=\"/changelog/\">Back to ChangeLog index...</a></p>"
            ."\n</div>\n";
 
+$cl_file = "ChangeLog.txt";
+
 // clean up $*ver var
+
 $cl_ver = str_replace("/", "", $cl_ver);
 
 switch ($cl_ver) {
     case "$gsb_bin_stable":
-        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/ChangeLog.txt";
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/".$cl_file;
         break;
     case "stable":
         $cl_ver = $gsb_bin_stable;
-        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/ChangeLog.txt";
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-$cl_ver"."_slackware-".$slack_ver."/".$cl_file;
         break;
     case "current":
-        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-current/ChangeLog.txt";
+        #$cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-current/ChangeLog.txt";
+        $cl_uri = "http://get.gnomeslackbuild.org/gsb/gsb-3.0_slackware-current/".$cl_file;
         break;
     case "unstable":
         break;
