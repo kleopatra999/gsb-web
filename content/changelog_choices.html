@@ -1,10 +1,12 @@
 <?php
 /* SVN log & last updated func. */
+/*
 $svn_log = "/home/chipster/webs/gnomeslackbuild.org/gsb-ChangeLog";
 $last_mod = date ("r", filemtime($svn_log));
 $print_svn_log = `cat $svn_log`;
 $print_svn_log = preg_replace("/<.*@.*\..*>/i", "", $print_svn_log);
 $print_svn_log = htmlentities($print_svn_log);
+*/
 ?>
     <h2>
       GSB Binary ChangeLog:
@@ -34,7 +36,7 @@ $print_svn_log = htmlentities($print_svn_log);
         (gsb-<?php echo($gsb_bin_current_ver);?>).
       </dd>
     </dl>
-    
+   <!--
     <h2 id="svn-log">
       SVN Commit Log
     </h2>
@@ -53,3 +55,4 @@ $print_svn_log = htmlentities($print_svn_log);
 <?php print($print_svn_log); ?>
 </pre>
     </div>
+    -->
