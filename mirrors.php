@@ -13,14 +13,14 @@
 // define mirrors and paths here (no trailing slash!)
 // last digit in the arrays are "weight" in the random pool - hi number =
 // more rotations in the random pool
-$sites[0]  = array("http://slackware.org.uk", 0); # good
-$sites[1]  = array("http://mirror.switch.ch/ftp/mirror",0); # good
-$sites[2]  = array("http://ftp.slackware.pl/pub/gnomeslackbuild", 0); # good
-$sites[3]  = array("http://slackware.rol.ru/gsb", 0); # good
-$sites[4]  = array("http://get.gnomeslackbuild.org", 0); #good
-$sites[5]  = array("http://ftp5.gwdg.de/pub/linux/slackware", 0); #good
-$sites[6]  = array("http://mirrors.dotsrc.org", 0); #incomplete mirror!
-$sites[7]  = array("http://ftp.paudni.kemdiknas.go.id", 0); #good
+$sites[0]  = array("http://slackware.org.uk", 5); # good
+$sites[1]  = array("http://mirror.switch.ch/ftp/mirror",2); # good
+$sites[2]  = array("http://ftp.slackware.pl/pub/gnomeslackbuild", 2); # good
+$sites[3]  = array("http://slackware.rol.ru/gsb", 2); # good
+$sites[4]  = array("http://get.gnomeslackbuild.org", 2); #good
+$sites[5]  = array("http://ftp5.gwdg.de/pub/linux/slackware", 2); #good
+$sites[6]  = array("http://mirrors.dotsrc.org", 2); #incomplete mirror!
+$sites[7]  = array("http://ftp.paudni.kemdiknas.go.id", 1); #good
 $sites[8]  = array("http://ftp.osuosl.org/pub", 15); #good
 // end vars
 
