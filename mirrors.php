@@ -13,7 +13,7 @@
 // define mirrors and paths here (no trailing slash!)
 // last digit in the arrays are "weight" in the random pool - hi number =
 // more rotations in the random pool
-$sites[0]  = array("http://slackware.org.uk", 5); # good
+$sites[0]  = array("http://slackware.org.uk", 0); # good
 $sites[1]  = array("http://mirror.switch.ch/ftp/mirror",2); # good
 $sites[2]  = array("http://ftp.slackware.pl/pub/gnomeslackbuild", 2); # good
 $sites[3]  = array("http://slackware.rol.ru/gsb", 2); # good
