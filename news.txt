@@ -2,7 +2,7 @@
 GSB 3.2 on servers now
 
 <p>GSB/GSB64 3.2 for Slackware 13.37 are now up on servers and
-<a href="http://ftp.osuosl.org/pub/gsb/gsb-3.2-slackware_13.37/MIRRORS.TXT">MIRRORS</a>.
+<a href="http://ftp.osuosl.org/pub/gsb/gsb-3.2_slackware-13.37/MIRRORS.TXT">MIRRORS</a>.
 Upgrading from previous 2.30 and 3.0 versions to 3.2 should be seamless.
 This version is quite solid now, but we're going to continue to maintain it, so
 if you find any bugs, please do let us know.</p>
