@@ -132,8 +132,7 @@ $MirrorData = str_replace("&","&amp;", $MirrorData);
     </h4>
 
     <div>
-<pre>
-lynx --source http://gnomeslackbuild.org/net-install | bash
+<pre>lynx --source http://gnomeslackbuild.org/net-install | bash
 </pre>
     </div>
 
@@ -142,8 +141,7 @@ lynx --source http://gnomeslackbuild.org/net-install | bash
     </h4>
 
 <div>
-<pre> 
-lynx --source http://gnomeslackbuild.org/net-install/64 | bash
+<pre>lynx --source http://gnomeslackbuild.org/net-install/64 | bash
 </pre>
 </div>
 
@@ -202,8 +200,7 @@ lynx --source http://gnomeslackbuild.org/net-install/64 | bash
     </p>
 
 <div>
-<pre>
-$ installpkg slapt-get-[version].txz
+<pre>$ installpkg slapt-get-[version].txz
 </pre>
 </div>
 
@@ -246,12 +243,11 @@ $ installpkg slapt-get-[version].txz
         mirrors.</strong>
 
        <div>
-          <pre>
-        WORKINGDIR=/var/slapt-get
+          <pre>WORKINGDIR=/var/slapt-get
         EXCLUDE=^kernel-.*,^alsa-.*,^glibc.*,.*-[0-9]+dl$,^devs$,^udev$,aaa_elflibs
         SOURCE=ftp://ftp.slackware.com/pub/slackware/slackware-<?php echo($slack_ver); ?>/:OFFICIAL
         SOURCE=http://mirrors.gnomeslackbuild.org/gsb/gsb-<?php echo $gsb_bin_stable; ?>_slackware-<?php echo($slack_ver); ?>
-        </pre>
+</pre>
         </div>
         If you would like to view a fully loaded example, after installing
         slapt-get, refer to <code>/usr/doc/slapt-get/example.slapt-getrc</code>.
@@ -323,8 +319,7 @@ $ installpkg slapt-get-[version].txz
          <code>slapt-getrc</code> configuration file, you need to run:</p>
 
 <div>
-<pre>
-$ slapt-get --update 
+<pre>$ slapt-get --update
 $ slapt-get --add-keys
 </pre>
 </div>
@@ -346,8 +341,7 @@ $ slapt-get --add-keys
       command before attempting to install GNOME SlackBuild:
     </p>
       <div>
-      <pre>
-$ slapt-get --install glib2 gtk+2
+      <pre>$ slapt-get --install glib2 gtk+2
 </pre>
       </div>
      
@@ -362,8 +356,7 @@ $ slapt-get --install glib2 gtk+2
     </p>
 
     <div>
-    <pre>
-$ slapt-get --remove-obsolete --upgrade
+    <pre>$ slapt-get --remove-obsolete --upgrade
 </pre>
     </div>
 
@@ -396,8 +389,7 @@ $ slapt-get --remove-obsolete --upgrade
     </p>
 
 <div>
-<pre>
-$ slapt-get --install gsb-desktop
+<pre>$ slapt-get --install gsb-desktop
 </pre>
 </div>
 
@@ -434,8 +426,7 @@ $ slapt-get --install gsb-desktop
     </p>
     
 <div>
-<pre>
-$ removepkg /var/log/packages/*gsb
+<pre>$ removepkg /var/log/packages/*gsb
 </pre>
 </div>
 
@@ -446,8 +437,7 @@ $ removepkg /var/log/packages/*gsb
     a few standard Slackware packages by running:</p>
 
 <div>
-<pre>
-$ slapt-get --reinstall --install glib2 gtk+2
+<pre>$ slapt-get --reinstall --install glib2 gtk+2
 </pre>
 </div>
 
