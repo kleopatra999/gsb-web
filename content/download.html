@@ -9,7 +9,8 @@ fclose($fh);
 // linkify :)
 $MirrorData = preg_replace("/(?<!<a href=\")((http|https|rsync|news|irc|ftp)+(s)?:\/\/[^<>\s]+)/i",
     "<a href=\"\\0\">\\0</a>", $MirrorData);
-
+// fix &'s
+$MirrorData = str_replace("&","&amp;", $MirrorData);
 ?>
             
     <div id="toc"
