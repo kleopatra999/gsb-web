@@ -1,1 +1,1 @@
-../versions.txt
+/home/chipster/webs/stage.gnomeslackbuild.org/web/versions.txt

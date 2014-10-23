@@ -1,7 +1,7 @@
 #
 # Site Apache Options (deny indexes, disable SSI, and disable CGI)
 #
-Options -Indexes -Includes -ExecCGI +FollowSymlinks
+Options -Indexes +Includes +ExecCGI +FollowSymlinks
 
 #
 # Direcory Index Options

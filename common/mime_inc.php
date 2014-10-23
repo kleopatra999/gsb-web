@@ -36,8 +36,8 @@ if($mime == "application/xhtml+xml") {
   \"http://www.w3.org/TR/html4/strict.dtd\">
 <html lang=\"en\">";
 }
-header("Content-Type: $mime;charset=$charset");
-header("Vary: Accept");
+//header("Content-Type: $mime;charset=$charset");
+//header("Vary: Accept");
 print $prolog_type;
 ?>
 
